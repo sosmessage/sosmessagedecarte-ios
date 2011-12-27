@@ -78,7 +78,7 @@
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         if (orientation == UIDeviceOrientationPortrait || orientation == UIDeviceOrientationPortraitUpsideDown) {
-            return 3;
+            return 4;
         } else {
             return 5;
         }
@@ -102,7 +102,7 @@
 - (UIFont *)deviceSpecificSOSFont {
     int fontSize = 36;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        fontSize = 34;
+        fontSize = 30;
     }
     return [UIFont fontWithName:@"PhontPhreak'sHandwriting" size:fontSize];;
 }

@@ -18,6 +18,13 @@
 
 - (void)handleCategoryTapping:(UIGestureRecognizer *)sender;
 - (void)handleMailPropositionTapping:(UIGestureRecognizer *)sender;
+
+- (void)addSOSCategory:(NSDictionary*)category inPosX:(int)posX andPosY:(int)posY forBlock:(int)nbBlock;
+- (void)addSOSCategory:(NSDictionary*)category inPosX:(int)posX andPosY:(int)posY;
+- (void)addSOSCategoryBackground:(UILabel*)uiLabel ofSize:(int)nbBlock;
+
+- (void)fillEmptyBlocks:(int)nb fromPosX:(int)posX andPosY:(int)posY;
+- (UILabel*)buildUILabelForBlock:(int)nbBlocks inPosX:(int)posX andPosY:(int)posY;
 @end
 
 @implementation SMCategoriesViewController
@@ -102,32 +109,43 @@ static char sosMessageKey;
     return [uiLabel autorelease];
 }
 
-- (void)addSOSCategory:(NSDictionary*)category inPosX:(int)posX andPosY:(int)posY {
-    NSString* label = [category objectForKey:CATEGORY_NAME];
+- (void)addSOSCategory:(NSDictionary*)category inPosX:(int)posX andPosY:(int)posY forBlock:(int)nbBlock {
+    NSString* category_name = [category objectForKey:CATEGORY_NAME];
     
-    UILabel* uiLabel = [self buildUILabelForBlock:[label blocksCount:self.view] inPosX:posX andPosY:posY];
-                        
-    uiLabel.backgroundColor = [UIColor colorWithHue:label.hue saturation:0.55 brightness:0.9 alpha:1.0];
-    uiLabel.text = [label capitalizedString];
+    UILabel* uiLabel = [self buildUILabelForBlock:nbBlock inPosX:posX andPosY:posY];
+    
+    uiLabel.backgroundColor = [UIColor colorWithHue:category_name.hue saturation:0.55 brightness:0.9 alpha:1.0];
+    uiLabel.text = [category_name capitalizedString];
     uiLabel.font = SOSFONT;
-    uiLabel.textColor = [UIColor colorWithHue:label.hue saturation:1.0 brightness:0.3 alpha:1.0];
+    uiLabel.textColor = [UIColor colorWithHue:category_name.hue saturation:1.0 brightness:0.3 alpha:1.0];
     uiLabel.textAlignment = UITextAlignmentCenter;
     uiLabel.userInteractionEnabled = YES;
     uiLabel.alpha = 0.90;
     
     objc_setAssociatedObject(uiLabel, &sosMessageKey, category, 0);
-
+    
     UITapGestureRecognizer *categoryTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCategoryTapping:)];
     [uiLabel addGestureRecognizer:categoryTap];
     [categoryTap release];
     
     [self.view insertSubview:uiLabel belowSubview:self.infoButton];
-    
-    
-    UIImageView* enveloppe = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"enveloppe.png"]];
-    enveloppe.frame = uiLabel.frame;
-    [self.view insertSubview:enveloppe belowSubview:uiLabel];
-    [enveloppe release];
+    [self addSOSCategoryBackground:uiLabel ofSize:nbBlock];
+}
+
+- (void)addSOSCategoryBackground:(UILabel*)uiLabel ofSize:(int)nbBlock {
+    if (nbBlock != NB_BLOCKS) {
+        UIImageView* enveloppe = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"enveloppe.png"]];
+        enveloppe.frame = uiLabel.frame;
+        [self.view insertSubview:enveloppe belowSubview:uiLabel];
+        [enveloppe release];
+    } else {
+        uiLabel.alpha = 1.0f;
+    }
+}
+
+- (void)addSOSCategory:(NSDictionary*)category inPosX:(int)posX andPosY:(int)posY {
+    NSString* category_name = [category objectForKey:CATEGORY_NAME];
+    [self addSOSCategory:category inPosX:posX andPosY:posY forBlock:[category_name blocksCount:self.view]];
 }
 
 - (void)fillEmptyBlocks:(int)nb fromPosX:(int)posX andPosY:(int)posY {
@@ -142,7 +160,7 @@ static char sosMessageKey;
 
 -(void)addMailPropositionBlockinPosY:(int)posY {
     NSString* label = @"Proposez vos messages";
-    UILabel* uiLabel = [self buildUILabelForBlock:[label blocksCount:self.view] inPosX:0 andPosY:posY];
+    UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
     uiLabel.backgroundColor = [UIColor colorWithHue:label.hue saturation:0.55 brightness:0.9 alpha:1.0];
     uiLabel.text = [label capitalizedString];
     uiLabel.font = SOSFONT;
@@ -160,34 +178,40 @@ static char sosMessageKey;
 - (void)refreshCategories {
     NSLog(@"Categories refreshed");
     [self removeCategoriesLabel];
-    
     NSMutableArray* workingCategories = [[NSMutableArray alloc] initWithArray:categories];
-    
     int x = 0;
     int y = 0;
-    while (workingCategories.count > 0) {
-        NSDictionary* category = [workingCategories objectAtIndex:0];
-        int blockSize = [[category objectForKey:CATEGORY_NAME] blocksCount:self.view];
-        if ((NB_BLOCKS - x < blockSize)) {
-            [self fillEmptyBlocks:NB_BLOCKS - x fromPosX:x andPosY:y];
-            x = 0;
-            y += 1;
-        }
-        
-        [self addSOSCategory:category inPosX:x andPosY:y];
-        
-        x += blockSize;
-        if (x >= NB_BLOCKS) {
-            y += 1;
-            x = 0;
-        }
-        
-        [workingCategories removeObjectAtIndex:0];
-    }
     
-    if (x < NB_BLOCKS && x > 0) {
-        [self fillEmptyBlocks:NB_BLOCKS - x fromPosX:x andPosY:y];
-        y++;
+    if ([workingCategories count] <= 5) {
+        for (NSDictionary* category in workingCategories) {
+            [self addSOSCategory:category inPosX:0 andPosY:[self.categories indexOfObject:category] forBlock:NB_BLOCKS];
+        }
+        y = [workingCategories count];
+    } else {
+        while (workingCategories.count > 0) {
+            NSDictionary* category = [workingCategories objectAtIndex:0];
+            int blockSize = [[category objectForKey:CATEGORY_NAME] blocksCount:self.view];
+            if ((NB_BLOCKS - x < blockSize)) {
+                [self fillEmptyBlocks:NB_BLOCKS - x fromPosX:x andPosY:y];
+                x = 0;
+                y += 1;
+            }
+            
+            [self addSOSCategory:category inPosX:x andPosY:y];
+            
+            x += blockSize;
+            if (x >= NB_BLOCKS) {
+                y += 1;
+                x = 0;
+            }
+            
+            [workingCategories removeObjectAtIndex:0];
+        }
+        
+        if (x < NB_BLOCKS && x > 0) {
+            [self fillEmptyBlocks:NB_BLOCKS - x fromPosX:x andPosY:y];
+            y++;
+        }
     }
     [workingCategories release];
     
@@ -254,7 +278,6 @@ static char sosMessageKey;
     CGFloat hue;
     [uilabel.backgroundColor getHue:&hue saturation:nil brightness:nil alpha:nil];
     
-    NSLog(@"Hue color: %.3f", hue);
     SMMessageViewController* detail = [[SMMessageViewController alloc] initWithCategory:category];
     detail.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentModalViewController:detail animated:true];

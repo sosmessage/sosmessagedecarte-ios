@@ -89,7 +89,7 @@ bool receiving = false;
 }
 
 - (void)requestRandomMessageForCategory:(NSString*)aCategoryId {
-    [self requestUrl:[NSString stringWithFormat:@"%@/api/v1/category/%@/message", SM_URL, aCategoryId]];
+    [self requestUrl:[NSString stringWithFormat:@"%@/api/v1/categories/%@/message", SM_URL, aCategoryId]];
 }
 
 +(void)showUIAlert {

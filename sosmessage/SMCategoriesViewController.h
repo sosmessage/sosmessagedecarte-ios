@@ -16,10 +16,6 @@
 @property (retain, nonatomic) NSMutableArray* categories;
 @property (retain, nonatomic) SMMessagesHandler* messageHandler;
 
-- (void)addSOSCategory:(NSDictionary*)category inPosX:(int)posX andPosY:(int)posY;
-- (void)fillEmptyBlocks:(int)nb fromPosX:(int)posX andPosY:(int)posY;
-- (UILabel*)buildUILabelForBlock:(int)nbBlocks inPosX:(int)posX andPosY:(int)posY;
-
 - (void)refreshCategories;
 - (void)removeCategoriesLabel;
 

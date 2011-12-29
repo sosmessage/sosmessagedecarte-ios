@@ -296,7 +296,7 @@ static char sosMessageKey;
 - (void)startActivityFromMessageHandler:(SMMessagesHandler *)messageHandler
 {
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:TRUE];
-    hud.labelText = @"sosmessage";
+    hud.labelText = @"Chargement ...";
 }
 
 - (void)stopActivityFromMessageHandler:(SMMessagesHandler *)messageHandler

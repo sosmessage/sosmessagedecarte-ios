@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5109146114ACD93A00047A47 /* hdpi_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146014ACD93A00047A47 /* hdpi_114.png */; };
 		510CB9411471B4A80039C8A0 /* SMMessagesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 510CB9401471B4A80039C8A0 /* SMMessagesHandler.m */; };
 		513FBA3D1480F4ED00E69AC1 /* SMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513FBA3B1480F4ED00E69AC1 /* SMAboutViewController.m */; };
 		513FBA3E1480F4ED00E69AC1 /* SMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513FBA3C1480F4ED00E69AC1 /* SMAboutViewController.xib */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5109146014ACD93A00047A47 /* hdpi_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hdpi_114.png; path = ../hdpi_114.png; sourceTree = "<group>"; };
 		510CB93D1471A6520039C8A0 /* SMUrlBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMUrlBase.h; sourceTree = "<group>"; };
 		510CB93F1471B4A80039C8A0 /* SMMessagesHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMessagesHandler.h; sourceTree = "<group>"; };
 		510CB9401471B4A80039C8A0 /* SMMessagesHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMessagesHandler.m; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		516515CF145DEA4000CF6C45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5109146014ACD93A00047A47 /* hdpi_114.png */,
 				518B620714988499002252B4 /* reload-message.png */,
 				518B62001498081D002252B4 /* enveloppe.png */,
 				514CDA3914975770008A3115 /* PhontPhreaks Handwriting.ttf */,
@@ -239,6 +242,7 @@
 				514CDA3A14975770008A3115 /* PhontPhreaks Handwriting.ttf in Resources */,
 				518B62011498081D002252B4 /* enveloppe.png in Resources */,
 				518B620814988499002252B4 /* reload-message.png in Resources */,
+				5109146114ACD93A00047A47 /* hdpi_114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -152,7 +152,19 @@ float baseHue;
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathAddRect(path, NULL, self.titleImage.bounds);
     
-    NSString* header = [NSString stringWithFormat:@"%@%@",@"sosmessagedecarte\nde", [[self.category objectForKey:CATEGORY_NAME] lowercaseString]];
+    NSString* categoryName = [self.category objectForKey:CATEGORY_NAME];
+    NSMutableString* sosHeader = [NSMutableString stringWithString:@"sosmessage\n"];
+    //Handle "de" and "d'" case depending of the category name first char.
+    NSCharacterSet* letters = [NSCharacterSet characterSetWithCharactersInString:@"aeiou"];
+    if ([letters characterIsMember:[[categoryName lowercaseString] characterAtIndex:0]]) {
+        [sosHeader appendString:@"d'"];
+    } else {
+        [sosHeader appendString:@"de"];
+    }
+    
+    //Concat sosheader and category name
+    NSMutableString* header = [NSMutableString stringWithFormat:@"%@%@", sosHeader, [categoryName lowercaseString]];
+    
     NSLog(@"Header: %@", [header lowercaseString]);
     NSInteger _stringLength=[header length];
     
@@ -160,15 +172,14 @@ float baseHue;
     CFMutableAttributedStringRef attrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
     CFAttributedStringReplaceString (attrString,CFRangeMake(0, 0), string);
     
-    CGColorRef _black=[UIColor blackColor].CGColor;
-    CGColorRef _hue=[UIColor colorWithHue:baseHue saturation:0.9 brightness:0.7 alpha:1].CGColor;
+    CGColorRef _black= [UIColor blackColor].CGColor;
+    //CGColorRef _hue= [UIColor colorWithHue:baseHue saturation:0.9 brightness:0.7 alpha:1].CGColor;
+    CGColorRef _hue= [UIColor whiteColor].CGColor;
     
     CFAttributedStringSetAttribute(attrString, CFRangeMake(0, 3),kCTForegroundColorAttributeName, _black);
     CFAttributedStringSetAttribute(attrString, CFRangeMake(3, 7),kCTForegroundColorAttributeName, _hue);
     CFAttributedStringSetAttribute(attrString, CFRangeMake(10, 2),kCTForegroundColorAttributeName, _black);
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(12, 5),kCTForegroundColorAttributeName, _hue);
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(18, 2),kCTForegroundColorAttributeName, _black);
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(20, _stringLength - 20),kCTForegroundColorAttributeName, _hue);
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(13, _stringLength - 13),kCTForegroundColorAttributeName, _hue);
     
     CTFontRef font = CTFontCreateWithName((CFStringRef)@"Helvetica", 20, nil);
     CFAttributedStringSetAttribute(attrString,CFRangeMake(0, _stringLength),kCTFontAttributeName,font);

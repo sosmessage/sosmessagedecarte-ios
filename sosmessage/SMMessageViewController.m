@@ -8,6 +8,7 @@
 
 #import "SMMessageViewController.h"
 #import <CoreText/CoreText.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface SMMessageViewController () {
 
@@ -20,6 +21,7 @@
 @implementation SMMessageViewController
 @synthesize titleImage;
 @synthesize messageText;
+@synthesize otherMessageButton;
 @synthesize category;
 @synthesize messageHandler;
 
@@ -30,7 +32,27 @@ float baseHue;
     if (self) {
         self.category = aCategory;
         baseHue = [[self.category objectForKey:CATEGORY_NAME] hue];
-        self.view.backgroundColor = [UIColor colorWithHue:baseHue saturation:0.15 brightness:0.9 alpha:1];
+        self.view.backgroundColor = [UIColor colorWithHue:baseHue saturation:0.40 brightness:0.9 alpha:1];
+        
+        UIView* buttonOverlay = [[UIView alloc] initWithFrame:self.otherMessageButton.frame];
+        buttonOverlay.backgroundColor = [UIColor colorWithHue:baseHue saturation:0.8 brightness:0.9 alpha:0.8];
+        buttonOverlay.userInteractionEnabled = false;
+        buttonOverlay.layer.cornerRadius = 10.0f;
+        buttonOverlay.layer.masksToBounds = YES;
+        [self.view insertSubview:buttonOverlay aboveSubview:self.otherMessageButton];
+        
+        UILabel* buttonLabel = [[UILabel alloc] initWithFrame:self.otherMessageButton.frame];
+        buttonLabel.text = @"SOS\nautre message";
+        buttonLabel.numberOfLines = 2;
+        buttonLabel.backgroundColor = [UIColor clearColor];
+        buttonLabel.textColor = [UIColor whiteColor];
+        buttonLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
+        buttonLabel.textAlignment = UITextAlignmentCenter;
+        buttonLabel.userInteractionEnabled = FALSE;
+        [self.view insertSubview:buttonLabel aboveSubview:buttonOverlay];
+        
+        [buttonLabel release];
+        [buttonOverlay release];
 
         id iMessageHandler = [[SMMessagesHandler alloc] initWithDelegate:self];
         self.messageHandler = iMessageHandler;
@@ -93,6 +115,7 @@ float baseHue;
     [self setMessageText:nil];
     [self setCategory:nil];
     [self setMessageHandler:nil];
+    [self setOtherMessageButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -129,6 +152,7 @@ float baseHue;
     [messageText release];
     [category release];
     [messageHandler release];
+    [otherMessageButton release];
     [super dealloc];
 }
 
@@ -172,13 +196,13 @@ float baseHue;
     CFMutableAttributedStringRef attrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
     CFAttributedStringReplaceString (attrString,CFRangeMake(0, 0), string);
     
-    CGColorRef _black= [UIColor blackColor].CGColor;
+    CGColorRef _black= [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0].CGColor;
     //CGColorRef _hue= [UIColor colorWithHue:baseHue saturation:0.9 brightness:0.7 alpha:1].CGColor;
     CGColorRef _hue= [UIColor whiteColor].CGColor;
     
     CFAttributedStringSetAttribute(attrString, CFRangeMake(0, 3),kCTForegroundColorAttributeName, _black);
     CFAttributedStringSetAttribute(attrString, CFRangeMake(3, 7),kCTForegroundColorAttributeName, _hue);
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(10, 2),kCTForegroundColorAttributeName, _black);
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(10, 3),kCTForegroundColorAttributeName, _black);
     CFAttributedStringSetAttribute(attrString, CFRangeMake(13, _stringLength - 13),kCTForegroundColorAttributeName, _hue);
     
     CTFontRef font = CTFontCreateWithName((CFStringRef)@"Helvetica", 20, nil);

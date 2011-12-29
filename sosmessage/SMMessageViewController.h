@@ -15,6 +15,7 @@
 
 @property (retain, nonatomic) IBOutlet UIImageView *titleImage;
 @property (retain, nonatomic) IBOutlet UITextView *messageText;
+@property (retain, nonatomic) IBOutlet UIButton *otherMessageButton;
 
 - (id)initWithCategory:(NSDictionary*)aCategory;
 - (IBAction)dismissButtonPressed:(id)sender;

@@ -46,7 +46,7 @@ float baseHue;
         buttonLabel.numberOfLines = 2;
         buttonLabel.backgroundColor = [UIColor clearColor];
         buttonLabel.textColor = [UIColor whiteColor];
-        buttonLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
+        buttonLabel.font = [UIFont fontWithName:FONT_NAME size:15];
         buttonLabel.textAlignment = UITextAlignmentCenter;
         buttonLabel.userInteractionEnabled = FALSE;
         [self.view insertSubview:buttonLabel aboveSubview:buttonOverlay];
@@ -205,7 +205,7 @@ float baseHue;
     CFAttributedStringSetAttribute(attrString, CFRangeMake(10, 3),kCTForegroundColorAttributeName, _black);
     CFAttributedStringSetAttribute(attrString, CFRangeMake(13, _stringLength - 13),kCTForegroundColorAttributeName, _hue);
     
-    CTFontRef font = CTFontCreateWithName((CFStringRef)@"Helvetica", 20, nil);
+    CTFontRef font = CTFontCreateWithName((CFStringRef)FONT_NAME, 20, nil);
     CFAttributedStringSetAttribute(attrString,CFRangeMake(0, _stringLength),kCTFontAttributeName,font);
     
     CTTextAlignment alignement = kCTRightTextAlignment;

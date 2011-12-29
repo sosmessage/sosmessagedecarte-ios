@@ -36,6 +36,10 @@
 
 #define MESSAGE_TEXT        @"text"
 
+#pragma mark Others
+
+#define FONT_NAME           @"Helvetica"
+
 @protocol SOSMessageConstant <NSObject>
 
 @end

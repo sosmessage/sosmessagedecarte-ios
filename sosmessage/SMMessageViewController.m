@@ -179,7 +179,7 @@ float baseHue;
     NSString* categoryName = [self.category objectForKey:CATEGORY_NAME];
     NSMutableString* sosHeader = [NSMutableString stringWithString:@"sosmessage\n"];
     //Handle "de" and "d'" case depending of the category name first char.
-    NSCharacterSet* letters = [NSCharacterSet characterSetWithCharactersInString:@"aeiou"];
+    NSCharacterSet* letters = [NSCharacterSet characterSetWithCharactersInString:@"aeiouh"];
     if ([letters characterIsMember:[[categoryName lowercaseString] characterAtIndex:0]]) {
         [sosHeader appendString:@"d'"];
     } else {

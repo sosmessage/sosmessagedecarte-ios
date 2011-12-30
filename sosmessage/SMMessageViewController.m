@@ -34,7 +34,7 @@ float baseHue;
         self.category = aCategory;
         baseHue = [AppDelegate buildUIColorFromARGBStringRepresentation:[self.category objectForKey:CATEGORY_COLOR]].hue;
         self.view.backgroundColor = [UIColor whiteColor];
-        self.backgroundView.backgroundColor = [UIColor colorWithHue:baseHue saturation:0.60 brightness:0.9 alpha:1];
+        self.backgroundView.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[self.category objectForKey:CATEGORY_COLOR]];
         
         UIView* buttonOverlay = [[UIView alloc] initWithFrame:self.otherMessageButton.frame];
         buttonOverlay.backgroundColor = [UIColor colorWithHue:baseHue saturation:0.8 brightness:0.7 alpha:0.6];

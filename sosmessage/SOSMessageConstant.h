@@ -23,7 +23,8 @@
 
 #pragma mark CODE REPLACE
 
-#define SOSFONT [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceSpecificSOSFont]
+#define CATEGORY_FONT [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceSpecificCategoryFont]
+#define MESSAGE_FONT [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceSpecificMessageFont]
 #define NB_BLOCKS [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceSpecificNumberOfBlocks]
 #define CATEGORIES_HEADER_SIZE [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceSpecificCategoriesHeaderSize]
 #define CATEGORIES_MARGIN_WIDTH [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceSpecificCategoriesMarginWidth]

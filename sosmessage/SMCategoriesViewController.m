@@ -126,7 +126,7 @@ static char sosMessageKey;
     
     uiLabel.backgroundColor = [UIColor colorWithHue:category_name.hue saturation:0.55 brightness:0.9 alpha:1.0];
     uiLabel.text = [category_name capitalizedString];
-    uiLabel.font = SOSFONT;
+    uiLabel.font = CATEGORY_FONT;
 
     uiLabel.textColor = [UIColor colorWithHue:category_name.hue saturation:1.0 brightness:0.3 alpha:1.0];
     uiLabel.textAlignment = UITextAlignmentCenter;
@@ -173,7 +173,7 @@ static char sosMessageKey;
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
     uiLabel.backgroundColor = [UIColor colorWithHue:label.hue saturation:0.55 brightness:0.9 alpha:1.0];
     uiLabel.text = [label capitalizedString];
-    uiLabel.font = SOSFONT;
+    uiLabel.font = CATEGORY_FONT;
     uiLabel.textColor = [UIColor colorWithHue:label.hue saturation:1.0 brightness:0.3 alpha:1.0];
     uiLabel.textAlignment = UITextAlignmentCenter;
     uiLabel.userInteractionEnabled = YES;

@@ -16,7 +16,8 @@
 @property (strong, nonatomic) SMCategoriesViewController *viewController;
 
 - (int)deviceSpecificNumberOfBlocks;
-- (UIFont*)deviceSpecificSOSFont;
+- (UIFont*)deviceSpecificCategoryFont;
+- (UIFont*)deviceSpecificMessageFont;
 - (int)deviceSpecificCategoriesHeaderSize;
 - (int)deviceSpecificCategoriesMarginHeight;
 - (int)deviceSpecificCategoriesMarginWidth;

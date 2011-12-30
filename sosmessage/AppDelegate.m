@@ -126,7 +126,15 @@
     }
 }
 
-- (UIFont *)deviceSpecificSOSFont {
+- (UIFont *)deviceSpecificMessageFont {
+    int fontSize = 22;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        fontSize = 16;
+    }
+    return [UIFont fontWithName:@"Georgia" size:fontSize];;
+}
+
+- (UIFont *)deviceSpecificCategoryFont {
     int fontSize = 28;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         fontSize = 22;

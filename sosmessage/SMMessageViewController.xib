@@ -37,7 +37,7 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUIImageView" id="342360507">
+					<object class="IBUIImageView" id="778273064">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{0, -1}, {320, 461}}</string>
@@ -51,7 +51,7 @@
 							<string key="NSResourceName">canvas.jpg</string>
 						</object>
 					</object>
-					<object class="IBUIView" id="149085568">
+					<object class="IBUIView" id="295324731">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
 						<string key="NSFrameSize">{320, 460}</string>
@@ -61,7 +61,7 @@
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
-							<object class="NSColorSpace" key="NSCustomColorSpace" id="940979484">
+							<object class="NSColorSpace" key="NSCustomColorSpace" id="674295298">
 								<int key="NSID">2</int>
 							</object>
 						</object>
@@ -153,7 +153,7 @@
 					</object>
 					<object class="IBUIButton" id="499637540">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">265</int>
+						<int key="NSvFlags">269</int>
 						<string key="NSFrame">{{92, 394}, {137, 54}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
@@ -187,7 +187,7 @@
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
-					<reference key="NSCustomColorSpace" ref="940979484"/>
+					<reference key="NSCustomColorSpace" ref="674295298"/>
 				</object>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -231,7 +231,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">backgroundView</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="149085568"/>
+						<reference key="destination" ref="295324731"/>
 					</object>
 					<int key="connectionID">25</int>
 				</object>
@@ -270,8 +270,8 @@
 							<reference ref="364306467"/>
 							<reference ref="226774992"/>
 							<reference ref="499637540"/>
-							<reference ref="342360507"/>
-							<reference ref="149085568"/>
+							<reference ref="778273064"/>
+							<reference ref="295324731"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -308,12 +308,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">23</int>
-						<reference key="object" ref="342360507"/>
+						<reference key="object" ref="778273064"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">24</int>
-						<reference key="object" ref="149085568"/>
+						<reference key="object" ref="295324731"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>

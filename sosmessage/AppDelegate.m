@@ -79,7 +79,7 @@
         return 7;
     }
     else {
-        return 20;
+        return 16;
     }
 }
 
@@ -88,7 +88,7 @@
         return 20;
     }
     else {
-        return 40;
+        return 30;
     }
 }
 
@@ -111,9 +111,9 @@
         }
     } else {
         if (orientation == UIDeviceOrientationPortrait || orientation == UIDeviceOrientationPortraitUpsideDown) {
-            return 6;
+            return 3;
         } else {
-            return 10;
+            return 6;
         }
     }
 }

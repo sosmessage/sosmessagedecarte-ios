@@ -12,7 +12,6 @@
 		510CB9411471B4A80039C8A0 /* SMMessagesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 510CB9401471B4A80039C8A0 /* SMMessagesHandler.m */; };
 		513FBA3D1480F4ED00E69AC1 /* SMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513FBA3B1480F4ED00E69AC1 /* SMAboutViewController.m */; };
 		513FBA3E1480F4ED00E69AC1 /* SMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513FBA3C1480F4ED00E69AC1 /* SMAboutViewController.xib */; };
-		514CDA3114974239008A3115 /* secoue-moi.png in Resources */ = {isa = PBXBuildFile; fileRef = 514CDA3014974239008A3115 /* secoue-moi.png */; };
 		514CDA3414975450008A3115 /* arrow_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 514CDA3314975450008A3115 /* arrow_back.png */; };
 		514CDA3A14975770008A3115 /* PhontPhreaks Handwriting.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 514CDA3914975770008A3115 /* PhontPhreaks Handwriting.ttf */; };
 		516515C9145DEA4000CF6C45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515C8145DEA4000CF6C45 /* UIKit.framework */; };
@@ -24,8 +23,6 @@
 		516515DC145DEA4100CF6C45 /* SMCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515DB145DEA4100CF6C45 /* SMCategoriesViewController.m */; };
 		516515DF145DEA4100CF6C45 /* SMCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516515DD145DEA4100CF6C45 /* SMCategoriesViewController.xib */; };
 		51712AE714A1BE7000E366AF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51712AE614A1BE7000E366AF /* MessageUI.framework */; };
-		518B62011498081D002252B4 /* enveloppe.png in Resources */ = {isa = PBXBuildFile; fileRef = 518B62001498081D002252B4 /* enveloppe.png */; };
-		518B620814988499002252B4 /* reload-message.png in Resources */ = {isa = PBXBuildFile; fileRef = 518B620714988499002252B4 /* reload-message.png */; };
 		51A5CE061465221400B274B3 /* NSString+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE051465221400B274B3 /* NSString+SOSMessage.m */; };
 		51A5CE0C1466768A00B274B3 /* SMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE0A1466768A00B274B3 /* SMMessageViewController.m */; };
 		51A5CE0D1466768A00B274B3 /* SMMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51A5CE0B1466768A00B274B3 /* SMMessageViewController.xib */; };
@@ -42,7 +39,6 @@
 		513FBA3A1480F4ED00E69AC1 /* SMAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAboutViewController.h; sourceTree = "<group>"; };
 		513FBA3B1480F4ED00E69AC1 /* SMAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMAboutViewController.m; sourceTree = "<group>"; };
 		513FBA3C1480F4ED00E69AC1 /* SMAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMAboutViewController.xib; sourceTree = "<group>"; };
-		514CDA3014974239008A3115 /* secoue-moi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "secoue-moi.png"; sourceTree = "<group>"; };
 		514CDA3314975450008A3115 /* arrow_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_back.png; sourceTree = "<group>"; };
 		514CDA3914975770008A3115 /* PhontPhreaks Handwriting.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PhontPhreaks Handwriting.ttf"; sourceTree = "<group>"; };
 		516515C4145DEA4000CF6C45 /* sosmessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sosmessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,8 +55,6 @@
 		516515DB145DEA4100CF6C45 /* SMCategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMCategoriesViewController.m; sourceTree = "<group>"; };
 		516515DE145DEA4100CF6C45 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SMCategoriesViewController.xib; sourceTree = "<group>"; };
 		51712AE614A1BE7000E366AF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		518B62001498081D002252B4 /* enveloppe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enveloppe.png; sourceTree = "<group>"; };
-		518B620714988499002252B4 /* reload-message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload-message.png"; sourceTree = "<group>"; };
 		51A5CE041465221400B274B3 /* NSString+SOSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SOSMessage.h"; sourceTree = "<group>"; };
 		51A5CE051465221400B274B3 /* NSString+SOSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SOSMessage.m"; sourceTree = "<group>"; };
 		51A5CE081465227C00B274B3 /* SOSMessageConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOSMessageConstant.h; sourceTree = "<group>"; };
@@ -145,11 +139,8 @@
 			children = (
 				5109146214AE0B5200047A47 /* canvas.jpg */,
 				5109146014ACD93A00047A47 /* hdpi_114.png */,
-				518B620714988499002252B4 /* reload-message.png */,
-				518B62001498081D002252B4 /* enveloppe.png */,
 				514CDA3914975770008A3115 /* PhontPhreaks Handwriting.ttf */,
 				514CDA3314975450008A3115 /* arrow_back.png */,
-				514CDA3014974239008A3115 /* secoue-moi.png */,
 				516515D0145DEA4000CF6C45 /* sosmessage-Info.plist */,
 				516515D1145DEA4000CF6C45 /* InfoPlist.strings */,
 				516515D4145DEA4000CF6C45 /* main.m */,
@@ -240,11 +231,8 @@
 				516515DF145DEA4100CF6C45 /* SMCategoriesViewController.xib in Resources */,
 				51A5CE0D1466768A00B274B3 /* SMMessageViewController.xib in Resources */,
 				513FBA3E1480F4ED00E69AC1 /* SMAboutViewController.xib in Resources */,
-				514CDA3114974239008A3115 /* secoue-moi.png in Resources */,
 				514CDA3414975450008A3115 /* arrow_back.png in Resources */,
 				514CDA3A14975770008A3115 /* PhontPhreaks Handwriting.ttf in Resources */,
-				518B62011498081D002252B4 /* enveloppe.png in Resources */,
-				518B620814988499002252B4 /* reload-message.png in Resources */,
 				5109146114ACD93A00047A47 /* hdpi_114.png in Resources */,
 				5109146314AE0B5300047A47 /* canvas.jpg in Resources */,
 			);

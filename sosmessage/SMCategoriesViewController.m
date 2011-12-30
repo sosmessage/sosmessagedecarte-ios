@@ -25,7 +25,6 @@
 
 - (void)addSOSCategory:(NSDictionary*)category inPosX:(int)posX andPosY:(int)posY forBlock:(int)nbBlock;
 - (void)addSOSCategory:(NSDictionary*)category inPosX:(int)posX andPosY:(int)posY;
-- (void)addSOSCategoryBackground:(UILabel*)uiLabel ofSize:(int)nbBlock;
 
 - (void)fillEmptyBlocks:(int)nb fromPosX:(int)posX andPosY:(int)posY;
 - (UILabel*)buildUILabelForBlock:(int)nbBlocks inPosX:(int)posX andPosY:(int)posY;
@@ -131,6 +130,7 @@ static char sosMessageKey;
     uiLabel.textColor = [UIColor colorWithHue:category_name.hue saturation:1.0 brightness:0.3 alpha:1.0];
     uiLabel.textAlignment = UITextAlignmentCenter;
     uiLabel.userInteractionEnabled = YES;
+    uiLabel.alpha = 0.8f;
     
     objc_setAssociatedObject(uiLabel, &sosMessageKey, category, 0);
     
@@ -139,18 +139,6 @@ static char sosMessageKey;
     [categoryTap release];
     
     [self.view insertSubview:uiLabel belowSubview:self.infoButton];
-    [self addSOSCategoryBackground:uiLabel ofSize:nbBlock];
-}
-
-- (void)addSOSCategoryBackground:(UILabel*)uiLabel ofSize:(int)nbBlock {
-    if (nbBlock != NB_BLOCKS) {
-        UIImageView* enveloppe = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"enveloppe.png"]];
-        enveloppe.frame = uiLabel.frame;
-        [self.view insertSubview:enveloppe belowSubview:uiLabel];
-        [enveloppe release];
-    } else {
-        uiLabel.alpha = 0.8f;
-    }
 }
 
 - (void)addSOSCategory:(NSDictionary*)category inPosX:(int)posX andPosY:(int)posY {

@@ -12,6 +12,7 @@
 	<array>
 		<string>iphone_hdpi_114.png</string>
 		<string>iphone_hdpi_72.png</string>
+		<string>iphone_mdpi_57.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -21,6 +22,7 @@
 			<array>
 				<string>iphone_hdpi_114.png</string>
 				<string>iphone_hdpi_72.png</string>
+				<string>iphone_mdpi_57.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<false/>
@@ -43,9 +45,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIAppFonts</key>
-	<array>
-		<string>PhontPhreaks Handwriting.ttf</string>
-	</array>
+	<array/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

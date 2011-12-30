@@ -17,5 +17,8 @@
 
 - (int)deviceSpecificNumberOfBlocks;
 - (UIFont*)deviceSpecificSOSFont;
+- (int)deviceSpecificCategoriesHeaderSize;
+- (int)deviceSpecificCategoriesMarginHeight;
+- (int)deviceSpecificCategoriesMarginWidth;
 
 @end

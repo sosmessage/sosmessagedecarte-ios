@@ -74,6 +74,33 @@
 
 #pragma mark Custom methods
 
+- (int)deviceSpecificCategoriesMarginHeight {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return 7;
+    }
+    else {
+        return 20;
+    }
+}
+
+- (int)deviceSpecificCategoriesMarginWidth {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return 20;
+    }
+    else {
+        return 40;
+    }
+}
+
+- (int)deviceSpecificCategoriesHeaderSize {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return 70;
+    }
+    else {
+        return 150;
+    }
+}
+
 - (int)deviceSpecificNumberOfBlocks {
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {

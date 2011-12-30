@@ -9,10 +9,12 @@
 #import "SMCategoriesViewController.h"
 #import "SMMessageViewController.h"
 #import "SMAboutViewController.h"
+#import <CoreText/CoreText.h>
 
 @interface SMCategoriesViewController () {
     
 }
+-(void)renderTitle;
 -(BOOL)isSubViewCategoryPart:(UIView*) view;
 -(void)addMailPropositionBlockinPosY:(int)posY;
 
@@ -29,6 +31,7 @@
 
 @implementation SMCategoriesViewController
 @synthesize infoButton;
+@synthesize titleImage;
 @synthesize categories;
 @synthesize messageHandler;
 
@@ -56,6 +59,7 @@ static char sosMessageKey;
 - (void)viewDidUnload
 {
     [self setInfoButton:nil];
+    [self setTitleImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -66,6 +70,7 @@ static char sosMessageKey;
     [super viewWillAppear:animated];
     
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [self renderTitle];
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCategories) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
@@ -224,14 +229,19 @@ static char sosMessageKey;
             y -= 1;
         }
     }
-    float fitHeight =  ceilf(self.view.bounds.size.height / (y + 1));
+    float fitHeight =  ceilf((self.view.bounds.size.height - CATEGORIES_HEADER_SIZE) / (y + 1.0f));
     for (UIView* subView in self.view.subviews) {
         if (subView.tag != 0) {
             continue;
         }
         
         if ([subView isKindOfClass:[UILabel class]]) {
-            subView.frame = CGRectMake(subView.frame.origin.x, floorf(subView.frame.origin.y * fitHeight), subView.frame.size.width, fitHeight);
+            float viewX = subView.frame.origin.x + CATEGORIES_MARGIN_WIDTH / 2;
+            float viewY = floorf(subView.frame.origin.y * fitHeight) + CATEGORIES_HEADER_SIZE - CATEGORIES_MARGIN_HEIGTH;
+            float viewWidth = subView.frame.size.width - CATEGORIES_MARGIN_WIDTH;
+            float viewHeight = fitHeight - CATEGORIES_MARGIN_HEIGTH;
+            
+            subView.frame = CGRectMake(viewX, viewY, viewWidth, viewHeight);
         } else if ([subView isKindOfClass:[UIImageView class]]) {
             UIImage* img = [(UIImageView*)subView image];
             float imgRation = img.size.height / img.size.width;
@@ -314,10 +324,65 @@ static char sosMessageKey;
 
 #pragma mark Custom methods
 
+- (void)renderTitle {
+    UIGraphicsBeginImageContext(self.titleImage.bounds.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGAffineTransform flipTransform = CGAffineTransformMake( 1, 0, 0, -1, 0, self.titleImage.bounds.size.height);
+    CGContextConcatCTM(context, flipTransform);
+    
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathAddRect(path, NULL, self.titleImage.bounds);
+    
+    //Concat sosheader and category name
+    NSMutableString* header = [NSMutableString stringWithString:@"sosmessage\ndecarte"];
+    
+    NSInteger _stringLength=[header length];
+    
+    CFStringRef string =  (CFStringRef) header;
+    CFMutableAttributedStringRef attrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
+    CFAttributedStringReplaceString (attrString,CFRangeMake(0, 0), string);
+    
+    CGColorRef _black= [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0].CGColor;
+    CGColorRef _hue= [UIColor whiteColor].CGColor;
+    
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(0, 3),kCTForegroundColorAttributeName, _black);
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(3, 7),kCTForegroundColorAttributeName, _hue);
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(11, 2),kCTForegroundColorAttributeName, _black);
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(13, _stringLength - 13),kCTForegroundColorAttributeName, _hue);
+    
+    CTFontRef font = CTFontCreateWithName((CFStringRef)FONT_NAME, 20, nil);
+    CFAttributedStringSetAttribute(attrString,CFRangeMake(0, _stringLength),kCTFontAttributeName,font);
+    
+    CTTextAlignment alignement = kCTRightTextAlignment;
+    CTParagraphStyleSetting settings[] = {kCTParagraphStyleSpecifierAlignment, sizeof(alignement), &alignement};
+    CTParagraphStyleRef paragraph = CTParagraphStyleCreate(settings, sizeof(settings) / sizeof(settings[0]));
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(0, _stringLength), kCTParagraphStyleAttributeName, paragraph);
+    CFRelease(paragraph);
+    
+    // Create the framesetter with the attributed string.
+    CTFramesetterRef framesetter =
+    CTFramesetterCreateWithAttributedString(attrString);
+    CFRelease(attrString);
+    
+    // Create the frame and draw it into the graphics context
+    CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, NULL);
+    CFRelease(framesetter);
+    CTFrameDraw(frame, context);
+    CFRelease(frame);
+    CFRelease(path);
+    
+    UIImage* result = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.titleImage.image = result;
+}
+
 - (void)dealloc {
     [categories release];
     [messageHandler release];
     [infoButton release];
+    [titleImage release];
     [super dealloc];
 }
 @end

@@ -155,10 +155,9 @@
     
     [[NSScanner scannerWithString:[aString substringWithRange:NSMakeRange(1, 2)]] scanHexInt:&alpha];
     [[NSScanner scannerWithString:[aString substringWithRange:NSMakeRange(3, 2)]] scanHexInt:&red];
-    [[NSScanner scannerWithString:[aString substringWithRange:NSMakeRange(4, 2)]] scanHexInt:&green];
+    [[NSScanner scannerWithString:[aString substringWithRange:NSMakeRange(5, 2)]] scanHexInt:&green];
     [[NSScanner scannerWithString:[aString substringWithRange:NSMakeRange(7, 2)]] scanHexInt:&blue];
     
-    NSLog(@"Parsed value from %@ are: %d/%d/%d/%d", aString, alpha, red, green, blue);
     return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:alpha/255.0f];
 }
 

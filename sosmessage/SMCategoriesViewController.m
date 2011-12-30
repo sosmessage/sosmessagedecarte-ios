@@ -9,7 +9,9 @@
 #import "SMCategoriesViewController.h"
 #import "SMMessageViewController.h"
 #import "SMAboutViewController.h"
+
 #import <CoreText/CoreText.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface SMCategoriesViewController () {
     
@@ -111,6 +113,9 @@ static char sosMessageKey;
     //NSLog(@"Place label (%@) at (%.2f;%.2f) with size (%.2f;%.2f)", label, rectX, rectY, rectWidth, rectHeight);
     
     UILabel* uiLabel = [[UILabel alloc] initWithFrame:CGRectMake(rectX, posY, rectWidth, rectHeight)];
+    
+    uiLabel.layer.cornerRadius = 3.0f;
+    uiLabel.layer.masksToBounds = YES;
     return [uiLabel autorelease];
 }
 
@@ -122,10 +127,10 @@ static char sosMessageKey;
     uiLabel.backgroundColor = [UIColor colorWithHue:category_name.hue saturation:0.55 brightness:0.9 alpha:1.0];
     uiLabel.text = [category_name capitalizedString];
     uiLabel.font = SOSFONT;
+
     uiLabel.textColor = [UIColor colorWithHue:category_name.hue saturation:1.0 brightness:0.3 alpha:1.0];
     uiLabel.textAlignment = UITextAlignmentCenter;
     uiLabel.userInteractionEnabled = YES;
-    uiLabel.alpha = 0.90;
     
     objc_setAssociatedObject(uiLabel, &sosMessageKey, category, 0);
     
@@ -144,7 +149,7 @@ static char sosMessageKey;
         [self.view insertSubview:enveloppe belowSubview:uiLabel];
         [enveloppe release];
     } else {
-        uiLabel.alpha = 1.0f;
+        uiLabel.alpha = 0.8f;
     }
 }
 
@@ -172,6 +177,7 @@ static char sosMessageKey;
     uiLabel.textColor = [UIColor colorWithHue:label.hue saturation:1.0 brightness:0.3 alpha:1.0];
     uiLabel.textAlignment = UITextAlignmentCenter;
     uiLabel.userInteractionEnabled = YES;
+    uiLabel.alpha = 0.8f;
     
     UITapGestureRecognizer *categoryTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleMailPropositionTapping:)];
     [uiLabel addGestureRecognizer:categoryTap];

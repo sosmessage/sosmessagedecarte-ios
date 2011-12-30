@@ -19,6 +19,7 @@
 @end
 
 @implementation SMMessageViewController
+@synthesize backgroundView;
 @synthesize titleImage;
 @synthesize messageText;
 @synthesize otherMessageButton;
@@ -32,13 +33,15 @@ float baseHue;
     if (self) {
         self.category = aCategory;
         baseHue = [[self.category objectForKey:CATEGORY_NAME] hue];
-        self.view.backgroundColor = [UIColor colorWithHue:baseHue saturation:0.40 brightness:0.9 alpha:1];
+        self.view.backgroundColor = [UIColor whiteColor];
+        self.backgroundView.backgroundColor = [UIColor colorWithHue:baseHue saturation:0.60 brightness:0.9 alpha:1];
         
         UIView* buttonOverlay = [[UIView alloc] initWithFrame:self.otherMessageButton.frame];
-        buttonOverlay.backgroundColor = [UIColor colorWithHue:baseHue saturation:0.8 brightness:0.9 alpha:0.8];
+        buttonOverlay.backgroundColor = [UIColor colorWithHue:baseHue saturation:0.8 brightness:0.7 alpha:0.6];
         buttonOverlay.userInteractionEnabled = false;
         buttonOverlay.layer.cornerRadius = 10.0f;
         buttonOverlay.layer.masksToBounds = YES;
+        buttonOverlay.autoresizingMask = self.otherMessageButton.autoresizingMask;
         [self.view insertSubview:buttonOverlay aboveSubview:self.otherMessageButton];
         
         UILabel* buttonLabel = [[UILabel alloc] initWithFrame:self.otherMessageButton.frame];
@@ -49,6 +52,7 @@ float baseHue;
         buttonLabel.font = [UIFont fontWithName:FONT_NAME size:15];
         buttonLabel.textAlignment = UITextAlignmentCenter;
         buttonLabel.userInteractionEnabled = FALSE;
+        buttonLabel.autoresizingMask = self.otherMessageButton.autoresizingMask;
         [self.view insertSubview:buttonLabel aboveSubview:buttonOverlay];
         
         [buttonLabel release];
@@ -116,6 +120,7 @@ float baseHue;
     [self setCategory:nil];
     [self setMessageHandler:nil];
     [self setOtherMessageButton:nil];
+    [self setBackgroundView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -153,6 +158,7 @@ float baseHue;
     [category release];
     [messageHandler release];
     [otherMessageButton release];
+    [backgroundView release];
     [super dealloc];
 }
 

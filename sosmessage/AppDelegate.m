@@ -127,11 +127,11 @@
 }
 
 - (UIFont *)deviceSpecificSOSFont {
-    int fontSize = 36;
+    int fontSize = 28;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        fontSize = 30;
+        fontSize = 22;
     }
-    return [UIFont fontWithName:@"PhontPhreak'sHandwriting" size:fontSize];;
+    return [UIFont fontWithName:@"Georgia" size:fontSize];;
 }
 
 @end

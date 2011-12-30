@@ -13,6 +13,7 @@
     
 }
 
+@property (retain, nonatomic) IBOutlet UIView *backgroundView;
 @property (retain, nonatomic) IBOutlet UIImageView *titleImage;
 @property (retain, nonatomic) IBOutlet UITextView *messageText;
 @property (retain, nonatomic) IBOutlet UIButton *otherMessageButton;

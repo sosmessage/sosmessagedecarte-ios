@@ -13,6 +13,8 @@
 }
 
 @property (readonly) float calculateHue;
+@property (readonly) NSString* prepositionWithSpace;
+@property (readonly) NSString* preposition;
 
 -(float)blocksCount:(UIView*)view;
 

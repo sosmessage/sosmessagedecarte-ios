@@ -124,7 +124,7 @@ static char sosMessageKey;
     UILabel* uiLabel = [self buildUILabelForBlock:nbBlock inPosX:posX andPosY:posY];
     
     uiLabel.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR]];
-    uiLabel.text = [category_name capitalizedString];
+    uiLabel.text = [NSString stringWithFormat:@"%@%@", category_name.prepositionWithSpace, category_name];
     uiLabel.font = CATEGORY_FONT;
 
     uiLabel.textColor = [UIColor colorWithHue:uiLabel.backgroundColor.hue saturation:1.0 brightness:0.3 alpha:1.0];
@@ -156,10 +156,10 @@ static char sosMessageKey;
 }
 
 -(void)addMailPropositionBlockinPosY:(int)posY {
-    NSString* label = @"Proposez vos messages";
+    NSString* label = @"proposez vos messages";
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
     uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:0.5];
-    uiLabel.text = [label capitalizedString];
+    uiLabel.text = label;
     uiLabel.font = CATEGORY_FONT;
     uiLabel.textColor = [UIColor colorWithHue:label.calculateHue saturation:1.0 brightness:0.3 alpha:1.0];
     uiLabel.textAlignment = UITextAlignmentCenter;

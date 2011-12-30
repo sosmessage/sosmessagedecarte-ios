@@ -29,4 +29,14 @@ float sizeInBlocks;
     NSLog(@"For '%@' hue: %.2f", self, calcultedHue);
     return calcultedHue;
 }
+
+-(NSString *)prepositionWithSpace {
+    NSString* prep = self.preposition;
+    return [prep characterAtIndex:1] == '\'' ? prep : [NSString stringWithFormat:@"%@ ", prep];
+}
+
+-(NSString*)preposition {
+    NSCharacterSet* letters = [NSCharacterSet characterSetWithCharactersInString:@"aeiouh"];
+    return [letters characterIsMember:[[self lowercaseString] characterAtIndex:0]] ? @"d'" : @"de";
+}
 @end

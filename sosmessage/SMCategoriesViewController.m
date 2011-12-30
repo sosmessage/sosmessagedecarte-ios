@@ -123,14 +123,13 @@ static char sosMessageKey;
     
     UILabel* uiLabel = [self buildUILabelForBlock:nbBlock inPosX:posX andPosY:posY];
     
-    uiLabel.backgroundColor = [UIColor colorWithHue:category_name.hue saturation:0.55 brightness:0.9 alpha:1.0];
+    uiLabel.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR]];
     uiLabel.text = [category_name capitalizedString];
     uiLabel.font = CATEGORY_FONT;
 
-    uiLabel.textColor = [UIColor colorWithHue:category_name.hue saturation:1.0 brightness:0.3 alpha:1.0];
+    uiLabel.textColor = [UIColor colorWithHue:uiLabel.backgroundColor.hue saturation:1.0 brightness:0.3 alpha:1.0];
     uiLabel.textAlignment = UITextAlignmentCenter;
     uiLabel.userInteractionEnabled = YES;
-    uiLabel.alpha = 0.8f;
     
     objc_setAssociatedObject(uiLabel, &sosMessageKey, category, 0);
     
@@ -151,7 +150,7 @@ static char sosMessageKey;
     UILabel* emptyBlocks = [self buildUILabelForBlock:nb inPosX:posX andPosY:posY];
     
     float hue = (rand()%24) / 24.0;
-    emptyBlocks.backgroundColor = [UIColor colorWithHue:hue saturation:0.05 brightness:0.9 alpha:1.0];
+    emptyBlocks.backgroundColor = [UIColor colorWithHue:hue saturation:0.05 brightness:0.9 alpha:0.5];
     
     [self.view insertSubview:emptyBlocks belowSubview:self.infoButton];
 }
@@ -159,13 +158,12 @@ static char sosMessageKey;
 -(void)addMailPropositionBlockinPosY:(int)posY {
     NSString* label = @"Proposez vos messages";
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
-    uiLabel.backgroundColor = [UIColor colorWithHue:label.hue saturation:0.55 brightness:0.9 alpha:1.0];
+    uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:0.5];
     uiLabel.text = [label capitalizedString];
     uiLabel.font = CATEGORY_FONT;
-    uiLabel.textColor = [UIColor colorWithHue:label.hue saturation:1.0 brightness:0.3 alpha:1.0];
+    uiLabel.textColor = [UIColor colorWithHue:label.calculateHue saturation:1.0 brightness:0.3 alpha:1.0];
     uiLabel.textAlignment = UITextAlignmentCenter;
     uiLabel.userInteractionEnabled = YES;
-    uiLabel.alpha = 0.8f;
     
     UITapGestureRecognizer *categoryTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleMailPropositionTapping:)];
     [uiLabel addGestureRecognizer:categoryTap];
@@ -278,9 +276,6 @@ static char sosMessageKey;
     NSDictionary* category = (NSDictionary*)objc_getAssociatedObject(uilabel, &sosMessageKey);
     
     NSLog(@"Category added: %@", category);
-    
-    CGFloat hue;
-    [uilabel.backgroundColor getHue:&hue saturation:nil brightness:nil alpha:nil];
     
     SMMessageViewController* detail = [[SMMessageViewController alloc] initWithCategory:category];
     detail.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;

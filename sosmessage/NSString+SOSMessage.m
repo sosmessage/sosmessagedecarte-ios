@@ -20,7 +20,7 @@ float sizeInBlocks;
     return ceilf(widthWithFont / blockSize);    
 }
 
--(float)hue {
+-(float)calculateHue {
     int hueFromString = self.length;
     for (int i = 0; i < self.length; i++) {
         hueFromString += [self characterAtIndex:i];

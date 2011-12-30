@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5109146114ACD93A00047A47 /* hdpi_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146014ACD93A00047A47 /* hdpi_114.png */; };
 		5109146314AE0B5300047A47 /* canvas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5109146214AE0B5200047A47 /* canvas.jpg */; };
+		5109146614AE279800047A47 /* UIColor+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5109146514AE279800047A47 /* UIColor+SOSMessage.m */; };
 		510CB9411471B4A80039C8A0 /* SMMessagesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 510CB9401471B4A80039C8A0 /* SMMessagesHandler.m */; };
 		513FBA3D1480F4ED00E69AC1 /* SMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513FBA3B1480F4ED00E69AC1 /* SMAboutViewController.m */; };
 		513FBA3E1480F4ED00E69AC1 /* SMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513FBA3C1480F4ED00E69AC1 /* SMAboutViewController.xib */; };
@@ -33,6 +34,8 @@
 /* Begin PBXFileReference section */
 		5109146014ACD93A00047A47 /* hdpi_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hdpi_114.png; path = ../hdpi_114.png; sourceTree = "<group>"; };
 		5109146214AE0B5200047A47 /* canvas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = canvas.jpg; sourceTree = SOURCE_ROOT; };
+		5109146414AE279700047A47 /* UIColor+SOSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SOSMessage.h"; sourceTree = "<group>"; };
+		5109146514AE279800047A47 /* UIColor+SOSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SOSMessage.m"; sourceTree = "<group>"; };
 		510CB93D1471A6520039C8A0 /* SMUrlBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMUrlBase.h; sourceTree = "<group>"; };
 		510CB93F1471B4A80039C8A0 /* SMMessagesHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMessagesHandler.h; sourceTree = "<group>"; };
 		510CB9401471B4A80039C8A0 /* SMMessagesHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMessagesHandler.m; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 			children = (
 				51A5CE041465221400B274B3 /* NSString+SOSMessage.h */,
 				51A5CE051465221400B274B3 /* NSString+SOSMessage.m */,
+				5109146414AE279700047A47 /* UIColor+SOSMessage.h */,
+				5109146514AE279800047A47 /* UIColor+SOSMessage.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 				510CB9411471B4A80039C8A0 /* SMMessagesHandler.m in Sources */,
 				51F1A70814746B710092F9F8 /* MBProgressHUD.m in Sources */,
 				513FBA3D1480F4ED00E69AC1 /* SMAboutViewController.m in Sources */,
+				5109146614AE279800047A47 /* UIColor+SOSMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

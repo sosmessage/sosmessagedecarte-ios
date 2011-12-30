@@ -22,4 +22,6 @@
 - (int)deviceSpecificCategoriesMarginHeight;
 - (int)deviceSpecificCategoriesMarginWidth;
 
++ (UIColor*)buildUIColorFromARGBStringRepresentation:(NSString*)aString;
+
 @end

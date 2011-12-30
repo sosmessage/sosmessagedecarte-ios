@@ -12,6 +12,7 @@
 #pragma mark CATEGORIES
 
 #import "NSString+SOSMessage.h"
+#import "UIColor+SOSMessage.h"
 
 #pragma mark HEADERS
 
@@ -37,6 +38,7 @@
 
 #define CATEGORY_ID         @"id"
 #define CATEGORY_NAME       @"name"
+#define CATEGORY_COLOR      @"color"
 
 #define MESSAGE_TEXT        @"text"
 

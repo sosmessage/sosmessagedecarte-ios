@@ -32,7 +32,7 @@ float baseHue;
     self = [super initWithNibName:@"SMMessageViewController" bundle:nil];
     if (self) {
         self.category = aCategory;
-        baseHue = [[self.category objectForKey:CATEGORY_NAME] hue];
+        baseHue = [AppDelegate buildUIColorFromARGBStringRepresentation:[self.category objectForKey:CATEGORY_COLOR]].hue;
         self.view.backgroundColor = [UIColor whiteColor];
         self.backgroundView.backgroundColor = [UIColor colorWithHue:baseHue saturation:0.60 brightness:0.9 alpha:1];
         

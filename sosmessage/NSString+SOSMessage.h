@@ -12,7 +12,7 @@
 
 }
 
-@property (readonly) float hue;
+@property (readonly) float calculateHue;
 
 -(float)blocksCount:(UIView*)view;
 

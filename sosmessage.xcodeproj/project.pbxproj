@@ -10,6 +10,11 @@
 		5109146114ACD93A00047A47 /* hdpi_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146014ACD93A00047A47 /* hdpi_114.png */; };
 		5109146314AE0B5300047A47 /* canvas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5109146214AE0B5200047A47 /* canvas.jpg */; };
 		5109146614AE279800047A47 /* UIColor+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5109146514AE279800047A47 /* UIColor+SOSMessage.m */; };
+		5109146814AE604A00047A47 /* iphone_hdpi_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146714AE604A00047A47 /* iphone_hdpi_114.png */; };
+		5109146C14AE626500047A47 /* iphone_hdpi_72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146B14AE626500047A47 /* iphone_hdpi_72.png */; };
+		5109146E14AE63FB00047A47 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146D14AE63FB00047A47 /* Default@2x.png */; };
+		5109147014AE640B00047A47 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146F14AE640A00047A47 /* Default-Landscape~ipad.png */; };
+		5109147214AE641200047A47 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109147114AE641200047A47 /* Default-Portrait~ipad.png */; };
 		510CB9411471B4A80039C8A0 /* SMMessagesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 510CB9401471B4A80039C8A0 /* SMMessagesHandler.m */; };
 		513FBA3D1480F4ED00E69AC1 /* SMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513FBA3B1480F4ED00E69AC1 /* SMAboutViewController.m */; };
 		513FBA3E1480F4ED00E69AC1 /* SMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513FBA3C1480F4ED00E69AC1 /* SMAboutViewController.xib */; };
@@ -36,6 +41,11 @@
 		5109146214AE0B5200047A47 /* canvas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = canvas.jpg; sourceTree = SOURCE_ROOT; };
 		5109146414AE279700047A47 /* UIColor+SOSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SOSMessage.h"; sourceTree = "<group>"; };
 		5109146514AE279800047A47 /* UIColor+SOSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SOSMessage.m"; sourceTree = "<group>"; };
+		5109146714AE604A00047A47 /* iphone_hdpi_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_hdpi_114.png; sourceTree = "<group>"; };
+		5109146B14AE626500047A47 /* iphone_hdpi_72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_hdpi_72.png; sourceTree = "<group>"; };
+		5109146D14AE63FB00047A47 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		5109146F14AE640A00047A47 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		5109147114AE641200047A47 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		510CB93D1471A6520039C8A0 /* SMUrlBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMUrlBase.h; sourceTree = "<group>"; };
 		510CB93F1471B4A80039C8A0 /* SMMessagesHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMessagesHandler.h; sourceTree = "<group>"; };
 		510CB9401471B4A80039C8A0 /* SMMessagesHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMessagesHandler.m; sourceTree = "<group>"; };
@@ -88,6 +98,11 @@
 		516515B9145DEA4000CF6C45 = {
 			isa = PBXGroup;
 			children = (
+				5109147114AE641200047A47 /* Default-Portrait~ipad.png */,
+				5109146F14AE640A00047A47 /* Default-Landscape~ipad.png */,
+				5109146D14AE63FB00047A47 /* Default@2x.png */,
+				5109146B14AE626500047A47 /* iphone_hdpi_72.png */,
+				5109146714AE604A00047A47 /* iphone_hdpi_114.png */,
 				516515CE145DEA4000CF6C45 /* sosmessage */,
 				516515C7145DEA4000CF6C45 /* Frameworks */,
 				516515C5145DEA4000CF6C45 /* Products */,
@@ -240,6 +255,11 @@
 				514CDA3A14975770008A3115 /* PhontPhreaks Handwriting.ttf in Resources */,
 				5109146114ACD93A00047A47 /* hdpi_114.png in Resources */,
 				5109146314AE0B5300047A47 /* canvas.jpg in Resources */,
+				5109146814AE604A00047A47 /* iphone_hdpi_114.png in Resources */,
+				5109146C14AE626500047A47 /* iphone_hdpi_72.png in Resources */,
+				5109146E14AE63FB00047A47 /* Default@2x.png in Resources */,
+				5109147014AE640B00047A47 /* Default-Landscape~ipad.png in Resources */,
+				5109147214AE641200047A47 /* Default-Portrait~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -131,7 +131,7 @@ bool receiving = false;
     NSError* error;
     id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
     if (!json) {
-        NSLog(@"Error while parsing json object: %@", error);
+        NSLog(@"Error while parsing json object from %@: %@", connection.originalRequest.URL, error);
     } 
     else if ([self.delegate respondsToSelector:@selector(messageHandler:didFinishWithJSon:)]) {
         [self.delegate messageHandler:self didFinishWithJSon:json];

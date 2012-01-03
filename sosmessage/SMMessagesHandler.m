@@ -71,7 +71,7 @@ bool receiving = false;
 - (void)requestUrl:(NSString*)url {
     if (receiving && currentConnection) {
         [currentConnection cancel];
-        [currentConnection release];
+        currentConnection = nil;
     }
     
     NSURL* nsUrl = [[NSURL alloc] initWithString:url];

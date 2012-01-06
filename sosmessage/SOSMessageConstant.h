@@ -19,6 +19,7 @@
 #import "SMUrlBase.h"
 #import "SMMessagesHandler.h"
 #import "MBProgressHUD.h"
+#import "SMProposeNewMessageController.h"
 
 #import "AppDelegate.h"
 

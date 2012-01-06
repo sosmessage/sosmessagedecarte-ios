@@ -28,6 +28,8 @@
 		516515DC145DEA4100CF6C45 /* SMCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515DB145DEA4100CF6C45 /* SMCategoriesViewController.m */; };
 		516515DF145DEA4100CF6C45 /* SMCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516515DD145DEA4100CF6C45 /* SMCategoriesViewController.xib */; };
 		51712AE714A1BE7000E366AF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51712AE614A1BE7000E366AF /* MessageUI.framework */; };
+		51973E3214B64B650062C26B /* SMProposeNewMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51973E3014B64B640062C26B /* SMProposeNewMessageController.m */; };
+		51973E3314B64B650062C26B /* SMProposeNewMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51973E3114B64B640062C26B /* SMProposeNewMessageController.xib */; };
 		51A5CE061465221400B274B3 /* NSString+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE051465221400B274B3 /* NSString+SOSMessage.m */; };
 		51A5CE0C1466768A00B274B3 /* SMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE0A1466768A00B274B3 /* SMMessageViewController.m */; };
 		51A5CE0D1466768A00B274B3 /* SMMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51A5CE0B1466768A00B274B3 /* SMMessageViewController.xib */; };
@@ -66,6 +68,9 @@
 		516515DB145DEA4100CF6C45 /* SMCategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMCategoriesViewController.m; sourceTree = "<group>"; };
 		516515DE145DEA4100CF6C45 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SMCategoriesViewController.xib; sourceTree = "<group>"; };
 		51712AE614A1BE7000E366AF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		51973E2F14B64B640062C26B /* SMProposeNewMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMProposeNewMessageController.h; sourceTree = "<group>"; };
+		51973E3014B64B640062C26B /* SMProposeNewMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMProposeNewMessageController.m; sourceTree = "<group>"; };
+		51973E3114B64B640062C26B /* SMProposeNewMessageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMProposeNewMessageController.xib; sourceTree = "<group>"; };
 		51A5CE041465221400B274B3 /* NSString+SOSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SOSMessage.h"; sourceTree = "<group>"; };
 		51A5CE051465221400B274B3 /* NSString+SOSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SOSMessage.m"; sourceTree = "<group>"; };
 		51A5CE081465227C00B274B3 /* SOSMessageConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOSMessageConstant.h; sourceTree = "<group>"; };
@@ -144,6 +149,8 @@
 				510CB9401471B4A80039C8A0 /* SMMessagesHandler.m */,
 				513FBA3A1480F4ED00E69AC1 /* SMAboutViewController.h */,
 				513FBA3B1480F4ED00E69AC1 /* SMAboutViewController.m */,
+				51973E2F14B64B640062C26B /* SMProposeNewMessageController.h */,
+				51973E3014B64B640062C26B /* SMProposeNewMessageController.m */,
 				51A5CE0F146677F200B274B3 /* Nibs */,
 				51F1A70514746AF90092F9F8 /* LoadingHUD */,
 				516515CF145DEA4000CF6C45 /* Supporting Files */,
@@ -178,6 +185,7 @@
 		51A5CE0F146677F200B274B3 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				51973E3114B64B640062C26B /* SMProposeNewMessageController.xib */,
 				516515DD145DEA4100CF6C45 /* SMCategoriesViewController.xib */,
 				51A5CE0B1466768A00B274B3 /* SMMessageViewController.xib */,
 				513FBA3C1480F4ED00E69AC1 /* SMAboutViewController.xib */,
@@ -256,6 +264,7 @@
 				5109147014AE640B00047A47 /* Default-Landscape~ipad.png in Resources */,
 				5109147214AE641200047A47 /* Default-Portrait~ipad.png in Resources */,
 				5109147414AE6E5000047A47 /* iphone_mdpi_57.png in Resources */,
+				51973E3314B64B650062C26B /* SMProposeNewMessageController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +284,7 @@
 				51F1A70814746B710092F9F8 /* MBProgressHUD.m in Sources */,
 				513FBA3D1480F4ED00E69AC1 /* SMAboutViewController.m in Sources */,
 				5109146614AE279800047A47 /* UIColor+SOSMessage.m in Sources */,
+				51973E3214B64B650062C26B /* SMProposeNewMessageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

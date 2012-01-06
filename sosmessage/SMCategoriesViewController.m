@@ -255,15 +255,10 @@ static char sosMessageKey;
 }
 
 - (void)handleMailPropositionTapping:(UIGestureRecognizer *)sender {
-    MFMailComposeViewController* mailer = [[MFMailComposeViewController alloc] init];
-    [mailer setSubject:@"[sosmessage] Proposition de message"];
-    NSArray *toRecipients = [NSArray arrayWithObjects:SM_EMAIL, nil];
-    [mailer setToRecipients:toRecipients];
-    
-    mailer.mailComposeDelegate = self;
-    [self presentModalViewController:mailer animated:true];
-    
-    [mailer release];
+    SMProposeNewMessageController* newMessageController = [[SMProposeNewMessageController alloc] initWithNibName:@"SMProposeNewMessageController" bundle:nil];
+    newMessageController.categories = self.categories;
+    [self presentModalViewController:newMessageController animated:true];
+    [newMessageController release];
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error

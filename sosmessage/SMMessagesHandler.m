@@ -18,6 +18,7 @@
 - (void)resetData;
 - (void)startWorking;
 - (void)stopWorking;
+- (void)startRequest:(NSURLRequest*)request;
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error;
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
@@ -68,20 +69,43 @@ bool receiving = false;
 
 #pragma mark Requesting ....
 
-- (void)requestUrl:(NSString*)url {
+-(void)startRequest:(NSURLRequest *)request {
     if (receiving && currentConnection) {
         [currentConnection cancel];
         currentConnection = nil;
     }
     
+    [self startWorking];
+    currentConnection = [NSURLConnection connectionWithRequest:request delegate:self];    
+}
+
+- (void)requestUrl:(NSString*)url {
+    
     NSURL* nsUrl = [[NSURL alloc] initWithString:url];
     NSURLRequest* request = [[NSURLRequest alloc] initWithURL:nsUrl];
     
-    [self startWorking];
-    currentConnection = [NSURLConnection connectionWithRequest:request delegate:self];
+    [self startRequest:request];
     
     [request release];
     [nsUrl release];
+}
+
+- (void)requestPOSTUrl:(NSString*)url params:(NSDictionary*)params {
+    NSURL* nsUrl = [[NSURL alloc] initWithString:url];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:nsUrl];
+    request.HTTPMethod = @"POST";
+    
+    // Build HTTP Body
+    NSMutableString* body = [NSMutableString string];
+    for (NSString* key in params) {
+        [body appendFormat:@"%@=%@&", key, [params objectForKey:key]];
+    }
+    request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [self startRequest:request];
+    
+    [request release];
+    [nsUrl release];    
 }
 
 - (void)requestCategories {
@@ -90,6 +114,10 @@ bool receiving = false;
 
 - (void)requestRandomMessageForCategory:(NSString*)aCategoryId {
     [self requestUrl:[NSString stringWithFormat:@"%@/api/v1/categories/%@/message", SM_URL, aCategoryId]];
+}
+
+-(void)requestProposeMessage:(NSString*)aMessage author:(NSString*)anAuthor category:(NSString*)aCategoryId {
+    [self requestPOSTUrl:[NSString stringWithFormat:@"%@/api/v1/categories/%@/message", SM_URL, aCategoryId] params:[NSDictionary dictionaryWithObjectsAndKeys:aMessage, @"text", anAuthor, @"contributorName", nil]];
 }
 
 +(void)showUIAlert {
@@ -122,20 +150,21 @@ bool receiving = false;
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     [self stopWorking];
     
-    if (!data) {
-        [SMMessagesHandler showUIAlert];
-        NSLog(@"Unable to fetch data ...");
-        return;
+    if (data) {
+        NSError* error;
+        id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if (!json) {
+            NSLog(@"Error while parsing json object from %@: %@", connection.originalRequest.URL, error);
+        } 
+        else if ([self.delegate respondsToSelector:@selector(messageHandler:didFinishWithJSon:)]) {
+            [self.delegate messageHandler:self didFinishWithJSon:json];
+        }
     }
     
-    NSError* error;
-    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-    if (!json) {
-        NSLog(@"Error while parsing json object from %@: %@", connection.originalRequest.URL, error);
-    } 
-    else if ([self.delegate respondsToSelector:@selector(messageHandler:didFinishWithJSon:)]) {
-        [self.delegate messageHandler:self didFinishWithJSon:json];
+    if ([self.delegate respondsToSelector:@selector(messageHandler:didFinish:)]) {
+        [self.delegate messageHandler:self didFinish:data];
     }
+    
     [self resetData];
 }
 

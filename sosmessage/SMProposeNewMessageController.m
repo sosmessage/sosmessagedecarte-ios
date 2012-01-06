@@ -9,8 +9,9 @@
 #import "SMProposeNewMessageController.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface SMProposeNewMessageController ()
+@interface SMProposeNewMessageController ()<SMMessageDelegate>
 @property (assign) NSInteger selectedCategory;
+@property (nonatomic, retain) SMMessagesHandler* handler;
 
 -(void)checkDoneButton;
 @end
@@ -23,6 +24,7 @@
 @synthesize categoryPicker;
 @synthesize categories;
 @synthesize selectedCategory;
+@synthesize handler;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +32,7 @@
     if (self) {
         // Custom initialization
         self.selectedCategory = -1;
+        self.handler = [[SMMessagesHandler alloc] initWithDelegate:self];
     }
     return self;
 }
@@ -91,7 +94,8 @@
 
 - (IBAction)sendPushed:(id)sender {
     NSLog(@"Send button pushed.");
-    [self dismissModalViewControllerAnimated:true];
+    NSString* categoryId = [[self.categories objectAtIndex:self.selectedCategory] objectForKey:CATEGORY_ID];
+    [self.handler requestProposeMessage:self.messageTextView.text author:self.nameTextField.text category:categoryId];
 }
 
 - (IBAction)showPicker:(id)sender {
@@ -151,6 +155,22 @@
     self.selectedCategory = row;
     self.categoryTextField.text = [[[self.categories objectAtIndex:row] objectForKey:CATEGORY_NAME] capitalizedString];
     [self checkDoneButton];
+}
+
+#pragma mark NSMessageHandlerDelegate
+
+- (void)startActivityFromMessageHandler:(SMMessagesHandler *)messageHandler
+{
+    [MBProgressHUD showHUDAddedTo:self.view animated:TRUE];
+}
+
+- (void)stopActivityFromMessageHandler:(SMMessagesHandler *)messageHandler
+{
+    [MBProgressHUD hideHUDForView:self.view animated:true];
+}
+
+- (void)messageHandler:(SMMessagesHandler *)messageHandler didFinish:(id)data {
+    [self dismissModalViewControllerAnimated:true];    
 }
 
 @end

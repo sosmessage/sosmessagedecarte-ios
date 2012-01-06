@@ -16,17 +16,19 @@
 
 - (id)initWithDelegate:(id)delegate;
 - (void)requestUrl:(NSString*)url;
+- (void)requestPOSTUrl:(NSString*)url params:(NSDictionary*)params;
 
 - (void)requestCategories;
 - (void)requestRandomMessageForCategory:(NSString*)aCategoryId;
+- (void)requestProposeMessage:(NSString*)aMessage author:(NSString*)anAuthor category:(NSString*)aCategoryId;
 
 @end
 
 @protocol SMMessageDelegate
-
-- (void)messageHandler:(SMMessagesHandler *)messageHandler didFinishWithJSon:(id)result;
-
 @optional
+- (void)messageHandler:(SMMessagesHandler *)messageHandler didFinishWithJSon:(id)result;
+- (void)messageHandler:(SMMessagesHandler *)messageHandler didFinish:(id)data;
+
 - (void)messageHandler:(SMMessagesHandler *)messageHandler didFail:(NSError *)error;
 
 - (void)startActivityFromMessageHandler:(SMMessagesHandler *)messageHandler;

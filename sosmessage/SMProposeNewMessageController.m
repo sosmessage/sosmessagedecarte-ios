@@ -180,7 +180,8 @@ bool keyboardVisible = false;
 
 - (void)startActivityFromMessageHandler:(SMMessagesHandler *)messageHandler
 {
-    [MBProgressHUD showHUDAddedTo:self.view animated:TRUE];
+    MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:TRUE];
+    hud.labelText = @"Envoi de la proposition";
 }
 
 - (void)stopActivityFromMessageHandler:(SMMessagesHandler *)messageHandler
@@ -189,7 +190,10 @@ bool keyboardVisible = false;
 }
 
 - (void)messageHandler:(SMMessagesHandler *)messageHandler didFinish:(id)data {
-    [self dismissModalViewControllerAnimated:true];    
+    NSLog(@"Status code: %d", messageHandler.lastStatusCode);
+    if (messageHandler.lastStatusCode == 204 || messageHandler.lastStatusCode == 202) {
+        [self dismissModalViewControllerAnimated:true];
+    }
 }
 
 #pragma mark handle keyboard resizing

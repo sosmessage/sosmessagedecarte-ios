@@ -26,7 +26,7 @@
 @end
 
 @implementation SMMessagesHandler
-@synthesize delegate;
+@synthesize delegate, lastStatusCode;
 
 NSMutableData* data;
 NSURLConnection* currentConnection;
@@ -147,6 +147,10 @@ bool receiving = false;
     }
 }
 
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    self.lastStatusCode = [(NSHTTPURLResponse*)response statusCode];
+}
+
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     [self stopWorking];
     
@@ -155,7 +159,7 @@ bool receiving = false;
         id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         if (!json) {
             NSLog(@"Error while parsing json object from %@: %@", connection.originalRequest.URL, error);
-        } 
+        }
         else if ([self.delegate respondsToSelector:@selector(messageHandler:didFinishWithJSon:)]) {
             [self.delegate messageHandler:self didFinishWithJSon:json];
         }

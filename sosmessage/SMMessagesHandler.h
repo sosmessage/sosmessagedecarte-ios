@@ -13,6 +13,7 @@
 @interface SMMessagesHandler : NSObject
 
 @property (assign) id <SMMessageDelegate,NSObject> delegate;
+@property (assign) NSInteger lastStatusCode;
 
 - (id)initWithDelegate:(id)delegate;
 - (void)requestUrl:(NSString*)url;

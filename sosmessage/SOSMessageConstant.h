@@ -43,6 +43,8 @@
 
 #define MESSAGE_TEXT        @"text"
 
+#define kSOSUUID            @"sosmessage.uuid.key"
+
 #pragma mark Others
 
 #define FONT_NAME           @"Helvetica"

@@ -15,6 +15,8 @@
 
 + (void)showUIAlert;
 
+@property (readonly) NSString* UUID;
+
 - (void)resetData;
 - (void)startWorking;
 - (void)stopWorking;
@@ -48,6 +50,20 @@ bool receiving = false;
 }
 
 #pragma mark Custom Methods
+-(NSString *)UUID {
+    NSUserDefaults* settings = [NSUserDefaults standardUserDefaults];
+    if (![settings objectForKey:kSOSUUID]) {
+        CFUUIDRef theUUID = CFUUIDCreate(NULL);
+        NSString* theUUIDstr = (__bridge_transfer NSString*) CFUUIDCreateString(NULL, theUUID);
+        CFRelease(theUUID);
+        [settings setValue:theUUIDstr forKey:kSOSUUID];
+        NSLog(@"Generate a new UUID: %@", theUUIDstr);
+    } else {
+        NSLog(@"Fetching an eisting UUID: %@", [settings stringForKey:kSOSUUID]);
+    }
+    return [settings stringForKey:kSOSUUID];
+}
+
 -(void)startWorking {
     [self resetData];
     receiving = true;

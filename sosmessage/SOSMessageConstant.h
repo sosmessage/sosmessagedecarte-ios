@@ -41,7 +41,12 @@
 #define CATEGORY_NAME       @"name"
 #define CATEGORY_COLOR      @"color"
 
+#define MESSAGE_ID          @"id"
 #define MESSAGE_TEXT        @"text"
+#define MESSAGE_RATING      @"rating"
+#define RATING_VALUE        @"value"
+#define MESSAGE_VOTE        @"vote"
+#define VOTE_USERVOTE       @"userVote"
 
 #define kSOSUUID            @"sosmessage.uuid.key"
 

@@ -18,11 +18,17 @@
 @property (retain, nonatomic) IBOutlet UITextView *messageText;
 @property (retain, nonatomic) IBOutlet UIButton *otherMessageButton;
 
+@property (retain, nonatomic) IBOutlet UIButton *votePlusButton;
+@property (retain, nonatomic) IBOutlet UIButton *voteMinusButton;
+@property (retain, nonatomic) IBOutlet UILabel *ratingLabel;
+
 - (id)initWithCategory:(NSDictionary*)aCategory;
 - (IBAction)dismissButtonPressed:(id)sender;
 - (void)fetchAMessage;
 - (void)renderTitle;
 - (void)refreshRenders;
 - (IBAction)reloadButtonPressed:(id)sender;
+
+- (IBAction)voteButtonPressed:(id)sender;
 
 @end

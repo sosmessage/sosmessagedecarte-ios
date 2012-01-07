@@ -15,6 +15,7 @@
 }
 @property (retain, nonatomic) NSDictionary* category;
 @property (retain, nonatomic) SMMessagesHandler* messageHandler;
+@property (retain, nonatomic) NSString* messageId;
 
 @end
 
@@ -23,8 +24,12 @@
 @synthesize titleImage;
 @synthesize messageText;
 @synthesize otherMessageButton;
+@synthesize votePlusButton;
+@synthesize voteMinusButton;
+@synthesize ratingLabel;
 @synthesize category;
 @synthesize messageHandler;
+@synthesize messageId;
 
 float baseHue;
 
@@ -121,6 +126,10 @@ float baseHue;
     [self setMessageHandler:nil];
     [self setOtherMessageButton:nil];
     [self setBackgroundView:nil];
+    [self setVotePlusButton:nil];
+    [self setVoteMinusButton:nil];
+    [self setRatingLabel:nil];
+    [self setMessageId:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -159,6 +168,10 @@ float baseHue;
     [messageHandler release];
     [otherMessageButton release];
     [backgroundView release];
+    [votePlusButton release];
+    [voteMinusButton release];
+    [ratingLabel release];
+    [messageId release];
     [super dealloc];
 }
 
@@ -170,6 +183,11 @@ float baseHue;
 
 - (IBAction)reloadButtonPressed:(id)sender {
     [self fetchAMessage];
+}
+
+- (IBAction)voteButtonPressed:(id)sender {
+    NSInteger vote = (sender == self.votePlusButton) ? 1 : -1;
+    [self.messageHandler requestVote:vote messageId:self.messageId];
 }
 
 - (void)renderTitle {
@@ -251,7 +269,14 @@ float baseHue;
 {
     if (self.messageText) {
         self.messageText.font = MESSAGE_FONT;
+        self.messageId = [result objectForKey:MESSAGE_ID];
         self.messageText.text = [result objectForKey:MESSAGE_TEXT];
+        self.ratingLabel.text = [(NSDecimalNumber*)[[result objectForKey:MESSAGE_RATING] objectForKey:RATING_VALUE] stringValue];
+        
+        NSInteger vote = [[[result objectForKey:MESSAGE_VOTE] objectForKey:VOTE_USERVOTE] integerValue];
+        self.voteMinusButton.enabled = vote != -1;
+        self.votePlusButton.enabled = vote != 1;
+        
         self.messageText.textColor = [UIColor colorWithHue:baseHue saturation:1.0 brightness:0.3 alpha:1.0];
     }
 }

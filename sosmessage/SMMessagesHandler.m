@@ -58,8 +58,6 @@ bool receiving = false;
         CFRelease(theUUID);
         [settings setValue:theUUIDstr forKey:kSOSUUID];
         NSLog(@"Generate a new UUID: %@", theUUIDstr);
-    } else {
-        NSLog(@"Fetching an eisting UUID: %@", [settings stringForKey:kSOSUUID]);
     }
     return [settings stringForKey:kSOSUUID];
 }
@@ -136,6 +134,13 @@ bool receiving = false;
     [self requestPOSTUrl:[NSString stringWithFormat:@"%@/api/v1/categories/%@/message", SM_URL, aCategoryId] params:[NSDictionary dictionaryWithObjectsAndKeys:aMessage, @"text", anAuthor, @"contributorName", nil]];
 }
 
+- (void)requestVote:(NSInteger)vote messageId:(NSString*)messageId {
+    NSLog(@"MessageID: %@", messageId);
+    NSString* url = [NSString stringWithFormat:@"%@/api/v1/messages/%@/vote", SM_URL, messageId];
+    NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:vote], @"vote", self.UUID, @"uid", nil];
+    [self requestPOSTUrl:url params:params];
+}
+
 +(void)showUIAlert {
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Erreur de connexion" message:@"Un probleme est survenu lors de la connexion au serveur de sosmessage" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
@@ -148,6 +153,7 @@ bool receiving = false;
     [self resetData];
     NSLog(@"%@", error);
     
+    [self stopWorking];
     if ([self.delegate respondsToSelector:@selector(messageHandler:didFail:)]) {
         [self.delegate messageHandler:self didFail:error];
     } else {
@@ -175,6 +181,7 @@ bool receiving = false;
         id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         if (!json) {
             NSLog(@"Error while parsing json object from %@: %@", connection.originalRequest.URL, error);
+            NSLog(@"Data: %@", [[[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding] autorelease]);
         }
         else if ([self.delegate respondsToSelector:@selector(messageHandler:didFinishWithJSon:)]) {
             [self.delegate messageHandler:self didFinishWithJSon:json];

@@ -10,10 +10,13 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface SMProposeNewMessageController ()<SMMessageDelegate>
+
 @property (assign) NSInteger selectedCategory;
 @property (nonatomic, retain) SMMessagesHandler* handler;
 
--(void)checkDoneButton;
+- (void)checkDoneButton;
+- (void)keyboardWasShown:(NSNotification*)aNotification;
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification;
 @end
 
 @implementation SMProposeNewMessageController
@@ -22,9 +25,12 @@
 @synthesize categoryTextField;
 @synthesize messageTextView;
 @synthesize categoryPicker;
+@synthesize scrollView;
 @synthesize categories;
 @synthesize selectedCategory;
 @synthesize handler;
+
+bool keyboardVisible = false;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,6 +62,8 @@
     self.messageTextView.layer.borderWidth = 1.5;
     self.messageTextView.clipsToBounds = true;
     
+    self.scrollView.contentSize = self.scrollView.frame.size;
+    
     [self checkDoneButton];
 }
 
@@ -66,9 +74,19 @@
     [self setSendButton:nil];
     [self setCategoryPicker:nil];
     [self setCategoryTextField:nil];
+    [self setScrollView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardDidHideNotification object:nil];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -133,6 +151,7 @@
     [sendButton release];
     [categoryPicker release];
     [categoryTextField release];
+    [scrollView release];
     [super dealloc];
 }
 
@@ -171,6 +190,26 @@
 
 - (void)messageHandler:(SMMessagesHandler *)messageHandler didFinish:(id)data {
     [self dismissModalViewControllerAnimated:true];    
+}
+
+#pragma mark handle keyboard resizing
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    scrollView.contentInset = contentInsets;
+    scrollView.scrollIndicatorInsets = contentInsets;
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    scrollView.contentInset = contentInsets;
+    scrollView.scrollIndicatorInsets = contentInsets;
 }
 
 @end

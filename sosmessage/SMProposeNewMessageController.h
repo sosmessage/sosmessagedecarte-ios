@@ -18,6 +18,7 @@
 @property (retain, nonatomic) IBOutlet UITextField *categoryTextField;
 @property (retain, nonatomic) IBOutlet UITextView *messageTextView;
 @property (retain, nonatomic) IBOutlet UIPickerView *categoryPicker;
+@property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)selectCategory:(id)sender;
 - (IBAction)dismissKeyboard:(id)sender;

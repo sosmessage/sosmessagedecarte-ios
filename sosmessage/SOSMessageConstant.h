@@ -43,6 +43,7 @@
 
 #define MESSAGE_ID          @"id"
 #define MESSAGE_TEXT        @"text"
+#define MESSAGE_CONTRIBUTOR @"contributorName"
 #define MESSAGE_RATING      @"rating"
 #define RATING_VALUE        @"value"
 #define MESSAGE_VOTE        @"vote"

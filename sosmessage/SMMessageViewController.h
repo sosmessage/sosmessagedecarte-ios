@@ -17,6 +17,7 @@
 @property (retain, nonatomic) IBOutlet UIImageView *titleImage;
 @property (retain, nonatomic) IBOutlet UITextView *messageText;
 @property (retain, nonatomic) IBOutlet UIButton *otherMessageButton;
+@property (retain, nonatomic) IBOutlet UILabel *contributorLabel;
 
 @property (retain, nonatomic) IBOutlet UIButton *votePlusButton;
 @property (retain, nonatomic) IBOutlet UIButton *voteMinusButton;

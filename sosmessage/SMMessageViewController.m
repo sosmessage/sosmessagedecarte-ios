@@ -24,6 +24,7 @@
 @synthesize titleImage;
 @synthesize messageText;
 @synthesize otherMessageButton;
+@synthesize contributorLabel;
 @synthesize votePlusButton;
 @synthesize voteMinusButton;
 @synthesize ratingLabel;
@@ -130,6 +131,7 @@ float baseHue;
     [self setVoteMinusButton:nil];
     [self setRatingLabel:nil];
     [self setMessageId:nil];
+    [self setContributorLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -172,6 +174,7 @@ float baseHue;
     [voteMinusButton release];
     [ratingLabel release];
     [messageId release];
+    [contributorLabel release];
     [super dealloc];
 }
 
@@ -272,6 +275,7 @@ float baseHue;
         self.messageId = [result objectForKey:MESSAGE_ID];
         self.messageText.text = [result objectForKey:MESSAGE_TEXT];
         self.ratingLabel.text = [(NSDecimalNumber*)[[result objectForKey:MESSAGE_RATING] objectForKey:RATING_VALUE] stringValue];
+        self.contributorLabel.text = [result objectForKey:MESSAGE_CONTRIBUTOR];
         
         NSInteger vote = [[[result objectForKey:MESSAGE_VOTE] objectForKey:VOTE_USERVOTE] integerValue];
         self.voteMinusButton.enabled = vote != -1;

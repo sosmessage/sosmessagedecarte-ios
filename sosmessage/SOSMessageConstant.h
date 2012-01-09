@@ -13,6 +13,7 @@
 
 #import "NSString+SOSMessage.h"
 #import "UIColor+SOSMessage.h"
+#import "UIButton+SOSMessage.h"
 
 #pragma mark HEADERS
 

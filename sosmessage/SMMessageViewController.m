@@ -42,27 +42,11 @@ float baseHue;
         self.view.backgroundColor = [UIColor whiteColor];
         self.backgroundView.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[self.category objectForKey:CATEGORY_COLOR]];
         
-        UIView* buttonOverlay = [[UIView alloc] initWithFrame:self.otherMessageButton.frame];
-        buttonOverlay.backgroundColor = [UIColor colorWithHue:baseHue saturation:0.8 brightness:0.3 alpha:0.7];
-        buttonOverlay.userInteractionEnabled = false;
-        buttonOverlay.layer.cornerRadius = 10.0f;
-        buttonOverlay.layer.masksToBounds = YES;
-        buttonOverlay.autoresizingMask = self.otherMessageButton.autoresizingMask;
-        [self.view insertSubview:buttonOverlay aboveSubview:self.otherMessageButton];
-        
-        UILabel* buttonLabel = [[UILabel alloc] initWithFrame:self.otherMessageButton.frame];
-        buttonLabel.text = @"SOS\nautre message";
-        buttonLabel.numberOfLines = 2;
-        buttonLabel.backgroundColor = [UIColor clearColor];
-        buttonLabel.textColor = [UIColor whiteColor];
-        buttonLabel.font = [UIFont fontWithName:FONT_NAME size:15];
-        buttonLabel.textAlignment = UITextAlignmentCenter;
-        buttonLabel.userInteractionEnabled = FALSE;
-        buttonLabel.autoresizingMask = self.otherMessageButton.autoresizingMask;
-        [self.view insertSubview:buttonLabel aboveSubview:buttonOverlay];
-        
-        [buttonLabel release];
-        [buttonOverlay release];
+        //Need to force /n in button title
+        [self.otherMessageButton setTitle:@"SOS\nautre message" forState:UIControlStateNormal];
+        [UIButton appendOverlaysWithHue:baseHue ToButton:self.otherMessageButton];
+        [UIButton appendOverlaysWithHue:baseHue ToButton:self.votePlusButton];
+        [UIButton appendOverlaysWithHue:baseHue ToButton:self.voteMinusButton];
 
         id iMessageHandler = [[SMMessagesHandler alloc] initWithDelegate:self];
         self.messageHandler = iMessageHandler;

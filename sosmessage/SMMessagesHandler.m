@@ -95,9 +95,8 @@ bool receiving = false;
 
 - (void)requestUrl:(NSString*)url {
     
-    NSURL* nsUrl = [[NSURL alloc] initWithString:url];
-    NSURLRequest* request = [[NSURLRequest alloc] initWithURL:nsUrl];
-    
+    NSURL* nsUrl = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@?%@=%@", url, @"uid", self.UUID]];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:nsUrl];
     [self startRequest:request];
     
     [request release];

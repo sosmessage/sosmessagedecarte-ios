@@ -49,6 +49,8 @@
 #define RATING_VALUE        @"value"
 #define MESSAGE_VOTE        @"vote"
 #define VOTE_USERVOTE       @"userVote"
+#define VOTE_PLUS           @"plus"
+#define VOTE_MINUS          @"minus"
 
 #define kSOSUUID            @"sosmessage.uuid.key"
 

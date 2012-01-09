@@ -27,7 +27,8 @@
 @synthesize contributorLabel;
 @synthesize votePlusButton;
 @synthesize voteMinusButton;
-@synthesize ratingLabel;
+@synthesize votePlusScoring;
+@synthesize voteMinusScoring;
 @synthesize category;
 @synthesize messageHandler;
 @synthesize messageId;
@@ -47,6 +48,10 @@ float baseHue;
         [UIButton appendOverlaysWithHue:baseHue ToButton:self.otherMessageButton];
         [UIButton appendOverlaysWithHue:baseHue ToButton:self.votePlusButton];
         [UIButton appendOverlaysWithHue:baseHue ToButton:self.voteMinusButton];
+        
+        self.voteMinusScoring.font = MESSAGE_FONT;
+        self.votePlusScoring.font = MESSAGE_FONT;
+        self.contributorLabel.font = MESSAGE_FONT;
 
         id iMessageHandler = [[SMMessagesHandler alloc] initWithDelegate:self];
         self.messageHandler = iMessageHandler;
@@ -113,9 +118,10 @@ float baseHue;
     [self setBackgroundView:nil];
     [self setVotePlusButton:nil];
     [self setVoteMinusButton:nil];
-    [self setRatingLabel:nil];
     [self setMessageId:nil];
     [self setContributorLabel:nil];
+    [self setVotePlusScoring:nil];
+    [self setVoteMinusScoring:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -156,9 +162,10 @@ float baseHue;
     [backgroundView release];
     [votePlusButton release];
     [voteMinusButton release];
-    [ratingLabel release];
     [messageId release];
     [contributorLabel release];
+    [votePlusScoring release];
+    [voteMinusScoring release];
     [super dealloc];
 }
 
@@ -258,12 +265,14 @@ float baseHue;
         self.messageText.font = MESSAGE_FONT;
         self.messageId = [result objectForKey:MESSAGE_ID];
         self.messageText.text = [result objectForKey:MESSAGE_TEXT];
-        self.ratingLabel.text = [(NSDecimalNumber*)[[result objectForKey:MESSAGE_RATING] objectForKey:RATING_VALUE] stringValue];
         self.contributorLabel.text = [result objectForKey:MESSAGE_CONTRIBUTOR];
         
         NSInteger vote = [[[result objectForKey:MESSAGE_VOTE] objectForKey:VOTE_USERVOTE] integerValue];
         self.voteMinusButton.enabled = vote != -1;
         self.votePlusButton.enabled = vote != 1;
+        NSLog(@"Usevote: %d, != -1: %s, != 1: %s", vote, vote != -1 ? "YES" : "NO", vote != 1 ? "YES" : "NO");
+        self.voteMinusScoring.text = [NSString stringWithFormat:@"%@", [[result objectForKey:MESSAGE_VOTE] objectForKey:VOTE_MINUS]];
+        self.votePlusScoring.text = [NSString stringWithFormat:@"%@", [[result objectForKey:MESSAGE_VOTE] objectForKey:VOTE_PLUS]];
         
         self.messageText.textColor = [UIColor colorWithHue:baseHue saturation:1.0 brightness:0.3 alpha:1.0];
     }

@@ -9,8 +9,14 @@
 #import "SMMessageViewController.h"
 #import <CoreText/CoreText.h>
 #import <QuartzCore/QuartzCore.h>
+#import <MessageUI/MessageUI.h>
+#import <Twitter/Twitter.h>
 
-@interface SMMessageViewController () {
+#define LBL_SMS     @"SMS"
+#define LBL_TWITTER @"Twitter"
+#define LBL_MAIL    @"Mail"
+
+@interface SMMessageViewController () <UIActionSheetDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate> {
 
 }
 @property (retain, nonatomic) NSDictionary* category;
@@ -23,6 +29,7 @@
 @synthesize backgroundView;
 @synthesize titleImage;
 @synthesize messageText;
+@synthesize sendMessageButton;
 @synthesize otherMessageButton;
 @synthesize contributorLabel;
 @synthesize votePlusButton;
@@ -48,6 +55,7 @@ float baseHue;
         [self.otherMessageButton appendOverlaysWithHue:baseHue];
         [self.votePlusButton appendOverlaysWithHue:baseHue];
         [self.voteMinusButton appendOverlaysWithHue:baseHue];
+        [self.sendMessageButton appendOverlaysWithHue:baseHue];
         
         self.voteMinusScoring.font = MESSAGE_FONT;
         self.votePlusScoring.font = MESSAGE_FONT;
@@ -122,6 +130,7 @@ float baseHue;
     [self setContributorLabel:nil];
     [self setVotePlusScoring:nil];
     [self setVoteMinusScoring:nil];
+    [self setSendMessageButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -166,6 +175,7 @@ float baseHue;
     [contributorLabel release];
     [votePlusScoring release];
     [voteMinusScoring release];
+    [sendMessageButton release];
     [super dealloc];
 }
 
@@ -177,6 +187,28 @@ float baseHue;
 
 - (IBAction)reloadButtonPressed:(id)sender {
     [self fetchAMessage];
+}
+
+- (IBAction)sendMessagePressed:(id)sender {
+    UIActionSheet* sheet = [[[UIActionSheet alloc] initWithTitle:@"Envoyer le message" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil] autorelease];
+    if ([MFMessageComposeViewController canSendText]) {
+        [sheet addButtonWithTitle:LBL_SMS];
+    }
+    if ([MFMailComposeViewController canSendMail]) {
+        [sheet addButtonWithTitle:LBL_MAIL];
+    }
+    if ([TWTweetComposeViewController canSendTweet]) {
+        [sheet addButtonWithTitle:LBL_TWITTER];
+    }
+    NSLog(@"Number of buttons in action sheet: %d", sheet.numberOfButtons);
+    if (sheet.numberOfButtons > 0) {
+        sheet.cancelButtonIndex = [sheet addButtonWithTitle:@"Annuler"];
+        [sheet showInView:self.view];
+    } else {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Impossible" message:@"Vous ne disposez d'aucun moyen pour envoyer le message a vos comparses." delegate:nil cancelButtonTitle:@"Dommage" otherButtonTitles: nil];
+        [alert show];
+        [alert release];
+    }
 }
 
 - (IBAction)voteButtonPressed:(id)sender {
@@ -276,6 +308,47 @@ float baseHue;
         
         self.messageText.textColor = [UIColor colorWithHue:baseHue saturation:1.0 brightness:0.3 alpha:1.0];
     }
+}
+
+#pragma mark UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSLog(@"Button pressed: %d", buttonIndex);
+    if (actionSheet.cancelButtonIndex != buttonIndex) {
+        NSString* btnText = [actionSheet buttonTitleAtIndex:buttonIndex];
+        if (btnText == LBL_SMS) {
+            NSLog(@"SMS");
+            // SMS
+            MFMessageComposeViewController* controller = [[MFMessageComposeViewController alloc] init];
+            controller.messageComposeDelegate = self;
+            controller.body = self.messageText.text;
+            [controller release];
+        } else if (btnText == LBL_MAIL) {
+            NSLog(@"MAIL");
+            // Mail
+            MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+            controller.mailComposeDelegate = self;
+            [controller setSubject:@"SOS Message"];
+            [controller setMessageBody:self.messageText.text isHTML:false];
+            [self presentModalViewController:controller animated:true];
+            [controller release];
+        } else if (btnText == LBL_TWITTER) {
+            NSLog(@"Twitter");
+            // Twitter
+            TWTweetComposeViewController* controller = [[TWTweetComposeViewController alloc] init];
+            [controller setInitialText:self.messageText.text];
+            [self presentModalViewController:controller animated:true];
+            [controller release];
+        }
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    [controller dismissModalViewControllerAnimated:TRUE];
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
+    [controller dismissModalViewControllerAnimated:TRUE];
 }
 
 @end

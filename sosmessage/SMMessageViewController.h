@@ -16,6 +16,7 @@
 @property (retain, nonatomic) IBOutlet UIView *backgroundView;
 @property (retain, nonatomic) IBOutlet UIImageView *titleImage;
 @property (retain, nonatomic) IBOutlet UITextView *messageText;
+@property (retain, nonatomic) IBOutlet UIButton *sendMessageButton;
 @property (retain, nonatomic) IBOutlet UIButton *otherMessageButton;
 @property (retain, nonatomic) IBOutlet UILabel *contributorLabel;
 
@@ -30,6 +31,7 @@
 - (void)renderTitle;
 - (void)refreshRenders;
 - (IBAction)reloadButtonPressed:(id)sender;
+- (IBAction)sendMessagePressed:(id)sender;
 
 - (IBAction)voteButtonPressed:(id)sender;
 

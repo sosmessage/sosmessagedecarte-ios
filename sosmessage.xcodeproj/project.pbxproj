@@ -29,6 +29,7 @@
 		516515DF145DEA4100CF6C45 /* SMCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516515DD145DEA4100CF6C45 /* SMCategoriesViewController.xib */; };
 		51712AE714A1BE7000E366AF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51712AE614A1BE7000E366AF /* MessageUI.framework */; };
 		517ECA4314B9A8F600B3CA55 /* UIButton+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 517ECA4214B9A8F600B3CA55 /* UIButton+SOSMessage.m */; };
+		517ECA4D14BCD39B00B3CA55 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517ECA4C14BCD39B00B3CA55 /* Twitter.framework */; };
 		51973E3214B64B650062C26B /* SMProposeNewMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51973E3014B64B640062C26B /* SMProposeNewMessageController.m */; };
 		51973E3314B64B650062C26B /* SMProposeNewMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51973E3114B64B640062C26B /* SMProposeNewMessageController.xib */; };
 		51A5CE061465221400B274B3 /* NSString+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE051465221400B274B3 /* NSString+SOSMessage.m */; };
@@ -71,6 +72,7 @@
 		51712AE614A1BE7000E366AF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		517ECA4114B9A8F600B3CA55 /* UIButton+SOSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SOSMessage.h"; sourceTree = "<group>"; };
 		517ECA4214B9A8F600B3CA55 /* UIButton+SOSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SOSMessage.m"; sourceTree = "<group>"; };
+		517ECA4C14BCD39B00B3CA55 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		51973E2F14B64B640062C26B /* SMProposeNewMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMProposeNewMessageController.h; sourceTree = "<group>"; };
 		51973E3014B64B640062C26B /* SMProposeNewMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMProposeNewMessageController.m; sourceTree = "<group>"; };
 		51973E3114B64B640062C26B /* SMProposeNewMessageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMProposeNewMessageController.xib; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				517ECA4D14BCD39B00B3CA55 /* Twitter.framework in Frameworks */,
 				51712AE714A1BE7000E366AF /* MessageUI.framework in Frameworks */,
 				51A5CE141466E24200B274B3 /* CoreText.framework in Frameworks */,
 				516515C9145DEA4000CF6C45 /* UIKit.framework in Frameworks */,
@@ -127,6 +130,7 @@
 		516515C7145DEA4000CF6C45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				517ECA4C14BCD39B00B3CA55 /* Twitter.framework */,
 				51712AE614A1BE7000E366AF /* MessageUI.framework */,
 				51A5CE131466E24200B274B3 /* CoreText.framework */,
 				516515C8145DEA4000CF6C45 /* UIKit.framework */,

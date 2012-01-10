@@ -322,6 +322,7 @@ float baseHue;
             MFMessageComposeViewController* controller = [[MFMessageComposeViewController alloc] init];
             controller.messageComposeDelegate = self;
             controller.body = self.messageText.text;
+            [self presentModalViewController:controller animated:true];
             [controller release];
         } else if (btnText == LBL_MAIL) {
             NSLog(@"MAIL");
@@ -336,7 +337,9 @@ float baseHue;
             NSLog(@"Twitter");
             // Twitter
             TWTweetComposeViewController* controller = [[TWTweetComposeViewController alloc] init];
-            [controller setInitialText:self.messageText.text];
+            if (![controller setInitialText:self.messageText.text]) {
+                [controller setInitialText:[NSString stringWithFormat:@"%@…", [self.messageText.text substringWithRange:NSMakeRange(0, 139)]]];
+            }
             [self presentModalViewController:controller animated:true];
             [controller release];
         }

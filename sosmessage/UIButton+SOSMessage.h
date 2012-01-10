@@ -10,5 +10,8 @@
 #import "SOSMessageConstant.h"
 
 @interface UIButton (SOSMessage)
-+(void)appendOverlaysWithHue:(float)aHue ToButton:(UIButton*)aButton;
+-(void)appendOverlaysWithHue:(float)aHue;
+
++(void)overlayLabel;
++(void)overlayView;
 @end

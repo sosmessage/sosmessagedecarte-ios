@@ -58,6 +58,11 @@
 
 #define FONT_NAME           @"Helvetica"
 
+#pragma mark DECLARE ASSOCIATIVE REFERENCE METHODS
+typedef uintptr_t objc_AssociationPolicy;
+void objc_setAssociatedObject(id object, void *key, id value, objc_AssociationPolicy policy);
+id objc_getAssociatedObject(id object, void *key);
+
 @protocol SOSMessageConstant <NSObject>
 
 @end

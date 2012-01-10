@@ -45,9 +45,9 @@ float baseHue;
         
         //Need to force /n in button title
         [self.otherMessageButton setTitle:@"SOS\nautre message" forState:UIControlStateNormal];
-        [UIButton appendOverlaysWithHue:baseHue ToButton:self.otherMessageButton];
-        [UIButton appendOverlaysWithHue:baseHue ToButton:self.votePlusButton];
-        [UIButton appendOverlaysWithHue:baseHue ToButton:self.voteMinusButton];
+        [self.otherMessageButton appendOverlaysWithHue:baseHue];
+        [self.votePlusButton appendOverlaysWithHue:baseHue];
+        [self.voteMinusButton appendOverlaysWithHue:baseHue];
         
         self.voteMinusScoring.font = MESSAGE_FONT;
         self.votePlusScoring.font = MESSAGE_FONT;

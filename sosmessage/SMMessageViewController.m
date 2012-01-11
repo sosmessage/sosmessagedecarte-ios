@@ -331,7 +331,9 @@ float baseHue;
             // Mail
             MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
             controller.mailComposeDelegate = self;
-            [controller setSubject:@"SOS Message"];
+            NSString* categoryName = [self.category objectForKey:CATEGORY_NAME];
+            
+            [controller setSubject:[NSString stringWithFormat:@"SOS Message %@%@", [categoryName prepositionWithSpace], categoryName]];
             [controller setMessageBody:self.messageText.text isHTML:false];
             [self presentModalViewController:controller animated:true];
             [controller release];

@@ -16,6 +16,8 @@
 @interface SMCategoriesViewController () {
     
 }
+@property (nonatomic, assign) NSDate* lastFetchingDate;
+
 -(void)renderTitle;
 -(BOOL)isSubViewCategoryPart:(UIView*) view;
 -(void)addMailPropositionBlockinPosY:(int)posY;
@@ -303,10 +305,22 @@ static char sosMessageKey;
     if ([result objectForKey:CATEGORIES_COUNT] > 0) {
         self.categories = [[[NSMutableArray alloc] initWithArray:[result objectForKey:CATEGORIES_ITEMS]] autorelease];
         [self refreshCategories];
+        
+        self.lastFetchingDate = [NSDate date];
     }
 }
 
 #pragma mark Custom methods
+
+-(NSDate *)lastFetchingDate {
+    NSUserDefaults* settings = [NSUserDefaults standardUserDefaults];
+    return (NSDate*)[settings objectForKey:kSOSLASTFETCH];
+}
+
+-(void)setLastFetchingDate:(NSDate *)lastFetchingDate {
+    NSUserDefaults* settings = [NSUserDefaults standardUserDefaults];
+    [settings setObject:lastFetchingDate forKey:kSOSLASTFETCH];
+}
 
 - (void)renderTitle {
     UIGraphicsBeginImageContext(self.titleImage.bounds.size);

@@ -53,6 +53,7 @@
 #define VOTE_MINUS          @"minus"
 
 #define kSOSUUID            @"sosmessage.uuid.key"
+#define kSOSLASTFETCH       @"sosmessage.categories.fetchDate"
 
 #pragma mark Others
 

@@ -321,7 +321,6 @@ float baseHue;
     if (actionSheet.cancelButtonIndex != buttonIndex) {
         NSString* btnText = [actionSheet buttonTitleAtIndex:buttonIndex];
         if (btnText == LBL_SMS) {
-            NSLog(@"SMS");
             // SMS
             MFMessageComposeViewController* controller = [[MFMessageComposeViewController alloc] init];
             controller.messageComposeDelegate = self;
@@ -329,7 +328,6 @@ float baseHue;
             [self presentModalViewController:controller animated:true];
             [controller release];
         } else if (btnText == LBL_MAIL) {
-            NSLog(@"MAIL");
             // Mail
             MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
             controller.mailComposeDelegate = self;
@@ -338,7 +336,6 @@ float baseHue;
             [self presentModalViewController:controller animated:true];
             [controller release];
         } else if (btnText == LBL_TWITTER) {
-            NSLog(@"Twitter");
             // Twitter
             TWTweetComposeViewController* controller = [[TWTweetComposeViewController alloc] init];
             if (![controller setInitialText:self.messageText.text]) {

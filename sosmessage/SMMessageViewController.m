@@ -88,9 +88,15 @@ float baseHue;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshRenders) name:UIDeviceOrientationDidChangeNotification object:nil];
     
     [self renderTitle];
-    [self fetchAMessage];
- 
     [messageText addObserver:self forKeyPath:@"contentSize" options:(NSKeyValueObservingOptionNew) context:NULL];
+    
+    // Prevent from fetching another message when come back from a send modal view
+    if (!self.modalViewController) {
+        [self fetchAMessage];
+    } else {
+        // Froce TextView's tweak to vertical align text
+        [self observeValueForKeyPath:nil ofObject:self.messageText change:nil context:nil];
+    }
     
     [super viewWillAppear:animated];
 }
@@ -113,7 +119,6 @@ float baseHue;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
@@ -302,7 +307,6 @@ float baseHue;
         NSInteger vote = [[[result objectForKey:MESSAGE_VOTE] objectForKey:VOTE_USERVOTE] integerValue];
         self.voteMinusButton.enabled = vote != -1;
         self.votePlusButton.enabled = vote != 1;
-        NSLog(@"Usevote: %d, != -1: %s, != 1: %s", vote, vote != -1 ? "YES" : "NO", vote != 1 ? "YES" : "NO");
         self.voteMinusScoring.text = [NSString stringWithFormat:@"%@", [[result objectForKey:MESSAGE_VOTE] objectForKey:VOTE_MINUS]];
         self.votePlusScoring.text = [NSString stringWithFormat:@"%@", [[result objectForKey:MESSAGE_VOTE] objectForKey:VOTE_PLUS]];
         

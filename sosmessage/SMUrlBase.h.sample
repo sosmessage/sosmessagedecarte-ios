@@ -11,6 +11,7 @@
 #define SM_URL @"http://www.dummyurl.fr"
 #define SM_ABOUT @"http://www.dummyurl.fr/about"
 #define SM_EMAIL @"fake@email.com"
+#define SM_APP_URL @"http://itunes.apple.com/fr/app/sos-message-de-carte/id492273436?mt=8&uo=4"
 
 @protocol SMUrlBase <NSObject>
 

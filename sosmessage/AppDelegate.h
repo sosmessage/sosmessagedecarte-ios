@@ -13,7 +13,6 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) SMCategoriesViewController *viewController;
 
 - (int)deviceSpecificNumberOfBlocks;
 - (UIFont*)deviceSpecificCategoryFont;
@@ -23,5 +22,7 @@
 - (int)deviceSpecificCategoriesMarginWidth;
 
 + (UIColor*)buildUIColorFromARGBStringRepresentation:(NSString*)aString;
++ (NSString*)applicationName;
++ (NSString*)applicationReadableName;
 
 @end

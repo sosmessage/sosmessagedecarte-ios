@@ -20,10 +20,13 @@
 
 -(void)renderTitle;
 -(BOOL)isSubViewCategoryPart:(UIView*) view;
+
+-(void)addAdvertisingBlockinPosY:(int)posY;
 -(void)addMailPropositionBlockinPosY:(int)posY;
 
 - (void)handleCategoryTapping:(UIGestureRecognizer *)sender;
 - (void)handleMailPropositionTapping:(UIGestureRecognizer *)sender;
+- (void)handleAdvertisingTapping:(UIGestureRecognizer *)sender;
 
 - (void)addSOSCategory:(NSDictionary*)category inPosX:(int)posX andPosY:(int)posY forBlock:(int)nbBlock;
 - (void)addSOSCategory:(NSDictionary*)category inPosX:(int)posX andPosY:(int)posY;
@@ -157,6 +160,23 @@ static char sosMessageKey;
     [self.view insertSubview:emptyBlocks belowSubview:self.infoButton];
 }
 
+-(void)addAdvertisingBlockinPosY:(int)posY {
+    NSString* label = @"de l'application complète";
+    UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
+    uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:0.5];
+    uiLabel.text = label;
+    uiLabel.font = CATEGORY_FONT;
+    uiLabel.textColor = [UIColor colorWithHue:label.calculateHue saturation:1.0 brightness:0.3 alpha:1.0];
+    uiLabel.textAlignment = UITextAlignmentCenter;
+    uiLabel.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *categoryTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleAdvertisingTapping:)];
+    [uiLabel addGestureRecognizer:categoryTap];
+    [categoryTap release];
+    
+    [self.view insertSubview:uiLabel belowSubview:self.infoButton];    
+}
+
 -(void)addMailPropositionBlockinPosY:(int)posY {
     NSString* label = @"contribuez vos messages";
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
@@ -181,7 +201,11 @@ static char sosMessageKey;
     int x = 0;
     int y = 0;
     
-    if ([workingCategories count] <= 5) {
+    if ([workingCategories count] == 1) {
+        [self addAdvertisingBlockinPosY:0];
+        [self addSOSCategory:[workingCategories objectAtIndex:0] inPosX:0 andPosY:1 forBlock:NB_BLOCKS];
+        y = 2;
+    } else if ([workingCategories count] <= 5) {
         for (NSDictionary* category in workingCategories) {
             [self addSOSCategory:category inPosX:0 andPosY:[self.categories indexOfObject:category] forBlock:NB_BLOCKS];
         }
@@ -256,6 +280,10 @@ static char sosMessageKey;
     }
 }
 
+- (void)handleAdvertisingTapping:(UIGestureRecognizer *)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:SM_APP_URL]];
+}
+
 - (void)handleMailPropositionTapping:(UIGestureRecognizer *)sender {
     SMProposeNewMessageController* newMessageController = [[SMProposeNewMessageController alloc] initWithNibName:@"SMProposeNewMessageController" bundle:nil];
     newMessageController.categories = self.categories;
@@ -275,6 +303,7 @@ static char sosMessageKey;
     NSLog(@"Category added: %@", category);
     
     SMMessageViewController* detail = [[SMMessageViewController alloc] initWithCategory:category];
+
     detail.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentModalViewController:detail animated:true];
     [detail release];
@@ -333,7 +362,12 @@ static char sosMessageKey;
     CGPathAddRect(path, NULL, self.titleImage.bounds);
     
     //Concat sosheader and category name
-    NSMutableString* header = [NSMutableString stringWithString:@"sosmessage\ndecarte"];
+    NSMutableString* header = [NSMutableString stringWithString:@"sosmessage\nde"];
+    if ([AppDelegate applicationName]) {
+        [header appendString:[AppDelegate applicationReadableName]];
+    } else {
+        [header appendString:@"carte"];
+    }
     
     NSInteger _stringLength=[header length];
     

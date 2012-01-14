@@ -94,8 +94,12 @@ bool receiving = false;
 }
 
 - (void)requestUrl:(NSString*)url {
+    NSMutableString* urlWithParams = [NSMutableString stringWithFormat:@"%@?uid=%@", url, self.UUID];
+    if ([AppDelegate applicationName]) {
+        [urlWithParams appendFormat:@"&appname=%@", [AppDelegate applicationName]];
+    }
     
-    NSURL* nsUrl = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@?%@=%@", url, @"uid", self.UUID]];
+    NSURL* nsUrl = [[NSURL alloc] initWithString:urlWithParams];
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:nsUrl];
     [self startRequest:request];
     
@@ -121,7 +125,7 @@ bool receiving = false;
     [nsUrl release];    
 }
 
-- (void)requestCategories {
+- (void)requestCategories {    
     [self requestUrl:[NSString stringWithFormat:@"%@/api/v1/categories", SM_URL]];
 }
 

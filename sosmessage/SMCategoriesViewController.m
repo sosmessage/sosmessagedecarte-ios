@@ -253,6 +253,8 @@ static char sosMessageKey;
             continue;
         }
         
+        NSDateFormatter* dateForm = [[NSDateFormatter alloc] init];
+        
         if ([subView isKindOfClass:[UILabel class]]) {
             float viewX = subView.frame.origin.x + CATEGORIES_MARGIN_WIDTH / 2;
             float viewY = floorf(subView.frame.origin.y * fitHeight) + CATEGORIES_HEADER_SIZE - CATEGORIES_MARGIN_HEIGTH;
@@ -260,11 +262,26 @@ static char sosMessageKey;
             float viewHeight = fitHeight - CATEGORIES_MARGIN_HEIGTH;
             
             subView.frame = CGRectMake(viewX, viewY, viewWidth, viewHeight);
+            
+            // Add "NEW" image above the label
+            NSDictionary* category = (NSDictionary*)objc_getAssociatedObject(subView, &sosMessageKey);
+            
+            double epoch = [[category objectForKey:CATEGORY_LASTADD] doubleValue] / 1000;
+            NSDate* categoryLastAdd = [NSDate dateWithTimeIntervalSince1970:epoch];
+            if ([self.lastFetchingDate compare:categoryLastAdd] != 1) {
+                UIImageView* newImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"new.png"]];
+                
+                newImage.center = CGPointMake(viewX + 18, viewY + 15);
+                
+                [self.view addSubview:newImage];
+                [newImage release];
+            }
         } else if ([subView isKindOfClass:[UIImageView class]]) {
             UIImage* img = [(UIImageView*)subView image];
             float imgRation = img.size.height / img.size.width;
             subView.frame = CGRectMake(subView.frame.origin.x, floorf(subView.frame.origin.y * fitHeight), subView.frame.size.width, imgRation * subView.frame.size.width);
         }
+        [dateForm release];
     }
 }
 

@@ -118,7 +118,7 @@ static char sosMessageKey;
     
     UILabel* uiLabel = [[UILabel alloc] initWithFrame:CGRectMake(rectX, posY, rectWidth, rectHeight)];
     
-    uiLabel.layer.cornerRadius = 3.0f;
+    uiLabel.layer.cornerRadius = 7.0f;
     uiLabel.layer.masksToBounds = YES;
     return [uiLabel autorelease];
 }

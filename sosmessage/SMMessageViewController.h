@@ -24,6 +24,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *voteMinusButton;
 @property (retain, nonatomic) IBOutlet UILabel *votePlusScoring;
 @property (retain, nonatomic) IBOutlet UILabel *voteMinusScoring;
+@property (retain, nonatomic) IBOutlet UIButton *backButton;
 
 - (id)initWithCategory:(NSDictionary*)aCategory;
 - (IBAction)dismissButtonPressed:(id)sender;

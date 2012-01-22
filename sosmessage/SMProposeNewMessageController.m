@@ -38,7 +38,7 @@ bool keyboardVisible = false;
     if (self) {
         // Custom initialization
         self.selectedCategory = -1;
-        self.handler = [[SMMessagesHandler alloc] initWithDelegate:self];
+        self.handler = [[[SMMessagesHandler alloc] initWithDelegate:self] autorelease];
     }
     return self;
 }

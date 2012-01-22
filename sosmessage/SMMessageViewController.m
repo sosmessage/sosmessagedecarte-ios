@@ -36,6 +36,7 @@
 @synthesize voteMinusButton;
 @synthesize votePlusScoring;
 @synthesize voteMinusScoring;
+@synthesize backButton;
 @synthesize category;
 @synthesize messageHandler;
 @synthesize messageId;
@@ -51,11 +52,12 @@ float baseHue;
         self.backgroundView.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[self.category objectForKey:CATEGORY_COLOR]];
         
         //Need to force /n in button title
-        [self.otherMessageButton setTitle:@"SOS\nautre message" forState:UIControlStateNormal];
+        //[self.otherMessageButton setTitle:@"SOS\nautre message" forState:UIControlStateNormal];
         [self.otherMessageButton appendOverlaysWithHue:baseHue];
         [self.votePlusButton appendOverlaysWithHue:baseHue];
         [self.voteMinusButton appendOverlaysWithHue:baseHue];
         [self.sendMessageButton appendOverlaysWithHue:baseHue];
+        [self.backButton appendOverlaysWithHue:baseHue];
         
         self.voteMinusScoring.font = MESSAGE_FONT;
         self.votePlusScoring.font = MESSAGE_FONT;
@@ -136,6 +138,7 @@ float baseHue;
     [self setVotePlusScoring:nil];
     [self setVoteMinusScoring:nil];
     [self setSendMessageButton:nil];
+    [self setBackButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -181,6 +184,7 @@ float baseHue;
     [votePlusScoring release];
     [voteMinusScoring release];
     [sendMessageButton release];
+    [backButton release];
     [super dealloc];
 }
 

@@ -54,7 +54,9 @@ bool receiving = false;
     NSUserDefaults* settings = [NSUserDefaults standardUserDefaults];
     if (![settings objectForKey:kSOSUUID]) {
         CFUUIDRef theUUID = CFUUIDCreate(NULL);
-        NSString* theUUIDstr = (__bridge_transfer NSString*) CFUUIDCreateString(NULL, theUUID);
+        CFStringRef uuidStrRef = CFUUIDCreateString(NULL, theUUID);
+        NSString* theUUIDstr = [NSString stringWithString:(__bridge NSString*) uuidStrRef];
+        CFRelease(uuidStrRef);
         CFRelease(theUUID);
         [settings setValue:theUUIDstr forKey:kSOSUUID];
         NSLog(@"Generate a new UUID: %@", theUUIDstr);

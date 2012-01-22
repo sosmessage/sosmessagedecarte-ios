@@ -11,31 +11,21 @@
 
 @implementation UIButton (SOSMessage)
 -(void)appendOverlaysWithHue:(float)aHue {
+    self.alpha = 0.7f;
+    
     //A simple view to make a great effect inside the button
     UIView* buttonOverlay = [[UIView alloc] initWithFrame:self.frame];
-    buttonOverlay.backgroundColor = [UIColor colorWithHue:aHue saturation:0.8 brightness:0.3 alpha:0.7];
+    buttonOverlay.backgroundColor = [UIColor colorWithHue:aHue saturation:0.8 brightness:0.3 alpha:0.3];
     buttonOverlay.userInteractionEnabled = false;
-    buttonOverlay.layer.cornerRadius = 10.0f;
+    
+    buttonOverlay.layer.cornerRadius = 8.0f;
     buttonOverlay.layer.masksToBounds = YES;
+    
     buttonOverlay.autoresizingMask = self.autoresizingMask;
-    [self.superview insertSubview:buttonOverlay aboveSubview:self];
     
-    //Move button title to the label inside the simple view
-    UILabel* buttonLabel = [[UILabel alloc] initWithFrame:self.frame];
-    //Move button Title text to the overlayed label
-    buttonLabel.text = self.currentTitle;
-    [self setTitle:@"" forState:UIControlStateNormal];
+    //[self.superview insertSubview:buttonOverlay aboveSubview:self];
+    [self.superview insertSubview:buttonOverlay belowSubview:self];
     
-    buttonLabel.numberOfLines = 2;
-    buttonLabel.backgroundColor = [UIColor clearColor];
-    buttonLabel.textColor = [UIColor whiteColor];
-    buttonLabel.font = [UIFont fontWithName:FONT_NAME size:15];
-    buttonLabel.textAlignment = UITextAlignmentCenter;
-    buttonLabel.userInteractionEnabled = FALSE;
-    buttonLabel.autoresizingMask = self.autoresizingMask;
-    [self.superview insertSubview:buttonLabel aboveSubview:buttonOverlay];
-    
-    [buttonLabel release];
     [buttonOverlay release];    
 }
 

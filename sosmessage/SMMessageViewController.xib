@@ -202,7 +202,7 @@
 										</object>
 									</object>
 								</array>
-								<string key="NSFrame">{{243, 119}, {82, 97}}</string>
+								<string key="NSFrame">{{243, 115}, {82, 97}}</string>
 								<reference key="NSSuperview" ref="417961653"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="964141098"/>
@@ -270,7 +270,7 @@
 										<reference key="IBUIFont" ref="927495696"/>
 									</object>
 								</array>
-								<string key="NSFrame">{{243, 224}, {82, 97}}</string>
+								<string key="NSFrame">{{243, 237}, {82, 97}}</string>
 								<reference key="NSSuperview" ref="417961653"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="907180306"/>

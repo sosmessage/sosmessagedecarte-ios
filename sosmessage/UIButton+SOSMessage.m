@@ -24,7 +24,7 @@
     buttonOverlay.autoresizingMask = self.autoresizingMask;
     
     //[self.superview insertSubview:buttonOverlay aboveSubview:self];
-    [self.superview insertSubview:buttonOverlay belowSubview:self];
+//    [self.superview insertSubview:buttonOverlay belowSubview:self];
     
     [buttonOverlay release];    
 }

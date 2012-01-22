@@ -178,7 +178,7 @@ static char sosMessageKey;
 }
 
 -(void)addMailPropositionBlockinPosY:(int)posY {
-    NSString* label = @"contribuez vos messages";
+    NSString* label = @"proposes tes messages";
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
     uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:0.5];
     uiLabel.text = label;
@@ -266,15 +266,17 @@ static char sosMessageKey;
             // Add "NEW" image above the label
             NSDictionary* category = (NSDictionary*)objc_getAssociatedObject(subView, &sosMessageKey);
             
-            double epoch = [[category objectForKey:CATEGORY_LASTADD] doubleValue] / 1000;
-            NSDate* categoryLastAdd = [NSDate dateWithTimeIntervalSince1970:epoch];
-            if ([self.lastFetchingDate compare:categoryLastAdd] != 1) {
-                UIImageView* newImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"new.png"]];
-                
-                newImage.center = CGPointMake(viewX + 18, viewY + 15);
-                
-                [self.view addSubview:newImage];
-                [newImage release];
+            if (category) {
+                double epoch = [[category objectForKey:CATEGORY_LASTADD] doubleValue] / 1000;
+                NSDate* categoryLastAdd = [NSDate dateWithTimeIntervalSince1970:epoch];
+                if ([self.lastFetchingDate compare:categoryLastAdd] != 1) {
+                    UIImageView* newImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"new.png"]];
+                    
+                    newImage.center = CGPointMake(viewX + 18, viewY + 15);
+                    
+                    [self.view addSubview:newImage];
+                    [newImage release];
+                }
             }
         } else if ([subView isKindOfClass:[UIImageView class]]) {
             UIImage* img = [(UIImageView*)subView image];

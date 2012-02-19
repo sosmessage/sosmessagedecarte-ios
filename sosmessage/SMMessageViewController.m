@@ -71,7 +71,8 @@ float baseHue;
 }
 
 - (IBAction)dismissButtonPressed:(id)sender {
-    [self dismissModalViewControllerAnimated:true];
+    [self.navigationController popViewControllerAnimated:YES];
+ //   [self dismissModalViewControllerAnimated:true];
 }
 
 - (void)didReceiveMemoryWarning

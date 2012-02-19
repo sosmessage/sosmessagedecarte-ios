@@ -322,9 +322,8 @@ static char sosMessageKey;
     NSLog(@"Category added: %@", category);
     
     SMMessageViewController* detail = [[SMMessageViewController alloc] initWithCategory:category];
-
-    detail.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self presentModalViewController:detail animated:true];
+    [self.navigationController pushViewController:detail animated:YES];
+    
     [detail release];
 }
 

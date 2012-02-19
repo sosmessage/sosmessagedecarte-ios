@@ -60,6 +60,8 @@
 		516515DC145DEA4100CF6C45 /* SMCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515DB145DEA4100CF6C45 /* SMCategoriesViewController.m */; };
 		516515DF145DEA4100CF6C45 /* SMCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516515DD145DEA4100CF6C45 /* SMCategoriesViewController.xib */; };
 		51712AE714A1BE7000E366AF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51712AE614A1BE7000E366AF /* MessageUI.framework */; };
+		517E321B14F0DB1D003565F9 /* AdBannerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517E321A14F0DB1D003565F9 /* AdBannerNavigationController.m */; };
+		517E321C14F0DB1D003565F9 /* AdBannerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517E321A14F0DB1D003565F9 /* AdBannerNavigationController.m */; };
 		517ECA4314B9A8F600B3CA55 /* UIButton+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 517ECA4214B9A8F600B3CA55 /* UIButton+SOSMessage.m */; };
 		517ECA4D14BCD39B00B3CA55 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517ECA4C14BCD39B00B3CA55 /* Twitter.framework */; };
 		51973E3214B64B650062C26B /* SMProposeNewMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51973E3014B64B640062C26B /* SMProposeNewMessageController.m */; };
@@ -115,6 +117,8 @@
 		516515DB145DEA4100CF6C45 /* SMCategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMCategoriesViewController.m; sourceTree = "<group>"; };
 		516515DE145DEA4100CF6C45 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SMCategoriesViewController.xib; sourceTree = "<group>"; };
 		51712AE614A1BE7000E366AF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		517E321914F0DB1D003565F9 /* AdBannerNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdBannerNavigationController.h; sourceTree = "<group>"; };
+		517E321A14F0DB1D003565F9 /* AdBannerNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdBannerNavigationController.m; sourceTree = "<group>"; };
 		517ECA4114B9A8F600B3CA55 /* UIButton+SOSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SOSMessage.h"; sourceTree = "<group>"; };
 		517ECA4214B9A8F600B3CA55 /* UIButton+SOSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SOSMessage.m"; sourceTree = "<group>"; };
 		517ECA4C14BCD39B00B3CA55 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -215,6 +219,8 @@
 		516515CE145DEA4000CF6C45 /* sosmessage */ = {
 			isa = PBXGroup;
 			children = (
+				517E321914F0DB1D003565F9 /* AdBannerNavigationController.h */,
+				517E321A14F0DB1D003565F9 /* AdBannerNavigationController.m */,
 				51A5CE081465227C00B274B3 /* SOSMessageConstant.h */,
 				510CB93D1471A6520039C8A0 /* SMUrlBase.h */,
 				51A5CE0E146677DE00B274B3 /* Category */,
@@ -416,6 +422,7 @@
 				515F720D14BE2CF5004676E1 /* UIColor+SOSMessage.m in Sources */,
 				515F720E14BE2CF5004676E1 /* SMProposeNewMessageController.m in Sources */,
 				515F720F14BE2CF5004676E1 /* UIButton+SOSMessage.m in Sources */,
+				517E321C14F0DB1D003565F9 /* AdBannerNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +441,7 @@
 				5109146614AE279800047A47 /* UIColor+SOSMessage.m in Sources */,
 				51973E3214B64B650062C26B /* SMProposeNewMessageController.m in Sources */,
 				517ECA4314B9A8F600B3CA55 /* UIButton+SOSMessage.m in Sources */,
+				517E321B14F0DB1D003565F9 /* AdBannerNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

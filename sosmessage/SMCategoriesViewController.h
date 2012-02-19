@@ -9,7 +9,7 @@
 #import "SOSMessageConstant.h"
 #import <MessageUI/MessageUI.h>
 
-@interface SMCategoriesViewController : UIViewController<SMMessageDelegate, MFMailComposeViewControllerDelegate>
+@interface SMCategoriesViewController : UIViewController<SMMessageDelegate, MFMailComposeViewControllerDelegate, UINavigationControllerDelegate>
 
 @property (retain, nonatomic) IBOutlet UIButton *infoButton;
 @property (retain, nonatomic) IBOutlet UIImageView *titleImage;

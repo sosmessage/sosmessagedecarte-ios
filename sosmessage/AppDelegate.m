@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "SMCategoriesViewController.h"
+#import "AdBannerNavigationController.h"
 
 @implementation AppDelegate
 
@@ -25,8 +26,16 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
     SMCategoriesViewController *categories = [[[SMCategoriesViewController alloc] initWithNibName:@"SMCategoriesViewController" bundle:nil] autorelease];
-    UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:categories] autorelease];
+    UINavigationController *nav;
+    if ([AppDelegate isIAdCompliant]) {
+        NSLog(@"With iAd");
+        nav = [[[AdBannerNavigationController alloc] initWithRootViewController:categories] autorelease];
+    } else {
+        NSLog(@"Without iAd");
+        nav = [[[UINavigationController alloc] initWithRootViewController:categories] autorelease];
+    }
     nav.navigationBarHidden = YES;
+    nav.delegate = categories;
     
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
@@ -140,6 +149,10 @@
         fontSize = 22;
     }
     return [UIFont fontWithName:@"Georgia" size:fontSize];;
+}
+
++(BOOL)isIAdCompliant {
+    return [AppDelegate applicationName] ? YES : NO;
 }
 
 +(NSString *)applicationName {

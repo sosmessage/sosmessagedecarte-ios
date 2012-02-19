@@ -334,6 +334,14 @@ static char sosMessageKey;
     [about release];
 }
 
+#pragma mark NSNavigationControllerDelegate
+-(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (viewController == self) {
+        NSLog(@"Categories vie wcontroller will be shown");
+        [self refreshCategories];
+    }
+}
+
 #pragma mark NSMessageHandlerDelegate
 
 - (void)startActivityFromMessageHandler:(SMMessagesHandler *)messageHandler

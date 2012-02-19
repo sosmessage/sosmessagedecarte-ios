@@ -22,6 +22,7 @@
 - (int)deviceSpecificCategoriesMarginWidth;
 
 + (UIColor*)buildUIColorFromARGBStringRepresentation:(NSString*)aString;
++ (BOOL)isIAdCompliant; 
 + (NSString*)applicationName;
 + (NSString*)applicationReadableName;
 

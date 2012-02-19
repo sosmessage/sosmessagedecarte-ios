@@ -13,7 +13,7 @@
 
 @implementation AppDelegate
 
-@synthesize window = _window;
+@synthesize window = _window, refreshCategories;
 
 - (void)dealloc
 {
@@ -38,6 +38,7 @@
     nav.delegate = categories;
     
     self.window.rootViewController = nav;
+    self.refreshCategories = NO;
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -52,6 +53,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+    self.refreshCategories = YES;
     /*
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
@@ -180,6 +182,10 @@
     [[NSScanner scannerWithString:[aString substringWithRange:NSMakeRange(7, 2)]] scanHexInt:&blue];
     
     return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:alpha/255.0f];
+}
+
++ (AppDelegate *)sharedDelegate {
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 @end

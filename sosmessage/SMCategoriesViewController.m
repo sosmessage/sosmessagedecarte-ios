@@ -195,6 +195,13 @@ static char sosMessageKey;
 }
 
 - (void)refreshCategories {
+    if ([AppDelegate sharedDelegate].refreshCategories) {
+        NSLog(@"Request new categories.");
+        [AppDelegate sharedDelegate].refreshCategories = NO;
+        [self.messageHandler requestCategories];
+        return;
+    }
+    
     NSLog(@"Categories refreshed");
     [self removeCategoriesLabel];
     NSMutableArray* workingCategories = [[NSMutableArray alloc] initWithArray:categories];
@@ -336,8 +343,8 @@ static char sosMessageKey;
 
 #pragma mark NSNavigationControllerDelegate
 -(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    // Only if it is the top controller aka categoriesController
     if (viewController == self) {
-        NSLog(@"Categories vie wcontroller will be shown");
         [self refreshCategories];
     }
 }
@@ -358,6 +365,7 @@ static char sosMessageKey;
 - (void)messageHandler:(SMMessagesHandler *)messageHandler didFinishWithJSon:(id)result
 {
     if ([result objectForKey:CATEGORIES_COUNT] > 0) {
+        self.categories = nil;
         self.categories = [[[NSMutableArray alloc] initWithArray:[result objectForKey:CATEGORIES_ITEMS]] autorelease];
         [self refreshCategories];
         

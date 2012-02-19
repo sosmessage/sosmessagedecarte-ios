@@ -13,6 +13,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, assign) BOOL refreshCategories;
 
 - (int)deviceSpecificNumberOfBlocks;
 - (UIFont*)deviceSpecificCategoryFont;
@@ -21,6 +22,7 @@
 - (int)deviceSpecificCategoriesMarginHeight;
 - (int)deviceSpecificCategoriesMarginWidth;
 
++ (AppDelegate *)sharedDelegate;
 + (UIColor*)buildUIColorFromARGBStringRepresentation:(NSString*)aString;
 + (BOOL)isIAdCompliant; 
 + (NSString*)applicationName;

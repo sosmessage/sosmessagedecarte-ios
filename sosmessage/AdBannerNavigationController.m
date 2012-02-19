@@ -7,8 +7,13 @@
 //
 
 #import "AdBannerNavigationController.h"
+#import "SMCategoriesViewController.h"
 
 #define BANNER_HEIGHT 50
+
+@interface AdBannerNavigationController ()
+-(void)refreshCategories;
+@end
 
 @implementation AdBannerNavigationController
 
@@ -33,22 +38,42 @@
 
 - (void)tearDownBanner:(ADBannerView *)banner {
     CGRect selfFrame = self.view.frame;
-    [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
-    banner.frame = CGRectMake(0, selfFrame.size.height, selfFrame.size.width, 0);
-    UIView *content = [self.view.subviews objectAtIndex:0];
-    content.frame = CGRectMake(selfFrame.origin.x, selfFrame.origin.y, selfFrame.size.width, selfFrame.size.height);
-    [UIView commitAnimations];
-    self.bannerVisible = NO;
+    [UIView animateWithDuration:0.4
+                     animations:^{    
+                         banner.frame = CGRectMake(0, selfFrame.size.height, selfFrame.size.width, 0);
+                         UIView *content = [self.view.subviews objectAtIndex:0];
+                         content.frame = CGRectMake(selfFrame.origin.x, selfFrame.origin.y, selfFrame.size.width, selfFrame.size.height);
+                     }
+                     completion:^(BOOL finished){
+                         [self refreshCategories];
+                         self.bannerVisible = NO; 
+                     }
+     ];
 }
 
 - (void)tearUpBanner:(ADBannerView *)banner {
     CGRect selfFrame = self.view.frame;
-    [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
-    banner.frame = CGRectMake(0, selfFrame.size.height - BANNER_HEIGHT, selfFrame.size.width, BANNER_HEIGHT);
-    UIView *content = [self.view.subviews objectAtIndex:0];
-    content.frame = CGRectMake(selfFrame.origin.x, selfFrame.origin.y, selfFrame.size.width, selfFrame.size.height - BANNER_HEIGHT);
-    [UIView commitAnimations];
-    self.bannerVisible = YES;
+    
+    [UIView animateWithDuration:0.4
+                     animations:^{
+                         banner.frame = CGRectMake(0, selfFrame.size.height - BANNER_HEIGHT, selfFrame.size.width, BANNER_HEIGHT);
+                         UIView *content = [self.view.subviews objectAtIndex:0];
+                         content.frame = CGRectMake(selfFrame.origin.x, selfFrame.origin.y, selfFrame.size.width, selfFrame.size.height - BANNER_HEIGHT);
+                     }
+                     completion:^(BOOL finished){
+                         [self refreshCategories];
+                         self.bannerVisible = YES;
+                     }
+     ];
+}
+
+#pragma mark - Categories refresh
+
+-(void)refreshCategories {
+    if (self.topViewController == self.visibleViewController) {
+        SMCategoriesViewController *categories = (SMCategoriesViewController *)self.topViewController;
+        [categories refreshCategories];
+    }
 }
 
 #pragma mark - View lifecycle

@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1280</int>
-		<string key="IBDocument.SystemVersion">11C74</string>
+		<string key="IBDocument.SystemVersion">11D50b</string>
 		<string key="IBDocument.InterfaceBuilderVersion">1938</string>
-		<string key="IBDocument.AppKitVersion">1138.23</string>
-		<string key="IBDocument.HIToolboxVersion">567.00</string>
+		<string key="IBDocument.AppKitVersion">1138.32</string>
+		<string key="IBDocument.HIToolboxVersion">568.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">933</string>
@@ -63,7 +63,7 @@
 								<string key="NSFrame">{{144, 365}, {156, 21}}</string>
 								<reference key="NSSuperview" ref="417961653"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="693967669"/>
+								<reference key="NSNextKeyView" ref="1026740732"/>
 								<string key="NSReuseIdentifierKey">_NS:328</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -300,10 +300,36 @@
 									<bytes key="NSRGB">MC4xOTYwNzg0MzE0IDAuMzA5ODAzOTIxNiAwLjUyMTU2ODYyNzUAA</bytes>
 								</object>
 								<reference key="IBUINormalTitleShadowColor" ref="872322840"/>
-								<object class="NSCustomResource" key="IBUINormalImage">
+								<object class="NSCustomResource" key="IBUINormalImage" id="742909841">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">btn_next.png</string>
 								</object>
+								<reference key="IBUIFontDescription" ref="983901476"/>
+								<reference key="IBUIFont" ref="673631208"/>
+							</object>
+							<object class="IBUIButton" id="1026740732">
+								<reference key="NSNextResponder" ref="417961653"/>
+								<int key="NSvFlags">265</int>
+								<string key="NSFrame">{{20, 394}, {57, 50}}</string>
+								<reference key="NSSuperview" ref="417961653"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="693967669"/>
+								<string key="NSReuseIdentifierKey">_NS:225</string>
+								<bool key="IBUIOpaque">NO</bool>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<int key="IBUIContentHorizontalAlignment">0</int>
+								<int key="IBUIContentVerticalAlignment">0</int>
+								<double key="IBUIImageEdgeInsets.top">7</double>
+								<double key="IBUIImageEdgeInsets.bottom">7</double>
+								<double key="IBUIImageEdgeInsets.left">5</double>
+								<double key="IBUIImageEdgeInsets.right">5</double>
+								<reference key="IBUIHighlightedTitleColor" ref="991564933"/>
+								<object class="NSColor" key="IBUINormalTitleColor">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MC4xOTYwNzg0MzE0IDAuMzA5ODAzOTIxNiAwLjUyMTU2ODYyNzUAA</bytes>
+								</object>
+								<reference key="IBUINormalTitleShadowColor" ref="872322840"/>
+								<reference key="IBUINormalImage" ref="742909841"/>
 								<reference key="IBUIFontDescription" ref="983901476"/>
 								<reference key="IBUIFont" ref="673631208"/>
 							</object>
@@ -515,6 +541,14 @@
 					<int key="connectionID">47</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">PreviousMessageButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1026740732"/>
+					</object>
+					<int key="connectionID">50</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">dismissButtonPressed:</string>
 						<reference key="source" ref="364306467"/>
@@ -558,6 +592,15 @@
 						<int key="IBEventType">7</int>
 					</object>
 					<int key="connectionID">44</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">previousButtonPressed:</string>
+						<reference key="source" ref="1026740732"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">52</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -610,6 +653,7 @@
 							<reference ref="256822962"/>
 							<reference ref="499637540"/>
 							<reference ref="693967669"/>
+							<reference ref="1026740732"/>
 						</array>
 						<reference key="parent" ref="191373211"/>
 					</object>
@@ -676,6 +720,11 @@
 						<reference key="object" ref="829431069"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">48</int>
+						<reference key="object" ref="1026740732"/>
+						<reference key="parent" ref="417961653"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -704,13 +753,16 @@
 				<real value="0.0" key="41.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="45.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="46.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="48.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<real value="2" key="48.IBUIButtonInspectorSelectedEdgeInsetMetadataKey"/>
+				<real value="0.0" key="48.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">47</int>
+			<int key="maxID">52</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -719,6 +771,7 @@
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="dismissButtonPressed:">id</string>
+						<string key="previousButtonPressed:">id</string>
 						<string key="reloadButtonPressed:">id</string>
 						<string key="sendMessagePressed:">id</string>
 						<string key="voteButtonPressed:">id</string>
@@ -726,6 +779,10 @@
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="dismissButtonPressed:">
 							<string key="name">dismissButtonPressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="previousButtonPressed:">
+							<string key="name">previousButtonPressed:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="reloadButtonPressed:">
@@ -742,6 +799,7 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="PreviousMessageButton">UIButton</string>
 						<string key="backButton">UIButton</string>
 						<string key="backgroundView">UIView</string>
 						<string key="contributorLabel">UILabel</string>
@@ -755,6 +813,10 @@
 						<string key="votePlusScoring">UILabel</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="PreviousMessageButton">
+							<string key="name">PreviousMessageButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="backButton">
 							<string key="name">backButton</string>
 							<string key="candidateClassName">UIButton</string>

@@ -135,6 +135,14 @@ bool receiving = false;
     [self requestUrl:[NSString stringWithFormat:@"%@/api/v1/categories/%@/message", SM_URL, aCategoryId]];
 }
 
+- (void)requestWorstMessageForCategory:(NSString*)aCategoryId {
+    [self requestUrl:[NSString stringWithFormat:@"%@/api/v1/categories/%@/worst", SM_URL, aCategoryId]];
+}
+
+- (void)requestBestMessageForCategory:(NSString*)aCategoryId {
+    [self requestUrl:[NSString stringWithFormat:@"%@/api/v1/categories/%@/best", SM_URL, aCategoryId]];    
+}
+
 -(void)requestProposeMessage:(NSString*)aMessage author:(NSString*)anAuthor category:(NSString*)aCategoryId {
     [self requestPOSTUrl:[NSString stringWithFormat:@"%@/api/v1/categories/%@/message", SM_URL, aCategoryId] params:[NSDictionary dictionaryWithObjectsAndKeys:aMessage, @"text", anAuthor, @"contributorName", nil]];
 }

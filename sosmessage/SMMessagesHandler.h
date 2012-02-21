@@ -22,6 +22,8 @@
 - (void)requestCategories;
 - (void)requestVote:(NSInteger)vote messageId:(NSString*)messageId;
 - (void)requestRandomMessageForCategory:(NSString*)aCategoryId;
+- (void)requestWorstMessageForCategory:(NSString*)aCategoryId;
+- (void)requestBestMessageForCategory:(NSString*)aCategoryId;
 - (void)requestProposeMessage:(NSString*)aMessage author:(NSString*)anAuthor category:(NSString*)aCategoryId;
 
 @end

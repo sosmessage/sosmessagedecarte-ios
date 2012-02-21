@@ -18,6 +18,7 @@
 @property (retain, nonatomic) IBOutlet UITextView *messageText;
 @property (retain, nonatomic) IBOutlet UIButton *sendMessageButton;
 @property (retain, nonatomic) IBOutlet UIButton *otherMessageButton;
+@property (retain, nonatomic) IBOutlet UIButton *PreviousMessageButton;
 @property (retain, nonatomic) IBOutlet UILabel *contributorLabel;
 
 @property (retain, nonatomic) IBOutlet UIButton *votePlusButton;
@@ -32,8 +33,8 @@
 - (void)renderTitle;
 - (void)refreshRenders;
 - (IBAction)reloadButtonPressed:(id)sender;
+- (IBAction)previousButtonPressed:(id)sender;
 - (IBAction)sendMessagePressed:(id)sender;
 
 - (IBAction)voteButtonPressed:(id)sender;
-
 @end

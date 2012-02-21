@@ -17,12 +17,15 @@
 #define LBL_MAIL    @"Mail"
 
 @interface SMMessageViewController () <UIActionSheetDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate> {
-
+    int currentMessageIndex;
 }
 @property (retain, nonatomic) NSDictionary* category;
 @property (retain, nonatomic) SMMessagesHandler* messageHandler;
 @property (retain, nonatomic) NSString* messageId;
+@property (retain, nonatomic) NSArray* messages;
 
+-(void)messageFillWithHUD:(NSDictionary *)message;
+-(void)messageFill:(NSDictionary *)message;
 @end
 
 @implementation SMMessageViewController
@@ -31,6 +34,7 @@
 @synthesize messageText;
 @synthesize sendMessageButton;
 @synthesize otherMessageButton;
+@synthesize PreviousMessageButton;
 @synthesize contributorLabel;
 @synthesize votePlusButton;
 @synthesize voteMinusButton;
@@ -40,6 +44,7 @@
 @synthesize category;
 @synthesize messageHandler;
 @synthesize messageId;
+@synthesize messages;
 
 float baseHue;
 
@@ -58,6 +63,7 @@ float baseHue;
         [self.voteMinusButton appendOverlaysWithHue:baseHue];
         [self.sendMessageButton appendOverlaysWithHue:baseHue];
         [self.backButton appendOverlaysWithHue:baseHue];
+        [self.PreviousMessageButton appendOverlaysWithHue:baseHue];
         
         self.voteMinusScoring.font = MESSAGE_FONT;
         self.votePlusScoring.font = MESSAGE_FONT;
@@ -66,6 +72,11 @@ float baseHue;
         id iMessageHandler = [[SMMessagesHandler alloc] initWithDelegate:self];
         self.messageHandler = iMessageHandler;
         [iMessageHandler release];
+        
+        //revert previousMessageImage
+        self.PreviousMessageButton.imageView.transform = CGAffineTransformMake(-1, 0, 0, 1, 0, self.PreviousMessageButton.imageView.bounds.size.width);
+        self.PreviousMessageButton.hidden = YES;
+        self.otherMessageButton.hidden = YES;
     }
     return self;
 }
@@ -140,6 +151,8 @@ float baseHue;
     [self setVoteMinusScoring:nil];
     [self setSendMessageButton:nil];
     [self setBackButton:nil];
+    [self setPreviousMessageButton:nil];
+    [self setMessages:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -186,6 +199,8 @@ float baseHue;
     [voteMinusScoring release];
     [sendMessageButton release];
     [backButton release];
+    [PreviousMessageButton release];
+    [messages release];
     [super dealloc];
 }
 
@@ -197,6 +212,10 @@ float baseHue;
 
 - (IBAction)reloadButtonPressed:(id)sender {
     [self fetchAMessage];
+}
+
+- (IBAction)previousButtonPressed:(id)sender {
+    [self messageFillWithHUD:[self.messages objectAtIndex:--currentMessageIndex]];
 }
 
 - (IBAction)sendMessagePressed:(id)sender {
@@ -285,7 +304,21 @@ float baseHue;
 }
 
 -(void)fetchAMessage {
-    [self.messageHandler requestRandomMessageForCategory:[self.category objectForKey:CATEGORY_ID]];
+    if (!self.messages) {
+        //[self.messageHandler requestRandomMessageForCategory:[self.category objectForKey:CATEGORY_ID]];
+        [self.messageHandler requestBestMessageForCategory:[self.category objectForKey:CATEGORY_ID]];
+    } else {
+        [self messageFillWithHUD:[self.messages objectAtIndex:++currentMessageIndex]];
+    }
+}
+
+-(void)messageFillWithHUD:(NSDictionary *)message {
+    MBProgressHUD *hud = [[[MBProgressHUD alloc] initWithView:self.view.window] autorelease];
+    [self.view addSubview:hud];
+    hud.labelText = [NSString stringWithFormat:@"Message #%d", currentMessageIndex + 1];
+    [hud show:YES];
+    [hud hide:YES afterDelay:1];
+    [self messageFill:message];
 }
 
 #pragma mark NSMessageHandlerDelegate
@@ -303,6 +336,20 @@ float baseHue;
 
 - (void)messageHandler:(SMMessagesHandler *)messageHandler didFinishWithJSon:(id)result
 {
+    if ([result objectForKey:@"count"]) {
+        //list of message
+        self.messages = [result objectForKey:@"items"];
+        currentMessageIndex = 0;
+        [self messageFill:[self.messages objectAtIndex:currentMessageIndex]];
+    } else {
+        //only one
+        [self messageFill:result];
+    }
+    self.otherMessageButton.hidden = NO;
+    self.PreviousMessageButton.hidden = self.messages ? NO : YES;
+}
+
+-(void)messageFill:(NSDictionary *)result {
     if (self.messageText) {
         self.messageText.font = MESSAGE_FONT;
         self.messageId = [result objectForKey:MESSAGE_ID];
@@ -316,6 +363,11 @@ float baseHue;
         self.votePlusScoring.text = [NSString stringWithFormat:@"%@", [[result objectForKey:MESSAGE_VOTE] objectForKey:VOTE_PLUS]];
         
         self.messageText.textColor = [UIColor colorWithHue:baseHue saturation:1.0 brightness:0.3 alpha:1.0];
+    }
+    
+    if (self.messages) {
+        self.PreviousMessageButton.enabled = currentMessageIndex != 0;
+        self.otherMessageButton.enabled = currentMessageIndex < self.messages.count - 1;
     }
 }
 

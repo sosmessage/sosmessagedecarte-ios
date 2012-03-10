@@ -68,12 +68,14 @@ bool receiving = false;
     [self resetData];
     receiving = true;
     [self.delegate startActivityFromMessageHandler:self];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
 -(void)stopWorking {
     if (receiving) {
         receiving = false;
         [self.delegate stopActivityFromMessageHandler:self];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     }
 }
 

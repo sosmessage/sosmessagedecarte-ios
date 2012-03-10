@@ -370,7 +370,12 @@ float baseHue;
     if (self.messageText) {
         self.messageText.font = MESSAGE_FONT;
         self.messageId = [result objectForKey:MESSAGE_ID];
-        self.messageText.text = [NSString stringWithFormat:@"%@\n\n\t%@", [result objectForKey:MESSAGE_TEXT], [result objectForKey:MESSAGE_CONTRIBUTOR]];
+        if ([result objectForKey:MESSAGE_CONTRIBUTOR]) {
+            self.messageText.text = [NSString stringWithFormat:@"%@\n\n\t%@", [result objectForKey:MESSAGE_TEXT], [result objectForKey:MESSAGE_CONTRIBUTOR]];
+        } else {
+            self.messageText.text = [NSString stringWithFormat:@"%@", [result objectForKey:MESSAGE_TEXT]];
+        }
+
         //self.contributorLabel.text = [result objectForKey:MESSAGE_CONTRIBUTOR];
         
         NSInteger vote = [[[result objectForKey:MESSAGE_VOTE] objectForKey:VOTE_USERVOTE] integerValue];

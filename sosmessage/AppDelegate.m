@@ -96,10 +96,10 @@
 
 - (int)deviceSpecificCategoriesMarginWidth {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return 20;
+        return 10;
     }
     else {
-        return 30;
+        return 15;
     }
 }
 
@@ -116,15 +116,15 @@
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         if (orientation == UIDeviceOrientationPortrait || orientation == UIDeviceOrientationPortraitUpsideDown) {
-            return 4;
-        } else {
             return 5;
+        } else {
+            return 7;
         }
     } else {
         if (orientation == UIDeviceOrientationPortrait || orientation == UIDeviceOrientationPortraitUpsideDown) {
-            return 3;
+            return 7;
         } else {
-            return 6;
+            return 10;
         }
     }
 }
@@ -142,7 +142,7 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         fontSize = 16;
     }
-    return [UIFont fontWithName:@"Georgia" size:fontSize];;
+    return [UIFont fontWithName:@"Georgia" size:fontSize];
 }
 
 - (UIFont *)deviceSpecificCategoryFont {
@@ -150,7 +150,7 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         fontSize = 22;
     }
-    return [UIFont fontWithName:@"Georgia" size:fontSize];;
+    return [UIFont fontWithName:@"Georgia" size:fontSize];
 }
 
 +(BOOL)isIAdCompliant {
@@ -166,6 +166,10 @@
 }
 
 + (UIColor*)buildUIColorFromARGBStringRepresentation:(NSString*)aString {
+    return [AppDelegate buildUIColorFromARGBStringRepresentation:aString plusRed:0 plusGreen:0 plusBlue:0];
+}
+
++ (UIColor*)buildUIColorFromARGBStringRepresentation:(NSString*)aString plusRed:(float)pRed plusGreen:(float)pGreen plusBlue:(float)pBlue {
     if ([aString length] != 9) {
         NSLog(@"Unable to calculate color from: %@", aString);
         return nil;
@@ -181,7 +185,11 @@
     [[NSScanner scannerWithString:[aString substringWithRange:NSMakeRange(5, 2)]] scanHexInt:&green];
     [[NSScanner scannerWithString:[aString substringWithRange:NSMakeRange(7, 2)]] scanHexInt:&blue];
     
-    return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:alpha/255.0f];
+    red = red + (red * pRed);
+    blue = blue + (blue * pBlue);
+    green = green + (green * pGreen);
+    
+    return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:alpha/255.0f];    
 }
 
 + (AppDelegate *)sharedDelegate {

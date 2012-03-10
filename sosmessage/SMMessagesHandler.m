@@ -214,4 +214,19 @@ bool receiving = false;
     currentConnection = nil;
     [super dealloc];
 }
+
+#pragma mark selectors helpers
++(SEL)selectorRequestMessageRandom {
+    return @selector(requestRandomMessageForCategory:);
+}
+
++(SEL)selectorRequestMessageBest {
+    return @selector(requestBestMessageForCategory:);
+}
+
++(SEL)selectorRequestMessageWorst {
+    return @selector(requestWorstMessageForCategory:);
+}
+
+
 @end

@@ -60,6 +60,10 @@
 
 #define FONT_NAME           @"Helvetica"
 
+#pragma mark CONSTANT
+#define kTEXT_TOP           @"TOP"
+#define kTEXT_FLOP          @"FLOP"
+
 #pragma mark DECLARE ASSOCIATIVE REFERENCE METHODS
 typedef uintptr_t objc_AssociationPolicy;
 void objc_setAssociatedObject(id object, void *key, id value, objc_AssociationPolicy policy);

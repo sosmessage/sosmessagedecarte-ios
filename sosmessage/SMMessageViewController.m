@@ -18,6 +18,8 @@
 
 @interface SMMessageViewController () <UIActionSheetDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate> {
     int currentMessageIndex;
+    SEL messageHandlerSelector;
+    NSString *subTitle;
 }
 @property (retain, nonatomic) NSDictionary* category;
 @property (retain, nonatomic) SMMessagesHandler* messageHandler;
@@ -77,6 +79,18 @@ float baseHue;
         self.PreviousMessageButton.imageView.transform = CGAffineTransformMake(-1, 0, 0, 1, 0, self.PreviousMessageButton.imageView.bounds.size.width);
         self.PreviousMessageButton.hidden = YES;
         self.otherMessageButton.hidden = YES;
+        
+        messageHandlerSelector = [SMMessagesHandler selectorRequestMessageRandom];
+        subTitle = @"";
+    }
+    return self;
+}
+
+- (id)initWithCategory:(NSDictionary *)aCategory messageHandlerSelector:(SEL) s title:(NSString *)aTitle {
+    self = [self initWithCategory:aCategory];
+    if (self) {
+        messageHandlerSelector = s;
+        subTitle = aTitle;
     }
     return self;
 }
@@ -258,7 +272,7 @@ float baseHue;
     NSString* categoryName = [self.category objectForKey:CATEGORY_NAME];
     
     //Concat sosheader and category name
-    NSMutableString* header = [NSMutableString stringWithFormat:@"%@%@%@", @"sosmessage\n", categoryName.preposition, [categoryName lowercaseString]];
+    NSMutableString* header = [NSMutableString stringWithFormat:@"%@%@%@%@", subTitle, @"sosmessage\n", categoryName.preposition, [categoryName lowercaseString]];
     
     NSLog(@"Header: %@", [header lowercaseString]);
     NSInteger _stringLength=[header length];
@@ -270,11 +284,13 @@ float baseHue;
     CGColorRef _black= [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0].CGColor;
     //CGColorRef _hue= [UIColor colorWithHue:baseHue saturation:0.9 brightness:0.7 alpha:1].CGColor;
     CGColorRef _hue= [UIColor whiteColor].CGColor;
-    
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(0, 3),kCTForegroundColorAttributeName, _black);
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(3, 7),kCTForegroundColorAttributeName, _hue);
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(10, 3),kCTForegroundColorAttributeName, _black);
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(13, _stringLength - 13),kCTForegroundColorAttributeName, _hue);
+
+    int stl = [subTitle length];
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(0, [subTitle length]),kCTForegroundColorAttributeName, _hue);
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(stl, 3),kCTForegroundColorAttributeName, _black);
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(stl + 3, 7),kCTForegroundColorAttributeName, _hue);
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(stl + 10, 3),kCTForegroundColorAttributeName, _black);
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(stl + 13, _stringLength - (13 + stl)),kCTForegroundColorAttributeName, _hue);
     
     CTFontRef font = CTFontCreateWithName((CFStringRef)FONT_NAME, 20, nil);
     CFAttributedStringSetAttribute(attrString,CFRangeMake(0, _stringLength),kCTFontAttributeName,font);
@@ -305,8 +321,9 @@ float baseHue;
 
 -(void)fetchAMessage {
     if (!self.messages) {
+        [self.messageHandler performSelector:messageHandlerSelector withObject:[self.category objectForKey:CATEGORY_ID]];
         //[self.messageHandler requestRandomMessageForCategory:[self.category objectForKey:CATEGORY_ID]];
-        [self.messageHandler requestBestMessageForCategory:[self.category objectForKey:CATEGORY_ID]];
+        //[self.messageHandler requestBestMessageForCategory:[self.category objectForKey:CATEGORY_ID]];
     } else {
         [self messageFillWithHUD:[self.messages objectAtIndex:++currentMessageIndex]];
     }
@@ -315,7 +332,7 @@ float baseHue;
 -(void)messageFillWithHUD:(NSDictionary *)message {
     MBProgressHUD *hud = [[[MBProgressHUD alloc] initWithView:self.view.window] autorelease];
     [self.view addSubview:hud];
-    hud.labelText = [NSString stringWithFormat:@"Message #%d", currentMessageIndex + 1];
+    hud.labelText = [NSString stringWithFormat:@"%@message #%d", subTitle, currentMessageIndex + 1];
     [hud show:YES];
     [hud hide:YES afterDelay:1];
     [self messageFill:message];

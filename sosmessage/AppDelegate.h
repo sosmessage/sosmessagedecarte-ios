@@ -24,6 +24,7 @@
 
 + (AppDelegate *)sharedDelegate;
 + (UIColor*)buildUIColorFromARGBStringRepresentation:(NSString*)aString;
++ (UIColor*)buildUIColorFromARGBStringRepresentation:(NSString*)aString plusRed:(float)pRed plusGreen:(float)pGreen plusBlue:(float)pBlue ;
 + (BOOL)isIAdCompliant; 
 + (NSString*)applicationName;
 + (NSString*)applicationReadableName;

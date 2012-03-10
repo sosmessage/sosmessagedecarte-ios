@@ -124,10 +124,12 @@ static char sosMessageKey;
 }
 
 - (void)addSOSCategory:(NSDictionary*)category inPosX:(int)posX andPosY:(int)posY forBlock:(int)nbBlock {
-    NSString* category_name = [category objectForKey:CATEGORY_NAME];
+    NSString* category_name = [category objectForKey:CATEGORY_NAME];    
+    int categoryBlock = nbBlock;
     
-    UILabel* uiLabel = [self buildUILabelForBlock:nbBlock inPosX:posX andPosY:posY];
-    
+    // CATEGORY LABEL
+    UILabel* uiLabel = [self buildUILabelForBlock:categoryBlock inPosX:0 andPosY:posY];
+
     uiLabel.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR]];
     uiLabel.text = [NSString stringWithFormat:@"%@%@", category_name.prepositionWithSpace, category_name];
     uiLabel.font = CATEGORY_FONT;
@@ -143,6 +145,42 @@ static char sosMessageKey;
     [categoryTap release];
     
     [self.view insertSubview:uiLabel belowSubview:self.infoButton];
+    
+    // FLOP LABEL
+    UILabel* flopLabel = [self buildUILabelForBlock:1 inPosX:categoryBlock - 1 andPosY:posY];
+    flopLabel.text = kTEXT_TOP;
+    flopLabel.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR] plusRed:-0.1 plusGreen:0.3 plusBlue:-0.1];
+    flopLabel.font = [UIFont fontWithName:@"Georgia" size:13];
+    flopLabel.textColor = [UIColor colorWithHue:uiLabel.backgroundColor.hue saturation:1.0 brightness:0.3 alpha:1.0];
+    flopLabel.textAlignment = UITextAlignmentCenter;
+    flopLabel.layer.cornerRadius = 3.0f;
+    flopLabel.userInteractionEnabled = YES;
+    
+    objc_setAssociatedObject(flopLabel, &sosMessageKey, category, 0);
+    
+    categoryTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCategoryTapping:)];
+    [flopLabel addGestureRecognizer:categoryTap];
+    [categoryTap release];
+    
+    [self.view insertSubview:flopLabel aboveSubview:uiLabel];
+    
+    // TOP LABEL
+    UILabel* topLabel = [self buildUILabelForBlock:1 inPosX:categoryBlock - 1 andPosY:posY];
+    topLabel.text = kTEXT_FLOP;
+    topLabel.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR] plusRed:0.3 plusGreen:-0.1 plusBlue:-0.1];
+    topLabel.font = [UIFont fontWithName:@"Georgia" size:13];
+    topLabel.textColor = [UIColor colorWithHue:uiLabel.backgroundColor.hue saturation:1.0 brightness:0.3 alpha:1.0];
+    topLabel.textAlignment = UITextAlignmentCenter;
+    topLabel.layer.cornerRadius = 3.0f;
+    topLabel.userInteractionEnabled = YES;
+    
+    objc_setAssociatedObject(topLabel, &sosMessageKey, category, 0);
+    
+    categoryTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCategoryTapping:)];
+    [topLabel addGestureRecognizer:categoryTap];
+    [categoryTap release];
+    
+    [self.view insertSubview:topLabel aboveSubview:uiLabel];
 }
 
 - (void)addSOSCategory:(NSDictionary*)category inPosX:(int)posX andPosY:(int)posY {
@@ -217,7 +255,9 @@ static char sosMessageKey;
             [self addSOSCategory:category inPosX:0 andPosY:[self.categories indexOfObject:category] forBlock:NB_BLOCKS];
         }
         y = [workingCategories count];
-    } else {
+    } 
+    /* temporaly disable this feature ... As the top / flop feature is not yet perfect
+    else {
         while (workingCategories.count > 0) {
             NSDictionary* category = [workingCategories objectAtIndex:0];
             int blockSize = [[category objectForKey:CATEGORY_NAME] blocksCount:self.view];
@@ -243,6 +283,7 @@ static char sosMessageKey;
             y++;
         }
     }
+     */
     [workingCategories release];
     
     if ([MFMailComposeViewController canSendMail]) {
@@ -267,6 +308,21 @@ static char sosMessageKey;
             float viewY = floorf(subView.frame.origin.y * fitHeight) + CATEGORIES_HEADER_SIZE - CATEGORIES_MARGIN_HEIGTH;
             float viewWidth = subView.frame.size.width - CATEGORIES_MARGIN_WIDTH;
             float viewHeight = fitHeight - CATEGORIES_MARGIN_HEIGTH;
+            
+            // Top / Flop handling ... what a mess :]
+            NSString *text = [((UILabel *)subView) text];
+            if (text == kTEXT_TOP || text == kTEXT_FLOP) {
+                int dummySpace = 1;
+                float viewMinus = viewHeight * 0.1;
+                viewHeight -= viewMinus;
+                viewY += viewMinus / 2;
+                viewX -= viewMinus / 2;
+                
+                if (text == kTEXT_FLOP) {
+                    viewY = viewY + viewHeight - ceilf(viewHeight / 2) + dummySpace;
+                }
+                viewHeight = floorf(viewHeight / 2) - dummySpace;
+            }
             
             subView.frame = CGRectMake(viewX, viewY, viewWidth, viewHeight);
             
@@ -328,7 +384,18 @@ static char sosMessageKey;
     
     NSLog(@"Category added: %@", category);
     
-    SMMessageViewController* detail = [[SMMessageViewController alloc] initWithCategory:category];
+    SEL sel = [SMMessagesHandler selectorRequestMessageRandom];
+    NSString *subtitle = @"";
+    if (uilabel.text == kTEXT_TOP) {
+        sel = [SMMessagesHandler selectorRequestMessageBest];
+        subtitle = @"top";
+    }
+    if (uilabel.text == kTEXT_FLOP) {
+        sel = [SMMessagesHandler selectorRequestMessageWorst];
+        subtitle = @"flop";
+    }
+    
+    SMMessageViewController* detail = [[SMMessageViewController alloc] initWithCategory:category messageHandlerSelector:sel title:subtitle];
     [self.navigationController pushViewController:detail animated:YES];
     
     [detail release];

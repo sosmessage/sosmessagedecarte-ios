@@ -15,6 +15,10 @@
 @property (assign) id <SMMessageDelegate,NSObject> delegate;
 @property (assign) NSInteger lastStatusCode;
 
++ (SEL) selectorRequestMessageRandom;
++ (SEL) selectorRequestMessageBest;
++ (SEL) selectorRequestMessageWorst;
+
 - (id)initWithDelegate:(id)delegate;
 - (void)requestUrl:(NSString*)url;
 - (void)requestPOSTUrl:(NSString*)url params:(NSDictionary*)params;

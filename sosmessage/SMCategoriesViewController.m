@@ -301,8 +301,6 @@ static char sosMessageKey;
             continue;
         }
         
-        NSDateFormatter* dateForm = [[NSDateFormatter alloc] init];
-        
         if ([subView isKindOfClass:[UILabel class]]) {
             float viewX = subView.frame.origin.x + CATEGORIES_MARGIN_WIDTH / 2;
             float viewY = floorf(subView.frame.origin.y * fitHeight) + CATEGORIES_HEADER_SIZE - CATEGORIES_MARGIN_HEIGTH;
@@ -350,7 +348,6 @@ static char sosMessageKey;
             float imgRation = img.size.height / img.size.width;
             subView.frame = CGRectMake(subView.frame.origin.x, floorf(subView.frame.origin.y * fitHeight), subView.frame.size.width, imgRation * subView.frame.size.width);
         }
-        [dateForm release];
     }
 }
 

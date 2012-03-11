@@ -12,7 +12,6 @@
 @interface AdBannerNavigationController : UINavigationController <ADBannerViewDelegate> {
 @private
     BOOL _bannerVisible;
-    CGRect bounds;
 }
 @property(nonatomic) BOOL bannerVisible;
 @end

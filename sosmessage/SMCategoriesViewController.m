@@ -325,6 +325,10 @@ static char sosMessageKey;
             }
             
             subView.frame = CGRectMake(viewX, viewY, viewWidth, viewHeight);
+
+            if (text == kTEXT_TOP || text == kTEXT_FLOP) {
+                continue;
+            }
             
             // Add "NEW" image above the label
             NSDictionary* category = (NSDictionary*)objc_getAssociatedObject(subView, &sosMessageKey);
@@ -332,7 +336,7 @@ static char sosMessageKey;
             if (category) {
                 double epoch = [[category objectForKey:CATEGORY_LASTADD] doubleValue] / 1000;
                 NSDate* categoryLastAdd = [NSDate dateWithTimeIntervalSince1970:epoch];
-                if ([self.lastFetchingDate compare:categoryLastAdd] != 1) {
+                if ([self.lastFetchingDate compare:categoryLastAdd] < 0) {
                     UIImageView* newImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"new.png"]];
                     
                     newImage.center = CGPointMake(viewX + 18, viewY + 15);
@@ -409,7 +413,7 @@ static char sosMessageKey;
 }
 
 #pragma mark NSNavigationControllerDelegate
--(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     // Only if it is the top controller aka categoriesController
     if (viewController == self) {
         [self refreshCategories];
@@ -420,13 +424,19 @@ static char sosMessageKey;
 
 - (void)startActivityFromMessageHandler:(SMMessagesHandler *)messageHandler
 {
+    NSLog(@"Try to add HUD");
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:TRUE];
     hud.labelText = @"Chargement ...";
 }
 
 - (void)stopActivityFromMessageHandler:(SMMessagesHandler *)messageHandler
 {
-    [MBProgressHUD hideHUDForView:self.view animated:true];
+    NSLog(@"Try to remove HUD");
+    if ([MBProgressHUD hideHUDForView:self.view animated:true]) {
+        NSLog(@"Removed");
+    } else {
+        NSLog(@"Not found");
+    }
 }
 
 - (void)messageHandler:(SMMessagesHandler *)messageHandler didFinishWithJSon:(id)result

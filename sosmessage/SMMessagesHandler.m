@@ -11,6 +11,8 @@
 @interface SMMessagesHandler () <NSURLConnectionDelegate> {
     @private
     id delegate;
+    
+    bool receiving;
 }
 
 + (void)showUIAlert;
@@ -33,11 +35,12 @@
 NSMutableData* data;
 NSURLConnection* currentConnection;
 
-bool receiving = false;
-
 #pragma mark Constructor
 - (id)init {
     self = [super init];
+    if (self) {
+        receiving = false;
+    }
     return self;
 }
 

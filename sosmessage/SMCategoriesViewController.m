@@ -216,7 +216,7 @@ static char sosMessageKey;
 }
 
 -(void)addMailPropositionBlockinPosY:(int)posY {
-    NSString* label = @"proposes tes messages";
+    NSString* label = @"propose tes messages";
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
     uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:0.5];
     uiLabel.text = label;

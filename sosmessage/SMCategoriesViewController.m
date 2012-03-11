@@ -336,14 +336,14 @@ static char sosMessageKey;
             if (category) {
                 double epoch = [[category objectForKey:CATEGORY_LASTADD] doubleValue] / 1000;
                 NSDate* categoryLastAdd = [NSDate dateWithTimeIntervalSince1970:epoch];
-                //if ([self.lastFetchingDate compare:categoryLastAdd] < 0) {
+                if ([self.lastFetchingDate compare:categoryLastAdd] < 0) {
                     UIImage *img = [UIImage imageNamed:@"new_stamp.png"];
                     UIImageView* newImage = [[UIImageView alloc] initWithImage:img];
                     newImage.center = CGPointMake(viewX + 50, viewY + 10);
                     
                     [self.view addSubview:newImage];
                     [newImage release];
-                //}
+                }
             }
         } else if ([subView isKindOfClass:[UIImageView class]]) {
             UIImage* img = [(UIImageView*)subView image];

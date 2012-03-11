@@ -337,7 +337,7 @@
 		516515BB145DEA4000CF6C45 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = 516515BE145DEA4000CF6C45 /* Build configuration list for PBXProject "sosmessage" */;
 			compatibilityVersion = "Xcode 3.2";

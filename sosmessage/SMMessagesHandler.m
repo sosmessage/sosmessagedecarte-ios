@@ -58,7 +58,7 @@ NSURLConnection* currentConnection;
     if (![settings objectForKey:kSOSUUID]) {
         CFUUIDRef theUUID = CFUUIDCreate(NULL);
         CFStringRef uuidStrRef = CFUUIDCreateString(NULL, theUUID);
-        NSString* theUUIDstr = [NSString stringWithString:(__bridge NSString*) uuidStrRef];
+        NSString* theUUIDstr = [NSString stringWithString:( NSString*) uuidStrRef];
         CFRelease(uuidStrRef);
         CFRelease(theUUID);
         [settings setValue:theUUIDstr forKey:kSOSUUID];

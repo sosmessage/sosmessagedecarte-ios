@@ -10,6 +10,7 @@
 #import "SMCategoriesViewController.h"
 
 #define BANNER_HEIGHT 50
+#define kBannerTag 12345341
 
 @interface AdBannerNavigationController ()
 -(void)refreshCategories;
@@ -35,6 +36,7 @@
 }
 
 #pragma mark - Custom method
+
 
 - (void)tearDownBanner:(ADBannerView *)banner {
     CGRect selfFrame = self.view.frame;
@@ -72,7 +74,9 @@
 -(void)refreshCategories {
     if (self.topViewController == self.visibleViewController) {
         SMCategoriesViewController *categories = (SMCategoriesViewController *)self.topViewController;
-        [categories refreshCategories];
+        if ([categories respondsToSelector:@selector(refreshCategories)]) {
+            [categories refreshCategories];
+        }
     }
 }
 
@@ -98,7 +102,9 @@
     // Do any additional setup after loading the view from its nib.
     ADBannerView *bannerView = [[ADBannerView alloc] initWithFrame:CGRectZero];
     bannerView.delegate = self;
+    bannerView.requiredContentSizeIdentifiers = [NSSet setWithObjects: ADBannerContentSizeIdentifierPortrait, ADBannerContentSizeIdentifierLandscape, nil];
     bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+    bannerView.tag = kBannerTag;
     self.bannerVisible = NO;
     [self.view addSubview:bannerView];
     [self tearDownBanner:bannerView];
@@ -116,9 +122,18 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    ADBannerView *banner = (ADBannerView *)[self.view viewWithTag:kBannerTag];
+    if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation))
+        banner.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
+    else
+        banner.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+}
+
 #pragma mark - ADBannerView delegate
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    NSLog(@"didFailToReceiveAdWithError");
     if (self.bannerVisible) {
         //NSLog(@"Hide banner ...");
         [self tearDownBanner:banner];
@@ -126,6 +141,7 @@
 }
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner {
+    NSLog(@"bannerViewDidLoadAd");
     if (!self.bannerVisible) {
         //NSLog(@"Display banner ...");
         [self tearUpBanner:banner];

@@ -138,7 +138,7 @@
 }
 
 - (UIFont *)deviceSpecificMessageFont {
-    int fontSize = 22;
+    int fontSize = 28;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         fontSize = 16;
     }
@@ -146,11 +146,15 @@
 }
 
 - (UIFont *)deviceSpecificCategoryFont {
-    int fontSize = 28;
+    int fontSize = 30;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         fontSize = 22;
     }
     return [UIFont fontWithName:@"Georgia" size:fontSize];
+}
+
++ (BOOL)isInsterstitialAdCompliant {
+    return [AppDelegate isIAdCompliant] && [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
 }
 
 +(BOOL)isIAdCompliant {

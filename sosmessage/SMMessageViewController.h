@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 #import "SOSMessageConstant.h"
 
-@interface SMMessageViewController : UIViewController {
-    
+@interface SMMessageViewController : UIViewController <ADInterstitialAdDelegate> {
+    ADInterstitialAd *interstitial;
 }
 
 @property (retain, nonatomic) IBOutlet UIView *backgroundView;

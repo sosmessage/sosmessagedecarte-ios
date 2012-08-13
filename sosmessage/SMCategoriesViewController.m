@@ -120,6 +120,9 @@ static char sosMessageKey;
     
     uiLabel.layer.cornerRadius = 7.0f;
     uiLabel.layer.masksToBounds = YES;
+    uiLabel.layer.borderWidth = 0.5f;
+    uiLabel.layer.borderColor = [[UIColor darkGrayColor] CGColor];
+    
     return [uiLabel autorelease];
 }
 
@@ -199,7 +202,7 @@ static char sosMessageKey;
 }
 
 -(void)addAdvertisingBlockinPosY:(int)posY {
-    NSString* label = @"de l'application complète";
+    NSString* label = @"Toutes les catégories";
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
     uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:0.5];
     uiLabel.text = label;

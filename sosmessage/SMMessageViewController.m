@@ -6,6 +6,7 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "SMMessageViewController.h"
 #import <CoreText/CoreText.h>
 #import <QuartzCore/QuartzCore.h>
@@ -18,6 +19,7 @@
 
 @interface SMMessageViewController () <UIActionSheetDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate> {
     int currentMessageIndex;
+    int fetchCount;
     SEL messageHandlerSelector;
     NSString *subTitle;
 }
@@ -82,6 +84,13 @@ float baseHue;
         
         messageHandlerSelector = [SMMessagesHandler selectorRequestMessageRandom];
         subTitle = @"";
+        
+        //load interstitil Ad
+        fetchCount = 0;
+        if ([AppDelegate isInsterstitialAdCompliant]) {
+            NSLog(@"Interstitial ad loaded.");
+            [self cycleInterstitial];
+        }
     }
     return self;
 }
@@ -167,6 +176,7 @@ float baseHue;
     [self setBackButton:nil];
     [self setPreviousMessageButton:nil];
     [self setMessages:nil];
+    interstitial = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -215,6 +225,7 @@ float baseHue;
     [backButton release];
     [PreviousMessageButton release];
     [messages release];
+    [interstitial release];
     [super dealloc];
 }
 
@@ -320,12 +331,22 @@ float baseHue;
 }
 
 -(void)fetchAMessage {
+    if (interstitial.loaded && fetchCount > 3) {
+        [interstitial presentFromViewController:self];
+        fetchCount = 0;
+        return;
+    }
+    
     if (!self.messages) {
         [self.messageHandler performSelector:messageHandlerSelector withObject:[self.category objectForKey:CATEGORY_ID]];
         //[self.messageHandler requestRandomMessageForCategory:[self.category objectForKey:CATEGORY_ID]];
         //[self.messageHandler requestBestMessageForCategory:[self.category objectForKey:CATEGORY_ID]];
     } else {
         [self messageFillWithHUD:[self.messages objectAtIndex:++currentMessageIndex]];
+    }
+    
+    if ([AppDelegate isInsterstitialAdCompliant]) {
+        fetchCount += 1;
     }
 }
 
@@ -435,5 +456,35 @@ float baseHue;
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
     [controller dismissModalViewControllerAnimated:TRUE];
 }
+
+#pragma mark iAd - interstitial
+- (void)cycleInterstitial {
+    interstitial.delegate = nil;
+    [interstitial release];
+    
+    interstitial = [[ADInterstitialAd alloc] init];
+    interstitial.delegate = self;    
+}
+
+#pragma mark ADInterstitialViewDelegate methods
+
+// When this method is invoked, the application should remove the view from the screen and tear it down.
+// The content will be unloaded shortly after this method is called and no new content will be loaded in that view.
+// This may occur either when the user dismisses the interstitial view via the dismiss button or
+// if the content in the view has expired.
+- (void)interstitialAdDidUnload:(ADInterstitialAd *)interstitialAd
+{
+    [self cycleInterstitial];
+    [self fetchAMessage];
+}
+
+// This method will be invoked when an error has occurred attempting to get advertisement content. 
+// The ADError enum lists the possible error codes.
+- (void)interstitialAd:(ADInterstitialAd *)interstitialAd didFailWithError:(NSError *)error
+{
+    [self cycleInterstitial];
+}
+
+#pragma mark -
 
 @end

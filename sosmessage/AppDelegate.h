@@ -26,6 +26,7 @@
 + (UIColor*)buildUIColorFromARGBStringRepresentation:(NSString*)aString;
 + (UIColor*)buildUIColorFromARGBStringRepresentation:(NSString*)aString plusRed:(float)pRed plusGreen:(float)pGreen plusBlue:(float)pBlue ;
 + (BOOL)isIAdCompliant; 
++ (BOOL)isInsterstitialAdCompliant;
 + (NSString*)applicationName;
 + (NSString*)applicationReadableName;
 

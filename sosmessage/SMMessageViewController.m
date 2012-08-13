@@ -374,14 +374,15 @@ float baseHue;
 
 - (void)messageHandler:(SMMessagesHandler *)messageHandler didFinishWithJSon:(id)result
 {
-    if ([result objectForKey:@"count"]) {
+    id response = [result objectForKey:JSON_RESPONSE];
+    if ([response objectForKey:@"count"]) {
         //list of message
-        self.messages = [result objectForKey:@"items"];
+        self.messages = [response objectForKey:@"items"];
         currentMessageIndex = 0;
         [self messageFill:[self.messages objectAtIndex:currentMessageIndex]];
     } else {
         //only one
-        [self messageFill:result];
+        [self messageFill:response];
     }
     self.otherMessageButton.hidden = NO;
     self.PreviousMessageButton.hidden = self.messages ? NO : YES;

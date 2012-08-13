@@ -8,6 +8,9 @@
 
 #import "SMMessagesHandler.h"
 
+#define V1 @"/api/v1"
+#define V2 @"/api/v2"
+
 @interface SMMessagesHandler () <NSURLConnectionDelegate> {
     @private
     id delegate;
@@ -133,28 +136,28 @@ NSURLConnection* currentConnection;
 }
 
 - (void)requestCategories {    
-    [self requestUrl:[NSString stringWithFormat:@"%@/api/v1/categories", SM_URL]];
+    [self requestUrl:[NSString stringWithFormat:@"%@%@/categories", SM_URL, V2]];
 }
 
 - (void)requestRandomMessageForCategory:(NSString*)aCategoryId {
-    [self requestUrl:[NSString stringWithFormat:@"%@/api/v1/categories/%@/message", SM_URL, aCategoryId]];
+    [self requestUrl:[NSString stringWithFormat:@"%@%@/categories/%@/message", SM_URL, V2, aCategoryId]];
 }
 
 - (void)requestWorstMessageForCategory:(NSString*)aCategoryId {
-    [self requestUrl:[NSString stringWithFormat:@"%@/api/v1/categories/%@/worst", SM_URL, aCategoryId]];
+    [self requestUrl:[NSString stringWithFormat:@"%@%@/categories/%@/worst", SM_URL, V2, aCategoryId]];
 }
 
 - (void)requestBestMessageForCategory:(NSString*)aCategoryId {
-    [self requestUrl:[NSString stringWithFormat:@"%@/api/v1/categories/%@/best", SM_URL, aCategoryId]];    
+    [self requestUrl:[NSString stringWithFormat:@"%@%@/categories/%@/best", SM_URL, V2, aCategoryId]];
 }
 
 -(void)requestProposeMessage:(NSString*)aMessage author:(NSString*)anAuthor category:(NSString*)aCategoryId {
-    [self requestPOSTUrl:[NSString stringWithFormat:@"%@/api/v1/categories/%@/message", SM_URL, aCategoryId] params:[NSDictionary dictionaryWithObjectsAndKeys:aMessage, @"text", anAuthor, @"contributorName", nil]];
+    [self requestPOSTUrl:[NSString stringWithFormat:@"%@%@/categories/%@/message", SM_URL, V1, aCategoryId] params:[NSDictionary dictionaryWithObjectsAndKeys:aMessage, @"text", anAuthor, @"contributorName", nil]];
 }
 
 - (void)requestVote:(NSInteger)vote messageId:(NSString*)messageId {
     NSLog(@"MessageID: %@", messageId);
-    NSString* url = [NSString stringWithFormat:@"%@/api/v1/messages/%@/vote", SM_URL, messageId];
+    NSString* url = [NSString stringWithFormat:@"%@%@/messages/%@/vote", SM_URL, V2, messageId];
     NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:vote], @"vote", self.UUID, @"uid", nil];
     [self requestPOSTUrl:url params:params];
 }
@@ -197,6 +200,7 @@ NSURLConnection* currentConnection;
     if (data) {
         NSError* error;
         id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        //HANDLE CORRECTLY ERRORS
         if (!json) {
             NSLog(@"Error while parsing json object from %@: %@", connection.originalRequest.URL, error);
             NSLog(@"Data: %@", [[[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding] autorelease]);

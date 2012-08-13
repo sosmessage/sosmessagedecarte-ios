@@ -441,9 +441,10 @@ static char sosMessageKey;
 
 - (void)messageHandler:(SMMessagesHandler *)messageHandler didFinishWithJSon:(id)result
 {
-    if ([result objectForKey:CATEGORIES_COUNT] > 0) {
+    id response = [result objectForKey:JSON_RESPONSE];
+    if ([response objectForKey:CATEGORIES_COUNT] > 0) {
         self.categories = nil;
-        self.categories = [[[NSMutableArray alloc] initWithArray:[result objectForKey:CATEGORIES_ITEMS]] autorelease];
+        self.categories = [[[NSMutableArray alloc] initWithArray:[response objectForKey:CATEGORIES_ITEMS]] autorelease];
         [self refreshCategories];
         
         self.lastFetchingDate = [NSDate date];

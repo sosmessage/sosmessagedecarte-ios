@@ -35,6 +35,9 @@
 
 #pragma mark DICTIONNARY KEYS
 
+#define JSON_RESPONSE       @"response"
+#define JSON_META           @"meta"
+
 #define CATEGORIES_COUNT    @"count"
 #define CATEGORIES_ITEMS    @"items"
 

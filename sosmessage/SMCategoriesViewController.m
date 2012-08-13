@@ -466,7 +466,15 @@ static char sosMessageKey;
         [self.messageHandler requestAnnouncements];
     }
     else {
-        id announcement = self.announcements.lastObject;
+        id announcement;
+        do {
+            announcement = self.announcements.lastObject;
+            if ([self isAnnouncementAlreadyRead:announcement]) {
+                [self.announcements removeLastObject];
+                announcement = nil;
+            }
+        } while (!announcement && self.announcements.lastObject != nil);
+        
         if (announcement) {
             UIAlertView *view = [[[UIAlertView alloc] init] autorelease];
             view.delegate = self;
@@ -480,8 +488,10 @@ static char sosMessageKey;
 
             if ([url length]) {
                 [view addButtonWithTitle:([btnValidate length] ? btnValidate : @"Ca marche")];
+                view.cancelButtonIndex = [view addButtonWithTitle:([btnCancel length] ? btnCancel : @"Non merci")];
+            } else {
+                view.cancelButtonIndex = [view addButtonWithTitle:([btnCancel length] ? btnCancel : @"Très bien")];
             }
-            view.cancelButtonIndex = [view addButtonWithTitle:([btnCancel length] ? btnCancel : @"Non merci")];
             
             [view show];
         }
@@ -494,7 +504,27 @@ static char sosMessageKey;
         NSURL *nsurl = [NSURL URLWithString:(NSString *)url];
         [[UIApplication sharedApplication] openURL:nsurl];
     }
+    [self addAnnouncementRead:self.announcements.lastObject];
     [self.announcements removeLastObject];
+}
+
+-(void)addAnnouncementRead:(id)anAnnouncement {
+    NSMutableArray *announces = [[[NSUserDefaults standardUserDefaults] objectForKey:kDEFAULTS_ANOUNCES] mutableCopy];
+    if (!announces) {
+        announces = [[NSMutableArray alloc] init];
+    }
+    [announces addObject:[anAnnouncement objectForKey:@"id"]];
+    [[NSUserDefaults standardUserDefaults] setObject:announces forKey:kDEFAULTS_ANOUNCES];
+    
+    [announces release];
+}
+
+-(BOOL)isAnnouncementAlreadyRead:(id)anAnnouncement {
+    NSMutableArray *announces = [[NSUserDefaults standardUserDefaults] objectForKey:kDEFAULTS_ANOUNCES];
+    if (announces) {
+        return [announces containsObject:[anAnnouncement objectForKey:@"id"]];
+    }
+    return NO;
 }
 
 #pragma mark Custom methods

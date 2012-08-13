@@ -70,6 +70,7 @@
 #pragma mark CONSTANT
 #define kTEXT_TOP           @"TOP"
 #define kTEXT_FLOP          @"FLOP"
+#define kDEFAULTS_ANOUNCES  @"kSoSAnnouncesRead"
 
 #pragma mark DECLARE ASSOCIATIVE REFERENCE METHODS
 typedef uintptr_t objc_AssociationPolicy;

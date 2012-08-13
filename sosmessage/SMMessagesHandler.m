@@ -206,7 +206,19 @@ NSURLConnection* currentConnection;
             NSLog(@"Data: %@", [[[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding] autorelease]);
         }
         else if ([self.delegate respondsToSelector:@selector(messageHandler:didFinishWithJSon:)]) {
-            [self.delegate messageHandler:self didFinishWithJSon:json];
+            id meta = [json objectForKey:JSON_META];
+            if ([meta objectForKey:META_CODE] == @"500") {
+                NSLog(@"SERVER ERROR: (%@) %@", [meta objectForKey:META_ERROR_TYPE], [meta objectForKey:META_ERROR_DETAILS]);
+                
+                UIView* view = AppDelegate.sharedDelegate.window.rootViewController.view;
+                
+                MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+                hud.labelText = @"Un problème coté serveur est arrivée. Nous nous en excusons...";
+                [hud show:YES];
+                [hud hide:YES afterDelay:3];
+            } else {
+                [self.delegate messageHandler:self didFinishWithJSon:json];
+            }
         }
     }
     

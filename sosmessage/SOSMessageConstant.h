@@ -38,6 +38,10 @@
 #define JSON_RESPONSE       @"response"
 #define JSON_META           @"meta"
 
+#define META_CODE           @"code"
+#define META_ERROR_TYPE     @"errorType"
+#define META_ERROR_DETAILS  @"errorDetails"
+
 #define CATEGORIES_COUNT    @"count"
 #define CATEGORIES_ITEMS    @"items"
 

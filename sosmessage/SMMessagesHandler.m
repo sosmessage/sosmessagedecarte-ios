@@ -135,7 +135,7 @@ NSURLConnection* currentConnection;
     [nsUrl release];    
 }
 
-- (void)requestCategories {    
+- (void)requestCategories {
     [self requestUrl:[NSString stringWithFormat:@"%@%@/categories", SM_URL, V2]];
 }
 
@@ -160,6 +160,10 @@ NSURLConnection* currentConnection;
     NSString* url = [NSString stringWithFormat:@"%@%@/messages/%@/vote", SM_URL, V2, messageId];
     NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:vote], @"vote", self.UUID, @"uid", nil];
     [self requestPOSTUrl:url params:params];
+}
+
+- (void)requestAnnouncements {
+    [self requestUrl:[NSString stringWithFormat:@"%@%@/announcements", SM_URL, V2]];
 }
 
 +(void)showUIAlert {
@@ -200,7 +204,6 @@ NSURLConnection* currentConnection;
     if (data) {
         NSError* error;
         id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-        //HANDLE CORRECTLY ERRORS
         if (!json) {
             NSLog(@"Error while parsing json object from %@: %@", connection.originalRequest.URL, error);
             NSLog(@"Data: %@", [[[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding] autorelease]);

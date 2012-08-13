@@ -36,10 +36,7 @@
 @end
 
 @implementation SMCategoriesViewController
-@synthesize infoButton;
-@synthesize titleImage;
-@synthesize categories;
-@synthesize messageHandler;
+@synthesize infoButton, titleImage, categories, messageHandler, announcements;
 
 static char sosMessageKey;
 
@@ -253,7 +250,7 @@ static char sosMessageKey;
         [self addAdvertisingBlockinPosY:0];
         [self addSOSCategory:[workingCategories objectAtIndex:0] inPosX:0 andPosY:1 forBlock:NB_BLOCKS];
         y = 2;
-    } else if ([workingCategories count] <= 5) {
+    } else {
         for (NSDictionary* category in workingCategories) {
             [self addSOSCategory:category inPosX:0 andPosY:[self.categories indexOfObject:category] forBlock:NB_BLOCKS];
         }
@@ -443,12 +440,61 @@ static char sosMessageKey;
 {
     id response = [result objectForKey:JSON_RESPONSE];
     if ([response objectForKey:CATEGORIES_COUNT] > 0) {
-        self.categories = nil;
-        self.categories = [[[NSMutableArray alloc] initWithArray:[response objectForKey:CATEGORIES_ITEMS]] autorelease];
-        [self refreshCategories];
+        NSMutableArray* items = [[[NSMutableArray alloc] initWithArray:[response objectForKey:CATEGORIES_ITEMS]] autorelease];
         
-        self.lastFetchingDate = [NSDate date];
+        id firstElt = [items objectAtIndex:0];
+        NSLog(@"Type: %@", [firstElt objectForKey:@"type"]);
+        NSLog(@"Typeof: %@", [[firstElt objectForKey:@"type"] class]);
+        if ([@"announcement" isEqualToString:[firstElt objectForKey:@"type"]]) {
+            NSLog(@"pouet");
+            self.announcements = nil;
+            self.announcements = [[[NSMutableArray alloc] initWithArray:[response objectForKey:CATEGORIES_ITEMS]] autorelease];
+        } else {
+            self.categories = nil;
+            self.categories = [[[NSMutableArray alloc] initWithArray:[response objectForKey:CATEGORIES_ITEMS]] autorelease];
+            
+            [self refreshCategories];
+            self.lastFetchingDate = [NSDate date];
+        }
     }
+    [self handleAnnouncements];
+}
+
+- (void)handleAnnouncements {
+    if (!announcements) {
+        NSLog(@"No announcements yet");
+        [self.messageHandler requestAnnouncements];
+    }
+    else {
+        id announcement = self.announcements.lastObject;
+        if (announcement) {
+            UIAlertView *view = [[[UIAlertView alloc] init] autorelease];
+            view.delegate = self;
+            view.title = [announcement objectForKey:@"title"];
+            view.message = [announcement objectForKey:@"text"];
+
+            id url =[announcement objectForKey:@"url"];
+            id buttons = [announcement objectForKey:@"buttons"];
+            id btnValidate = [buttons objectForKey:@"validate"];
+            id btnCancel = [buttons objectForKey:@"cancel"];
+
+            if ([url length]) {
+                [view addButtonWithTitle:([btnValidate length] ? btnValidate : @"Ca marche")];
+            }
+            view.cancelButtonIndex = [view addButtonWithTitle:([btnCancel length] ? btnCancel : @"Non merci")];
+            
+            [view show];
+        }
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex != alertView.cancelButtonIndex) {
+        id url =[self.announcements.lastObject objectForKey:@"url"];
+        NSURL *nsurl = [NSURL URLWithString:(NSString *)url];
+        [[UIApplication sharedApplication] openURL:nsurl];
+    }
+    [self.announcements removeLastObject];
 }
 
 #pragma mark Custom methods
@@ -524,6 +570,7 @@ static char sosMessageKey;
 
 - (void)dealloc {
     [categories release];
+    [announcements release];
     [messageHandler release];
     [infoButton release];
     [titleImage release];

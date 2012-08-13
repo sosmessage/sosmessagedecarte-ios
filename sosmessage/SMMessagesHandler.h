@@ -24,6 +24,7 @@
 - (void)requestPOSTUrl:(NSString*)url params:(NSDictionary*)params;
 
 - (void)requestCategories;
+- (void)requestAnnouncements;
 - (void)requestVote:(NSInteger)vote messageId:(NSString*)messageId;
 - (void)requestRandomMessageForCategory:(NSString*)aCategoryId;
 - (void)requestWorstMessageForCategory:(NSString*)aCategoryId;

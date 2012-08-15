@@ -550,11 +550,11 @@ static char sosMessageKey;
     CGPathAddRect(path, NULL, self.titleImage.bounds);
     
     //Concat sosheader and category name
-    NSMutableString* header = [NSMutableString stringWithString:@"sosmessage\nde"];
+    NSMutableString* header = [NSMutableString stringWithString:@"sos"];
     if ([AppDelegate applicationName]) {
         [header appendString:[AppDelegate applicationReadableName]];
     } else {
-        [header appendString:@"carte"];
+        [header appendString:@"message"];
     }
     
     NSInteger _stringLength=[header length];
@@ -567,9 +567,7 @@ static char sosMessageKey;
     CGColorRef _hue= [UIColor whiteColor].CGColor;
     
     CFAttributedStringSetAttribute(attrString, CFRangeMake(0, 3),kCTForegroundColorAttributeName, _black);
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(3, 7),kCTForegroundColorAttributeName, _hue);
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(11, 2),kCTForegroundColorAttributeName, _black);
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(13, _stringLength - 13),kCTForegroundColorAttributeName, _hue);
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(3, _stringLength - 3),kCTForegroundColorAttributeName, _hue);
     
     CTFontRef font = CTFontCreateWithName((CFStringRef)FONT_NAME, 20, nil);
     CFAttributedStringSetAttribute(attrString,CFRangeMake(0, _stringLength),kCTFontAttributeName,font);

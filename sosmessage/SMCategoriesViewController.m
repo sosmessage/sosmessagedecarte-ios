@@ -74,7 +74,7 @@ static char sosMessageKey;
     
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [self renderTitle];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCategories) name:UIDeviceOrientationDidChangeNotification object:nil];
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCategories) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -105,7 +105,7 @@ static char sosMessageKey;
 
 -(UILabel*)buildUILabelForBlock:(int)nbBlocks inPosX:(int)posX andPosY:(int)posY {
     float blockSize = self.view.bounds.size.width / NB_BLOCKS;
-
+    
     float rectX = floorf(blockSize * posX);
     //float rectY = posY; //origin y will be re-calculate after views are generated
     float rectWidth = ceilf(blockSize * nbBlocks);
@@ -124,16 +124,16 @@ static char sosMessageKey;
 }
 
 - (void)addSOSCategory:(NSDictionary*)category inPosX:(int)posX andPosY:(int)posY forBlock:(int)nbBlock {
-    NSString* category_name = [category objectForKey:CATEGORY_NAME];    
+    NSString* category_name = [category objectForKey:CATEGORY_NAME];
     int categoryBlock = nbBlock;
     
     // CATEGORY LABEL
     UILabel* uiLabel = [self buildUILabelForBlock:categoryBlock inPosX:0 andPosY:posY];
-
+    
     uiLabel.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR]];
     uiLabel.text = [NSString stringWithFormat:@"%@%@", category_name.prepositionWithSpace, category_name];
     uiLabel.font = CATEGORY_FONT;
-
+    
     uiLabel.textColor = [UIColor colorWithHue:uiLabel.backgroundColor.hue saturation:1.0 brightness:0.3 alpha:1.0];
     uiLabel.textAlignment = UITextAlignmentCenter;
     uiLabel.userInteractionEnabled = YES;
@@ -212,7 +212,7 @@ static char sosMessageKey;
     [uiLabel addGestureRecognizer:categoryTap];
     [categoryTap release];
     
-    [self.view insertSubview:uiLabel belowSubview:self.infoButton];    
+    [self.view insertSubview:uiLabel belowSubview:self.infoButton];
 }
 
 -(void)addMailPropositionBlockinPosY:(int)posY {
@@ -255,34 +255,34 @@ static char sosMessageKey;
             [self addSOSCategory:category inPosX:0 andPosY:[self.categories indexOfObject:category] forBlock:NB_BLOCKS];
         }
         y = [workingCategories count];
-    } 
-    /* temporaly disable this feature ... As the top / flop feature is not yet perfect
-    else {
-        while (workingCategories.count > 0) {
-            NSDictionary* category = [workingCategories objectAtIndex:0];
-            int blockSize = [[category objectForKey:CATEGORY_NAME] blocksCount:self.view];
-            if ((NB_BLOCKS - x < blockSize)) {
-                [self fillEmptyBlocks:NB_BLOCKS - x fromPosX:x andPosY:y];
-                x = 0;
-                y += 1;
-            }
-            
-            [self addSOSCategory:category inPosX:x andPosY:y];
-            
-            x += blockSize;
-            if (x >= NB_BLOCKS) {
-                y += 1;
-                x = 0;
-            }
-            
-            [workingCategories removeObjectAtIndex:0];
-        }
-        
-        if (x < NB_BLOCKS && x > 0) {
-            [self fillEmptyBlocks:NB_BLOCKS - x fromPosX:x andPosY:y];
-            y++;
-        }
     }
+    /* temporaly disable this feature ... As the top / flop feature is not yet perfect
+     else {
+     while (workingCategories.count > 0) {
+     NSDictionary* category = [workingCategories objectAtIndex:0];
+     int blockSize = [[category objectForKey:CATEGORY_NAME] blocksCount:self.view];
+     if ((NB_BLOCKS - x < blockSize)) {
+     [self fillEmptyBlocks:NB_BLOCKS - x fromPosX:x andPosY:y];
+     x = 0;
+     y += 1;
+     }
+     
+     [self addSOSCategory:category inPosX:x andPosY:y];
+     
+     x += blockSize;
+     if (x >= NB_BLOCKS) {
+     y += 1;
+     x = 0;
+     }
+     
+     [workingCategories removeObjectAtIndex:0];
+     }
+     
+     if (x < NB_BLOCKS && x > 0) {
+     [self fillEmptyBlocks:NB_BLOCKS - x fromPosX:x andPosY:y];
+     y++;
+     }
+     }
      */
     [workingCategories release];
     
@@ -323,7 +323,7 @@ static char sosMessageKey;
             }
             
             subView.frame = CGRectMake(viewX, viewY, viewWidth, viewHeight);
-
+            
             if (text == kTEXT_TOP || text == kTEXT_FLOP) {
                 continue;
             }
@@ -439,14 +439,12 @@ static char sosMessageKey;
 - (void)messageHandler:(SMMessagesHandler *)messageHandler didFinishWithJSon:(id)result
 {
     id response = [result objectForKey:JSON_RESPONSE];
-    if ([response objectForKey:CATEGORIES_COUNT] > 0) {
+    if ([[response objectForKey:CATEGORIES_COUNT] intValue] > 0) {
         NSMutableArray* items = [[[NSMutableArray alloc] initWithArray:[response objectForKey:CATEGORIES_ITEMS]] autorelease];
         
         id firstElt = [items objectAtIndex:0];
         NSLog(@"Type: %@", [firstElt objectForKey:@"type"]);
-        NSLog(@"Typeof: %@", [[firstElt objectForKey:@"type"] class]);
         if ([@"announcement" isEqualToString:[firstElt objectForKey:@"type"]]) {
-            NSLog(@"pouet");
             self.announcements = nil;
             self.announcements = [[[NSMutableArray alloc] initWithArray:[response objectForKey:CATEGORIES_ITEMS]] autorelease];
         } else {
@@ -456,8 +454,8 @@ static char sosMessageKey;
             [self refreshCategories];
             self.lastFetchingDate = [NSDate date];
         }
+        [self handleAnnouncements];
     }
-    [self handleAnnouncements];
 }
 
 - (void)handleAnnouncements {
@@ -480,12 +478,12 @@ static char sosMessageKey;
             view.delegate = self;
             view.title = [announcement objectForKey:@"title"];
             view.message = [announcement objectForKey:@"text"];
-
+            
             id url =[announcement objectForKey:@"url"];
             id buttons = [announcement objectForKey:@"buttons"];
             id btnValidate = [buttons objectForKey:@"validate"];
             id btnCancel = [buttons objectForKey:@"cancel"];
-
+            
             if ([url length]) {
                 [view addButtonWithTitle:([btnValidate length] ? btnValidate : @"Ca marche")];
                 view.cancelButtonIndex = [view addButtonWithTitle:([btnCancel length] ? btnCancel : @"Non merci")];

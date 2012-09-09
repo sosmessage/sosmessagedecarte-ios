@@ -18,6 +18,8 @@
 		510CB9411471B4A80039C8A0 /* SMMessagesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 510CB9401471B4A80039C8A0 /* SMMessagesHandler.m */; };
 		5129835114C163CA00252D33 /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = 5129835014C163CA00252D33 /* new.png */; };
 		5129835214C163CA00252D33 /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = 5129835014C163CA00252D33 /* new.png */; };
+		513B9F4E15FA82F000199E82 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 513B9F4D15FA82F000199E82 /* Settings.bundle */; };
+		513B9F4F15FA82F000199E82 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 513B9F4D15FA82F000199E82 /* Settings.bundle */; };
 		513FBA3D1480F4ED00E69AC1 /* SMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513FBA3B1480F4ED00E69AC1 /* SMAboutViewController.m */; };
 		513FBA3E1480F4ED00E69AC1 /* SMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513FBA3C1480F4ED00E69AC1 /* SMAboutViewController.xib */; };
 		514CDA3414975450008A3115 /* btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 514CDA3314975450008A3115 /* btn_back.png */; };
@@ -99,6 +101,7 @@
 		510CB93F1471B4A80039C8A0 /* SMMessagesHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMessagesHandler.h; sourceTree = "<group>"; };
 		510CB9401471B4A80039C8A0 /* SMMessagesHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMessagesHandler.m; sourceTree = "<group>"; };
 		5129835014C163CA00252D33 /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new.png; sourceTree = "<group>"; };
+		513B9F4D15FA82F000199E82 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		513FBA3A1480F4ED00E69AC1 /* SMAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAboutViewController.h; sourceTree = "<group>"; };
 		513FBA3B1480F4ED00E69AC1 /* SMAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMAboutViewController.m; sourceTree = "<group>"; };
 		513FBA3C1480F4ED00E69AC1 /* SMAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMAboutViewController.xib; sourceTree = "<group>"; };
@@ -179,6 +182,7 @@
 		516515B9145DEA4000CF6C45 = {
 			isa = PBXGroup;
 			children = (
+				513B9F4D15FA82F000199E82 /* Settings.bundle */,
 				514CDA3314975450008A3115 /* btn_back.png */,
 				51B84BA414CC836200A20D2C /* btn_minus.png */,
 				51B84BA514CC836200A20D2C /* btn_next.png */,
@@ -381,6 +385,7 @@
 				51B84BAA14CC836200A20D2C /* btn_next.png in Resources */,
 				51B84BAC14CC836200A20D2C /* btn_plus.png in Resources */,
 				51788A1B150CE50700AEE736 /* new_stamp.png in Resources */,
+				513B9F4F15FA82F000199E82 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +412,7 @@
 				51B84BA914CC836200A20D2C /* btn_next.png in Resources */,
 				51B84BAB14CC836200A20D2C /* btn_plus.png in Resources */,
 				51788A1A150CE50700AEE736 /* new_stamp.png in Resources */,
+				513B9F4E15FA82F000199E82 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

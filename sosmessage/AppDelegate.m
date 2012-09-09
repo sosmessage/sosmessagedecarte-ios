@@ -17,6 +17,8 @@
 
 - (void)dealloc
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
     [_window release];
     [super dealloc];
 }
@@ -25,6 +27,15 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
+    //Setting default Value
+    NSMutableDictionary *appDefaults = [NSMutableDictionary dictionary];
+    [appDefaults setValue:[[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode] forKey:@"language_selection"];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+    
+    // Register event
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didUserDefaultsChanged:) name:NSUserDefaultsDidChangeNotification object:nil];
+    
+    //Display categories controller
     SMCategoriesViewController *categories = [[[SMCategoriesViewController alloc] initWithNibName:@"SMCategoriesViewController" bundle:nil] autorelease];
     UINavigationController *nav;
     if ([AppDelegate isIAdCompliant]) {
@@ -43,6 +54,12 @@
     return YES;
 }
 
+-(void)didUserDefaultsChanged:(NSNotification *)notification {
+    //    NSUserDefaults *userDefault = [notification object];
+    NSLog(@"User pref changed, langue selectionnee: %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"language_selection"]);
+    self.refreshCategories = YES;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*
@@ -55,7 +72,7 @@
 {
     self.refreshCategories = YES;
     /*
-     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
 }
@@ -71,15 +88,6 @@
 {
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-     */
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    /*
-     Called when the application is about to terminate.
-     Save data if appropriate.
-     See also applicationDidEnterBackground:.
      */
 }
 
@@ -158,11 +166,21 @@
 }
 
 +(BOOL)isIAdCompliant {
-    return [AppDelegate applicationName] ? YES : NO;
+    return [@"smdc" isEqualToString:[AppDelegate applicationNameWithoutLang]] ? NO : YES;
+}
+
++(NSString *)applicationNameWithoutLang {
+    return [[NSBundle mainBundle].infoDictionary objectForKey:@"SMAppName"];
 }
 
 +(NSString *)applicationName {
-    return [[NSBundle mainBundle].infoDictionary objectForKey:@"SMAppName"];
+    id appName = [[NSBundle mainBundle].infoDictionary objectForKey:@"SMAppName"];
+    id lang = [[NSUserDefaults standardUserDefaults] objectForKey:@"language_selection"];
+    
+    NSLog(@"AppName: %@_%@", appName, lang);
+    
+    //return [[NSBundle mainBundle].infoDictionary objectForKey:@"SMAppName"];
+    return [NSString stringWithFormat:@"%@_%@",appName, lang];
 }
 
 + (NSString*)applicationReadableName {
@@ -193,7 +211,7 @@
     blue = blue + (blue * pBlue);
     green = green + (green * pGreen);
     
-    return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:alpha/255.0f];    
+    return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:alpha/255.0f];
 }
 
 + (AppDelegate *)sharedDelegate {

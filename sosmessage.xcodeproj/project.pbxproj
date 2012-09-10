@@ -21,7 +21,6 @@
 		513B9F4E15FA82F000199E82 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 513B9F4D15FA82F000199E82 /* Settings.bundle */; };
 		513B9F4F15FA82F000199E82 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 513B9F4D15FA82F000199E82 /* Settings.bundle */; };
 		513FBA3D1480F4ED00E69AC1 /* SMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513FBA3B1480F4ED00E69AC1 /* SMAboutViewController.m */; };
-		513FBA3E1480F4ED00E69AC1 /* SMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513FBA3C1480F4ED00E69AC1 /* SMAboutViewController.xib */; };
 		514CDA3414975450008A3115 /* btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 514CDA3314975450008A3115 /* btn_back.png */; };
 		515F720514BE2CF5004676E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515D4145DEA4000CF6C45 /* main.m */; };
 		515F720614BE2CF5004676E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515D8145DEA4100CF6C45 /* AppDelegate.m */; };
@@ -43,7 +42,6 @@
 		515F721814BE2CF5004676E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 516515D1145DEA4000CF6C45 /* InfoPlist.strings */; };
 		515F721914BE2CF5004676E1 /* SMCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516515DD145DEA4100CF6C45 /* SMCategoriesViewController.xib */; };
 		515F721A14BE2CF5004676E1 /* SMMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51A5CE0B1466768A00B274B3 /* SMMessageViewController.xib */; };
-		515F721B14BE2CF5004676E1 /* SMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513FBA3C1480F4ED00E69AC1 /* SMAboutViewController.xib */; };
 		515F721C14BE2CF5004676E1 /* btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 514CDA3314975450008A3115 /* btn_back.png */; };
 		515F721D14BE2CF5004676E1 /* canvas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5109146214AE0B5200047A47 /* canvas.jpg */; };
 		515F721E14BE2CF5004676E1 /* iphone_hdpi_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146714AE604A00047A47 /* iphone_hdpi_114.png */; };
@@ -52,7 +50,6 @@
 		515F722114BE2CF5004676E1 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146F14AE640A00047A47 /* Default-Landscape~ipad.png */; };
 		515F722214BE2CF5004676E1 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109147114AE641200047A47 /* Default-Portrait~ipad.png */; };
 		515F722314BE2CF5004676E1 /* iphone_mdpi_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109147314AE6E5000047A47 /* iphone_mdpi_57.png */; };
-		515F722414BE2CF5004676E1 /* SMProposeNewMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51973E3114B64B640062C26B /* SMProposeNewMessageController.xib */; };
 		516515C9145DEA4000CF6C45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515C8145DEA4000CF6C45 /* UIKit.framework */; };
 		516515CB145DEA4000CF6C45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515CA145DEA4000CF6C45 /* Foundation.framework */; };
 		516515CD145DEA4000CF6C45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515CC145DEA4000CF6C45 /* CoreGraphics.framework */; };
@@ -69,7 +66,6 @@
 		517ECA4314B9A8F600B3CA55 /* UIButton+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 517ECA4214B9A8F600B3CA55 /* UIButton+SOSMessage.m */; };
 		517ECA4D14BCD39B00B3CA55 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517ECA4C14BCD39B00B3CA55 /* Twitter.framework */; };
 		51973E3214B64B650062C26B /* SMProposeNewMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51973E3014B64B640062C26B /* SMProposeNewMessageController.m */; };
-		51973E3314B64B650062C26B /* SMProposeNewMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51973E3114B64B640062C26B /* SMProposeNewMessageController.xib */; };
 		51A5CE061465221400B274B3 /* NSString+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE051465221400B274B3 /* NSString+SOSMessage.m */; };
 		51A5CE0C1466768A00B274B3 /* SMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE0A1466768A00B274B3 /* SMMessageViewController.m */; };
 		51A5CE0D1466768A00B274B3 /* SMMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51A5CE0B1466768A00B274B3 /* SMMessageViewController.xib */; };
@@ -82,6 +78,14 @@
 		51B84BAA14CC836200A20D2C /* btn_next.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B84BA514CC836200A20D2C /* btn_next.png */; };
 		51B84BAB14CC836200A20D2C /* btn_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B84BA614CC836200A20D2C /* btn_plus.png */; };
 		51B84BAC14CC836200A20D2C /* btn_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B84BA614CC836200A20D2C /* btn_plus.png */; };
+		51C133AC15FD257000128453 /* SMProposeNewMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133AF15FD257000128453 /* SMProposeNewMessageController.xib */; };
+		51C133AD15FD257000128453 /* SMProposeNewMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133AF15FD257000128453 /* SMProposeNewMessageController.xib */; };
+		51C133B115FD26A200128453 /* SMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B415FD26A200128453 /* SMAboutViewController.xib */; };
+		51C133B215FD26A200128453 /* SMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B415FD26A200128453 /* SMAboutViewController.xib */; };
+		51C133BB15FD27B200128453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B615FD27B200128453 /* Localizable.strings */; };
+		51C133BC15FD27B200128453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B615FD27B200128453 /* Localizable.strings */; };
+		51C133BD15FD27B200128453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B915FD27B200128453 /* Localizable.strings */; };
+		51C133BE15FD27B200128453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B915FD27B200128453 /* Localizable.strings */; };
 		51CBBC0714BE330E009148B2 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CBBC0614BE330D009148B2 /* iAd.framework */; };
 		51CBBC0814BE3326009148B2 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CBBC0614BE330D009148B2 /* iAd.framework */; };
 		51F1A70814746B710092F9F8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F1A70714746B710092F9F8 /* MBProgressHUD.m */; };
@@ -104,7 +108,6 @@
 		513B9F4D15FA82F000199E82 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		513FBA3A1480F4ED00E69AC1 /* SMAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAboutViewController.h; sourceTree = "<group>"; };
 		513FBA3B1480F4ED00E69AC1 /* SMAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMAboutViewController.m; sourceTree = "<group>"; };
-		513FBA3C1480F4ED00E69AC1 /* SMAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMAboutViewController.xib; sourceTree = "<group>"; };
 		514CDA3314975450008A3115 /* btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_back.png; path = sosmessage/btn_back.png; sourceTree = "<group>"; };
 		515F722814BE2CF5004676E1 /* jtequitte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jtequitte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		515F722A14BE2CF5004676E1 /* jtequitte.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = jtequitte.plist; path = "/Users/arnaud/Developments/iOS/sosmessagedecarte-ios/jtequitte.plist"; sourceTree = "<absolute>"; };
@@ -130,7 +133,6 @@
 		517ECA4C14BCD39B00B3CA55 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		51973E2F14B64B640062C26B /* SMProposeNewMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMProposeNewMessageController.h; sourceTree = "<group>"; };
 		51973E3014B64B640062C26B /* SMProposeNewMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMProposeNewMessageController.m; sourceTree = "<group>"; };
-		51973E3114B64B640062C26B /* SMProposeNewMessageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMProposeNewMessageController.xib; sourceTree = "<group>"; };
 		51A5CE041465221400B274B3 /* NSString+SOSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SOSMessage.h"; sourceTree = "<group>"; };
 		51A5CE051465221400B274B3 /* NSString+SOSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SOSMessage.m"; sourceTree = "<group>"; };
 		51A5CE081465227C00B274B3 /* SOSMessageConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOSMessageConstant.h; sourceTree = "<group>"; };
@@ -142,7 +144,15 @@
 		51B84BA414CC836200A20D2C /* btn_minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_minus.png; sourceTree = "<group>"; };
 		51B84BA514CC836200A20D2C /* btn_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_next.png; sourceTree = "<group>"; };
 		51B84BA614CC836200A20D2C /* btn_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_plus.png; sourceTree = "<group>"; };
+		51C133AE15FD257000128453 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SMProposeNewMessageController.xib; sourceTree = "<group>"; };
+		51C133B315FD26A200128453 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SMAboutViewController.xib; sourceTree = "<group>"; };
+		51C133B715FD27B200128453 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		51C133BA15FD27B200128453 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
 		51CBBC0614BE330D009148B2 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		51DCAD9115FE8446008F07AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/SMProposeNewMessageController.xib; sourceTree = "<group>"; };
+		51DCAD9215FE8446008F07AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/SMCategoriesViewController.xib; sourceTree = "<group>"; };
+		51DCAD9315FE8446008F07AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/SMAboutViewController.xib; sourceTree = "<group>"; };
+		51DCAD9415FE8446008F07AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		51F1A70614746B710092F9F8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		51F1A70714746B710092F9F8 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -253,6 +263,8 @@
 		516515CF145DEA4000CF6C45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				51C133B515FD27B200128453 /* en.lproj */,
+				51C133B815FD27B200128453 /* fr.lproj */,
 				51788A19150CE50700AEE736 /* new_stamp.png */,
 				5129835014C163CA00252D33 /* new.png */,
 				5109146214AE0B5200047A47 /* canvas.jpg */,
@@ -281,13 +293,29 @@
 		51A5CE0F146677F200B274B3 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
-				51973E3114B64B640062C26B /* SMProposeNewMessageController.xib */,
+				51C133AF15FD257000128453 /* SMProposeNewMessageController.xib */,
 				516515DD145DEA4100CF6C45 /* SMCategoriesViewController.xib */,
 				51A5CE0B1466768A00B274B3 /* SMMessageViewController.xib */,
-				513FBA3C1480F4ED00E69AC1 /* SMAboutViewController.xib */,
+				51C133B415FD26A200128453 /* SMAboutViewController.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
+		};
+		51C133B515FD27B200128453 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				51C133B615FD27B200128453 /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = SOURCE_ROOT;
+		};
+		51C133B815FD27B200128453 /* fr.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				51C133B915FD27B200128453 /* Localizable.strings */,
+			);
+			path = fr.lproj;
+			sourceTree = SOURCE_ROOT;
 		};
 		51F1A70514746AF90092F9F8 /* LoadingHUD */ = {
 			isa = PBXGroup;
@@ -349,6 +377,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				fr,
 			);
 			mainGroup = 516515B9145DEA4000CF6C45;
 			productRefGroup = 516515C5145DEA4000CF6C45 /* Products */;
@@ -369,7 +398,7 @@
 				515F721814BE2CF5004676E1 /* InfoPlist.strings in Resources */,
 				515F721914BE2CF5004676E1 /* SMCategoriesViewController.xib in Resources */,
 				515F721A14BE2CF5004676E1 /* SMMessageViewController.xib in Resources */,
-				515F721B14BE2CF5004676E1 /* SMAboutViewController.xib in Resources */,
+				51C133B215FD26A200128453 /* SMAboutViewController.xib in Resources */,
 				515F721C14BE2CF5004676E1 /* btn_back.png in Resources */,
 				515F721D14BE2CF5004676E1 /* canvas.jpg in Resources */,
 				515F721E14BE2CF5004676E1 /* iphone_hdpi_114.png in Resources */,
@@ -378,7 +407,7 @@
 				515F722114BE2CF5004676E1 /* Default-Landscape~ipad.png in Resources */,
 				515F722214BE2CF5004676E1 /* Default-Portrait~ipad.png in Resources */,
 				515F722314BE2CF5004676E1 /* iphone_mdpi_57.png in Resources */,
-				515F722414BE2CF5004676E1 /* SMProposeNewMessageController.xib in Resources */,
+				51C133AD15FD257000128453 /* SMProposeNewMessageController.xib in Resources */,
 				5129835214C163CA00252D33 /* new.png in Resources */,
 				51B84BA214CC81C400A20D2C /* btn_send.png in Resources */,
 				51B84BA814CC836200A20D2C /* btn_minus.png in Resources */,
@@ -386,6 +415,8 @@
 				51B84BAC14CC836200A20D2C /* btn_plus.png in Resources */,
 				51788A1B150CE50700AEE736 /* new_stamp.png in Resources */,
 				513B9F4F15FA82F000199E82 /* Settings.bundle in Resources */,
+				51C133BC15FD27B200128453 /* Localizable.strings in Resources */,
+				51C133BE15FD27B200128453 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +427,7 @@
 				516515D3145DEA4000CF6C45 /* InfoPlist.strings in Resources */,
 				516515DF145DEA4100CF6C45 /* SMCategoriesViewController.xib in Resources */,
 				51A5CE0D1466768A00B274B3 /* SMMessageViewController.xib in Resources */,
-				513FBA3E1480F4ED00E69AC1 /* SMAboutViewController.xib in Resources */,
+				51C133B115FD26A200128453 /* SMAboutViewController.xib in Resources */,
 				514CDA3414975450008A3115 /* btn_back.png in Resources */,
 				5109146314AE0B5300047A47 /* canvas.jpg in Resources */,
 				5109146814AE604A00047A47 /* iphone_hdpi_114.png in Resources */,
@@ -405,7 +436,7 @@
 				5109147014AE640B00047A47 /* Default-Landscape~ipad.png in Resources */,
 				5109147214AE641200047A47 /* Default-Portrait~ipad.png in Resources */,
 				5109147414AE6E5000047A47 /* iphone_mdpi_57.png in Resources */,
-				51973E3314B64B650062C26B /* SMProposeNewMessageController.xib in Resources */,
+				51C133AC15FD257000128453 /* SMProposeNewMessageController.xib in Resources */,
 				5129835114C163CA00252D33 /* new.png in Resources */,
 				51B84BA114CC81C400A20D2C /* btn_send.png in Resources */,
 				51B84BA714CC836200A20D2C /* btn_minus.png in Resources */,
@@ -413,6 +444,8 @@
 				51B84BAB14CC836200A20D2C /* btn_plus.png in Resources */,
 				51788A1A150CE50700AEE736 /* new_stamp.png in Resources */,
 				513B9F4E15FA82F000199E82 /* Settings.bundle in Resources */,
+				51C133BB15FD27B200128453 /* Localizable.strings in Resources */,
+				51C133BD15FD27B200128453 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +497,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				516515D2145DEA4000CF6C45 /* en */,
+				51DCAD9415FE8446008F07AC /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -472,8 +506,43 @@
 			isa = PBXVariantGroup;
 			children = (
 				516515DE145DEA4100CF6C45 /* en */,
+				51DCAD9215FE8446008F07AC /* fr */,
 			);
 			name = SMCategoriesViewController.xib;
+			sourceTree = "<group>";
+		};
+		51C133AF15FD257000128453 /* SMProposeNewMessageController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				51C133AE15FD257000128453 /* en */,
+				51DCAD9115FE8446008F07AC /* fr */,
+			);
+			name = SMProposeNewMessageController.xib;
+			sourceTree = "<group>";
+		};
+		51C133B415FD26A200128453 /* SMAboutViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				51C133B315FD26A200128453 /* en */,
+				51DCAD9315FE8446008F07AC /* fr */,
+			);
+			name = SMAboutViewController.xib;
+			sourceTree = "<group>";
+		};
+		51C133B615FD27B200128453 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				51C133B715FD27B200128453 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		51C133B915FD27B200128453 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				51C133BA15FD27B200128453 /* fr */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

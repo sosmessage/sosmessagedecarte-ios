@@ -63,14 +63,36 @@
 #define kSOSUUID            @"sosmessage.uuid.key"
 #define kSOSLASTFETCH       @"sosmessage.categories.fetchDate"
 
+#pragma mark -
 #pragma mark Others
 
 #define FONT_NAME           @"Helvetica"
 
 #pragma mark CONSTANT
-#define kTEXT_TOP           @"TOP"
-#define kTEXT_FLOP          @"FLOP"
+#define kTEXT_TOP           kcategories_top
+#define kTEXT_FLOP          kcategories_flop
 #define kDEFAULTS_ANOUNCES  @"kSoSAnnouncesRead"
+
+#pragma mark -
+#pragma mark Localizations
+
+#define kmessage_propose             NSLocalizedString(@"message.propose", nil)
+#define kmessage_propose_sending     NSLocalizedString(@"message.propose.sending", nil)
+#define kmessage_share               NSLocalizedString(@"message.share", nil)
+#define kmessage_share_unable_title  NSLocalizedString(@"message.share.unable.title", nil)
+#define kmessage_share_unable        NSLocalizedString(@"message.share.unable", nil)
+
+#define kcategories_all              NSLocalizedString(@"categories.all", nil)
+#define kcategories_top              NSLocalizedString(@"categories.top", nil)
+#define kcategories_flop             NSLocalizedString(@"categories.flop", nil)
+
+#define klabel_about                 NSLocalizedString(@"label.about", nil)
+#define klabel_loading               NSLocalizedString(@"label.loading", nil)
+#define klabel_error_server          NSLocalizedString(@"label.error.server", nil)
+#define klabel_btn_ok                NSLocalizedString(@"label.btn.ok", nil)
+#define klabel_btn_ko                NSLocalizedString(@"label.btn.ok", nil)
+#define klabel_btn_go                NSLocalizedString(@"label.btn.go", nil)
+#define klabel_btn_cancel            NSLocalizedString(@"label.btn.cancel", nil)
 
 #pragma mark DECLARE ASSOCIATIVE REFERENCE METHODS
 typedef uintptr_t objc_AssociationPolicy;

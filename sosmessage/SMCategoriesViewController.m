@@ -199,7 +199,7 @@ static char sosMessageKey;
 }
 
 -(void)addAdvertisingBlockinPosY:(int)posY {
-    NSString* label = @"Toutes les catégories";
+    NSString* label = kcategories_all;
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
     uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:0.5];
     uiLabel.text = label;
@@ -216,7 +216,7 @@ static char sosMessageKey;
 }
 
 -(void)addMailPropositionBlockinPosY:(int)posY {
-    NSString* label = @"propose tes messages";
+    NSString* label = kmessage_propose;
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
     uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:0.5];
     uiLabel.text = label;
@@ -423,7 +423,7 @@ static char sosMessageKey;
 {
     NSLog(@"Try to add HUD");
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:TRUE];
-    hud.labelText = @"Chargement ...";
+    hud.labelText = klabel_loading;
 }
 
 - (void)stopActivityFromMessageHandler:(SMMessagesHandler *)messageHandler
@@ -485,10 +485,10 @@ static char sosMessageKey;
             id btnCancel = [buttons objectForKey:@"cancel"];
             
             if ([url length]) {
-                [view addButtonWithTitle:([btnValidate length] ? btnValidate : @"Ca marche")];
-                view.cancelButtonIndex = [view addButtonWithTitle:([btnCancel length] ? btnCancel : @"Non merci")];
+                [view addButtonWithTitle:([btnValidate length] ? btnValidate : klabel_btn_go)];
+                view.cancelButtonIndex = [view addButtonWithTitle:([btnCancel length] ? btnCancel : klabel_btn_ko)];
             } else {
-                view.cancelButtonIndex = [view addButtonWithTitle:([btnCancel length] ? btnCancel : @"Très bien")];
+                view.cancelButtonIndex = [view addButtonWithTitle:([btnCancel length] ? btnCancel : klabel_btn_ok)];
             }
             
             [view show];

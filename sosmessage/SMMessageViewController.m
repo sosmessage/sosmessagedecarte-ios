@@ -244,7 +244,7 @@ float baseHue;
 }
 
 - (IBAction)sendMessagePressed:(id)sender {
-    UIActionSheet* sheet = [[[UIActionSheet alloc] initWithTitle:@"Envoyer le message" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil] autorelease];
+    UIActionSheet* sheet = [[[UIActionSheet alloc] initWithTitle:kmessage_share delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil] autorelease];
     if ([MFMessageComposeViewController canSendText]) {
         [sheet addButtonWithTitle:LBL_SMS];
     }
@@ -256,10 +256,10 @@ float baseHue;
     }
     NSLog(@"Number of buttons in action sheet: %d", sheet.numberOfButtons);
     if (sheet.numberOfButtons > 0) {
-        sheet.cancelButtonIndex = [sheet addButtonWithTitle:@"Annuler"];
+        sheet.cancelButtonIndex = [sheet addButtonWithTitle:klabel_btn_cancel];
         [sheet showInView:self.view];
     } else {
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Impossible" message:@"Vous ne disposez d'aucun moyen pour envoyer le message a vos comparses." delegate:nil cancelButtonTitle:@"Dommage" otherButtonTitles: nil];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:kmessage_share_unable_title message:kmessage_share_unable delegate:nil cancelButtonTitle:klabel_btn_cancel otherButtonTitles: nil];
         [alert show];
         [alert release];
     }
@@ -364,7 +364,7 @@ float baseHue;
 - (void)startActivityFromMessageHandler:(SMMessagesHandler *)messageHandler
 {
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:TRUE];
-    hud.labelText = @"Chargement ...";
+    hud.labelText = klabel_loading;
 }
 
 - (void)stopActivityFromMessageHandler:(SMMessagesHandler *)messageHandler

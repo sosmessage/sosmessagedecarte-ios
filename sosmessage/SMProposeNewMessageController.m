@@ -181,7 +181,7 @@ bool keyboardVisible = false;
 - (void)startActivityFromMessageHandler:(SMMessagesHandler *)messageHandler
 {
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:TRUE];
-    hud.labelText = @"Envoi de la proposition";
+    hud.labelText = kmessage_propose_sending;
 }
 
 - (void)stopActivityFromMessageHandler:(SMMessagesHandler *)messageHandler

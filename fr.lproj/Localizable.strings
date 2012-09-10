@@ -1,0 +1,17 @@
+"message.propose" = "Propose ton message";
+"message.propose.sending" = "Envoi de votre message ...";
+"message.share"   = "Partage";
+"message.share.unable.title" = "Impossibilité";
+"message.share.unable" = "Vous ne disposez d'aucun moyen pour envoyer le message a vos comparses.";
+
+"categories.all" = "Application complète";
+"categories.top" = "Top";
+"categories.flop" = "Flop";
+
+"label.about" = "À propos";
+"label.loading" = "Chargement ...";
+"label.error.server" = "Une erreur coté serveur est apparue, désolé pour le dérangement.";
+"label.btn.ok"  = "Trés bien";
+"label.btn.ko"  = "Désolé";
+"label.btn.go"  = "Ca marche";
+"label.btn.cancel" = "Non merci";

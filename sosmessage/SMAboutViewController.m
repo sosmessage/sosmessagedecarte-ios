@@ -98,7 +98,7 @@
 -(void)startActivity {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:TRUE];
-    hud.labelText = @"a propos...";
+    hud.labelText = klabel_about;
 }
 
 -(void)endActivity {

@@ -167,7 +167,7 @@ NSURLConnection* currentConnection;
 }
 
 +(void)showUIAlert {
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Erreur de connexion" message:@"Un probleme est survenu lors de la connexion au serveur de sosmessage" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error" message:klabel_error_server delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
     [alert release];    
 }
@@ -216,7 +216,7 @@ NSURLConnection* currentConnection;
                 UIView* view = AppDelegate.sharedDelegate.window.rootViewController.view;
                 
                 MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-                hud.labelText = @"Un problème coté serveur est arrivée. Nous nous en excusons...";
+                hud.labelText = klabel_error_server;
                 [hud show:YES];
                 [hud hide:YES afterDelay:3];
             } else {

@@ -1,0 +1,17 @@
+"message.propose" = "Propose your own";
+"message.propose.sending" = "Sending your message...";
+"message.share"   = "Share message";
+"message.share.unable.title" = "Can't share";
+"message.share.unable" = "Sorry, but we can't share this wonderful message as you do not have suffisant device capabilites.";
+
+"categories.all" = "All categories";
+"categories.top" = "Best";
+"categories.flop" = "Worst";
+
+"label.about" = "About";
+"label.loading" = "Loading...";
+"label.error.server" = "Something went wrong server side, so; sorry for your message.";
+"label.btn.ok"  = "Cool";
+"label.btn.ko"  = "Sorry";
+"label.btn.go"  = "Let's go";
+"label.btn.cancel" = "Cancel";

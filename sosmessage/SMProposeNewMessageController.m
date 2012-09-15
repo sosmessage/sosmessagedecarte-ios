@@ -167,7 +167,7 @@ bool keyboardVisible = false;
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     NSString* category = [[self.categories objectAtIndex:row] objectForKey:CATEGORY_NAME];
-    return [NSString stringWithFormat:@"%@%@", category.prepositionWithSpace, category];
+    return [NSString stringWithFormat:@"%@", category];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {

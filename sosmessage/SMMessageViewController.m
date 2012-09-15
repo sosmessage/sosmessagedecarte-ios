@@ -283,7 +283,7 @@ float baseHue;
     NSString* categoryName = [self.category objectForKey:CATEGORY_NAME];
     
     //Concat sosheader and category name
-    NSMutableString* header = [NSMutableString stringWithFormat:@"%@%@%@%@", subTitle, @"sosmessage\n", categoryName.preposition, [categoryName lowercaseString]];
+    NSMutableString* header = [NSMutableString stringWithFormat:@"%@%@%@", subTitle, @"sosmessage\n", [categoryName lowercaseString]];
     
     NSLog(@"Header: %@", [header lowercaseString]);
     NSInteger _stringLength=[header length];
@@ -297,11 +297,10 @@ float baseHue;
     CGColorRef _hue= [UIColor whiteColor].CGColor;
 
     int stl = [subTitle length];
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(0, [subTitle length]),kCTForegroundColorAttributeName, _hue);
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(stl, 3),kCTForegroundColorAttributeName, _black);
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(stl + 3, 7),kCTForegroundColorAttributeName, _hue);
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(stl + 10, 3),kCTForegroundColorAttributeName, _black);
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(stl + 13, _stringLength - (13 + stl)),kCTForegroundColorAttributeName, _hue);
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(0, [subTitle length]),kCTForegroundColorAttributeName, _black);
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(stl, 3),kCTForegroundColorAttributeName, _hue);
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(stl + 3, 7),kCTForegroundColorAttributeName, _black);
+    CFAttributedStringSetAttribute(attrString, CFRangeMake(stl + 10, _stringLength - (13 + stl)),kCTForegroundColorAttributeName, _hue);
     
     CTFontRef font = CTFontCreateWithName((CFStringRef)FONT_NAME, 20, nil);
     CFAttributedStringSetAttribute(attrString,CFRangeMake(0, _stringLength),kCTFontAttributeName,font);
@@ -434,7 +433,7 @@ float baseHue;
             controller.mailComposeDelegate = self;
             NSString* categoryName = [self.category objectForKey:CATEGORY_NAME];
             
-            [controller setSubject:[NSString stringWithFormat:@"SOS Message %@%@", [categoryName prepositionWithSpace], categoryName]];
+            [controller setSubject:[NSString stringWithFormat:@"sosmessage %@", categoryName]];
             [controller setMessageBody:self.messageText.text isHTML:false];
             [self presentModalViewController:controller animated:true];
             [controller release];

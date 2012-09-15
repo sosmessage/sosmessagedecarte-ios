@@ -131,7 +131,7 @@ static char sosMessageKey;
     UILabel* uiLabel = [self buildUILabelForBlock:categoryBlock inPosX:0 andPosY:posY];
     
     uiLabel.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR]];
-    uiLabel.text = [NSString stringWithFormat:@"%@%@", category_name.prepositionWithSpace, category_name];
+    uiLabel.text = [NSString stringWithFormat:@"%@", category_name];
     uiLabel.font = CATEGORY_FONT;
     
     uiLabel.textColor = [UIColor colorWithHue:uiLabel.backgroundColor.hue saturation:1.0 brightness:0.3 alpha:1.0];

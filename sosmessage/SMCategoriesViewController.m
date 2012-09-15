@@ -402,6 +402,12 @@ static char sosMessageKey;
     [detail release];
 }
 
+- (IBAction)refreshPressed:(id)sender {
+    [AppDelegate sharedDelegate].refreshCategories = YES;
+    
+    [self refreshCategories];
+}
+
 - (IBAction)aboutPressed:(id)sender {
     SMAboutViewController* about = [[SMAboutViewController alloc] initWithNibName:@"SMAboutViewController" bundle:nil];
     about.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;

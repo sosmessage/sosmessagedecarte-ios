@@ -22,5 +22,6 @@
 - (void)removeCategoriesLabel;
 
 - (IBAction)aboutPressed:(id)sender;
+- (IBAction)refreshPressed:(id)sender;
 
 @end

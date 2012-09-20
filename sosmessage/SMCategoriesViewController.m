@@ -309,19 +309,21 @@ static char sosMessageKey;
             
             // Top / Flop handling ... what a mess :]
             NSString *text = [((UILabel *)subView) text];
-            if (text == kTEXT_TOP || text == kTEXT_FLOP) {
+            if ([text isEqualToString:kTEXT_TOP] || [text isEqualToString:kTEXT_FLOP]) {
                 int dummySpace = 1;
                 float viewMinus = viewHeight * 0.1;
                 viewHeight -= viewMinus;
                 viewY += viewMinus / 2;
                 viewX -= viewMinus / 2;
                 
-                if (text == kTEXT_FLOP) {
+                if ([text isEqualToString:kTEXT_FLOP]) {
                     viewY = viewY + viewHeight - ceilf(viewHeight / 2) + dummySpace;
                 }
                 viewHeight = floorf(viewHeight / 2) - dummySpace;
+                
+                NSLog(@"Subview: %f:%f %fx%f", viewX, viewY, viewWidth, viewHeight);
             }
-            
+
             subView.frame = CGRectMake(viewX, viewY, viewWidth, viewHeight);
             
             if (text == kTEXT_TOP || text == kTEXT_FLOP) {

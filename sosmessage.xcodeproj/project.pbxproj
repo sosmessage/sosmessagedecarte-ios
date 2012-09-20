@@ -59,6 +59,7 @@
 		516515DC145DEA4100CF6C45 /* SMCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515DB145DEA4100CF6C45 /* SMCategoriesViewController.m */; };
 		516515DF145DEA4100CF6C45 /* SMCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516515DD145DEA4100CF6C45 /* SMCategoriesViewController.xib */; };
 		51712AE714A1BE7000E366AF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51712AE614A1BE7000E366AF /* MessageUI.framework */; };
+		5171FA28160BADB600D19E01 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5171FA27160BADB600D19E01 /* Default-568h@2x.png */; };
 		51788A1A150CE50700AEE736 /* new_stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 51788A19150CE50700AEE736 /* new_stamp.png */; };
 		51788A1B150CE50700AEE736 /* new_stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 51788A19150CE50700AEE736 /* new_stamp.png */; };
 		517E321B14F0DB1D003565F9 /* AdBannerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517E321A14F0DB1D003565F9 /* AdBannerNavigationController.m */; };
@@ -125,6 +126,7 @@
 		516515DB145DEA4100CF6C45 /* SMCategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMCategoriesViewController.m; sourceTree = "<group>"; };
 		516515DE145DEA4100CF6C45 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SMCategoriesViewController.xib; sourceTree = "<group>"; };
 		51712AE614A1BE7000E366AF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		5171FA27160BADB600D19E01 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		51788A19150CE50700AEE736 /* new_stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_stamp.png; sourceTree = "<group>"; };
 		517E321914F0DB1D003565F9 /* AdBannerNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdBannerNavigationController.h; sourceTree = "<group>"; };
 		517E321A14F0DB1D003565F9 /* AdBannerNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdBannerNavigationController.m; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 		516515B9145DEA4000CF6C45 = {
 			isa = PBXGroup;
 			children = (
+				5171FA27160BADB600D19E01 /* Default-568h@2x.png */,
 				513B9F4D15FA82F000199E82 /* Settings.bundle */,
 				514CDA3314975450008A3115 /* btn_back.png */,
 				51B84BA414CC836200A20D2C /* btn_minus.png */,
@@ -369,7 +372,7 @@
 		516515BB145DEA4000CF6C45 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = 516515BE145DEA4000CF6C45 /* Build configuration list for PBXProject "sosmessage" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -446,6 +449,7 @@
 				513B9F4E15FA82F000199E82 /* Settings.bundle in Resources */,
 				51C133BB15FD27B200128453 /* Localizable.strings in Resources */,
 				51C133BD15FD27B200128453 /* Localizable.strings in Resources */,
+				5171FA28160BADB600D19E01 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

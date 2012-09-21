@@ -161,12 +161,18 @@
     return [UIFont fontWithName:@"Georgia" size:fontSize];
 }
 
+
+
 + (BOOL)isInsterstitialAdCompliant {
     return [AppDelegate isIAdCompliant] && [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
 }
 
 +(BOOL)isIAdCompliant {
     return [@"smdc" isEqualToString:[AppDelegate applicationNameWithoutLang]] ? NO : YES;
+}
+
++ (BOOL)isIPad {
+    return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
 }
 
 +(NSString *)applicationNameWithoutLang {

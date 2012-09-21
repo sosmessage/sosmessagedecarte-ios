@@ -10,7 +10,7 @@
 #import <iAd/iAd.h>
 #import "SOSMessageConstant.h"
 
-@interface SMMessageViewController : UIViewController <ADInterstitialAdDelegate> {
+@interface SMMessageViewController : UIViewController {
     ADInterstitialAd *interstitial;
 }
 

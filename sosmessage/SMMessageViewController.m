@@ -17,7 +17,7 @@
 #define LBL_TWITTER @"Twitter"
 #define LBL_MAIL    @"Mail"
 
-@interface SMMessageViewController () <UIActionSheetDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate> {
+@interface SMMessageViewController () <UIActionSheetDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, UIPopoverControllerDelegate, ADInterstitialAdDelegate> {
     int currentMessageIndex;
     int fetchCount;
     SEL messageHandlerSelector;
@@ -244,24 +244,43 @@ float baseHue;
 }
 
 - (IBAction)sendMessagePressed:(id)sender {
-    UIActionSheet* sheet = [[[UIActionSheet alloc] initWithTitle:kmessage_share delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil] autorelease];
-    if ([MFMessageComposeViewController canSendText]) {
-        [sheet addButtonWithTitle:LBL_SMS];
+    //UIActivityViewController should be only available on iOS6
+    if ([UIActivityViewController class] != nil) {
+        NSLog(@"Display UIActivityView");
+        UIActivityViewController *activity = [[[UIActivityViewController alloc] initWithActivityItems:@[self.messageText.text] applicationActivities:nil] autorelease];
+        
+        if ([AppDelegate isIPad]) {
+            NSLog(@"Try open activity in a popover");
+            UIButton *btnSender = (UIButton *)sender;
+            UIPopoverController* aPopover = [[UIPopoverController alloc] initWithContentViewController:activity];
+            aPopover.delegate = self;
+            [aPopover presentPopoverFromRect:btnSender.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+        } else {
+            [self presentModalViewController:activity animated:YES];
+        }
     }
-    if ([MFMailComposeViewController canSendMail]) {
-        [sheet addButtonWithTitle:LBL_MAIL];
-    }
-    if ([TWTweetComposeViewController canSendTweet]) {
-        [sheet addButtonWithTitle:LBL_TWITTER];
-    }
-    NSLog(@"Number of buttons in action sheet: %d", sheet.numberOfButtons);
-    if (sheet.numberOfButtons > 0) {
-        sheet.cancelButtonIndex = [sheet addButtonWithTitle:klabel_btn_cancel];
-        [sheet showInView:self.view];
-    } else {
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:kmessage_share_unable_title message:kmessage_share_unable delegate:nil cancelButtonTitle:klabel_btn_cancel otherButtonTitles: nil];
-        [alert show];
-        [alert release];
+    //If something less than iOS6
+    else {
+        NSLog(@"Display Custom action sheet");
+        UIActionSheet* sheet = [[[UIActionSheet alloc] initWithTitle:kmessage_share delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil] autorelease];
+        if ([MFMessageComposeViewController canSendText]) {
+            [sheet addButtonWithTitle:LBL_SMS];
+        }
+        if ([MFMailComposeViewController canSendMail]) {
+            [sheet addButtonWithTitle:LBL_MAIL];
+        }
+        if ([TWTweetComposeViewController canSendTweet]) {
+            [sheet addButtonWithTitle:LBL_TWITTER];
+        }
+        NSLog(@"Number of buttons in action sheet: %d", sheet.numberOfButtons);
+        if (sheet.numberOfButtons > 0) {
+            sheet.cancelButtonIndex = [sheet addButtonWithTitle:klabel_btn_cancel];
+            [sheet showInView:self.view];
+        } else {
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:kmessage_share_unable_title message:kmessage_share_unable delegate:nil cancelButtonTitle:klabel_btn_cancel otherButtonTitles: nil];
+            [alert show];
+            [alert release];
+        }
     }
 }
 
@@ -412,6 +431,12 @@ float baseHue;
         self.PreviousMessageButton.enabled = currentMessageIndex != 0;
         self.otherMessageButton.enabled = currentMessageIndex < self.messages.count - 1;
     }
+}
+
+#pragma mark UIPopOverControllerDelegate
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+    [popoverController release];
 }
 
 #pragma mark UIActionSheetDelegate

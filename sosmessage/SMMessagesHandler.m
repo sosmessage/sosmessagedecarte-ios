@@ -104,6 +104,7 @@ NSURLConnection* currentConnection;
 }
 
 - (void)requestUrl:(NSString*)url {
+    //Append uuid and url
     NSMutableString* urlWithParams = [NSMutableString stringWithFormat:@"%@?uid=%@", url, self.UUID];
     if ([AppDelegate applicationName]) {
         [urlWithParams appendFormat:@"&appname=%@", [AppDelegate applicationName]];
@@ -118,7 +119,13 @@ NSURLConnection* currentConnection;
 }
 
 - (void)requestPOSTUrl:(NSString*)url params:(NSDictionary*)params {
-    NSURL* nsUrl = [[NSURL alloc] initWithString:url];
+    //Append uuid and url
+    NSMutableString* urlWithParams = [NSMutableString stringWithFormat:@"%@?uid=%@", url, self.UUID];
+    if ([AppDelegate applicationName]) {
+        [urlWithParams appendFormat:@"&appname=%@", [AppDelegate applicationName]];
+    }
+    
+    NSURL* nsUrl = [[NSURL alloc] initWithString:urlWithParams];
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:nsUrl];
     request.HTTPMethod = @"POST";
     

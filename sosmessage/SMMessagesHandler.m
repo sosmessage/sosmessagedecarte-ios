@@ -8,8 +8,8 @@
 
 #import "SMMessagesHandler.h"
 
-#define V1 @"/api/v1"
-#define V2 @"/api/v2"
+#define V1 @"/v1"
+#define V2 @"/v2"
 
 @interface SMMessagesHandler () <NSURLConnectionDelegate> {
     @private

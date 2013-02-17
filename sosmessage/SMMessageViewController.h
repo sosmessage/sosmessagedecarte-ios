@@ -15,7 +15,6 @@
 }
 
 @property (retain, nonatomic) IBOutlet UIView *backgroundView;
-@property (retain, nonatomic) IBOutlet UIImageView *titleImage;
 @property (retain, nonatomic) IBOutlet UITextView *messageText;
 @property (retain, nonatomic) IBOutlet UIButton *sendMessageButton;
 @property (retain, nonatomic) IBOutlet UIButton *otherMessageButton;
@@ -25,18 +24,19 @@
 @property (retain, nonatomic) IBOutlet UIButton *votePlusButton;
 @property (retain, nonatomic) IBOutlet UIButton *voteMinusButton;
 @property (retain, nonatomic) IBOutlet UILabel *votePlusScoring;
-@property (retain, nonatomic) IBOutlet UILabel *voteMinusScoring;
+@property (retain, nonatomic) IBOutlet UILabel *categoryName;
+@property (retain, nonatomic) IBOutlet UIButton *handlerMode;
 @property (retain, nonatomic) IBOutlet UIButton *backButton;
 
 - (id)initWithCategory:(NSDictionary*)aCategory;
-- (id)initWithCategory:(NSDictionary *)aCategory messageHandlerSelector:(SEL) s title:(NSString *)aTitle;
+- (id)initWithCategory:(NSDictionary *)aCategory messageHandlerSelector:(SEL)s title:(NSString *)aTitle;
 
 - (IBAction)dismissButtonPressed:(id)sender;
-- (void)renderTitle;
 - (void)refreshRenders;
 - (IBAction)reloadButtonPressed:(id)sender;
 - (IBAction)previousButtonPressed:(id)sender;
 - (IBAction)sendMessagePressed:(id)sender;
+- (IBAction)switchModePressed:(id)sender;
 
 - (IBAction)voteButtonPressed:(id)sender;
 @end

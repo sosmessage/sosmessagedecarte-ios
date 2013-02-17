@@ -227,8 +227,9 @@
     red = red + (red * pRed);
     blue = blue + (blue * pBlue);
     green = green + (green * pGreen);
+    NSLog(@"Color: R%.2f V%.2f B%.2f A%.2f", red/255.0f,green/255.0f,blue/255.0f,alpha/255.0f);
     
-    return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:alpha/255.0f];
+    return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:0.7];
 }
 
 + (AppDelegate *)sharedDelegate {

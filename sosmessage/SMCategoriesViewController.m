@@ -393,11 +393,11 @@ static char sosMessageKey;
     
     SEL sel = [SMMessagesHandler selectorRequestMessageRandom];
     NSString *subtitle = @"";
-    if (uilabel.text == kTEXT_TOP) {
+    if ([uilabel.text isEqualToString:kTEXT_TOP]) {
         sel = [SMMessagesHandler selectorRequestMessageBest];
         subtitle = @"top";
     }
-    if (uilabel.text == kTEXT_FLOP) {
+    if ([uilabel.text isEqualToString:kTEXT_FLOP]) {
         sel = [SMMessagesHandler selectorRequestMessageWorst];
         subtitle = @"flop";
     }

@@ -29,7 +29,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *backButton;
 
 - (id)initWithCategory:(NSDictionary*)aCategory;
-- (id)initWithCategory:(NSDictionary *)aCategory messageHandlerSelector:(SEL)s title:(NSString *)aTitle;
+- (id)initWithCategory:(NSDictionary *)aCategory messageHandlerSelector:(SEL)s;
 
 - (IBAction)dismissButtonPressed:(id)sender;
 - (void)refreshRenders;

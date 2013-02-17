@@ -30,6 +30,7 @@
 #define MESSAGE_FONT [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceSpecificMessageFont]
 #define NB_BLOCKS [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceSpecificNumberOfBlocks]
 #define CATEGORIES_HEADER_SIZE [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceSpecificCategoriesHeaderSize]
+#define CATEGORIES_FOOTER_SIZE [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceSpecificCategoriesFooterSize]
 #define CATEGORIES_MARGIN_WIDTH [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceSpecificCategoriesMarginWidth]
 #define CATEGORIES_MARGIN_HEIGTH [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceSpecificCategoriesMarginHeight]
 
@@ -69,8 +70,6 @@
 #define FONT_NAME           @"Helvetica"
 
 #pragma mark CONSTANT
-#define kTEXT_TOP           kcategories_top
-#define kTEXT_FLOP          kcategories_flop
 #define kDEFAULTS_ANOUNCES  @"kSoSAnnouncesRead"
 
 #pragma mark -

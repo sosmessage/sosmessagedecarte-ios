@@ -19,6 +19,7 @@
 - (UIFont*)deviceSpecificCategoryFont;
 - (UIFont*)deviceSpecificMessageFont;
 - (int)deviceSpecificCategoriesHeaderSize;
+- (int)deviceSpecificCategoriesFooterSize;
 - (int)deviceSpecificCategoriesMarginHeight;
 - (int)deviceSpecificCategoriesMarginWidth;
 

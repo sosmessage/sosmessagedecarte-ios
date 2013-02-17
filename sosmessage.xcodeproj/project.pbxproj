@@ -44,6 +44,10 @@
 		515B63C716D11217002FCC38 /* sosm_bottom_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63C516D11217002FCC38 /* sosm_bottom_bar.png */; };
 		515B63C916D118C0002FCC38 /* sosm_top_bar_with_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63C816D118C0002FCC38 /* sosm_top_bar_with_icon.png */; };
 		515B63CA16D118C0002FCC38 /* sosm_top_bar_with_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63C816D118C0002FCC38 /* sosm_top_bar_with_icon.png */; };
+		515B63CD16D13416002FCC38 /* sosm_button_home_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CB16D13416002FCC38 /* sosm_button_home_empty.png */; };
+		515B63CE16D13416002FCC38 /* sosm_button_home_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CB16D13416002FCC38 /* sosm_button_home_empty.png */; };
+		515B63CF16D13416002FCC38 /* sosm_button_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CC16D13416002FCC38 /* sosm_button_home.png */; };
+		515B63D016D13416002FCC38 /* sosm_button_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CC16D13416002FCC38 /* sosm_button_home.png */; };
 		515F720514BE2CF5004676E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515D4145DEA4000CF6C45 /* main.m */; };
 		515F720614BE2CF5004676E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515D8145DEA4100CF6C45 /* AppDelegate.m */; };
 		515F720714BE2CF5004676E1 /* SMCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515DB145DEA4100CF6C45 /* SMCategoriesViewController.m */; };
@@ -143,6 +147,8 @@
 		515B63BC16D10B6E002FCC38 /* sosm_liked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_liked.png; sourceTree = "<group>"; };
 		515B63C516D11217002FCC38 /* sosm_bottom_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_bottom_bar.png; sourceTree = "<group>"; };
 		515B63C816D118C0002FCC38 /* sosm_top_bar_with_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_top_bar_with_icon.png; sourceTree = "<group>"; };
+		515B63CB16D13416002FCC38 /* sosm_button_home_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_button_home_empty.png; sourceTree = "<group>"; };
+		515B63CC16D13416002FCC38 /* sosm_button_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_button_home.png; sourceTree = "<group>"; };
 		515F722814BE2CF5004676E1 /* jtequitte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jtequitte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		515F722A14BE2CF5004676E1 /* jtequitte.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = jtequitte.plist; path = "/Users/arnaud/Developments/iOS/sosmessagedecarte-ios/jtequitte.plist"; sourceTree = "<absolute>"; };
 		516515C4145DEA4000CF6C45 /* sosmessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sosmessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +233,8 @@
 		515B63A916D0E195002FCC38 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				515B63CB16D13416002FCC38 /* sosm_button_home_empty.png */,
+				515B63CC16D13416002FCC38 /* sosm_button_home.png */,
 				515B63C816D118C0002FCC38 /* sosm_top_bar_with_icon.png */,
 				515B63C516D11217002FCC38 /* sosm_bottom_bar.png */,
 				515B63B916D10B6E002FCC38 /* sosm_dislike.png */,
@@ -483,6 +491,8 @@
 				515B63C416D10B6E002FCC38 /* sosm_liked.png in Resources */,
 				515B63C716D11217002FCC38 /* sosm_bottom_bar.png in Resources */,
 				515B63CA16D118C0002FCC38 /* sosm_top_bar_with_icon.png in Resources */,
+				515B63CE16D13416002FCC38 /* sosm_button_home_empty.png in Resources */,
+				515B63D016D13416002FCC38 /* sosm_button_home.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +534,8 @@
 				515B63C316D10B6E002FCC38 /* sosm_liked.png in Resources */,
 				515B63C616D11217002FCC38 /* sosm_bottom_bar.png in Resources */,
 				515B63C916D118C0002FCC38 /* sosm_top_bar_with_icon.png in Resources */,
+				515B63CD16D13416002FCC38 /* sosm_button_home_empty.png in Resources */,
+				515B63CF16D13416002FCC38 /* sosm_button_home.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

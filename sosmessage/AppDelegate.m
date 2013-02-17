@@ -115,16 +115,20 @@
 
 - (int)deviceSpecificCategoriesMarginWidth {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return 10;
+        return 30;
     }
     else {
         return 15;
     }
 }
 
+- (int)deviceSpecificCategoriesFooterSize {
+    return self.deviceSpecificCategoriesHeaderSize - 18;
+}
+
 - (int)deviceSpecificCategoriesHeaderSize {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return 35;
+        return 85;
     }
     else {
         return 55;
@@ -229,7 +233,7 @@
     green = green + (green * pGreen);
     NSLog(@"Color: R%.2f V%.2f B%.2f A%.2f", red/255.0f,green/255.0f,blue/255.0f,alpha/255.0f);
     
-    return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:0.7];
+    return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1];
 }
 
 + (AppDelegate *)sharedDelegate {

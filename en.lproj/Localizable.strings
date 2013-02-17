@@ -10,7 +10,7 @@
 
 "label.about" = "About";
 "label.loading" = "Loading...";
-"label.error.server" = "Something went wrong server side, so; sorry for your message.";
+"label.error.server" = "An error occured from the server, please try again.";
 "label.btn.ok"  = "Cool";
 "label.btn.ko"  = "Sorry";
 "label.btn.go"  = "Let's go";

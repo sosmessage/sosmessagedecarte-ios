@@ -12,7 +12,9 @@
 @interface SMCategoriesViewController : UIViewController<SMMessageDelegate, MFMailComposeViewControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>
 
 @property (retain, nonatomic) IBOutlet UIButton *infoButton;
+@property (retain, nonatomic) IBOutlet UIButton *refreshButton;
 @property (retain, nonatomic) IBOutlet UIImageView *titleImage;
+@property (retain, nonatomic) IBOutlet UILabel *applicationName;
 
 @property (retain, nonatomic) NSMutableArray* categories;
 @property (retain, nonatomic) SMMessagesHandler* messageHandler;

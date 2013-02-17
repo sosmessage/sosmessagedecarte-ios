@@ -52,7 +52,7 @@
 	<key>SMAppName</key>
 	<string>sm</string>
 	<key>SMAppReadableName</key>
-	<string>message</string>
+	<string>sos message</string>
 	<key>UIAppFonts</key>
 	<array/>
 	<key>UIPrerenderedIcon</key>

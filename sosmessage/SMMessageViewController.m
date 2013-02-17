@@ -21,7 +21,6 @@
     int currentMessageIndex;
     int fetchCount;
     SEL messageHandlerSelector;
-    NSString *subTitle;
 }
 @property (retain, nonatomic) NSDictionary* category;
 @property (retain, nonatomic) SMMessagesHandler* messageHandler;
@@ -66,7 +65,6 @@ float baseHue;
         [iMessageHandler release];
         
         messageHandlerSelector = [SMMessagesHandler selectorRequestMessageRandom];
-        subTitle = @"";
         
         //load interstitil Ad
         fetchCount = 0;
@@ -78,11 +76,10 @@ float baseHue;
     return self;
 }
 
-- (id)initWithCategory:(NSDictionary *)aCategory messageHandlerSelector:(SEL) s title:(NSString *)aTitle {
+- (id)initWithCategory:(NSDictionary *)aCategory messageHandlerSelector:(SEL) s {
     self = [self initWithCategory:aCategory];
     if (self) {
         messageHandlerSelector = s;
-        subTitle = aTitle;
     }
     return self;
 }
@@ -360,7 +357,10 @@ float baseHue;
 
         self.votePlusButton.enabled = vote != 1;
         
-        self.votePlusScoring.text = [NSString stringWithFormat:@"%@ likes", [[result objectForKey:MESSAGE_VOTE] objectForKey:VOTE_PLUS]];
+        
+        NSInteger nbVote = [[[result objectForKey:MESSAGE_VOTE] objectForKey:VOTE_PLUS] integerValue];
+
+        self.votePlusScoring.text = [NSString stringWithFormat:@"%d like%@", nbVote, nbVote > 1 ? @"s" : @""];
         
         self.messageText.textColor = [UIColor colorWithHue:baseHue saturation:1.0 brightness:0.3 alpha:1.0];
     }

@@ -18,7 +18,6 @@
 }
 @property (nonatomic, assign) NSDate* lastFetchingDate;
 
--(void)renderTitle;
 -(BOOL)isSubViewCategoryPart:(UIView*) view;
 
 -(void)addAdvertisingBlockinPosY:(int)posY;
@@ -36,7 +35,7 @@
 @end
 
 @implementation SMCategoriesViewController
-@synthesize infoButton, titleImage, categories, messageHandler, announcements;
+@synthesize infoButton, titleImage, categories, messageHandler, announcements, applicationName, refreshButton;
 
 static char sosMessageKey;
 
@@ -63,6 +62,8 @@ static char sosMessageKey;
 {
     [self setInfoButton:nil];
     [self setTitleImage:nil];
+    [self setRefreshButton:nil];
+    [self setApplicationName:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -73,13 +74,14 @@ static char sosMessageKey;
     [super viewWillAppear:animated];
     
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    [self renderTitle];
+    self.applicationName.text = [AppDelegate applicationReadableName];
     //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCategories) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [self becomeFirstResponder];
+    
     [super viewDidAppear:animated];
 }
 
@@ -115,24 +117,25 @@ static char sosMessageKey;
     
     UILabel* uiLabel = [[UILabel alloc] initWithFrame:CGRectMake(rectX, posY, rectWidth, rectHeight)];
     
-    uiLabel.layer.cornerRadius = 7.0f;
-    uiLabel.layer.masksToBounds = YES;
-    uiLabel.layer.borderWidth = 0.5f;
-    uiLabel.layer.borderColor = [[UIColor darkGrayColor] CGColor];
+    //uiLabel.layer.cornerRadius = 7.0f;
+    //uiLabel.layer.masksToBounds = YES;
+    //uiLabel.layer.borderWidth = 0.5f;
+    //uiLabel.layer.borderColor = [[UIColor darkGrayColor] CGColor];
     
     return [uiLabel autorelease];
 }
 
 - (void)addSOSCategory:(NSDictionary*)category inPosX:(int)posX andPosY:(int)posY forBlock:(int)nbBlock {
+    
     NSString* category_name = [category objectForKey:CATEGORY_NAME];
     int categoryBlock = nbBlock;
     
     // CATEGORY LABEL
     UILabel* uiLabel = [self buildUILabelForBlock:categoryBlock inPosX:0 andPosY:posY];
     
-    uiLabel.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR]];
-    uiLabel.text = [NSString stringWithFormat:@"%@", category_name];
+    uiLabel.text = [[NSString stringWithFormat:@"%@", category_name] capitalizedString];
     uiLabel.font = CATEGORY_FONT;
+    uiLabel.backgroundColor = [UIColor clearColor];
     
     uiLabel.textColor = [UIColor colorWithHue:uiLabel.backgroundColor.hue saturation:1.0 brightness:0.3 alpha:1.0];
     uiLabel.textAlignment = UITextAlignmentCenter;
@@ -144,43 +147,7 @@ static char sosMessageKey;
     [uiLabel addGestureRecognizer:categoryTap];
     [categoryTap release];
     
-    [self.view insertSubview:uiLabel belowSubview:self.infoButton];
-    
-    // FLOP LABEL
-    UILabel* flopLabel = [self buildUILabelForBlock:1 inPosX:categoryBlock - 1 andPosY:posY];
-    flopLabel.text = kTEXT_TOP;
-    flopLabel.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR] plusRed:-0.1 plusGreen:0.3 plusBlue:-0.1];
-    flopLabel.font = [UIFont fontWithName:@"Georgia" size:13];
-    flopLabel.textColor = [UIColor colorWithHue:uiLabel.backgroundColor.hue saturation:1.0 brightness:0.3 alpha:1.0];
-    flopLabel.textAlignment = UITextAlignmentCenter;
-    flopLabel.layer.cornerRadius = 3.0f;
-    flopLabel.userInteractionEnabled = YES;
-    
-    objc_setAssociatedObject(flopLabel, &sosMessageKey, category, 0);
-    
-    categoryTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCategoryTapping:)];
-    [flopLabel addGestureRecognizer:categoryTap];
-    [categoryTap release];
-    
-    [self.view insertSubview:flopLabel aboveSubview:uiLabel];
-    
-    // TOP LABEL
-    UILabel* topLabel = [self buildUILabelForBlock:1 inPosX:categoryBlock - 1 andPosY:posY];
-    topLabel.text = kTEXT_FLOP;
-    topLabel.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR] plusRed:0.3 plusGreen:-0.1 plusBlue:-0.1];
-    topLabel.font = [UIFont fontWithName:@"Georgia" size:13];
-    topLabel.textColor = [UIColor colorWithHue:uiLabel.backgroundColor.hue saturation:1.0 brightness:0.3 alpha:1.0];
-    topLabel.textAlignment = UITextAlignmentCenter;
-    topLabel.layer.cornerRadius = 3.0f;
-    topLabel.userInteractionEnabled = YES;
-    
-    objc_setAssociatedObject(topLabel, &sosMessageKey, category, 0);
-    
-    categoryTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCategoryTapping:)];
-    [topLabel addGestureRecognizer:categoryTap];
-    [categoryTap release];
-    
-    [self.view insertSubview:topLabel aboveSubview:uiLabel];
+    [self.view insertSubview:uiLabel aboveSubview:self.infoButton];
 }
 
 - (void)addSOSCategory:(NSDictionary*)category inPosX:(int)posX andPosY:(int)posY {
@@ -252,7 +219,9 @@ static char sosMessageKey;
     int x = 0;
     int y = 0;
     
-    if ([workingCategories count] == 1) {
+    if ([workingCategories count] == 0) {
+        return;
+    } else if ([workingCategories count] == 1) {
         [self addAdvertisingBlockinPosY:0];
         [self addSOSCategory:[workingCategories objectAtIndex:0] inPosX:0 andPosY:1 forBlock:NB_BLOCKS];
         y = 2;
@@ -262,34 +231,6 @@ static char sosMessageKey;
         }
         y = [workingCategories count];
     }
-    /* temporaly disable this feature ... As the top / flop feature is not yet perfect
-     else {
-     while (workingCategories.count > 0) {
-     NSDictionary* category = [workingCategories objectAtIndex:0];
-     int blockSize = [[category objectForKey:CATEGORY_NAME] blocksCount:self.view];
-     if ((NB_BLOCKS - x < blockSize)) {
-     [self fillEmptyBlocks:NB_BLOCKS - x fromPosX:x andPosY:y];
-     x = 0;
-     y += 1;
-     }
-     
-     [self addSOSCategory:category inPosX:x andPosY:y];
-     
-     x += blockSize;
-     if (x >= NB_BLOCKS) {
-     y += 1;
-     x = 0;
-     }
-     
-     [workingCategories removeObjectAtIndex:0];
-     }
-     
-     if (x < NB_BLOCKS && x > 0) {
-     [self fillEmptyBlocks:NB_BLOCKS - x fromPosX:x andPosY:y];
-     y++;
-     }
-     }
-     */
     [workingCategories release];
     
     if ([MFMailComposeViewController canSendMail]) {
@@ -301,7 +242,8 @@ static char sosMessageKey;
             y -= 1;
         }
     }
-    float fitHeight =  ceilf((self.view.bounds.size.height - CATEGORIES_HEADER_SIZE) / (y + 1.0f));
+    float fitHeight =  ceilf((self.view.bounds.size.height - CATEGORIES_HEADER_SIZE - CATEGORIES_FOOTER_SIZE) / (y + 1.0f)); //XXX May i need to set a max-height to handle background image size
+
     for (UIView* subView in self.view.subviews) {
         if (subView.tag != 0) {
             continue;
@@ -312,29 +254,8 @@ static char sosMessageKey;
             float viewY = floorf(subView.frame.origin.y * fitHeight) + CATEGORIES_HEADER_SIZE - CATEGORIES_MARGIN_HEIGTH;
             float viewWidth = subView.frame.size.width - CATEGORIES_MARGIN_WIDTH;
             float viewHeight = fitHeight - CATEGORIES_MARGIN_HEIGTH;
-            
-            // Top / Flop handling ... what a mess :]
-            NSString *text = [((UILabel *)subView) text];
-            if ([text isEqualToString:kTEXT_TOP] || [text isEqualToString:kTEXT_FLOP]) {
-                int dummySpace = 1;
-                float viewMinus = viewHeight * 0.1;
-                viewHeight -= viewMinus;
-                viewY += viewMinus / 2;
-                viewX -= viewMinus / 2;
-                
-                if ([text isEqualToString:kTEXT_FLOP]) {
-                    viewY = viewY + viewHeight - ceilf(viewHeight / 2) + dummySpace;
-                }
-                viewHeight = floorf(viewHeight / 2) - dummySpace;
-                
-                //NSLog(@"Subview: %f:%f %fx%f", viewX, viewY, viewWidth, viewHeight);
-            }
 
             subView.frame = CGRectMake(viewX, viewY, viewWidth, viewHeight);
-            
-            if (text == kTEXT_TOP || text == kTEXT_FLOP) {
-                continue;
-            }
             
             // Add "NEW" image above the label
             NSDictionary* category = (NSDictionary*)objc_getAssociatedObject(subView, &sosMessageKey);
@@ -346,11 +267,19 @@ static char sosMessageKey;
                     UIImage *img = [UIImage imageNamed:@"new_stamp.png"];
                     UIImageView* newImage = [[UIImageView alloc] initWithImage:img];
                     newImage.center = CGPointMake(viewX + 50, viewY + 10);
+                    newImage.frame = subView.frame;
                     
                     [self.view addSubview:newImage];
                     [newImage release];
                 }
             }
+            
+            // Add background image
+            NSString *imgName = category ? @"sosm_button_home.png" : @"sosm_button_home_empty.png";
+            UIImageView *imageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:imgName]] autorelease];
+            imageView.frame = subView.frame;
+            imageView.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR]];
+            [self.view insertSubview:imageView belowSubview:subView];
         } else if ([subView isKindOfClass:[UIImageView class]]) {
             UIImage* img = [(UIImageView*)subView image];
             float imgRation = img.size.height / img.size.width;
@@ -360,7 +289,7 @@ static char sosMessageKey;
 }
 
 -(BOOL)isSubViewCategoryPart:(UIView*) view {
-    return ([view isKindOfClass:[UILabel class]] || [view isKindOfClass:[UILabel class]]) && view.tag == 0;
+    return [view isKindOfClass:[UILabel class]] && view.tag == 0;
 }
 
 -(void)removeCategoriesLabel {
@@ -392,17 +321,8 @@ static char sosMessageKey;
     NSDictionary* category = (NSDictionary*)objc_getAssociatedObject(uilabel, &sosMessageKey);
     
     SEL sel = [SMMessagesHandler selectorRequestMessageRandom];
-    NSString *subtitle = @"";
-    if ([uilabel.text isEqualToString:kTEXT_TOP]) {
-        sel = [SMMessagesHandler selectorRequestMessageBest];
-        subtitle = @"top";
-    }
-    if ([uilabel.text isEqualToString:kTEXT_FLOP]) {
-        sel = [SMMessagesHandler selectorRequestMessageWorst];
-        subtitle = @"flop";
-    }
     
-    SMMessageViewController* detail = [[SMMessageViewController alloc] initWithCategory:category messageHandlerSelector:sel title:subtitle];
+    SMMessageViewController* detail = [[SMMessageViewController alloc] initWithCategory:category messageHandlerSelector:sel];
     [self.navigationController pushViewController:detail animated:YES];
     
     [detail release];
@@ -448,8 +368,14 @@ static char sosMessageKey;
     }
 }
 
+- (void)messageHandler:(SMMessagesHandler *)messageHandler didFail:(NSError *)error {
+    self.refreshButton.hidden = false;
+}
+
 - (void)messageHandler:(SMMessagesHandler *)messageHandler didFinishWithJSon:(id)items
 {
+    self.refreshButton.hidden = true;
+    
     if ([items count] > 0) {
         //NSMutableArray* items = [[[NSMutableArray alloc] initWithArray:[response objectForKey:CATEGORIES_ITEMS]] autorelease];
         
@@ -560,69 +486,15 @@ static char sosMessageKey;
     [settings setObject:lastFetchingDate forKey:kSOSLASTFETCH];
 }
 
-- (void)renderTitle {
-    UIGraphicsBeginImageContext(self.titleImage.bounds.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGAffineTransform flipTransform = CGAffineTransformMake( 1, 0, 0, -1, 0, self.titleImage.bounds.size.height);
-    CGContextConcatCTM(context, flipTransform);
-    
-    CGMutablePathRef path = CGPathCreateMutable();
-    CGPathAddRect(path, NULL, self.titleImage.bounds);
-    
-    //Concat sosheader and category name
-    NSMutableString* header = [NSMutableString stringWithString:@"sos"];
-    if ([AppDelegate applicationName]) {
-        [header appendString:[AppDelegate applicationReadableName]];
-    } else {
-        [header appendString:@"message"];
-    }
-    
-    NSInteger _stringLength=[header length];
-    
-    CFStringRef string =  (CFStringRef) header;
-    CFMutableAttributedStringRef attrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
-    CFAttributedStringReplaceString (attrString,CFRangeMake(0, 0), string);
-    
-    CGColorRef _black= [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0].CGColor;
-    CGColorRef _hue= [UIColor whiteColor].CGColor;
-    
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(0, 3),kCTForegroundColorAttributeName, _black);
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(3, _stringLength - 3),kCTForegroundColorAttributeName, _hue);
-    
-    CTFontRef font = CTFontCreateWithName((CFStringRef)FONT_NAME, 20, nil);
-    CFAttributedStringSetAttribute(attrString,CFRangeMake(0, _stringLength),kCTFontAttributeName,font);
-    
-    CTTextAlignment alignement = kCTRightTextAlignment;
-    CTParagraphStyleSetting settings[] = {kCTParagraphStyleSpecifierAlignment, sizeof(alignement), &alignement};
-    CTParagraphStyleRef paragraph = CTParagraphStyleCreate(settings, sizeof(settings) / sizeof(settings[0]));
-    CFAttributedStringSetAttribute(attrString, CFRangeMake(0, _stringLength), kCTParagraphStyleAttributeName, paragraph);
-    CFRelease(paragraph);
-    
-    // Create the framesetter with the attributed string.
-    CTFramesetterRef framesetter =
-    CTFramesetterCreateWithAttributedString(attrString);
-    CFRelease(attrString);
-    
-    // Create the frame and draw it into the graphics context
-    CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, NULL);
-    CFRelease(framesetter);
-    CTFrameDraw(frame, context);
-    CFRelease(frame);
-    CFRelease(path);
-    
-    UIImage* result = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    self.titleImage.image = result;
-}
 
 - (void)dealloc {
     [categories release];
+    [refreshButton release];
     [announcements release];
     [messageHandler release];
     [infoButton release];
     [titleImage release];
+    [applicationName release];
     [super dealloc];
 }
 @end

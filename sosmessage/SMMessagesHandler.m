@@ -32,17 +32,26 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection;
 @end
 
-@implementation SMMessagesHandler
+@implementation SMMessagesHandler {
+    int index;
+    NSMutableArray* messages;
+    
+    SEL lastCallMethod;
+    NSString* lastCategory;
+    
+    NSMutableData* data;
+    NSURLConnection* currentConnection;
+}
 @synthesize delegate, lastStatusCode;
 
-NSMutableData* data;
-NSURLConnection* currentConnection;
 
 #pragma mark Constructor
 - (id)init {
     self = [super init];
     if (self) {
         receiving = false;
+
+        [self resetCachedMessages];
     }
     return self;
 }
@@ -103,19 +112,31 @@ NSURLConnection* currentConnection;
     currentConnection = [NSURLConnection connectionWithRequest:request delegate:self];    
 }
 
-- (void)requestUrl:(NSString*)url {
+- (void)requestUrl:(NSString*)url withAddtionalsParameters:(NSDictionary *)parameters {
     //Append uuid and url
     NSMutableString* urlWithParams = [NSMutableString stringWithFormat:@"%@?uid=%@", url, self.UUID];
     if ([AppDelegate applicationName]) {
         [urlWithParams appendFormat:@"&appname=%@", [AppDelegate applicationName]];
     }
     
+    if (parameters) {
+        for (NSString *key in [parameters keyEnumerator]) {
+            //[urlWithParams appendFormat:@"&%@=%@", key, [parameters objectForKey:key]];
+            NSLog(@"&%@=%@", key, [parameters objectForKey:key]);
+        }
+    }
+    
     NSURL* nsUrl = [[NSURL alloc] initWithString:urlWithParams];
+    NSLog(@"url: %@", nsUrl);
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:nsUrl];
     [self startRequest:request];
     
     [request release];
     [nsUrl release];
+}
+
+- (void)requestUrl:(NSString*)url {
+    [self requestUrl:url withAddtionalsParameters:Nil];
 }
 
 - (void)requestPOSTUrl:(NSString*)url params:(NSDictionary*)params {
@@ -147,14 +168,27 @@ NSURLConnection* currentConnection;
 }
 
 - (void)requestRandomMessageForCategory:(NSString*)aCategoryId {
-    [self requestUrl:[NSString stringWithFormat:@"%@%@/categories/%@/message", SM_URL, V2, aCategoryId]];
+    lastCallMethod = @selector(requestRandomMessageForCategory:);
+    lastCategory = aCategoryId;
+    
+    NSDictionary *params = [[[NSDictionary alloc] initWithObjectsAndKeys:[[[NSMutableArray alloc] init] autorelease], @"ids", nil] autorelease];
+    for (NSDictionary *message in messages) {
+        [[params objectForKey:@"ids"] addObject:[message objectForKey:MESSAGE_ID]];
+    }
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@/categories/%@/message", SM_URL, V2, aCategoryId];
+    [self requestUrl:url withAddtionalsParameters:params];
 }
 
 - (void)requestWorstMessageForCategory:(NSString*)aCategoryId {
+    [self resetCachedMessages];
+    
     [self requestUrl:[NSString stringWithFormat:@"%@%@/categories/%@/worst", SM_URL, V2, aCategoryId]];
 }
 
 - (void)requestBestMessageForCategory:(NSString*)aCategoryId {
+    [self resetCachedMessages];
+    
     [self requestUrl:[NSString stringWithFormat:@"%@%@/categories/%@/best", SM_URL, V2, aCategoryId]];
 }
 
@@ -176,7 +210,7 @@ NSURLConnection* currentConnection;
 +(void)showUIAlert {
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error" message:klabel_error_server delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
-    [alert release];    
+    [alert release];
 }
 
 #pragma mark -
@@ -217,7 +251,7 @@ NSURLConnection* currentConnection;
         }
         else if ([self.delegate respondsToSelector:@selector(messageHandler:didFinishWithJSon:)]) {
             id meta = [json objectForKey:JSON_META];
-            if ([meta objectForKey:META_CODE] == @"500") {
+            if ([[meta objectForKey:META_CODE] isEqual:@(500)]) {
                 NSLog(@"SERVER ERROR: (%@) %@", [meta objectForKey:META_ERROR_TYPE], [meta objectForKey:META_ERROR_DETAILS]);
                 
                 UIView* view = AppDelegate.sharedDelegate.window.rootViewController.view;
@@ -227,7 +261,43 @@ NSURLConnection* currentConnection;
                 [hud show:YES];
                 [hud hide:YES afterDelay:3];
             } else {
-                [self.delegate messageHandler:self didFinishWithJSon:json];
+                //Fill messages.
+                id response = [json objectForKey:JSON_RESPONSE];
+                if ([response objectForKey:@"count"]) {
+                    [messages addObjectsFromArray:[response objectForKey:@"items"]];
+                } else {
+                    bool found = NO;
+                    
+                    //Replace existing message with the same id
+                    for (int i = 0; i < messages.count; i++) {
+                        NSDictionary *message = [messages objectAtIndex:i];
+                        
+                        NSString *currentId = [response objectForKey:MESSAGE_ID];
+                        NSString *messageId = [message objectForKey:MESSAGE_ID];
+                        
+                        if ([currentId isEqualToString:messageId]) {
+                            NSLog(@"Response message found. Replacing...");
+                            
+                            [messages replaceObjectAtIndex:[messages indexOfObject:message] withObject:response];
+                            found = YES;
+                            break;
+                        }
+                    }
+                    
+                    if (!found) {
+                        [messages addObject:response];
+                    }
+                }
+                
+                //Hack between categories / messages
+                id current = [messages objectAtIndex:index];
+                
+                if ([[current objectForKey:@"type"] isEqualToString:@"message"]) {
+                    [self.delegate messageHandler:self didFinishWithJSon:current];
+                }
+                else {
+                    [self.delegate messageHandler:self didFinishWithJSon:[response objectForKey:@"items"]];
+                }
             }
         }
     }
@@ -244,6 +314,41 @@ NSURLConnection* currentConnection;
     [data release];
     currentConnection = nil;
     [super dealloc];
+}
+
+#pragma mark navigation methods
+-(BOOL)hasNext {
+    if (lastCategory) {
+        return true;
+    }
+    return index >= messages.count;
+}
+
+-(BOOL)hasPrevious {
+    return index > 0;
+}
+
+-(void)fetchPreviousMessage {
+    index -= 1;
+    [self.delegate messageHandler:self didFinishWithJSon:[messages objectAtIndex:index]];
+}
+
+-(void)fetchNextMessage {
+    index += 1;
+    if (lastCategory && messages.count <= index) {
+        [self requestRandomMessageForCategory:lastCategory];
+    }
+    else {
+        [self.delegate messageHandler:self didFinishWithJSon:[messages objectAtIndex:index]];
+    }
+}
+
+-(void)resetCachedMessages {
+    lastCategory = nil;
+    lastCallMethod = nil;
+    index = 0;
+    [messages release];
+    messages = [[NSMutableArray alloc] init];
 }
 
 #pragma mark selectors helpers

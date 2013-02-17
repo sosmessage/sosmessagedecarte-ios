@@ -26,9 +26,7 @@
 @property (retain, nonatomic) NSDictionary* category;
 @property (retain, nonatomic) SMMessagesHandler* messageHandler;
 @property (retain, nonatomic) NSString* messageId;
-@property (retain, nonatomic) NSArray* messages;
 
--(void)messageFillWithHUD:(NSDictionary *)message;
 -(void)messageFill:(NSDictionary *)message;
 @end
 
@@ -48,7 +46,6 @@
 @synthesize category;
 @synthesize messageHandler;
 @synthesize messageId;
-@synthesize messages;
 
 float baseHue;
 
@@ -79,8 +76,6 @@ float baseHue;
         
         //revert previousMessageImage
         self.PreviousMessageButton.imageView.transform = CGAffineTransformMake(-1, 0, 0, 1, 0, self.PreviousMessageButton.imageView.bounds.size.width);
-        self.PreviousMessageButton.hidden = YES;
-        self.otherMessageButton.hidden = YES;
         
         messageHandlerSelector = [SMMessagesHandler selectorRequestMessageRandom];
         subTitle = @"";
@@ -129,9 +124,10 @@ float baseHue;
     
     // Prevent from fetching another message when come back from a send modal view
     if (!self.modalViewController) {
-        [self fetchAMessage];
+        // Call the expected method to initialize the message handler
+        [self.messageHandler performSelector:messageHandlerSelector withObject:[self.category objectForKey:CATEGORY_ID]];
     } else {
-        // Froce TextView's tweak to vertical align text
+        // Force TextView's tweak to vertical align text
         [self observeValueForKeyPath:nil ofObject:self.messageText change:nil context:nil];
     }
     
@@ -153,11 +149,6 @@ float baseHue;
     [self becomeFirstResponder];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
 - (void)viewDidUnload
 {
     [self setTitleImage:nil];
@@ -175,7 +166,6 @@ float baseHue;
     [self setSendMessageButton:nil];
     [self setBackButton:nil];
     [self setPreviousMessageButton:nil];
-    [self setMessages:nil];
     interstitial = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -204,7 +194,7 @@ float baseHue;
 -(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event 
 {
     if (motion == UIEventSubtypeMotionShake) {
-        [self fetchAMessage];
+        [self fillNextMessage];
     }
 }
 
@@ -224,7 +214,6 @@ float baseHue;
     [sendMessageButton release];
     [backButton release];
     [PreviousMessageButton release];
-    [messages release];
     [interstitial release];
     [super dealloc];
 }
@@ -236,11 +225,11 @@ float baseHue;
 }
 
 - (IBAction)reloadButtonPressed:(id)sender {
-    [self fetchAMessage];
+    [self fillNextMessage];
 }
 
 - (IBAction)previousButtonPressed:(id)sender {
-    [self messageFillWithHUD:[self.messages objectAtIndex:--currentMessageIndex]];
+    [self fillPreviousMessage];
 }
 
 - (IBAction)sendMessagePressed:(id)sender {
@@ -304,7 +293,7 @@ float baseHue;
     //Concat sosheader and category name
     NSMutableString* header = [NSMutableString stringWithFormat:@"%@%@%@", subTitle, @"sosmessage\n", [categoryName lowercaseString]];
     
-    NSLog(@"Header: %@", [header lowercaseString]);
+    //NSLog(@"Header: %@", [header lowercaseString]);
     NSInteger _stringLength=[header length];
     
     CFStringRef string =  (CFStringRef) header;
@@ -348,19 +337,21 @@ float baseHue;
     self.titleImage.image = result;
 }
 
--(void)fetchAMessage {
+-(void)fillNextMessage {
+    [self fillMessageWithDirection:1];
+}
+
+-(void)fillMessageWithDirection:(int)direction {
     if (interstitial.loaded && fetchCount > 3) {
         [interstitial presentFromViewController:self];
         fetchCount = 0;
         return;
     }
     
-    if (!self.messages) {
-        [self.messageHandler performSelector:messageHandlerSelector withObject:[self.category objectForKey:CATEGORY_ID]];
-        //[self.messageHandler requestRandomMessageForCategory:[self.category objectForKey:CATEGORY_ID]];
-        //[self.messageHandler requestBestMessageForCategory:[self.category objectForKey:CATEGORY_ID]];
+    if (direction < 0) {
+        [self.messageHandler fetchPreviousMessage];
     } else {
-        [self messageFillWithHUD:[self.messages objectAtIndex:++currentMessageIndex]];
+        [self.messageHandler fetchNextMessage];
     }
     
     if ([AppDelegate isInsterstitialAdCompliant]) {
@@ -368,13 +359,23 @@ float baseHue;
     }
 }
 
--(void)messageFillWithHUD:(NSDictionary *)message {
-    MBProgressHUD *hud = [[[MBProgressHUD alloc] initWithView:self.view.window] autorelease];
-    [self.view addSubview:hud];
-    hud.labelText = [NSString stringWithFormat:@"%@message #%d", subTitle, currentMessageIndex + 1];
-    [hud show:YES];
-    [hud hide:YES afterDelay:1];
-    [self messageFill:message];
+-(void)fillPreviousMessage {
+    [self fillMessageWithDirection:-1];
+}
+
+-(void)fetchAMessage {
+    NSLog(@"XXX fetchAMessage called ...");
+    return;
+    
+    if (interstitial.loaded && fetchCount > 3) {
+        [interstitial presentFromViewController:self];
+        fetchCount = 0;
+        return;
+    }
+    
+    if ([AppDelegate isInsterstitialAdCompliant]) {
+        fetchCount += 1;
+    }
 }
 
 #pragma mark NSMessageHandlerDelegate
@@ -392,18 +393,7 @@ float baseHue;
 
 - (void)messageHandler:(SMMessagesHandler *)messageHandler didFinishWithJSon:(id)result
 {
-    id response = [result objectForKey:JSON_RESPONSE];
-    if ([response objectForKey:@"count"]) {
-        //list of message
-        self.messages = [response objectForKey:@"items"];
-        currentMessageIndex = 0;
-        [self messageFill:[self.messages objectAtIndex:currentMessageIndex]];
-    } else {
-        //only one
-        [self messageFill:response];
-    }
-    self.otherMessageButton.hidden = NO;
-    self.PreviousMessageButton.hidden = self.messages ? NO : YES;
+    [self messageFill:result];
 }
 
 -(void)messageFill:(NSDictionary *)result {
@@ -426,11 +416,9 @@ float baseHue;
         
         self.messageText.textColor = [UIColor colorWithHue:baseHue saturation:1.0 brightness:0.3 alpha:1.0];
     }
-    
-    if (self.messages) {
-        self.PreviousMessageButton.enabled = currentMessageIndex != 0;
-        self.otherMessageButton.enabled = currentMessageIndex < self.messages.count - 1;
-    }
+
+    self.PreviousMessageButton.enabled = [self.messageHandler hasPrevious];
+    self.otherMessageButton.enabled = [self.messageHandler hasNext];
 }
 
 #pragma mark UIPopOverControllerDelegate
@@ -445,14 +433,14 @@ float baseHue;
     NSLog(@"Button pressed: %d", buttonIndex);
     if (actionSheet.cancelButtonIndex != buttonIndex) {
         NSString* btnText = [actionSheet buttonTitleAtIndex:buttonIndex];
-        if (btnText == LBL_SMS) {
+        if ([btnText isEqual: LBL_SMS]) {
             // SMS
             MFMessageComposeViewController* controller = [[MFMessageComposeViewController alloc] init];
             controller.messageComposeDelegate = self;
             controller.body = self.messageText.text;
             [self presentModalViewController:controller animated:true];
             [controller release];
-        } else if (btnText == LBL_MAIL) {
+        } else if ([btnText isEqual: LBL_MAIL]) {
             // Mail
             MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
             controller.mailComposeDelegate = self;
@@ -462,7 +450,7 @@ float baseHue;
             [controller setMessageBody:self.messageText.text isHTML:false];
             [self presentModalViewController:controller animated:true];
             [controller release];
-        } else if (btnText == LBL_TWITTER) {
+        } else if ([btnText isEqual: LBL_TWITTER]) {
             // Twitter
             TWTweetComposeViewController* controller = [[TWTweetComposeViewController alloc] init];
             if (![controller setInitialText:self.messageText.text]) {
@@ -500,10 +488,11 @@ float baseHue;
 - (void)interstitialAdDidUnload:(ADInterstitialAd *)interstitialAd
 {
     [self cycleInterstitial];
-    [self fetchAMessage];
+    //XXX todo should not be next all the times.
+    [self fillNextMessage];
 }
 
-// This method will be invoked when an error has occurred attempting to get advertisement content. 
+// This method will be invoked when an error has occurred attempting to get advertisement content.
 // The ADError enum lists the possible error codes.
 - (void)interstitialAd:(ADInterstitialAd *)interstitialAd didFailWithError:(NSError *)error
 {

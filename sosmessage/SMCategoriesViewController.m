@@ -56,7 +56,7 @@ static char sosMessageKey;
     self.messageHandler = iMessageHandler;
     [iMessageHandler release];
     
-    [self.messageHandler requestCategories];
+    [self requestCategories];
 }
 
 - (void)viewDidUnload
@@ -232,11 +232,17 @@ static char sosMessageKey;
     [self.view insertSubview:uiLabel belowSubview:self.infoButton];
 }
 
+-(void)requestCategories {
+    self.categories = nil;
+    
+    [self.messageHandler requestCategories];
+}
+
 - (void)refreshCategories {
     if ([AppDelegate sharedDelegate].refreshCategories) {
         NSLog(@"Request new categories.");
         [AppDelegate sharedDelegate].refreshCategories = NO;
-        [self.messageHandler requestCategories];
+        [self requestCategories];
         return;
     }
     
@@ -321,7 +327,7 @@ static char sosMessageKey;
                 }
                 viewHeight = floorf(viewHeight / 2) - dummySpace;
                 
-                NSLog(@"Subview: %f:%f %fx%f", viewX, viewY, viewWidth, viewHeight);
+                //NSLog(@"Subview: %f:%f %fx%f", viewX, viewY, viewWidth, viewHeight);
             }
 
             subView.frame = CGRectMake(viewX, viewY, viewWidth, viewHeight);
@@ -385,8 +391,6 @@ static char sosMessageKey;
     UILabel* uilabel = (UILabel*)sender.view;
     NSDictionary* category = (NSDictionary*)objc_getAssociatedObject(uilabel, &sosMessageKey);
     
-    NSLog(@"Category added: %@", category);
-    
     SEL sel = [SMMessagesHandler selectorRequestMessageRandom];
     NSString *subtitle = @"";
     if (uilabel.text == kTEXT_TOP) {
@@ -429,46 +433,57 @@ static char sosMessageKey;
 
 - (void)startActivityFromMessageHandler:(SMMessagesHandler *)messageHandler
 {
-    NSLog(@"Try to add HUD");
+    //NSLog(@"Try to add HUD");
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:TRUE];
     hud.labelText = klabel_loading;
 }
 
 - (void)stopActivityFromMessageHandler:(SMMessagesHandler *)messageHandler
 {
-    NSLog(@"Try to remove HUD");
+    //NSLog(@"Try to remove HUD");
     if ([MBProgressHUD hideHUDForView:self.view animated:true]) {
-        NSLog(@"Removed");
+        //NSLog(@"Removed");
     } else {
-        NSLog(@"Not found");
+        //NSLog(@"Not found");
     }
 }
 
-- (void)messageHandler:(SMMessagesHandler *)messageHandler didFinishWithJSon:(id)result
+- (void)messageHandler:(SMMessagesHandler *)messageHandler didFinishWithJSon:(id)items
 {
-    id response = [result objectForKey:JSON_RESPONSE];
-    if ([[response objectForKey:CATEGORIES_COUNT] intValue] > 0) {
-        NSMutableArray* items = [[[NSMutableArray alloc] initWithArray:[response objectForKey:CATEGORIES_ITEMS]] autorelease];
+    if ([items count] > 0) {
+        //NSMutableArray* items = [[[NSMutableArray alloc] initWithArray:[response objectForKey:CATEGORIES_ITEMS]] autorelease];
         
-        id firstElt = [items objectAtIndex:0];
-        NSLog(@"Type: %@", [firstElt objectForKey:@"type"]);
-        if ([@"announcement" isEqualToString:[firstElt objectForKey:@"type"]]) {
-            self.announcements = nil;
-            self.announcements = [[[NSMutableArray alloc] initWithArray:[response objectForKey:CATEGORIES_ITEMS]] autorelease];
-        } else {
-            self.categories = nil;
-            self.categories = [[[NSMutableArray alloc] initWithArray:[response objectForKey:CATEGORIES_ITEMS]] autorelease];
+        for (NSDictionary *item in items) {
+            if ([@"announcement" isEqualToString:[item objectForKey:@"type"]]) {
+                if (!self.announcements) {
+                    self.announcements = [[[NSMutableArray alloc] init] autorelease];
+                }
+                [self.announcements addObject:item];
+            }
             
-            [self refreshCategories];
-            self.lastFetchingDate = [NSDate date];
+            if ([@"category" isEqualToString:[item objectForKey:@"type"]]) {
+                if (!self.categories) {
+                    self.categories = [[[NSMutableArray alloc] init] autorelease];
+                }
+                [self.categories addObject:item];
+                [AppDelegate sharedDelegate].refreshCategories = NO;
+                
+                self.lastFetchingDate = [NSDate date];
+            }
         }
-        [self handleAnnouncements];
+
+        if (!announcements) {
+            [self handleAnnouncements];
+            return;
+        }
     }
+    [self refreshCategories];
 }
 
 - (void)handleAnnouncements {
     if (!announcements) {
         NSLog(@"No announcements yet");
+        self.announcements = [[[NSMutableArray alloc] init] autorelease];
         [self.messageHandler requestAnnouncements];
     }
     else {

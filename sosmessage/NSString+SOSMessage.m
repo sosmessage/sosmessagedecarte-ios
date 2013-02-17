@@ -26,7 +26,7 @@ float sizeInBlocks;
         hueFromString += [self characterAtIndex:i];
     }
     float calcultedHue = (hueFromString % HUE_COLORS / (HUE_COLORS * 1.0f)) * 0.58f + 0.21f;
-    NSLog(@"For '%@' hue: %.2f", self, calcultedHue);
+    //NSLog(@"For '%@' hue: %.2f", self, calcultedHue);
     return calcultedHue;
 }
 

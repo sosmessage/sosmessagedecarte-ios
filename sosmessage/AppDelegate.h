@@ -13,7 +13,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, assign) BOOL refreshCategories;
+@property (assign, nonatomic) BOOL refreshCategories;
 
 - (int)deviceSpecificNumberOfBlocks;
 - (UIFont*)deviceSpecificCategoryFont;

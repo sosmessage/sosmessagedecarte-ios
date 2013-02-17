@@ -50,7 +50,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>SMAppName</key>
-	<string>smdc</string>
+	<string>sm</string>
 	<key>SMAppReadableName</key>
 	<string>message</string>
 	<key>UIAppFonts</key>

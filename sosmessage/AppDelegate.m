@@ -11,9 +11,20 @@
 #import "SMCategoriesViewController.h"
 #import "AdBannerNavigationController.h"
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    BOOL _refreshCategories;
+}
 
-@synthesize window = _window, refreshCategories;
+@synthesize window = _window;
+
+
+-(BOOL)getRefreshCategories {
+    return _refreshCategories;
+}
+
+-(void)setRefreshCategories:(BOOL)value {
+    _refreshCategories = value;
+}
 
 - (void)dealloc
 {
@@ -31,9 +42,6 @@
     NSMutableDictionary *appDefaults = [NSMutableDictionary dictionary];
     [appDefaults setValue:[[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode] forKey:@"language_selection"];
     [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
-    
-    // Register event
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didUserDefaultsChanged:) name:NSUserDefaultsDidChangeNotification object:nil];
     
     //Display categories controller
     SMCategoriesViewController *categories = [[[SMCategoriesViewController alloc] initWithNibName:@"SMCategoriesViewController" bundle:nil] autorelease];
@@ -71,6 +79,9 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     self.refreshCategories = YES;
+    
+    // Register event
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didUserDefaultsChanged:) name:NSUserDefaultsDidChangeNotification object:nil];
     /*
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
@@ -168,7 +179,7 @@
 }
 
 +(BOOL)isIAdCompliant {
-    return [@"smdc" isEqualToString:[AppDelegate applicationNameWithoutLang]] ? NO : YES;
+    return [@"sm" isEqualToString:[AppDelegate applicationNameWithoutLang]] ? NO : YES;
 }
 
 + (BOOL)isIPad {
@@ -183,7 +194,7 @@
     id appName = [[NSBundle mainBundle].infoDictionary objectForKey:@"SMAppName"];
     id lang = [[NSUserDefaults standardUserDefaults] objectForKey:@"language_selection"];
     
-    NSLog(@"AppName: %@_%@", appName, lang);
+    //NSLog(@"AppName: %@_%@", appName, lang);
     
     //return [[NSBundle mainBundle].infoDictionary objectForKey:@"SMAppName"];
     return [NSString stringWithFormat:@"%@_%@",appName, lang];

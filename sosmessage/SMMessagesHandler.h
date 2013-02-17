@@ -23,6 +23,11 @@
 - (void)requestUrl:(NSString*)url;
 - (void)requestPOSTUrl:(NSString*)url params:(NSDictionary*)params;
 
+- (BOOL)hasNext;
+- (BOOL)hasPrevious;
+- (void)fetchPreviousMessage;
+- (void)fetchNextMessage;
+
 - (void)requestCategories;
 - (void)requestAnnouncements;
 - (void)requestVote:(NSInteger)vote messageId:(NSString*)messageId;

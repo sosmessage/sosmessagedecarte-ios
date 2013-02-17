@@ -32,7 +32,6 @@
 - (id)initWithCategory:(NSDictionary *)aCategory messageHandlerSelector:(SEL) s title:(NSString *)aTitle;
 
 - (IBAction)dismissButtonPressed:(id)sender;
-- (void)fetchAMessage;
 - (void)renderTitle;
 - (void)refreshRenders;
 - (IBAction)reloadButtonPressed:(id)sender;

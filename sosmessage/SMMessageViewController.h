@@ -25,6 +25,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *voteMinusButton;
 @property (retain, nonatomic) IBOutlet UILabel *votePlusScoring;
 @property (retain, nonatomic) IBOutlet UILabel *categoryName;
+@property (retain, nonatomic) IBOutlet UILabel *shareBtnLabel;
 @property (retain, nonatomic) IBOutlet UIButton *handlerMode;
 @property (retain, nonatomic) IBOutlet UIButton *backButton;
 

@@ -465,7 +465,7 @@
 					<object class="IBUIButton" id="364306467">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{10, 417}, {77, 50}}</string>
+						<string key="NSFrame">{{10, 417}, {101, 50}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="397233603"/>
@@ -487,10 +487,9 @@
 					<object class="IBUIButton" id="397233603">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">265</int>
-						<string key="NSFrame">{{199, 417}, {111, 50}}</string>
+						<string key="NSFrame">{{162, 417}, {148, 50}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:225</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -625,6 +624,14 @@
 						<reference key="destination" ref="397233603"/>
 					</object>
 					<int key="connectionID">66</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">shareBtnLabel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="319625340"/>
+					</object>
+					<int key="connectionID">67</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -884,7 +891,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">66</int>
+			<int key="maxID">67</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -935,6 +942,7 @@
 						<string key="messageText">UITextView</string>
 						<string key="otherMessageButton">UIButton</string>
 						<string key="sendMessageButton">UIButton</string>
+						<string key="shareBtnLabel">UILabel</string>
 						<string key="voteMinusButton">UIButton</string>
 						<string key="votePlusButton">UIButton</string>
 						<string key="votePlusScoring">UILabel</string>
@@ -975,6 +983,10 @@
 						<object class="IBToOneOutletInfo" key="sendMessageButton">
 							<string key="name">sendMessageButton</string>
 							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="shareBtnLabel">
+							<string key="name">shareBtnLabel</string>
+							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="voteMinusButton">
 							<string key="name">voteMinusButton</string>

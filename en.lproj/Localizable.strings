@@ -15,3 +15,6 @@
 "label.btn.ko"  = "Sorry";
 "label.btn.go"  = "Let's go";
 "label.btn.cancel" = "Cancel";
+"label.btn.share" = "Send this one    ";
+"label.btn.mode.random" = "Random";
+"label.btn.mode.liked" = "Most liked";

@@ -89,9 +89,12 @@
 #define klabel_loading               NSLocalizedString(@"label.loading", nil)
 #define klabel_error_server          NSLocalizedString(@"label.error.server", nil)
 #define klabel_btn_ok                NSLocalizedString(@"label.btn.ok", nil)
-#define klabel_btn_ko                NSLocalizedString(@"label.btn.ok", nil)
+#define klabel_btn_share             NSLocalizedString(@"label.btn.share", nil)
+#define klabel_btn_ko                NSLocalizedString(@"label.btn.ko", nil)
 #define klabel_btn_go                NSLocalizedString(@"label.btn.go", nil)
 #define klabel_btn_cancel            NSLocalizedString(@"label.btn.cancel", nil)
+#define klabel_btn_mode_random       NSLocalizedString(@"label.btn.mode.random", nil)
+#define klabel_btn_mode_liked        NSLocalizedString(@"label.btn.mode.liked", nil)
 
 #pragma mark DECLARE ASSOCIATIVE REFERENCE METHODS
 typedef uintptr_t objc_AssociationPolicy;

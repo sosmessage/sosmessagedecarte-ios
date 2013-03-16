@@ -15,3 +15,6 @@
 "label.btn.ko"  = "Désolé";
 "label.btn.go"  = "Ca marche";
 "label.btn.cancel" = "Non merci";
+"label.btn.share" = "Envoie celle-là   ";
+"label.btn.mode.random" = "Aléatoirement";
+"label.btn.mode.liked" = "Les meilleurs";

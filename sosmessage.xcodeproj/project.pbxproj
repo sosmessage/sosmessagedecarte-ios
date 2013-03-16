@@ -171,6 +171,7 @@
 		517ECA4114B9A8F600B3CA55 /* UIButton+SOSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SOSMessage.h"; sourceTree = "<group>"; };
 		517ECA4214B9A8F600B3CA55 /* UIButton+SOSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SOSMessage.m"; sourceTree = "<group>"; };
 		517ECA4C14BCD39B00B3CA55 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		5187633816F4685E003D0B2B /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/SMProposeNewMessageController.xib; sourceTree = "<group>"; };
 		51973E2F14B64B640062C26B /* SMProposeNewMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMProposeNewMessageController.h; sourceTree = "<group>"; };
 		51973E3014B64B640062C26B /* SMProposeNewMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMProposeNewMessageController.m; sourceTree = "<group>"; };
 		51A5CE041465221400B274B3 /* NSString+SOSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SOSMessage.h"; sourceTree = "<group>"; };
@@ -189,8 +190,6 @@
 		51C133B715FD27B200128453 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		51C133BA15FD27B200128453 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
 		51CBBC0614BE330D009148B2 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		51DCAD9115FE8446008F07AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/SMProposeNewMessageController.xib; sourceTree = "<group>"; };
-		51DCAD9215FE8446008F07AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/SMCategoriesViewController.xib; sourceTree = "<group>"; };
 		51DCAD9315FE8446008F07AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/SMAboutViewController.xib; sourceTree = "<group>"; };
 		51DCAD9415FE8446008F07AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		51F1A70614746B710092F9F8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -594,7 +593,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				516515DE145DEA4100CF6C45 /* en */,
-				51DCAD9215FE8446008F07AC /* fr */,
 			);
 			name = SMCategoriesViewController.xib;
 			sourceTree = "<group>";
@@ -603,7 +601,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				51C133AE15FD257000128453 /* en */,
-				51DCAD9115FE8446008F07AC /* fr */,
+				5187633816F4685E003D0B2B /* fr */,
 			);
 			name = SMProposeNewMessageController.xib;
 			sourceTree = "<group>";

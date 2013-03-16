@@ -45,6 +45,7 @@
 @synthesize messageHandler;
 @synthesize handlerMode;
 @synthesize messageId;
+@synthesize shareBtnLabel;
 
 float baseHue;
 
@@ -59,6 +60,7 @@ float baseHue;
         
         self.votePlusScoring.font = MESSAGE_FONT;
         self.contributorLabel.font = MESSAGE_FONT;
+        [self.shareBtnLabel setText:klabel_btn_share];
 
         self.messageHandler = [[SMMessagesHandler alloc] initWithDelegate:self];
         
@@ -147,6 +149,7 @@ float baseHue;
     [self setSendMessageButton:nil];
     [self setBackButton:nil];
     [self setPreviousMessageButton:nil];
+    [self setShareBtnLabel:nil];
     interstitial = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -198,13 +201,14 @@ float baseHue;
     [backButton release];
     [PreviousMessageButton release];
     [interstitial release];
+    [shareBtnLabel release];
     [super dealloc];
 }
 
 #pragma mark Custom methods
 
 -(void)refreshRenders {
-    NSLog(@"Deprecated");
+    NSLog(@"XXX Deprecated: refreshRenders");
 }
 
 -(void)resetMessageHandler {
@@ -276,11 +280,11 @@ float baseHue;
     if (messageHandlerSelector == [SMMessagesHandler selectorRequestMessageRandom]) {
         NSLog(@"Switching to best message handler");
         messageHandlerSelector = [SMMessagesHandler selectorRequestMessageBest];
-        [self.handlerMode setTitle:@"Random" forState:UIControlStateNormal];
+        [self.handlerMode setTitle:klabel_btn_mode_random forState:UIControlStateNormal];
     } else {
         NSLog(@"Switching to random message handler");
         messageHandlerSelector = [SMMessagesHandler selectorRequestMessageRandom];
-        [self.handlerMode setTitle:@"Most liked" forState:UIControlStateNormal];
+        [self.handlerMode setTitle:klabel_btn_mode_liked forState:UIControlStateNormal];
     }
     
     [self resetMessageHandler];

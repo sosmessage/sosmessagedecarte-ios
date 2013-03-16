@@ -60,11 +60,7 @@ float baseHue;
         self.votePlusScoring.font = MESSAGE_FONT;
         self.contributorLabel.font = MESSAGE_FONT;
 
-        id iMessageHandler = [[SMMessagesHandler alloc] initWithDelegate:self];
-        self.messageHandler = iMessageHandler;
-        [iMessageHandler release];
-        
-        messageHandlerSelector = [SMMessagesHandler selectorRequestMessageRandom];
+        self.messageHandler = [[SMMessagesHandler alloc] initWithDelegate:self];
         
         //load interstitil Ad
         fetchCount = 0;
@@ -79,7 +75,8 @@ float baseHue;
 - (id)initWithCategory:(NSDictionary *)aCategory messageHandlerSelector:(SEL) s {
     self = [self initWithCategory:aCategory];
     if (self) {
-        messageHandlerSelector = s;
+        NSLog(@"XXX Deprecated: initWithCategory");
+        //messageHandlerSelector = s;
     }
     return self;
 }
@@ -109,8 +106,7 @@ float baseHue;
     
     // Prevent from fetching another message when come back from a send modal view
     if (!self.modalViewController) {
-        // Call the expected method to initialize the message handler
-        [self.messageHandler performSelector:messageHandlerSelector withObject:[self.category objectForKey:CATEGORY_ID]];
+        [self switchModePressed:nil];
     } else {
         // Force TextView's tweak to vertical align text
         [self observeValueForKeyPath:nil ofObject:self.messageText change:nil context:nil];
@@ -211,6 +207,17 @@ float baseHue;
     NSLog(@"Deprecated");
 }
 
+-(void)resetMessageHandler {
+    currentMessageIndex = 0;
+    
+    [messageHandler release];
+    self.messageHandler = nil;
+
+    self.messageHandler = [[SMMessagesHandler alloc] initWithDelegate:self];
+    
+    [self.messageHandler performSelector:messageHandlerSelector withObject:[self.category objectForKey:CATEGORY_ID]];
+}
+
 - (IBAction)reloadButtonPressed:(id)sender {
     [self fillNextMessage];
 }
@@ -266,17 +273,17 @@ float baseHue;
 }
 
 - (IBAction)switchModePressed:(id)sender {
-    NSLog(@"XXX TODO");
-    /*
     if (messageHandlerSelector == [SMMessagesHandler selectorRequestMessageRandom]) {
         NSLog(@"Switching to best message handler");
         messageHandlerSelector = [SMMessagesHandler selectorRequestMessageBest];
-        self.handlerMode.titleLabel.text = @"Random";
+        [self.handlerMode setTitle:@"Random" forState:UIControlStateNormal];
     } else {
         NSLog(@"Switching to random message handler");
         messageHandlerSelector = [SMMessagesHandler selectorRequestMessageRandom];
-        self.handlerMode.titleLabel.text = @"Best messages";
-    }*/
+        [self.handlerMode setTitle:@"Most liked" forState:UIControlStateNormal];
+    }
+    
+    [self resetMessageHandler];
 }
 
 
@@ -285,7 +292,7 @@ float baseHue;
 }
 
 -(void)fillMessageWithDirection:(int)direction {
-    if (interstitial.loaded && fetchCount > 3) {
+    if (interstitial.loaded && fetchCount > 5) {
         [interstitial presentFromViewController:self];
         fetchCount = 0;
         return;

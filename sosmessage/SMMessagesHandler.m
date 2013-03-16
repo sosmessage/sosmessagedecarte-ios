@@ -321,7 +321,8 @@
     if (lastCategory) {
         return true;
     }
-    return index >= messages.count;
+    NSLog(@"hasNext: %d (%d, %d)", index < messages.count, index, messages.count);
+    return index < messages.count - 1;
 }
 
 -(BOOL)hasPrevious {

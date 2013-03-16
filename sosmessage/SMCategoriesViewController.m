@@ -220,6 +220,7 @@ static char sosMessageKey;
     int y = 0;
     
     if ([workingCategories count] == 0) {
+        [workingCategories release];
         return;
     } else if ([workingCategories count] == 1) {
         [self addAdvertisingBlockinPosY:0];

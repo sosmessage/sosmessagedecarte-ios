@@ -266,8 +266,6 @@
                 if ([response objectForKey:@"count"]) {
                     [messages addObjectsFromArray:[response objectForKey:@"items"]];
                 } else {
-                    bool found = NO;
-                    
                     //Replace existing message with the same id
                     for (int i = 0; i < messages.count; i++) {
                         NSDictionary *message = [messages objectAtIndex:i];
@@ -276,17 +274,15 @@
                         NSString *messageId = [message objectForKey:MESSAGE_ID];
                         
                         if ([currentId isEqualToString:messageId]) {
-                            NSLog(@"Response message found. Replacing...");
+                            NSLog(@"XXX Response message found. Replacing... Should not happends");
                             
-                            [messages replaceObjectAtIndex:[messages indexOfObject:message] withObject:response];
-                            found = YES;
+                            [messages removeObjectAtIndex:[messages indexOfObject:message]];
+                            index -= 1;
                             break;
                         }
                     }
                     
-                    if (!found) {
-                        [messages addObject:response];
-                    }
+                    [messages addObject:response];
                 }
                 
                 //Hack between categories / messages

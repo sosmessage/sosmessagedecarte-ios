@@ -75,7 +75,7 @@ float baseHue;
 - (id)initWithCategory:(NSDictionary *)aCategory messageHandlerSelector:(SEL) s {
     self = [self initWithCategory:aCategory];
     if (self) {
-        NSLog(@"XXX Deprecated: initWithCategory");
+        NSLog(@"XXX Deprecated: initWithCategory: messageHandlerSelector:");
         //messageHandlerSelector = s;
     }
     return self;

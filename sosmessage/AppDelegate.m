@@ -104,21 +104,23 @@
 
 #pragma mark Custom methods
 
+// Marging between two blocks
 - (int)deviceSpecificCategoriesMarginHeight {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         return 7;
     }
     else {
-        return 24;
+        return 12;
     }
 }
 
+// Left/Right block's margins
 - (int)deviceSpecificCategoriesMarginWidth {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         return 30;
     }
     else {
-        return 100;
+        return 160;
     }
 }
 
@@ -128,10 +130,10 @@
 
 - (int)deviceSpecificCategoriesHeaderSize {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return 85;
+        return [AppDelegate isIAdCompliant] ? 105 : 85; //iAd compliant have less categories
     }
     else {
-        return 140;
+        return [AppDelegate isIAdCompliant] ? 190 : 140; //iAd compliant have less categories;
     }
 }
 
@@ -179,7 +181,7 @@
 
 
 + (BOOL)isInsterstitialAdCompliant {
-    return [AppDelegate isIAdCompliant] && [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
+    return [AppDelegate isIAdCompliant] && [AppDelegate isIPad];
 }
 
 +(BOOL)isIAdCompliant {

@@ -75,7 +75,7 @@ static char sosMessageKey;
     
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     self.applicationName.text = [AppDelegate applicationReadableName];
-    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCategories) name:UIDeviceOrientationDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCategories) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated

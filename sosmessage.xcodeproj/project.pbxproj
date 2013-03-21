@@ -426,22 +426,6 @@
 		516515B9145DEA4000CF6C45 = {
 			isa = PBXGroup;
 			children = (
-				51B8CD6F16FAEDFE009B5DB4 /* 144px_birthday.png */,
-				51B8CD6D16FAEDFA009B5DB4 /* 72px_birthday.png */,
-				51B8CD6B16FAEDF5009B5DB4 /* 114px_birthday.png */,
-				51B8CD6916FAEDED009B5DB4 /* 57px_birthday.png */,
-				51B8CD2116FAED41009B5DB4 /* 144px_jokes.png */,
-				51B8CD1F16FAED3E009B5DB4 /* 72px_jokes.png */,
-				51B8CD1D16FAED34009B5DB4 /* 114px_jokes.png */,
-				51B8CD1B16FAED30009B5DB4 /* 57px_jokes.png */,
-				51B8CCD716FAEC78009B5DB4 /* 144px_breakup.png */,
-				51B8CCD516FAEC72009B5DB4 /* 72px_breakup.png */,
-				51B8CCD216FAEC07009B5DB4 /* 114px_breakup.png */,
-				51B8CCD016FAEBF6009B5DB4 /* 57px_breakup.png */,
-				515B63D716D1688E002FCC38 /* 144px_full_app.png */,
-				515B63D516D16886002FCC38 /* 72px_full_app.png */,
-				515B63D316D16744002FCC38 /* 114px_full_app.png */,
-				515B63D116D1673A002FCC38 /* 57px_full_app.png */,
 				515B63A916D0E195002FCC38 /* Resources */,
 				5171FA27160BADB600D19E01 /* Default-568h@2x.png */,
 				513B9F4D15FA82F000199E82 /* Settings.bundle */,
@@ -514,6 +498,7 @@
 		516515CF145DEA4000CF6C45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				51B8CD7116FAF0E4009B5DB4 /* Icons */,
 				51C133B515FD27B200128453 /* en.lproj */,
 				51C133B815FD27B200128453 /* fr.lproj */,
 				51788A19150CE50700AEE736 /* new_stamp.png */,
@@ -552,6 +537,30 @@
 				51C133B415FD26A200128453 /* SMAboutViewController.xib */,
 			);
 			name = Nibs;
+			sourceTree = "<group>";
+		};
+		51B8CD7116FAF0E4009B5DB4 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				51B8CD6B16FAEDF5009B5DB4 /* 114px_birthday.png */,
+				51B8CCD216FAEC07009B5DB4 /* 114px_breakup.png */,
+				515B63D316D16744002FCC38 /* 114px_full_app.png */,
+				51B8CD1D16FAED34009B5DB4 /* 114px_jokes.png */,
+				51B8CD6F16FAEDFE009B5DB4 /* 144px_birthday.png */,
+				51B8CCD716FAEC78009B5DB4 /* 144px_breakup.png */,
+				515B63D716D1688E002FCC38 /* 144px_full_app.png */,
+				51B8CD2116FAED41009B5DB4 /* 144px_jokes.png */,
+				51B8CD6916FAEDED009B5DB4 /* 57px_birthday.png */,
+				51B8CCD016FAEBF6009B5DB4 /* 57px_breakup.png */,
+				515B63D116D1673A002FCC38 /* 57px_full_app.png */,
+				51B8CD1B16FAED30009B5DB4 /* 57px_jokes.png */,
+				51B8CD6D16FAEDFA009B5DB4 /* 72px_birthday.png */,
+				51B8CCD516FAEC72009B5DB4 /* 72px_breakup.png */,
+				515B63D516D16886002FCC38 /* 72px_full_app.png */,
+				51B8CD1F16FAED3E009B5DB4 /* 72px_jokes.png */,
+			);
+			name = Icons;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		51C133B515FD27B200128453 /* en.lproj */ = {

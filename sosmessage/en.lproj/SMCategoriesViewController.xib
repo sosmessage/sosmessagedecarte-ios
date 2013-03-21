@@ -64,8 +64,8 @@
 						<bool key="IBUIOpaque">NO</bool>
 						<int key="IBUITag">25</int>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<int key="IBUIContentHorizontalAlignment">0</int>
-						<int key="IBUIContentVerticalAlignment">0</int>
+						<int key="IBUIContentHorizontalAlignment">3</int>
+						<int key="IBUIContentVerticalAlignment">2</int>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="88622477">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -308,10 +308,10 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="1068416858"/>
 							<reference ref="755733034"/>
-							<reference ref="575597388"/>
-							<reference ref="675774394"/>
 							<reference ref="1023038145"/>
 							<reference ref="482297566"/>
+							<reference ref="675774394"/>
+							<reference ref="575597388"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -358,6 +358,7 @@
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="21.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<real value="1" key="21.IBUIButtonInspectorSelectedEdgeInsetMetadataKey"/>
 				<string key="24.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="26.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="27.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

@@ -21,6 +21,7 @@
     int currentMessageIndex;
     int fetchCount;
     SEL messageHandlerSelector;
+    NSString *messagePlain;
 }
 @property (retain, nonatomic) NSDictionary* category;
 @property (retain, nonatomic) SMMessagesHandler* messageHandler;
@@ -234,7 +235,7 @@ float baseHue;
     //UIActivityViewController should be only available on iOS6
     if ([UIActivityViewController class] != nil) {
         NSLog(@"Display UIActivityView");
-        UIActivityViewController *activity = [[[UIActivityViewController alloc] initWithActivityItems:@[self.messageText.text] applicationActivities:nil] autorelease];
+        UIActivityViewController *activity = [[[UIActivityViewController alloc] initWithActivityItems:@[messagePlain] applicationActivities:nil] autorelease];
         
         if ([AppDelegate isIPad]) {
             NSLog(@"Try open activity in a popover");
@@ -359,6 +360,7 @@ float baseHue;
         } else {
             self.messageText.text = [NSString stringWithFormat:@"%@", [result objectForKey:MESSAGE_TEXT]];
         }
+        messagePlain = [result objectForKey:MESSAGE_TEXT]; //Save plain message to share it without contributor name.
 
         //self.contributorLabel.text = [result objectForKey:MESSAGE_CONTRIBUTOR];
         
@@ -396,7 +398,7 @@ float baseHue;
             // SMS
             MFMessageComposeViewController* controller = [[MFMessageComposeViewController alloc] init];
             controller.messageComposeDelegate = self;
-            controller.body = self.messageText.text;
+            controller.body = messagePlain;
             [self presentModalViewController:controller animated:true];
             [controller release];
         } else if ([btnText isEqual: LBL_MAIL]) {
@@ -405,14 +407,14 @@ float baseHue;
             controller.mailComposeDelegate = self;
             
             [controller setSubject:[NSString stringWithFormat:@"sosmessage %@", self.categoryName.text]];
-            [controller setMessageBody:self.messageText.text isHTML:false];
+            [controller setMessageBody:messagePlain isHTML:false];
             [self presentModalViewController:controller animated:true];
             [controller release];
         } else if ([btnText isEqual: LBL_TWITTER]) {
             // Twitter
             TWTweetComposeViewController* controller = [[TWTweetComposeViewController alloc] init];
-            if (![controller setInitialText:self.messageText.text]) {
-                [controller setInitialText:[NSString stringWithFormat:@"%@…", [self.messageText.text substringWithRange:NSMakeRange(0, 139)]]];
+            if (![controller setInitialText:messagePlain]) {
+                [controller setInitialText:[NSString stringWithFormat:@"%@…", [messagePlain substringWithRange:NSMakeRange(0, 139)]]];
             }
             [self presentModalViewController:controller animated:true];
             [controller release];

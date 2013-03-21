@@ -103,6 +103,11 @@
 		51B84BAA14CC836200A20D2C /* btn_next.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B84BA514CC836200A20D2C /* btn_next.png */; };
 		51B84BAB14CC836200A20D2C /* btn_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B84BA614CC836200A20D2C /* btn_plus.png */; };
 		51B84BAC14CC836200A20D2C /* btn_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B84BA614CC836200A20D2C /* btn_plus.png */; };
+		51B8CCD116FAEBF6009B5DB4 /* 57px_breakup.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CCD016FAEBF6009B5DB4 /* 57px_breakup.png */; };
+		51B8CCD316FAEC07009B5DB4 /* 114px_breakup.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CCD216FAEC07009B5DB4 /* 114px_breakup.png */; };
+		51B8CCD416FAEC43009B5DB4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5171FA27160BADB600D19E01 /* Default-568h@2x.png */; };
+		51B8CCD616FAEC72009B5DB4 /* 72px_breakup.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CCD516FAEC72009B5DB4 /* 72px_breakup.png */; };
+		51B8CCD816FAEC78009B5DB4 /* 144px_breakup.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CCD716FAEC78009B5DB4 /* 144px_breakup.png */; };
 		51C133AC15FD257000128453 /* SMProposeNewMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133AF15FD257000128453 /* SMProposeNewMessageController.xib */; };
 		51C133AD15FD257000128453 /* SMProposeNewMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133AF15FD257000128453 /* SMProposeNewMessageController.xib */; };
 		51C133B115FD26A200128453 /* SMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B415FD26A200128453 /* SMAboutViewController.xib */; };
@@ -113,6 +118,7 @@
 		51C133BE15FD27B200128453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B915FD27B200128453 /* Localizable.strings */; };
 		51CBBC0714BE330E009148B2 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CBBC0614BE330D009148B2 /* iAd.framework */; };
 		51CBBC0814BE3326009148B2 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CBBC0614BE330D009148B2 /* iAd.framework */; };
+		51D85B6516F8D194002635CF /* sosmessage-bu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51D85B6416F8D194002635CF /* sosmessage-bu.plist */; };
 		51F1A70814746B710092F9F8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F1A70714746B710092F9F8 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
@@ -148,8 +154,7 @@
 		515B63D316D16744002FCC38 /* 114px_full_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114px_full_app.png; sourceTree = "<group>"; };
 		515B63D516D16886002FCC38 /* 72px_full_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 72px_full_app.png; sourceTree = "<group>"; };
 		515B63D716D1688E002FCC38 /* 144px_full_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 144px_full_app.png; sourceTree = "<group>"; };
-		515F722814BE2CF5004676E1 /* jtequitte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jtequitte.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		515F722A14BE2CF5004676E1 /* jtequitte.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = jtequitte.plist; path = "/Users/arnaud/Developments/iOS/sosmessagedecarte-ios/jtequitte.plist"; sourceTree = "<absolute>"; };
+		515F722814BE2CF5004676E1 /* smbu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smbu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		516515C4145DEA4000CF6C45 /* sosmessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sosmessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		516515C8145DEA4000CF6C45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		516515CA145DEA4000CF6C45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -185,11 +190,16 @@
 		51B84BA414CC836200A20D2C /* btn_minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_minus.png; sourceTree = "<group>"; };
 		51B84BA514CC836200A20D2C /* btn_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_next.png; sourceTree = "<group>"; };
 		51B84BA614CC836200A20D2C /* btn_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_plus.png; sourceTree = "<group>"; };
+		51B8CCD016FAEBF6009B5DB4 /* 57px_breakup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 57px_breakup.png; sourceTree = "<group>"; };
+		51B8CCD216FAEC07009B5DB4 /* 114px_breakup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114px_breakup.png; sourceTree = "<group>"; };
+		51B8CCD516FAEC72009B5DB4 /* 72px_breakup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 72px_breakup.png; sourceTree = "<group>"; };
+		51B8CCD716FAEC78009B5DB4 /* 144px_breakup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 144px_breakup.png; sourceTree = "<group>"; };
 		51C133AE15FD257000128453 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SMProposeNewMessageController.xib; sourceTree = "<group>"; };
 		51C133B315FD26A200128453 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SMAboutViewController.xib; sourceTree = "<group>"; };
 		51C133B715FD27B200128453 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		51C133BA15FD27B200128453 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
 		51CBBC0614BE330D009148B2 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		51D85B6416F8D194002635CF /* sosmessage-bu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sosmessage-bu.plist"; sourceTree = "<group>"; };
 		51DCAD9315FE8446008F07AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/SMAboutViewController.xib; sourceTree = "<group>"; };
 		51DCAD9415FE8446008F07AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		51F1A70614746B710092F9F8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -251,6 +261,10 @@
 		516515B9145DEA4000CF6C45 = {
 			isa = PBXGroup;
 			children = (
+				51B8CCD716FAEC78009B5DB4 /* 144px_breakup.png */,
+				51B8CCD516FAEC72009B5DB4 /* 72px_breakup.png */,
+				51B8CCD216FAEC07009B5DB4 /* 114px_breakup.png */,
+				51B8CCD016FAEBF6009B5DB4 /* 57px_breakup.png */,
 				515B63D716D1688E002FCC38 /* 144px_full_app.png */,
 				515B63D516D16886002FCC38 /* 72px_full_app.png */,
 				515B63D316D16744002FCC38 /* 114px_full_app.png */,
@@ -276,7 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				516515C4145DEA4000CF6C45 /* sosmessage.app */,
-				515F722814BE2CF5004676E1 /* jtequitte.app */,
+				515F722814BE2CF5004676E1 /* smbu.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -331,7 +345,7 @@
 				5129835014C163CA00252D33 /* new.png */,
 				5109146214AE0B5200047A47 /* canvas.jpg */,
 				516515D0145DEA4000CF6C45 /* sosmessage-Info.plist */,
-				515F722A14BE2CF5004676E1 /* jtequitte.plist */,
+				51D85B6416F8D194002635CF /* sosmessage-bu.plist */,
 				516515D1145DEA4000CF6C45 /* InfoPlist.strings */,
 				516515D4145DEA4000CF6C45 /* main.m */,
 				516515D6145DEA4100CF6C45 /* sosmessage-Prefix.pch */,
@@ -391,9 +405,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		515F720314BE2CF5004676E1 /* jtequitte */ = {
+		515F720314BE2CF5004676E1 /* break up */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 515F722514BE2CF5004676E1 /* Build configuration list for PBXNativeTarget "jtequitte" */;
+			buildConfigurationList = 515F722514BE2CF5004676E1 /* Build configuration list for PBXNativeTarget "break up" */;
 			buildPhases = (
 				515F720414BE2CF5004676E1 /* Sources */,
 				515F721014BE2CF5004676E1 /* Frameworks */,
@@ -403,9 +417,9 @@
 			);
 			dependencies = (
 			);
-			name = jtequitte;
+			name = "break up";
 			productName = sosmessage;
-			productReference = 515F722814BE2CF5004676E1 /* jtequitte.app */;
+			productReference = 515F722814BE2CF5004676E1 /* smbu.app */;
 			productType = "com.apple.product-type.application";
 		};
 		516515C3145DEA4000CF6C45 /* sosmessage */ = {
@@ -447,7 +461,7 @@
 			projectRoot = "";
 			targets = (
 				516515C3145DEA4000CF6C45 /* sosmessage */,
-				515F720314BE2CF5004676E1 /* jtequitte */,
+				515F720314BE2CF5004676E1 /* break up */,
 			);
 		};
 /* End PBXProject section */
@@ -489,6 +503,12 @@
 				515B63CA16D118C0002FCC38 /* sosm_top_bar_with_icon.png in Resources */,
 				515B63CE16D13416002FCC38 /* sosm_button_home_empty.png in Resources */,
 				515B63D016D13416002FCC38 /* sosm_button_home.png in Resources */,
+				51D85B6516F8D194002635CF /* sosmessage-bu.plist in Resources */,
+				51B8CCD116FAEBF6009B5DB4 /* 57px_breakup.png in Resources */,
+				51B8CCD316FAEC07009B5DB4 /* 114px_breakup.png in Resources */,
+				51B8CCD416FAEC43009B5DB4 /* Default-568h@2x.png in Resources */,
+				51B8CCD616FAEC72009B5DB4 /* 72px_breakup.png in Resources */,
+				51B8CCD816FAEC78009B5DB4 /* 144px_breakup.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,8 +659,8 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "sosmessage/sosmessage-Prefix.pch";
-				INFOPLIST_FILE = jtequitte.plist;
-				PRODUCT_NAME = jtequitte;
+				INFOPLIST_FILE = "sosmessage/sosmessage-bu.plist";
+				PRODUCT_NAME = smbu;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -650,8 +670,8 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "sosmessage/sosmessage-Prefix.pch";
-				INFOPLIST_FILE = jtequitte.plist;
-				PRODUCT_NAME = jtequitte;
+				INFOPLIST_FILE = "sosmessage/sosmessage-bu.plist";
+				PRODUCT_NAME = smbu;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -736,7 +756,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		515F722514BE2CF5004676E1 /* Build configuration list for PBXNativeTarget "jtequitte" */ = {
+		515F722514BE2CF5004676E1 /* Build configuration list for PBXNativeTarget "break up" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				515F722614BE2CF5004676E1 /* Debug */,

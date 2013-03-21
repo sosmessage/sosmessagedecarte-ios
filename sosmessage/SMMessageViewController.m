@@ -321,7 +321,7 @@ float baseHue;
     NSLog(@"XXX fetchAMessage called ...");
     return;
     
-    if (interstitial.loaded && fetchCount > 3) {
+    if (interstitial.loaded && fetchCount > 5) {
         [interstitial presentFromViewController:self];
         fetchCount = 0;
         return;

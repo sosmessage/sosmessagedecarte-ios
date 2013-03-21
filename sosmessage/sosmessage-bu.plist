@@ -13,6 +13,10 @@
 		<string>iphone_hdpi_114.png</string>
 		<string>iphone_hdpi_72.png</string>
 		<string>iphone_mdpi_57.png</string>
+		<string>57px_breakup.png</string>
+		<string>114px_breakup.png</string>
+		<string>72px_breakup.png</string>
+		<string>144px_breakup.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -23,9 +27,11 @@
 				<string>iphone_hdpi_114.png</string>
 				<string>iphone_hdpi_72.png</string>
 				<string>iphone_mdpi_57.png</string>
+				<string>57px_breakup.png</string>
+				<string>114px_breakup.png</string>
+				<string>72px_breakup.png</string>
+				<string>144px_breakup.png</string>
 			</array>
-			<key>UIPrerenderedIcon</key>
-			<false/>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
@@ -44,6 +50,10 @@
 	<string>1.1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>SMAppName</key>
+	<string>smbu</string>
+	<key>SMAppReadableName</key>
+	<string>break up</string>
 	<key>UIAppFonts</key>
 	<array/>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -53,9 +63,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -64,9 +71,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>SMAppName</key>
-	<string>jtk</string>
-	<key>SMAppReadableName</key>
-	<string>jtequitte</string>
 </dict>
 </plist>

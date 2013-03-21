@@ -109,7 +109,7 @@
         return 7;
     }
     else {
-        return 16;
+        return 24;
     }
 }
 
@@ -118,7 +118,7 @@
         return 30;
     }
     else {
-        return 15;
+        return 100;
     }
 }
 
@@ -131,7 +131,7 @@
         return 85;
     }
     else {
-        return 55;
+        return 140;
     }
 }
 

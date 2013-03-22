@@ -55,7 +55,7 @@
 					</object>
 					<object class="IBUIButton" id="575597388">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">282</int>
+						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{0, 420}, {320, 40}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
@@ -78,7 +78,7 @@
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
 						</object>
-						<object class="NSCustomResource" key="IBUINormalImage">
+						<object class="NSCustomResource" key="IBUINormalImage" id="162878634">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">sosm_bottom_bar.png</string>
 						</object>
@@ -94,7 +94,7 @@
 					</object>
 					<object class="IBUIImageView" id="755733034">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">306</int>
+						<int key="NSvFlags">290</int>
 						<string key="NSFrameSize">{320, 40}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
@@ -103,18 +103,14 @@
 						<int key="IBUITag">26</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">sosm_top_bar_with_icon.png</string>
-						</object>
+						<reference key="IBUIImage" ref="162878634"/>
 					</object>
 					<object class="IBUILabel" id="675774394">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">285</int>
+						<int key="NSvFlags">269</int>
 						<string key="NSFrame">{{79, 420}, {161, 40}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -183,11 +179,11 @@
 					</object>
 					<object class="IBUILabel" id="482297566">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">306</int>
+						<int key="NSvFlags">290</int>
 						<string key="NSFrameSize">{320, 40}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="1023038145"/>
+						<reference key="NSNextKeyView" ref="1010553111"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -203,6 +199,22 @@
 						<reference key="IBUIFontDescription" ref="686737819"/>
 						<reference key="IBUIFont" ref="806829793"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+					</object>
+					<object class="IBUIImageView" id="1010553111">
+						<reference key="NSNextResponder" ref="774585933"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{10, 3}, {48, 33}}</string>
+						<reference key="NSSuperview" ref="774585933"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="1023038145"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<int key="IBUITag">823</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">sosm_top_bar_icon.png</string>
+						</object>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
@@ -234,14 +246,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">titleImage</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="755733034"/>
-					</object>
-					<int key="connectionID">25</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">applicationName</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="482297566"/>
@@ -263,6 +267,14 @@
 						<reference key="destination" ref="1023038145"/>
 					</object>
 					<int key="connectionID">34</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">creditsLabel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="675774394"/>
+					</object>
+					<int key="connectionID">35</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -312,6 +324,7 @@
 							<reference ref="482297566"/>
 							<reference ref="675774394"/>
 							<reference ref="575597388"/>
+							<reference ref="1010553111"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -350,6 +363,11 @@
 						<reference key="object" ref="482297566"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">36</int>
+						<reference key="object" ref="1010553111"/>
+						<reference key="parent" ref="774585933"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -366,13 +384,14 @@
 				<real value="0.0" key="27.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="30.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="36.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">34</int>
+			<int key="maxID">36</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -395,13 +414,17 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="applicationName">UILabel</string>
+						<string key="creditsLabel">UILabel</string>
 						<string key="infoButton">UIButton</string>
 						<string key="refreshButton">UIButton</string>
-						<string key="titleImage">UIImageView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="applicationName">
 							<string key="name">applicationName</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="creditsLabel">
+							<string key="name">creditsLabel</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="infoButton">
@@ -411,10 +434,6 @@
 						<object class="IBToOneOutletInfo" key="refreshButton">
 							<string key="name">refreshButton</string>
 							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="titleImage">
-							<string key="name">titleImage</string>
-							<string key="candidateClassName">UIImageView</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -436,7 +455,7 @@
 			<string key="btn_back.png">{533, 555}</string>
 			<string key="sosm_background_640_1136.png">{640, 1136}</string>
 			<string key="sosm_bottom_bar.png">{640, 85}</string>
-			<string key="sosm_top_bar_with_icon.png">{640, 84}</string>
+			<string key="sosm_top_bar_icon.png">{95, 66}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

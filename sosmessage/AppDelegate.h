@@ -18,12 +18,14 @@
 - (int)deviceSpecificNumberOfBlocks;
 - (UIFont*)deviceSpecificCategoryFont;
 - (UIFont*)deviceSpecificMessageFont;
+- (UIFont*)deviceSpecificBarsFont;
 - (int)deviceSpecificCategoriesHeaderSize;
 - (int)deviceSpecificCategoriesFooterSize;
 - (int)deviceSpecificCategoriesMarginHeight;
 - (int)deviceSpecificCategoriesMarginWidth;
 
 + (AppDelegate *)sharedDelegate;
++ (void)logAvaiableFonts;
 + (UIColor*)buildUIColorFromARGBStringRepresentation:(NSString*)aString;
 + (UIColor*)buildUIColorFromARGBStringRepresentation:(NSString*)aString plusRed:(float)pRed plusGreen:(float)pGreen plusBlue:(float)pBlue;
 + (BOOL)isIPad;

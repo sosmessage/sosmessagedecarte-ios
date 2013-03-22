@@ -154,7 +154,7 @@
     }
 }
 
--(void)logAvaiableFonts {
++(void)logAvaiableFonts {
     for (NSString* familyName in [UIFont familyNames]) {
         for (NSString* fontName in [UIFont fontNamesForFamilyName:familyName]) {
             NSLog(@"Available font: %@", fontName);
@@ -162,12 +162,20 @@
     }
 }
 
+- (UIFont *)deviceSpecificBarsFont {
+    int fontSize = 28;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        fontSize = 17;
+    }
+    return [UIFont fontWithName:@"HelveticaNeue-Bold" size:fontSize];
+}
+
 - (UIFont *)deviceSpecificMessageFont {
     int fontSize = 28;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         fontSize = 16;
     }
-    return [UIFont fontWithName:@"Georgia" size:fontSize];
+    return [UIFont fontWithName:@"Pacifico" size:fontSize];
 }
 
 - (UIFont *)deviceSpecificCategoryFont {

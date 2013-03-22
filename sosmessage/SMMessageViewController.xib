@@ -387,7 +387,6 @@
 									<int key="IBUIAutocapitalizationType">2</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<int key="IBUIDataDetectorTypes">4</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<string key="name">Georgia</string>
 									<string key="family">Georgia</string>
@@ -420,9 +419,9 @@
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
+						<object class="NSCustomResource" key="IBUIImage" id="411838270">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">sosm_top_bar_with_icon.png</string>
+							<string key="NSResourceName">sosm_bottom_bar.png</string>
 						</object>
 					</object>
 					<object class="IBUILabel" id="619276367">
@@ -457,10 +456,7 @@
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">sosm_bottom_bar.png</string>
-						</object>
+						<reference key="IBUIImage" ref="411838270"/>
 					</object>
 					<object class="IBUIButton" id="364306467">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -486,8 +482,8 @@
 					</object>
 					<object class="IBUIButton" id="397233603">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">265</int>
-						<string key="NSFrame">{{162, 417}, {148, 50}}</string>
+						<int key="NSvFlags">267</int>
+						<string key="NSFrame">{{182, 417}, {128, 50}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:225</string>
@@ -510,11 +506,26 @@
 						</object>
 						<reference key="IBUIFont" ref="409230961"/>
 					</object>
+					<object class="IBUIImageView" id="568181071">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{10, 3}, {44, 33}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="257214470"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">sosm_top_bar_icon.png</string>
+						</object>
+					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="257214470"/>
+				<reference key="NSNextKeyView" ref="568181071"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MC41OTc1NzY3NzU5IDAuNzUzOTkxMTY4NSAwLjQ1MzEwNzgyOTUAA</bytes>
@@ -634,6 +645,14 @@
 					<int key="connectionID">67</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">menuName</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="364306467"/>
+					</object>
+					<int key="connectionID">68</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">dismissButtonPressed:</string>
 						<reference key="source" ref="364306467"/>
@@ -725,6 +744,7 @@
 							<reference ref="1073080307"/>
 							<reference ref="397233603"/>
 							<reference ref="619276367"/>
+							<reference ref="568181071"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -847,6 +867,11 @@
 						<reference key="object" ref="619276367"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">69</int>
+						<reference key="object" ref="568181071"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -886,12 +911,13 @@
 				<string key="61.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="62.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="63.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="69.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">67</int>
+			<int key="maxID">69</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -939,6 +965,7 @@
 						<string key="categoryName">UILabel</string>
 						<string key="contributorLabel">UILabel</string>
 						<string key="handlerMode">UIButton</string>
+						<string key="menuName">UIButton</string>
 						<string key="messageText">UITextView</string>
 						<string key="otherMessageButton">UIButton</string>
 						<string key="sendMessageButton">UIButton</string>
@@ -970,6 +997,10 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="handlerMode">
 							<string key="name">handlerMode</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="menuName">
+							<string key="name">menuName</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="messageText">
@@ -1027,7 +1058,7 @@
 			<string key="sosm_message_container.png">{517, 480}</string>
 			<string key="sosm_next_message.png">{28, 42}</string>
 			<string key="sosm_previous_message.png">{28, 42}</string>
-			<string key="sosm_top_bar_with_icon.png">{640, 84}</string>
+			<string key="sosm_top_bar_icon.png">{95, 66}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

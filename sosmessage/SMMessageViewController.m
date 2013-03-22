@@ -59,11 +59,14 @@ float baseHue;
         self.view.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[self.category objectForKey:CATEGORY_COLOR]];
         self.sendMessageButton.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[self.category objectForKey:CATEGORY_COLOR]];
         
-        self.votePlusScoring.font = MESSAGE_FONT;
-        self.contributorLabel.font = MESSAGE_FONT;
         [self.shareBtnLabel setText:klabel_btn_share];
 
         self.messageHandler = [[SMMessagesHandler alloc] initWithDelegate:self];
+        
+        self.contributorLabel.font = MESSAGE_FONT;
+        self.categoryName.font = BARS_FONT;
+        self.menuName.titleLabel.font = BARS_FONT;
+        self.handlerMode.titleLabel.font = BARS_FONT;
         
         //load interstitil Ad
         fetchCount = 0;
@@ -152,6 +155,7 @@ float baseHue;
     [self setPreviousMessageButton:nil];
     [self setShareBtnLabel:nil];
     interstitial = nil;
+    [self setMenuName:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -203,6 +207,7 @@ float baseHue;
     [PreviousMessageButton release];
     [interstitial release];
     [shareBtnLabel release];
+    [_menuName release];
     [super dealloc];
 }
 

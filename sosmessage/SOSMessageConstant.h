@@ -26,6 +26,7 @@
 
 #pragma mark CODE REPLACE
 
+#define BARS_FONT [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceSpecificBarsFont]
 #define CATEGORY_FONT [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceSpecificCategoryFont]
 #define MESSAGE_FONT [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceSpecificMessageFont]
 #define NB_BLOCKS [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceSpecificNumberOfBlocks]

@@ -58,7 +58,9 @@
 	<key>SMAppReadableName</key>
 	<string>sos message</string>
 	<key>UIAppFonts</key>
-	<array/>
+	<array>
+		<string>Pacifico.ttf</string>
+	</array>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>

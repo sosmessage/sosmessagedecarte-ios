@@ -55,7 +55,9 @@
 	<key>SMAppReadableName</key>
 	<string>break up</string>
 	<key>UIAppFonts</key>
-	<array/>
+	<array>
+		<string>Pacifico.ttf</string>
+	</array>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>

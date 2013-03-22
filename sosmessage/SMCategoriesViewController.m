@@ -35,7 +35,7 @@
 @end
 
 @implementation SMCategoriesViewController
-@synthesize infoButton, titleImage, categories, messageHandler, announcements, applicationName, refreshButton;
+@synthesize infoButton, categories, messageHandler, announcements, applicationName, refreshButton;
 
 static char sosMessageKey;
 
@@ -56,14 +56,17 @@ static char sosMessageKey;
     [iMessageHandler release];
     
     [self requestCategories];
+    self.creditsLabel.font = BARS_FONT;
+    self.applicationName.font = BARS_FONT;
+    [AppDelegate logAvaiableFonts];
 }
 
 - (void)viewDidUnload
 {
     [self setInfoButton:nil];
-    [self setTitleImage:nil];
     [self setRefreshButton:nil];
     [self setApplicationName:nil];
+    [self setCreditsLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -494,8 +497,8 @@ static char sosMessageKey;
     [announcements release];
     [messageHandler release];
     [infoButton release];
-    [titleImage release];
     [applicationName release];
+    [_creditsLabel release];
     [super dealloc];
 }
 @end

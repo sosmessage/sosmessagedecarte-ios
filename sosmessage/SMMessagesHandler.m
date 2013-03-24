@@ -276,13 +276,23 @@
                         if ([currentId isEqualToString:messageId]) {
                             NSLog(@"XXX Response message found. Replacing... Should not happends");
                             
-                            [messages removeObjectAtIndex:[messages indexOfObject:message]];
-                            index -= 1;
+                            // If best messages or random: dirty, dirty, dirty
+                            if (lastCategory) {
+                                [messages removeObjectAtIndex:[messages indexOfObject:message]];
+                                index = messages.count;
+                            } else {
+                                // if best message; replace the old one with new values
+                                [messages replaceObjectAtIndex:i withObject:response];
+                            }
+                            
+                            NSLog(@"Current index: %d", index);
                             break;
                         }
                     }
                     
-                    [messages addObject:response];
+                    if (lastCategory) {
+                        [messages addObject:response];   
+                    }
                 }
                 
                 //Hack between categories / messages

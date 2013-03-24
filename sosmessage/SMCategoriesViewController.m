@@ -265,6 +265,18 @@ static char sosMessageKey;
             NSDictionary* category = (NSDictionary*)objc_getAssociatedObject(subView, &sosMessageKey);
             
             if (category) {
+                // Add env icon
+                UIImage *envImg = [[UIImage imageNamed:@"sosm_top_bar_icon.png"] autorelease];
+                UIImageView *envView = [[[UIImageView alloc] initWithImage:envImg] autorelease];
+                int ratio = [AppDelegate isIPad] ? 1.3 : 2;
+                CGFloat imgWidth = envView.frame.size.width / ratio;
+                CGFloat imgHeight = envView.frame.size.height / ratio;
+                
+                envView.frame = CGRectMake(0, 0, imgWidth, imgHeight);
+                envView.center = CGPointMake(viewX + imgWidth * 0.8, viewY + viewHeight / 2);
+                [self.view addSubview:envView];
+                
+                // Add New icon
                 double epoch = [[category objectForKey:CATEGORY_LASTADD] doubleValue] / 1000;
                 NSDate* categoryLastAdd = [NSDate dateWithTimeIntervalSince1970:epoch];
                 if ([self.lastFetchingDate compare:categoryLastAdd] < 0) {
@@ -279,8 +291,8 @@ static char sosMessageKey;
             }
             
             // Add background image
-            NSString *imgName = category ? @"sosm_button_home.png" : @"sosm_button_home_empty.png";
-            UIImageView *imageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:imgName]] autorelease];
+            //NSString *imgName = category ? @"sosm_button_home.png" : @"sosm_button_home_empty.png";
+            UIImageView *imageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sosm_button_home_empty.png"]] autorelease];
             imageView.frame = subView.frame;
             imageView.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR]];
             [self.view insertSubview:imageView belowSubview:subView];

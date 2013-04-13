@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SOSMessageConstant.h"
 
-@interface SMAboutViewController : UIViewController<UIWebViewDelegate>
-@property (retain, nonatomic) IBOutlet UINavigationItem *navigationItem;
-@property (retain, nonatomic) IBOutlet UIWebView *webView;
+@interface SMAboutViewController : UIViewController
+
+- (IBAction)backPressed:(id)sender;
+- (IBAction)otherAppsPressed:(id)sender;
 
 @end

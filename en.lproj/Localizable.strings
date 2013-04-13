@@ -19,7 +19,7 @@
 "label.btn.mode.random" = "Random";
 "label.btn.mode.liked" = "Most liked";
 
-"label.app.sm" = "sosmessage";
-"label.app.smbu" = "sosmessage/breakup";
-"label.app.smj" = "sosmessage/jokes";
-"label.app.smb" = "sosmessage/birthday";
+"label.app.sm" = "sosmessages";
+"label.app.smbu" = "sosmessages/breakup";
+"label.app.smj" = "sosmessages/jokes";
+"label.app.smb" = "sosmessages/birthday";

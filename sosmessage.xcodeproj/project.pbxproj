@@ -344,6 +344,7 @@
 		516A30D416FC418A00D20E82 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
 		517088C01719A63500DDA769 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		517088C21719A9AA00DDA769 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		517088CA1719CCC400DDA769 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/SMAboutViewController.xib; sourceTree = "<group>"; };
 		51712AE614A1BE7000E366AF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5171FA27160BADB600D19E01 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		51788A19150CE50700AEE736 /* new_stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_stamp.png; sourceTree = "<group>"; };
@@ -388,7 +389,6 @@
 		51C133BA15FD27B200128453 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
 		51CBBC0614BE330D009148B2 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		51D85B6416F8D194002635CF /* sosmessage-bu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sosmessage-bu.plist"; sourceTree = "<group>"; };
-		51DCAD9315FE8446008F07AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/SMAboutViewController.xib; sourceTree = "<group>"; };
 		51DCAD9415FE8446008F07AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		51F1A70614746B710092F9F8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		51F1A70714746B710092F9F8 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
@@ -682,9 +682,9 @@
 			productReference = 515F722814BE2CF5004676E1 /* smbu.app */;
 			productType = "com.apple.product-type.application";
 		};
-		516515C3145DEA4000CF6C45 /* sosmessage */ = {
+		516515C3145DEA4000CF6C45 /* sosmessages */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 516515E5145DEA4100CF6C45 /* Build configuration list for PBXNativeTarget "sosmessage" */;
+			buildConfigurationList = 516515E5145DEA4100CF6C45 /* Build configuration list for PBXNativeTarget "sosmessages" */;
 			buildPhases = (
 				516515C0145DEA4000CF6C45 /* Sources */,
 				516515C1145DEA4000CF6C45 /* Frameworks */,
@@ -694,7 +694,7 @@
 			);
 			dependencies = (
 			);
-			name = sosmessage;
+			name = sosmessages;
 			productName = sosmessage;
 			productReference = 516515C4145DEA4000CF6C45 /* sosmessage.app */;
 			productType = "com.apple.product-type.application";
@@ -754,7 +754,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				516515C3145DEA4000CF6C45 /* sosmessage */,
+				516515C3145DEA4000CF6C45 /* sosmessages */,
 				515F720314BE2CF5004676E1 /* break up */,
 				51B8CCD916FAECB3009B5DB4 /* jokes */,
 				51B8CD2316FAED8A009B5DB4 /* birthday */,
@@ -1101,7 +1101,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				51C133B315FD26A200128453 /* en */,
-				51DCAD9315FE8446008F07AC /* fr */,
+				517088CA1719CCC400DDA769 /* fr */,
 			);
 			name = SMAboutViewController.xib;
 			sourceTree = "<group>";
@@ -1289,7 +1289,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		516515E5145DEA4100CF6C45 /* Build configuration list for PBXNativeTarget "sosmessage" */ = {
+		516515E5145DEA4100CF6C45 /* Build configuration list for PBXNativeTarget "sosmessages" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				516515E6145DEA4100CF6C45 /* Debug */,

@@ -61,7 +61,6 @@ static char sosMessageKey;
     [self requestCategories];
     self.creditsLabel.font = BARS_FONT;
     self.applicationName.font = BARS_FONT;
-    [AppDelegate logAvaiableFonts];
 }
 
 - (void)viewDidUnload

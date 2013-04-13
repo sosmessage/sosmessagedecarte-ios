@@ -302,6 +302,7 @@ float baseHue;
 }
 
 -(void)fillMessageWithDirection:(int)direction {
+    NSLog(@"bonne methode: %d", fetchCount);
     if (interstitial.loaded && fetchCount > 5) {
         [interstitial presentFromViewController:self];
         fetchCount = 0;

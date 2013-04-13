@@ -13,6 +13,9 @@
 #import <CoreText/CoreText.h>
 #import <QuartzCore/QuartzCore.h>
 
+#define kAlphaCategory 0.7
+#define kAlpha 0.5
+
 @interface SMCategoriesViewController () {
     
 }
@@ -163,7 +166,7 @@ static char sosMessageKey;
     UILabel* emptyBlocks = [self buildUILabelForBlock:nb inPosX:posX andPosY:posY];
     
     float hue = (rand()%24) / 24.0;
-    emptyBlocks.backgroundColor = [UIColor colorWithHue:hue saturation:0.05 brightness:0.9 alpha:0.5];
+    emptyBlocks.backgroundColor = [UIColor colorWithHue:hue saturation:0.05 brightness:0.9 alpha:kAlpha];
     
     [self.view insertSubview:emptyBlocks belowSubview:self.infoButton];
 }
@@ -171,7 +174,7 @@ static char sosMessageKey;
 -(void)addAdvertisingBlockinPosY:(int)posY {
     NSString* label = kcategories_all;
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
-    uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:0.5];
+    uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:kAlpha];
     uiLabel.text = label;
     uiLabel.font = CATEGORY_FONT;
     uiLabel.textColor = [UIColor colorWithHue:label.calculateHue saturation:1.0 brightness:0.3 alpha:1.0];
@@ -188,7 +191,7 @@ static char sosMessageKey;
 -(void)addMailPropositionBlockinPosY:(int)posY {
     NSString* label = kmessage_propose;
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
-    uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:0.5];
+    uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:kAlpha];
     uiLabel.text = label;
     uiLabel.font = CATEGORY_FONT;
     uiLabel.textColor = [UIColor colorWithHue:label.calculateHue saturation:1.0 brightness:0.3 alpha:1.0];
@@ -279,7 +282,7 @@ static char sosMessageKey;
                 // Add New icon
                 double epoch = [[category objectForKey:CATEGORY_LASTADD] doubleValue] / 1000;
                 NSDate* categoryLastAdd = [NSDate dateWithTimeIntervalSince1970:epoch];
-                if (true || [self.lastFetchingDate compare:categoryLastAdd] < 0) {
+                if (false || [self.lastFetchingDate compare:categoryLastAdd] < 0) {
                     UIImage *img = [UIImage imageNamed:@"new_stamp.png"];
                     UIImageView* newImage = [[UIImageView alloc] initWithImage:img];
                     newImage.center = CGPointMake(viewX + 50, viewY + 10);
@@ -295,6 +298,7 @@ static char sosMessageKey;
             UIImageView *imageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sosm_button_home_empty.png"]] autorelease];
             imageView.frame = subView.frame;
             imageView.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR]];
+            imageView.alpha = kAlphaCategory;
             [self.view insertSubview:imageView belowSubview:subView];
         } else if ([subView isKindOfClass:[UIImageView class]]) {
             UIImage* img = [(UIImageView*)subView image];

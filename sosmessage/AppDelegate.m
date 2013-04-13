@@ -175,7 +175,7 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         fontSize = 16;
     }
-    return [UIFont fontWithName:@"Pacifico" size:fontSize];
+    return [UIFont fontWithName:@"Handlee" size:fontSize];
 }
 
 - (UIFont *)deviceSpecificCategoryFont {

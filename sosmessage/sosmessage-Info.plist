@@ -59,7 +59,7 @@
 	<string>sos message</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Pacifico.ttf</string>
+		<string>Handlee.ttf</string>
 	</array>
 	<key>UIPrerenderedIcon</key>
 	<true/>

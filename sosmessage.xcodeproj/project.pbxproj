@@ -23,6 +23,14 @@
 		510291041719A196004F602C /* sosm_button_home_update_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 510291021719A196004F602C /* sosm_button_home_update_5.png */; };
 		510291051719A196004F602C /* sosm_button_home_update_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 510291021719A196004F602C /* sosm_button_home_update_5.png */; };
 		510291061719A196004F602C /* sosm_button_home_update_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 510291021719A196004F602C /* sosm_button_home_update_5.png */; };
+		510291091719A343004F602C /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 510291081719A343004F602C /* iRate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		5102910A1719A343004F602C /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 510291081719A343004F602C /* iRate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		5102910B1719A343004F602C /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 510291081719A343004F602C /* iRate.m */; };
+		5102910C1719A343004F602C /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 510291081719A343004F602C /* iRate.m */; };
+		5102910F1719A411004F602C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5102910E1719A411004F602C /* StoreKit.framework */; };
+		510291101719A423004F602C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5102910E1719A411004F602C /* StoreKit.framework */; };
+		510291111719A42A004F602C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5102910E1719A411004F602C /* StoreKit.framework */; };
+		510291121719A431004F602C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5102910E1719A411004F602C /* StoreKit.framework */; };
 		5109146314AE0B5300047A47 /* canvas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5109146214AE0B5200047A47 /* canvas.jpg */; };
 		5109146614AE279800047A47 /* UIColor+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5109146514AE279800047A47 /* UIColor+SOSMessage.m */; };
 		5109146E14AE63FB00047A47 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146D14AE63FB00047A47 /* Default@2x.png */; };
@@ -276,6 +284,9 @@
 		510290DE171960AF004F602C /* Handlee.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Handlee.ttf; sourceTree = "<group>"; };
 		510290E8171964E3004F602C /* sosm_button_refresh_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_button_refresh_small.png; sourceTree = "<group>"; };
 		510291021719A196004F602C /* sosm_button_home_update_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_button_home_update_5.png; sourceTree = "<group>"; };
+		510291071719A343004F602C /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
+		510291081719A343004F602C /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
+		5102910E1719A411004F602C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5109146214AE0B5200047A47 /* canvas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = canvas.jpg; sourceTree = SOURCE_ROOT; };
 		5109146414AE279700047A47 /* UIColor+SOSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SOSMessage.h"; sourceTree = "<group>"; };
 		5109146514AE279800047A47 /* UIColor+SOSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SOSMessage.m"; sourceTree = "<group>"; };
@@ -378,6 +389,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510291101719A423004F602C /* StoreKit.framework in Frameworks */,
 				51CBBC0714BE330E009148B2 /* iAd.framework in Frameworks */,
 				515F721114BE2CF5004676E1 /* Twitter.framework in Frameworks */,
 				515F721214BE2CF5004676E1 /* MessageUI.framework in Frameworks */,
@@ -392,6 +404,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5102910F1719A411004F602C /* StoreKit.framework in Frameworks */,
 				51CBBC0814BE3326009148B2 /* iAd.framework in Frameworks */,
 				517ECA4D14BCD39B00B3CA55 /* Twitter.framework in Frameworks */,
 				51712AE714A1BE7000E366AF /* MessageUI.framework in Frameworks */,
@@ -406,6 +419,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510291111719A42A004F602C /* StoreKit.framework in Frameworks */,
 				51B8CCE816FAECB3009B5DB4 /* iAd.framework in Frameworks */,
 				51B8CCE916FAECB3009B5DB4 /* Twitter.framework in Frameworks */,
 				51B8CCEA16FAECB3009B5DB4 /* MessageUI.framework in Frameworks */,
@@ -420,6 +434,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510291121719A431004F602C /* StoreKit.framework in Frameworks */,
 				51B8CD3216FAED8A009B5DB4 /* iAd.framework in Frameworks */,
 				51B8CD3316FAED8A009B5DB4 /* Twitter.framework in Frameworks */,
 				51B8CD3416FAED8A009B5DB4 /* MessageUI.framework in Frameworks */,
@@ -433,6 +448,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5102910D1719A34C004F602C /* iRate */ = {
+			isa = PBXGroup;
+			children = (
+				510291071719A343004F602C /* iRate.h */,
+				510291081719A343004F602C /* iRate.m */,
+			);
+			name = iRate;
+			sourceTree = "<group>";
+		};
 		515B63A916D0E195002FCC38 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,6 +486,7 @@
 		516515B9145DEA4000CF6C45 = {
 			isa = PBXGroup;
 			children = (
+				5102910E1719A411004F602C /* StoreKit.framework */,
 				515B63A916D0E195002FCC38 /* Resources */,
 				5171FA27160BADB600D19E01 /* Default-568h@2x.png */,
 				513B9F4D15FA82F000199E82 /* Settings.bundle */,
@@ -507,6 +532,7 @@
 		516515CE145DEA4000CF6C45 /* sosmessage */ = {
 			isa = PBXGroup;
 			children = (
+				5102910D1719A34C004F602C /* iRate */,
 				517E321914F0DB1D003565F9 /* AdBannerNavigationController.h */,
 				517E321A14F0DB1D003565F9 /* AdBannerNavigationController.m */,
 				51A5CE081465227C00B274B3 /* SOSMessageConstant.h */,
@@ -958,6 +984,7 @@
 				515F720E14BE2CF5004676E1 /* SMProposeNewMessageController.m in Sources */,
 				515F720F14BE2CF5004676E1 /* UIButton+SOSMessage.m in Sources */,
 				517E321C14F0DB1D003565F9 /* AdBannerNavigationController.m in Sources */,
+				5102910A1719A343004F602C /* iRate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -977,6 +1004,7 @@
 				51973E3214B64B650062C26B /* SMProposeNewMessageController.m in Sources */,
 				517ECA4314B9A8F600B3CA55 /* UIButton+SOSMessage.m in Sources */,
 				517E321B14F0DB1D003565F9 /* AdBannerNavigationController.m in Sources */,
+				510291091719A343004F602C /* iRate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -996,6 +1024,7 @@
 				51B8CCE416FAECB3009B5DB4 /* SMProposeNewMessageController.m in Sources */,
 				51B8CCE516FAECB3009B5DB4 /* UIButton+SOSMessage.m in Sources */,
 				51B8CCE616FAECB3009B5DB4 /* AdBannerNavigationController.m in Sources */,
+				5102910B1719A343004F602C /* iRate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1015,6 +1044,7 @@
 				51B8CD2E16FAED8A009B5DB4 /* SMProposeNewMessageController.m in Sources */,
 				51B8CD2F16FAED8A009B5DB4 /* UIButton+SOSMessage.m in Sources */,
 				51B8CD3016FAED8A009B5DB4 /* AdBannerNavigationController.m in Sources */,
+				5102910C1719A343004F602C /* iRate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

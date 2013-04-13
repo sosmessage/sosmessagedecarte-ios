@@ -11,12 +11,19 @@
 #import "SMCategoriesViewController.h"
 #import "AdBannerNavigationController.h"
 
+#import "iRate.h"
+
 @implementation AppDelegate {
     BOOL _refreshCategories;
 }
 
 @synthesize window = _window;
 
+
++(void)initialize {
+    //[iRate sharedInstance].previewMode = YES;
+    [iRate sharedInstance].applicationName = [AppDelegate applicationReadableName];
+}
 
 -(BOOL)getRefreshCategories {
     return _refreshCategories;

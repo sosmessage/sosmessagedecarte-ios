@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "516515C3145DEA4000CF6C45"
-               BuildableName = "sosmessage.app"
-               BlueprintName = "sosmessages"
+               BuildableName = "sosmessages.app"
+               BlueprintName = "sosmessage"
                ReferencedContainer = "container:sosmessage.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "516515C3145DEA4000CF6C45"
-            BuildableName = "sosmessage.app"
-            BlueprintName = "sosmessages"
+            BuildableName = "sosmessages.app"
+            BlueprintName = "sosmessage"
             ReferencedContainer = "container:sosmessage.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -52,8 +52,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "516515C3145DEA4000CF6C45"
-            BuildableName = "sosmessage.app"
-            BlueprintName = "sosmessages"
+            BuildableName = "sosmessages.app"
+            BlueprintName = "sosmessage"
             ReferencedContainer = "container:sosmessage.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -70,8 +70,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "516515C3145DEA4000CF6C45"
-            BuildableName = "sosmessage.app"
-            BlueprintName = "sosmessages"
+            BuildableName = "sosmessages.app"
+            BlueprintName = "sosmessage"
             ReferencedContainer = "container:sosmessage.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -81,6 +81,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "sosmessages"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

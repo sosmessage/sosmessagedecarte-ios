@@ -682,9 +682,9 @@
 			productReference = 515F722814BE2CF5004676E1 /* smbu.app */;
 			productType = "com.apple.product-type.application";
 		};
-		516515C3145DEA4000CF6C45 /* sosmessages */ = {
+		516515C3145DEA4000CF6C45 /* sosmessage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 516515E5145DEA4100CF6C45 /* Build configuration list for PBXNativeTarget "sosmessages" */;
+			buildConfigurationList = 516515E5145DEA4100CF6C45 /* Build configuration list for PBXNativeTarget "sosmessage" */;
 			buildPhases = (
 				516515C0145DEA4000CF6C45 /* Sources */,
 				516515C1145DEA4000CF6C45 /* Frameworks */,
@@ -694,7 +694,7 @@
 			);
 			dependencies = (
 			);
-			name = sosmessages;
+			name = sosmessage;
 			productName = sosmessage;
 			productReference = 516515C4145DEA4000CF6C45 /* sosmessage.app */;
 			productType = "com.apple.product-type.application";
@@ -754,7 +754,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				516515C3145DEA4000CF6C45 /* sosmessages */,
+				516515C3145DEA4000CF6C45 /* sosmessage */,
 				515F720314BE2CF5004676E1 /* break up */,
 				51B8CCD916FAECB3009B5DB4 /* jokes */,
 				51B8CD2316FAED8A009B5DB4 /* birthday */,
@@ -1289,7 +1289,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		516515E5145DEA4100CF6C45 /* Build configuration list for PBXNativeTarget "sosmessages" */ = {
+		516515E5145DEA4100CF6C45 /* Build configuration list for PBXNativeTarget "sosmessage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				516515E6145DEA4100CF6C45 /* Debug */,

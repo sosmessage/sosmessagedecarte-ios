@@ -54,7 +54,7 @@
 	<key>SMAppName</key>
 	<string>sm</string>
 	<key>SMAppReadableName</key>
-	<string>sos message</string>
+	<string>sosmessage</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Handlee.ttf</string>

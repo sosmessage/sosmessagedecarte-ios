@@ -47,7 +47,7 @@
 	<key>SMAppName</key>
 	<string>smj</string>
 	<key>SMAppReadableName</key>
-	<string>jokes</string>
+	<string>sosmessage/jokes</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Handlee.ttf</string>

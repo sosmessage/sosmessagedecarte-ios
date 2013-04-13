@@ -47,7 +47,7 @@
 	<key>SMAppName</key>
 	<string>smb</string>
 	<key>SMAppReadableName</key>
-	<string>birthday</string>
+	<string>sosmessage/birthday</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Handlee.ttf</string>

@@ -25,8 +25,8 @@
 		510291061719A196004F602C /* sosm_button_home_update_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 510291021719A196004F602C /* sosm_button_home_update_5.png */; };
 		510291091719A343004F602C /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 510291081719A343004F602C /* iRate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		5102910A1719A343004F602C /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 510291081719A343004F602C /* iRate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		5102910B1719A343004F602C /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 510291081719A343004F602C /* iRate.m */; };
-		5102910C1719A343004F602C /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 510291081719A343004F602C /* iRate.m */; };
+		5102910B1719A343004F602C /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 510291081719A343004F602C /* iRate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		5102910C1719A343004F602C /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 510291081719A343004F602C /* iRate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		5102910F1719A411004F602C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5102910E1719A411004F602C /* StoreKit.framework */; };
 		510291101719A423004F602C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5102910E1719A411004F602C /* StoreKit.framework */; };
 		510291111719A42A004F602C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5102910E1719A411004F602C /* StoreKit.framework */; };

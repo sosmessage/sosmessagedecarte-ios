@@ -47,7 +47,7 @@
 	<key>SMAppName</key>
 	<string>smbu</string>
 	<key>SMAppReadableName</key>
-	<string>break up</string>
+	<string>sosmessage/breakup</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Handlee.ttf</string>

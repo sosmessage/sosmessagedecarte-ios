@@ -111,6 +111,7 @@
 						<string key="NSFrame">{{79, 420}, {161, 40}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -139,7 +140,7 @@
 					</object>
 					<object class="IBUIButton" id="1023038145">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">301</int>
+						<int key="NSvFlags">-2147483347</int>
 						<string key="NSFrame">{{114, 194}, {91, 72}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>

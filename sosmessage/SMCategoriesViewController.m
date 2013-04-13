@@ -269,7 +269,7 @@ static char sosMessageKey;
             
             if (category || [((UILabel*)subView).text isEqualToString:kcategories_all]) {
                 // Add env icon
-                UIImage *envImg = [[UIImage imageNamed:@"sosm_top_bar_icon.png"] autorelease];
+                UIImage *envImg = [UIImage imageNamed:@"sosm_top_bar_icon.png"];
                 UIImageView *envView = [[[UIImageView alloc] initWithImage:envImg] autorelease];
                 int ratio = [AppDelegate isIPad] ? 1.3 : 2;
                 CGFloat imgWidth = envView.frame.size.width / ratio;
@@ -283,7 +283,7 @@ static char sosMessageKey;
                     // Add New icon
                     double epoch = [[category objectForKey:CATEGORY_LASTADD] doubleValue] / 1000;
                     NSDate* categoryLastAdd = [NSDate dateWithTimeIntervalSince1970:epoch];
-                    if (true || [self.lastFetchingDate compare:categoryLastAdd] < 0) {
+                    if ([self.lastFetchingDate compare:categoryLastAdd] < 0) {
                         UIImage *img = [UIImage imageNamed:@"sosm_button_home_update_5.png"];
                         UIImageView* newImage = [[UIImageView alloc] initWithImage:img];
                         newImage.frame = CGRectMake(subView.frame.origin.x + subView.frame.size.width - 35, viewY - 5, img.size.width, img.size.height);

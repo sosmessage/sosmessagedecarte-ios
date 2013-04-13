@@ -10,9 +10,6 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>iphone_hdpi_114.png</string>
-		<string>iphone_hdpi_72.png</string>
-		<string>iphone_mdpi_57.png</string>
 		<string>57px_breakup.png</string>
 		<string>114px_breakup.png</string>
 		<string>72px_breakup.png</string>
@@ -24,9 +21,6 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>iphone_hdpi_114.png</string>
-				<string>iphone_hdpi_72.png</string>
-				<string>iphone_mdpi_57.png</string>
 				<string>57px_breakup.png</string>
 				<string>114px_breakup.png</string>
 				<string>72px_breakup.png</string>
@@ -35,7 +29,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>fr.arnk.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.aketomic.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -43,11 +37,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.1</string>
+	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>SMAppName</key>

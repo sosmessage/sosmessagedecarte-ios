@@ -223,7 +223,9 @@
 }
 
 + (NSString*)applicationReadableName {
-    return [[NSBundle mainBundle].infoDictionary objectForKey:@"SMAppReadableName"];
+    NSString * appTrad = [NSString stringWithFormat:@"label.app.%@",[AppDelegate applicationNameWithoutLang]];
+    return NSLocalizedString(appTrad, nil);
+//    return [[NSBundle mainBundle].infoDictionary objectForKey:@"SMAppReadableName"];
 }
 
 + (UIColor*)buildUIColorFromARGBStringRepresentation:(NSString*)aString {

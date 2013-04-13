@@ -4,7 +4,7 @@
 "message.share.unable.title" = "Impossibilité";
 "message.share.unable" = "Vous ne disposez d'aucun moyen pour envoyer le message a vos comparses.";
 
-"categories.all" = "Application complète";
+"categories.all" = "Version complète";
 "categories.top" = "Top";
 "categories.flop" = "Flop";
 
@@ -18,3 +18,8 @@
 "label.btn.share" = "Envoie celle-là   ";
 "label.btn.mode.random" = "Aléatoirement";
 "label.btn.mode.liked" = "Les meilleurs";
+
+"label.app.sm" = "sosmessage";
+"label.app.smbu" = "sosmessage/rupture";
+"label.app.smj" = "sosmessage/blagues";
+"label.app.smb" = "sosmessage/anniversaire";

@@ -4,7 +4,7 @@
 "message.share.unable.title" = "Can't share";
 "message.share.unable" = "Sorry, but we can't share this wonderful message as you do not have suffisant device capabilites.";
 
-"categories.all" = "All categories";
+"categories.all" = "Full version";
 "categories.top" = "Best";
 "categories.flop" = "Worst";
 
@@ -18,3 +18,8 @@
 "label.btn.share" = "Send this one    ";
 "label.btn.mode.random" = "Random";
 "label.btn.mode.liked" = "Most liked";
+
+"label.app.sm" = "sosmessage";
+"label.app.smbu" = "sosmessage/breakup";
+"label.app.smj" = "sosmessage/jokes";
+"label.app.smb" = "sosmessage/birthday";

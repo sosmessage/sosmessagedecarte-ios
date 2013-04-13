@@ -19,6 +19,10 @@
 		510290EA171964E3004F602C /* sosm_button_refresh_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 510290E8171964E3004F602C /* sosm_button_refresh_small.png */; };
 		510290EB171964E3004F602C /* sosm_button_refresh_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 510290E8171964E3004F602C /* sosm_button_refresh_small.png */; };
 		510290EC171964E3004F602C /* sosm_button_refresh_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 510290E8171964E3004F602C /* sosm_button_refresh_small.png */; };
+		510291031719A196004F602C /* sosm_button_home_update_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 510291021719A196004F602C /* sosm_button_home_update_5.png */; };
+		510291041719A196004F602C /* sosm_button_home_update_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 510291021719A196004F602C /* sosm_button_home_update_5.png */; };
+		510291051719A196004F602C /* sosm_button_home_update_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 510291021719A196004F602C /* sosm_button_home_update_5.png */; };
+		510291061719A196004F602C /* sosm_button_home_update_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 510291021719A196004F602C /* sosm_button_home_update_5.png */; };
 		5109146314AE0B5300047A47 /* canvas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5109146214AE0B5200047A47 /* canvas.jpg */; };
 		5109146614AE279800047A47 /* UIColor+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5109146514AE279800047A47 /* UIColor+SOSMessage.m */; };
 		5109146E14AE63FB00047A47 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146D14AE63FB00047A47 /* Default@2x.png */; };
@@ -271,6 +275,7 @@
 		510290D917195FA4004F602C /* sosm_message_big_container.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_message_big_container.png; sourceTree = "<group>"; };
 		510290DE171960AF004F602C /* Handlee.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Handlee.ttf; sourceTree = "<group>"; };
 		510290E8171964E3004F602C /* sosm_button_refresh_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_button_refresh_small.png; sourceTree = "<group>"; };
+		510291021719A196004F602C /* sosm_button_home_update_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_button_home_update_5.png; sourceTree = "<group>"; };
 		5109146214AE0B5200047A47 /* canvas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = canvas.jpg; sourceTree = SOURCE_ROOT; };
 		5109146414AE279700047A47 /* UIColor+SOSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SOSMessage.h"; sourceTree = "<group>"; };
 		5109146514AE279800047A47 /* UIColor+SOSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SOSMessage.m"; sourceTree = "<group>"; };
@@ -433,6 +438,7 @@
 			children = (
 				510290DE171960AF004F602C /* Handlee.ttf */,
 				516A30D416FC418A00D20E82 /* Pacifico.ttf */,
+				510291021719A196004F602C /* sosm_button_home_update_5.png */,
 				515B63CB16D13416002FCC38 /* sosm_button_home_empty.png */,
 				515B63CC16D13416002FCC38 /* sosm_button_home.png */,
 				516A30CF16FC3D1A00D20E82 /* sosm_top_bar_icon.png */,
@@ -765,6 +771,7 @@
 				510290DB17195FA4004F602C /* sosm_message_big_container.png in Resources */,
 				510290E0171963E5004F602C /* Handlee.ttf in Resources */,
 				510290EA171964E3004F602C /* sosm_button_refresh_small.png in Resources */,
+				510291041719A196004F602C /* sosm_button_home_update_5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,6 +821,7 @@
 				510290DA17195FA4004F602C /* sosm_message_big_container.png in Resources */,
 				510290DF171963E4004F602C /* Handlee.ttf in Resources */,
 				510290E9171964E3004F602C /* sosm_button_refresh_small.png in Resources */,
+				510291031719A196004F602C /* sosm_button_home_update_5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,6 +876,7 @@
 				510290DC17195FA4004F602C /* sosm_message_big_container.png in Resources */,
 				510290E1171963E5004F602C /* Handlee.ttf in Resources */,
 				510290EB171964E3004F602C /* sosm_button_refresh_small.png in Resources */,
+				510291051719A196004F602C /* sosm_button_home_update_5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -926,6 +935,7 @@
 				510290DD17195FA4004F602C /* sosm_message_big_container.png in Resources */,
 				510290E2171963E6004F602C /* Handlee.ttf in Resources */,
 				510290EC171964E3004F602C /* sosm_button_refresh_small.png in Resources */,
+				510291061719A196004F602C /* sosm_button_home_update_5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

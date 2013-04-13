@@ -267,7 +267,7 @@ static char sosMessageKey;
             // Add "NEW" image above the label
             NSDictionary* category = (NSDictionary*)objc_getAssociatedObject(subView, &sosMessageKey);
             
-            if (category) {
+            if (category || [((UILabel*)subView).text isEqualToString:kcategories_all]) {
                 // Add env icon
                 UIImage *envImg = [[UIImage imageNamed:@"sosm_top_bar_icon.png"] autorelease];
                 UIImageView *envView = [[[UIImageView alloc] initWithImage:envImg] autorelease];
@@ -279,17 +279,18 @@ static char sosMessageKey;
                 envView.center = CGPointMake(viewX + imgWidth * 0.8, viewY + viewHeight / 2);
                 [self.view addSubview:envView];
                 
-                // Add New icon
-                double epoch = [[category objectForKey:CATEGORY_LASTADD] doubleValue] / 1000;
-                NSDate* categoryLastAdd = [NSDate dateWithTimeIntervalSince1970:epoch];
-                if (false || [self.lastFetchingDate compare:categoryLastAdd] < 0) {
-                    UIImage *img = [UIImage imageNamed:@"new_stamp.png"];
-                    UIImageView* newImage = [[UIImageView alloc] initWithImage:img];
-                    newImage.center = CGPointMake(viewX + 50, viewY + 10);
-                    newImage.frame = subView.frame;
-                    
-                    [self.view addSubview:newImage];
-                    [newImage release];
+                if (category) {
+                    // Add New icon
+                    double epoch = [[category objectForKey:CATEGORY_LASTADD] doubleValue] / 1000;
+                    NSDate* categoryLastAdd = [NSDate dateWithTimeIntervalSince1970:epoch];
+                    if (true || [self.lastFetchingDate compare:categoryLastAdd] < 0) {
+                        UIImage *img = [UIImage imageNamed:@"sosm_button_home_update_5.png"];
+                        UIImageView* newImage = [[UIImageView alloc] initWithImage:img];
+                        newImage.frame = CGRectMake(subView.frame.origin.x + subView.frame.size.width - 35, viewY - 5, img.size.width, img.size.height);
+                        
+                        [self.view addSubview:newImage];
+                        [newImage release];
+                    }
                 }
             }
             

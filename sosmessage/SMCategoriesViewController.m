@@ -142,7 +142,7 @@ static char sosMessageKey;
     uiLabel.font = CATEGORY_FONT;
     uiLabel.backgroundColor = [UIColor clearColor];
     
-    uiLabel.textColor = [UIColor colorWithHue:uiLabel.backgroundColor.hue saturation:1.0 brightness:0.3 alpha:1.0];
+    uiLabel.textColor = [UIColor colorWithWhite:1.0 alpha:1.0];
     uiLabel.textAlignment = UITextAlignmentCenter;
     uiLabel.userInteractionEnabled = YES;
     
@@ -176,7 +176,7 @@ static char sosMessageKey;
     uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:kAlpha];
     uiLabel.text = label;
     uiLabel.font = CATEGORY_FONT;
-    uiLabel.textColor = [UIColor colorWithHue:label.calculateHue saturation:1.0 brightness:0.3 alpha:1.0];
+    uiLabel.textColor = [UIColor colorWithWhite:1.0 alpha:1.0];;
     uiLabel.textAlignment = UITextAlignmentCenter;
     uiLabel.userInteractionEnabled = YES;
     
@@ -193,7 +193,7 @@ static char sosMessageKey;
     uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:kAlpha];
     uiLabel.text = label;
     uiLabel.font = CATEGORY_FONT;
-    uiLabel.textColor = [UIColor colorWithHue:label.calculateHue saturation:1.0 brightness:0.3 alpha:1.0];
+    uiLabel.textColor = [UIColor colorWithWhite:1.0 alpha:1.0];;
     uiLabel.textAlignment = UITextAlignmentCenter;
     uiLabel.userInteractionEnabled = YES;
     

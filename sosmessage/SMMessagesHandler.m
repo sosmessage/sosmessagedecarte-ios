@@ -193,7 +193,7 @@
 }
 
 -(void)requestProposeMessage:(NSString*)aMessage author:(NSString*)anAuthor category:(NSString*)aCategoryId {
-    [self requestPOSTUrl:[NSString stringWithFormat:@"%@%@/categories/%@/message", SM_URL, V1, aCategoryId] params:[NSDictionary dictionaryWithObjectsAndKeys:aMessage, @"text", anAuthor, @"contributorName", nil]];
+    [self requestPOSTUrl:[NSString stringWithFormat:@"%@%@/categories/%@/message", SM_URL, V2, aCategoryId] params:[NSDictionary dictionaryWithObjectsAndKeys:aMessage, @"text", anAuthor, @"contributorName", nil]];
 }
 
 - (void)requestVote:(NSInteger)vote messageId:(NSString*)messageId {

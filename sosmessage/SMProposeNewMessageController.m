@@ -191,7 +191,7 @@ bool keyboardVisible = false;
 
 - (void)messageHandler:(SMMessagesHandler *)messageHandler didFinish:(id)data {
     NSLog(@"Status code: %d", messageHandler.lastStatusCode);
-    if (messageHandler.lastStatusCode == 204 || messageHandler.lastStatusCode == 202) {
+    if (messageHandler.lastStatusCode == 200) {
         [self dismissModalViewControllerAnimated:true];
     }
 }

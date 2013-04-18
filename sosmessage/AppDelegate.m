@@ -162,7 +162,6 @@
 }
 
 +(void)logAvaiableFonts {
-    return;
     for (NSString* familyName in [UIFont familyNames]) {
         for (NSString* fontName in [UIFont fontNamesForFamilyName:familyName]) {
             NSLog(@"Available font: %@", fontName);
@@ -191,7 +190,7 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         fontSize = 22;
     }
-    return [UIFont fontWithName:@"Georgia" size:fontSize];
+    return [UIFont fontWithName:@"Helvetica-Bold" size:fontSize];
 }
 
 

@@ -266,30 +266,30 @@ static char sosMessageKey;
             // Add "NEW" image above the label
             NSDictionary* category = (NSDictionary*)objc_getAssociatedObject(subView, &sosMessageKey);
             
-            if (category || [((UILabel*)subView).text isEqualToString:kcategories_all]) {
-                // Add env icon
-                UIImage *envImg = [UIImage imageNamed:@"sosm_top_bar_icon.png"];
-                UIImageView *envView = [[[UIImageView alloc] initWithImage:envImg] autorelease];
-                int ratio = [AppDelegate isIPad] ? 1.3 : 2;
-                CGFloat imgWidth = envView.frame.size.width / ratio;
-                CGFloat imgHeight = envView.frame.size.height / ratio;
-                
-                envView.frame = CGRectMake(0, 0, imgWidth, imgHeight);
-                envView.center = CGPointMake(viewX + imgWidth * 0.8, viewY + viewHeight / 2);
-                [self.view addSubview:envView];
-                
-                if (category) {
-                    // Add New icon
-                    double epoch = [[category objectForKey:CATEGORY_LASTADD] doubleValue] / 1000;
-                    NSDate* categoryLastAdd = [NSDate dateWithTimeIntervalSince1970:epoch];
-                    if ([self.lastFetchingDate compare:categoryLastAdd] < 0) {
-                        UIImage *img = [UIImage imageNamed:@"sosm_button_home_update_5.png"];
-                        UIImageView* newImage = [[UIImageView alloc] initWithImage:img];
-                        newImage.frame = CGRectMake(subView.frame.origin.x + subView.frame.size.width - 35, viewY - 5, img.size.width, img.size.height);
-                        
-                        [self.view addSubview:newImage];
-                        [newImage release];
-                    }
+            // Add env icon
+            NSString *imageName = [((UILabel*)subView).text isEqualToString:kmessage_propose] ? @"sosm_message_propose.png" : @"sosm_top_bar_icon.png";
+            
+            UIImage *envImg = [UIImage imageNamed:imageName];
+            UIImageView *envView = [[[UIImageView alloc] initWithImage:envImg] autorelease];
+            int ratio = [AppDelegate isIPad] ? 1.3 : 2;
+            CGFloat imgWidth = envView.frame.size.width / ratio;
+            CGFloat imgHeight = envView.frame.size.height / ratio;
+            
+            envView.frame = CGRectMake(0, 0, imgWidth, imgHeight);
+            envView.center = CGPointMake(viewX + imgWidth * 0.8, viewY + viewHeight / 2);
+            [self.view addSubview:envView];
+            
+            if (category) {
+                // Add New icon
+                double epoch = [[category objectForKey:CATEGORY_LASTADD] doubleValue] / 1000;
+                NSDate* categoryLastAdd = [NSDate dateWithTimeIntervalSince1970:epoch];
+                if ([self.lastFetchingDate compare:categoryLastAdd] < 0) {
+                    UIImage *img = [UIImage imageNamed:@"sosm_button_home_update_5.png"];
+                    UIImageView* newImage = [[UIImageView alloc] initWithImage:img];
+                    newImage.frame = CGRectMake(subView.frame.origin.x + subView.frame.size.width - 35, viewY - 5, img.size.width, img.size.height);
+                    
+                    [self.view addSubview:newImage];
+                    [newImage release];
                 }
             }
             

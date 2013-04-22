@@ -149,7 +149,10 @@ static char sosMessageKey;
     
     objc_setAssociatedObject(uiLabel, &sosMessageKey, category, 0);
     
-    UITapGestureRecognizer *categoryTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCategoryTapping:)];
+    // Lock category or not depending of his free
+    SEL action = [self isEnabledCategory:category] ? @selector(handleCategoryTapping:) : @selector(handleMissingCategoryTapping:);
+    
+    UITapGestureRecognizer *categoryTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:action];
     [uiLabel addGestureRecognizer:categoryTap];
     [categoryTap release];
     
@@ -299,6 +302,15 @@ static char sosMessageKey;
                 imageView.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR]];
                 imageView.alpha = kAlphaCategory;
                 [self.view insertSubview:imageView belowSubview:subView];
+                
+                if (![self isEnabledCategory:category]) { //If disabled
+                    imageView.alpha -= 0.3;
+                    
+                    UILabel *label = [[[UILabel alloc] init] autorelease];
+                    label.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.6];
+                    label.frame = subView.frame;
+                    [self.view addSubview:label];
+                }
             }
         } else if ([subView isKindOfClass:[UIImageView class]]) {
             UIImage* img = [(UIImageView*)subView image];
@@ -306,6 +318,10 @@ static char sosMessageKey;
             subView.frame = CGRectMake(subView.frame.origin.x, floorf(subView.frame.origin.y * fitHeight), subView.frame.size.width, imgRation * subView.frame.size.width);
         }
     }
+}
+
+-(BOOL)isEnabledCategory:(NSDictionary *)category {
+    return [[category objectForKey:CATEGORY_FREE] boolValue];
 }
 
 -(BOOL)isSubViewCategoryPart:(UIView*) view {
@@ -346,6 +362,10 @@ static char sosMessageKey;
     [self.navigationController pushViewController:detail animated:YES];
     
     [detail release];
+}
+
+- (void)handleMissingCategoryTapping:(UIGestureRecognizer *)sender {
+    NSLog(@"Locked App");
 }
 
 - (IBAction)refreshPressed:(id)sender {

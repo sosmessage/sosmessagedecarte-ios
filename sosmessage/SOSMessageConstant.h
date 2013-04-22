@@ -50,6 +50,7 @@
 #define CATEGORY_ID         @"id"
 #define CATEGORY_NAME       @"name"
 #define CATEGORY_COLOR      @"color"
+#define CATEGORY_FREE       @"free"
 #define CATEGORY_LASTADD    @"lastAddedMessageAt"
 
 #define MESSAGE_ID          @"id"

@@ -69,6 +69,7 @@ static char sosMessageKey;
     [self setRefreshButton:nil];
     [self setApplicationName:nil];
     [self setCreditsLabel:nil];
+    [self setBtnLanguage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -219,6 +220,7 @@ static char sosMessageKey;
     }
     
     NSLog(@"Categories refreshed");
+    [self updateLanguageBtn];
     [self removeCategoriesLabel];
     NSMutableArray* workingCategories = [[NSMutableArray alloc] initWithArray:categories];
     int x = 0;
@@ -291,15 +293,13 @@ static char sosMessageKey;
                     [self.view addSubview:newImage];
                     [newImage release];
                 }
+                
+                UIImageView *imageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sosm_button_home_empty.png"]] autorelease];
+                imageView.frame = subView.frame;
+                imageView.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR]];
+                imageView.alpha = kAlphaCategory;
+                [self.view insertSubview:imageView belowSubview:subView];
             }
-            
-            // Add background image
-            //NSString *imgName = category ? @"sosm_button_home.png" : @"sosm_button_home_empty.png";
-            UIImageView *imageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sosm_button_home_empty.png"]] autorelease];
-            imageView.frame = subView.frame;
-            imageView.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR]];
-            imageView.alpha = kAlphaCategory;
-            [self.view insertSubview:imageView belowSubview:subView];
         } else if ([subView isKindOfClass:[UIImageView class]]) {
             UIImage* img = [(UIImageView*)subView image];
             float imgRation = img.size.height / img.size.width;
@@ -358,6 +358,11 @@ static char sosMessageKey;
     NSString *lang = [[[NSUserDefaults standardUserDefaults] valueForKey:@"language_selection"] isEqualToString:@"fr"] ? @"en" : @"fr";
     [[NSUserDefaults standardUserDefaults] setValue:lang forKey:@"language_selection"];
     [self refreshPressed:sender];
+}
+
+- (void)updateLanguageBtn {
+    NSString *lang = [[NSUserDefaults standardUserDefaults] valueForKey:@"language_selection"];
+    self.btnLanguage.text = [lang isEqualToString:@"en"] ? @"Français" : @"English";
 }
 
 - (IBAction)aboutPressed:(id)sender {
@@ -521,6 +526,7 @@ static char sosMessageKey;
     [infoButton release];
     [applicationName release];
     [_creditsLabel release];
+    [_btnLanguage release];
     [super dealloc];
 }
 @end

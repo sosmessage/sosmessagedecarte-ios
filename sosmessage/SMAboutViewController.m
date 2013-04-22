@@ -8,7 +8,7 @@
 
 #import "SMAboutViewController.h"
 
-@interface SMAboutViewController ()
+@interface SMAboutViewController() <MFMailComposeViewControllerDelegate>
 
 @end
 
@@ -69,5 +69,25 @@
 
 - (IBAction)otherAppsPressed:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: SM_ABOUT]];
+}
+
+- (IBAction)mailPressed:(id)sender {
+    if (![MFMailComposeViewController canSendMail]) {
+        return;
+    }
+    
+    MFMailComposeViewController *mailController = [[[MFMailComposeViewController alloc] init] autorelease];
+    [mailController setToRecipients:@[SM_EMAIL]];
+    [mailController setDefinesPresentationContext:YES];
+    mailController.mailComposeDelegate = self;
+    [self presentModalViewController:mailController animated:YES];
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    [controller dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)twitterPressed:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: SM_TWITTER]];
 }
 @end

@@ -25,5 +25,6 @@
 
 - (IBAction)aboutPressed:(id)sender;
 - (IBAction)refreshPressed:(id)sender;
+- (IBAction)changeLanguage:(id)sender;
 
 @end

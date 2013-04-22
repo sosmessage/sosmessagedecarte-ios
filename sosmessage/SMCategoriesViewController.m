@@ -354,6 +354,12 @@ static char sosMessageKey;
     [self refreshCategories];
 }
 
+- (IBAction)changeLanguage:(id)sender {
+    NSString *lang = [[[NSUserDefaults standardUserDefaults] valueForKey:@"language_selection"] isEqualToString:@"fr"] ? @"en" : @"fr";
+    [[NSUserDefaults standardUserDefaults] setValue:lang forKey:@"language_selection"];
+    [self refreshPressed:sender];
+}
+
 - (IBAction)aboutPressed:(id)sender {
     SMAboutViewController* about = [[SMAboutViewController alloc] initWithNibName:@"SMAboutViewController" bundle:nil];
     about.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;

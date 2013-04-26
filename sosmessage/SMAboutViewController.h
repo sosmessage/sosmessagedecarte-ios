@@ -18,4 +18,6 @@
 - (IBAction)mailPressed:(id)sender;
 - (IBAction)twitterPressed:(id)sender;
 
+@property (retain, nonatomic) IBOutlet UITextView *ourMessage;
+
 @end

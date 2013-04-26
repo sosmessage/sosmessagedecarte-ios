@@ -36,10 +36,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.ourMessage.font = MESSAGE_FONT;
 }
 
 - (void)viewDidUnload
 {
+    [self setOurMessage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -60,6 +62,7 @@
 }
 
 - (void)dealloc {
+    [_ourMessage release];
     [super dealloc];
 }
 

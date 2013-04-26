@@ -137,10 +137,10 @@
 
 - (int)deviceSpecificCategoriesHeaderSize {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return [AppDelegate isIAdCompliant] ? 105 : 85; //iAd compliant have less categories
+        return 60;
     }
     else {
-        return [AppDelegate isIAdCompliant] ? 190 : 140; //iAd compliant have less categories;
+        return 140;
     }
 }
 

@@ -277,7 +277,7 @@ static char sosPosY;
             
             // Add env icon
             NSString *imageName = [((UILabel*)subView).text isEqualToString:kmessage_propose] ? @"sosm_message_propose.png" : @"sosm_top_bar_icon.png";
-            if ([objc_getAssociatedObject(subView, &sosPosY) intValue] == 0) {
+            if (objc_getAssociatedObject(subView, &sosPosY) != nil && [objc_getAssociatedObject(subView, &sosPosY) intValue] == 0) {
                 imageName = @"sosm_button_home_top_category.png";
             }
             

@@ -13,7 +13,7 @@
 #import <CoreText/CoreText.h>
 #import <QuartzCore/QuartzCore.h>
 
-#define kAlphaCategory 0.7
+#define kAlphaCategory 0.6
 #define kAlpha 0.5
 
 @interface SMCategoriesViewController () {
@@ -41,6 +41,7 @@
 @synthesize infoButton, categories, messageHandler, announcements, applicationName, refreshButton;
 
 static char sosMessageKey;
+static char sosPosY;
 
 - (void)didReceiveMemoryWarning
 {
@@ -147,7 +148,9 @@ static char sosMessageKey;
     uiLabel.textAlignment = UITextAlignmentCenter;
     uiLabel.userInteractionEnabled = YES;
     
+
     objc_setAssociatedObject(uiLabel, &sosMessageKey, category, 0);
+    objc_setAssociatedObject(uiLabel, &sosPosY, [NSNumber numberWithInt:posY], 0);
     
     // Lock category or not depending of his free
     SEL action = [self isEnabledCategory:category] ? @selector(handleCategoryTapping:) : @selector(handleMissingCategoryTapping:);
@@ -177,7 +180,8 @@ static char sosMessageKey;
 -(void)addAdvertisingBlockinPosY:(int)posY {
     NSString* label = kcategories_all;
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
-    uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:kAlpha];
+    //uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:kAlpha];
+    uiLabel.backgroundColor = [UIColor clearColor];
     uiLabel.text = label;
     uiLabel.font = CATEGORY_FONT;
     uiLabel.textColor = [UIColor colorWithWhite:1.0 alpha:1.0];;
@@ -194,10 +198,10 @@ static char sosMessageKey;
 -(void)addMailPropositionBlockinPosY:(int)posY {
     NSString* label = kmessage_propose;
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
-    uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:kAlpha];
+    uiLabel.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.4];//[UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:kAlpha];
     uiLabel.text = label;
     uiLabel.font = CATEGORY_FONT;
-    uiLabel.textColor = [UIColor colorWithWhite:1.0 alpha:1.0];;
+    uiLabel.textColor = [UIColor colorWithWhite:0.0 alpha:1];
     uiLabel.textAlignment = UITextAlignmentCenter;
     uiLabel.userInteractionEnabled = YES;
     
@@ -273,6 +277,9 @@ static char sosMessageKey;
             
             // Add env icon
             NSString *imageName = [((UILabel*)subView).text isEqualToString:kmessage_propose] ? @"sosm_message_propose.png" : @"sosm_top_bar_icon.png";
+            if ([objc_getAssociatedObject(subView, &sosPosY) intValue] == 0) {
+                imageName = @"sosm_button_home_top_category.png";
+            }
             
             UIImage *envImg = [UIImage imageNamed:imageName];
             UIImageView *envView = [[[UIImageView alloc] initWithImage:envImg] autorelease];
@@ -281,7 +288,7 @@ static char sosMessageKey;
             CGFloat imgHeight = envView.frame.size.height / ratio;
             
             envView.frame = CGRectMake(0, 0, imgWidth, imgHeight);
-            envView.center = CGPointMake(viewX + imgWidth * 0.8, viewY + viewHeight / 2);
+            envView.center = CGPointMake(viewX + imgWidth * 0.6, viewY + viewHeight / 2);
             [self.view addSubview:envView];
             
             if (category) {
@@ -296,21 +303,21 @@ static char sosMessageKey;
                     [self.view addSubview:newImage];
                     [newImage release];
                 }
+            }
+            
+            UIImageView *imageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sosm_button_home_empty.png"]] autorelease];
+            imageView.frame = subView.frame;
+            UIColor *iconBackColor = category ? [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR]] : [UIColor colorWithWhite:0.8 alpha:1];
+            imageView.backgroundColor = iconBackColor;
+            [self.view insertSubview:imageView belowSubview:subView];
+            
+            if (![self isEnabledCategory:category]) { //If disabled
+                imageView.alpha -= 0.3;
                 
-                UIImageView *imageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sosm_button_home_empty.png"]] autorelease];
-                imageView.frame = subView.frame;
-                imageView.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR]];
-                imageView.alpha = kAlphaCategory;
-                [self.view insertSubview:imageView belowSubview:subView];
-                
-                if (![self isEnabledCategory:category]) { //If disabled
-                    imageView.alpha -= 0.3;
-                    
-                    UILabel *label = [[[UILabel alloc] init] autorelease];
-                    label.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.6];
-                    label.frame = subView.frame;
-                    [self.view addSubview:label];
-                }
+                UILabel *label = [[[UILabel alloc] init] autorelease];
+                label.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.6];
+                label.frame = subView.frame;
+                [self.view addSubview:label];
             }
         } else if ([subView isKindOfClass:[UIImageView class]]) {
             UIImage* img = [(UIImageView*)subView image];
@@ -321,7 +328,7 @@ static char sosMessageKey;
 }
 
 -(BOOL)isEnabledCategory:(NSDictionary *)category {
-    return [[category objectForKey:CATEGORY_FREE] boolValue];
+    return YES || [[category objectForKey:CATEGORY_FREE] boolValue];
 }
 
 -(BOOL)isSubViewCategoryPart:(UIView*) view {

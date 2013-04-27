@@ -344,7 +344,6 @@
 		516A30D416FC418A00D20E82 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
 		517088C01719A63500DDA769 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		517088C21719A9AA00DDA769 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
-		517088CA1719CCC400DDA769 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/SMAboutViewController.xib; sourceTree = "<group>"; };
 		51712AE614A1BE7000E366AF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5171FA27160BADB600D19E01 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		51788A19150CE50700AEE736 /* new_stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_stamp.png; sourceTree = "<group>"; };
@@ -1111,7 +1110,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				51C133B315FD26A200128453 /* en */,
-				517088CA1719CCC400DDA769 /* fr */,
 			);
 			name = SMAboutViewController.xib;
 			sourceTree = "<group>";
@@ -1217,6 +1215,8 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "sosmessage/sosmessage-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "isFullApp=1";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				INFOPLIST_FILE = "sosmessage/sosmessage-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1228,6 +1228,8 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "sosmessage/sosmessage-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "isFullApp=1";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				INFOPLIST_FILE = "sosmessage/sosmessage-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

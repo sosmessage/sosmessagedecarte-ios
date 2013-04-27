@@ -47,7 +47,8 @@
     
     //Setting default Value
     NSMutableDictionary *appDefaults = [NSMutableDictionary dictionary];
-    [appDefaults setValue:[[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode] forKey:@"language_selection"];
+    NSString *langCode = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode]; //Ensure to have fr or en, not something else.
+    [appDefaults setValue:([langCode isEqualToString:@"fr"] ? @"fr" : @"en") forKey:@"language_selection"];
     [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
     
     //Display categories controller
@@ -200,7 +201,11 @@
 }
 
 +(BOOL)isIAdCompliant {
-    return [@"sm" isEqualToString:[AppDelegate applicationNameWithoutLang]] ? NO : YES;
+#ifdef isFullApp
+    return NO;
+#else
+    return YES;
+#endif
 }
 
 + (BOOL)isIPad {

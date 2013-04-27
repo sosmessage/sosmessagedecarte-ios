@@ -152,10 +152,7 @@ static char sosPosY;
     objc_setAssociatedObject(uiLabel, &sosMessageKey, category, 0);
     objc_setAssociatedObject(uiLabel, &sosPosY, [NSNumber numberWithInt:posY], 0);
     
-    // Lock category or not depending of his free
-    SEL action = [self isEnabledCategory:category] ? @selector(handleCategoryTapping:) : @selector(handleMissingCategoryTapping:);
-    
-    UITapGestureRecognizer *categoryTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:action];
+    UITapGestureRecognizer *categoryTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCategoryTapping:)];
     [uiLabel addGestureRecognizer:categoryTap];
     [categoryTap release];
     
@@ -311,14 +308,6 @@ static char sosPosY;
             imageView.backgroundColor = iconBackColor;
             [self.view insertSubview:imageView belowSubview:subView];
             
-            if (![self isEnabledCategory:category]) { //If disabled
-                imageView.alpha -= 0.3;
-                
-                UILabel *label = [[[UILabel alloc] init] autorelease];
-                label.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.6];
-                label.frame = subView.frame;
-                [self.view addSubview:label];
-            }
         } else if ([subView isKindOfClass:[UIImageView class]]) {
             UIImage* img = [(UIImageView*)subView image];
             float imgRation = img.size.height / img.size.width;
@@ -328,7 +317,7 @@ static char sosPosY;
 }
 
 -(BOOL)isEnabledCategory:(NSDictionary *)category {
-    return YES || [[category objectForKey:CATEGORY_FREE] boolValue];
+    return ![AppDelegate isIAdCompliant] || [[category objectForKey:CATEGORY_FREE] boolValue];
 }
 
 -(BOOL)isSubViewCategoryPart:(UIView*) view {
@@ -449,6 +438,12 @@ static char sosPosY;
                 if (!self.categories) {
                     self.categories = [[[NSMutableArray alloc] init] autorelease];
                 }
+                
+                if (![self isEnabledCategory:item]) {
+                    // Filter not free category
+                    continue;
+                }
+                
                 [self.categories addObject:item];
                 [AppDelegate sharedDelegate].refreshCategories = NO;
                 

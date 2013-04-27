@@ -132,6 +132,76 @@
 		517E321C14F0DB1D003565F9 /* AdBannerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517E321A14F0DB1D003565F9 /* AdBannerNavigationController.m */; };
 		517ECA4314B9A8F600B3CA55 /* UIButton+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 517ECA4214B9A8F600B3CA55 /* UIButton+SOSMessage.m */; };
 		517ECA4D14BCD39B00B3CA55 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517ECA4C14BCD39B00B3CA55 /* Twitter.framework */; };
+		519052B4172BBFE400DB24F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515D4145DEA4000CF6C45 /* main.m */; };
+		519052B5172BBFE400DB24F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515D8145DEA4100CF6C45 /* AppDelegate.m */; };
+		519052B6172BBFE400DB24F0 /* SMCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515DB145DEA4100CF6C45 /* SMCategoriesViewController.m */; };
+		519052B7172BBFE400DB24F0 /* NSString+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE051465221400B274B3 /* NSString+SOSMessage.m */; };
+		519052B8172BBFE400DB24F0 /* SMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE0A1466768A00B274B3 /* SMMessageViewController.m */; };
+		519052B9172BBFE400DB24F0 /* SMMessagesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 510CB9401471B4A80039C8A0 /* SMMessagesHandler.m */; };
+		519052BA172BBFE400DB24F0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F1A70714746B710092F9F8 /* MBProgressHUD.m */; };
+		519052BB172BBFE400DB24F0 /* SMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513FBA3B1480F4ED00E69AC1 /* SMAboutViewController.m */; };
+		519052BC172BBFE400DB24F0 /* UIColor+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5109146514AE279800047A47 /* UIColor+SOSMessage.m */; };
+		519052BD172BBFE400DB24F0 /* SMProposeNewMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51973E3014B64B640062C26B /* SMProposeNewMessageController.m */; };
+		519052BE172BBFE400DB24F0 /* UIButton+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 517ECA4214B9A8F600B3CA55 /* UIButton+SOSMessage.m */; };
+		519052BF172BBFE400DB24F0 /* AdBannerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517E321A14F0DB1D003565F9 /* AdBannerNavigationController.m */; };
+		519052C0172BBFE400DB24F0 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 510291081719A343004F602C /* iRate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		519052C2172BBFE400DB24F0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5102910E1719A411004F602C /* StoreKit.framework */; };
+		519052C3172BBFE400DB24F0 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CBBC0614BE330D009148B2 /* iAd.framework */; };
+		519052C4172BBFE400DB24F0 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517ECA4C14BCD39B00B3CA55 /* Twitter.framework */; };
+		519052C5172BBFE400DB24F0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51712AE614A1BE7000E366AF /* MessageUI.framework */; };
+		519052C6172BBFE400DB24F0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A5CE131466E24200B274B3 /* CoreText.framework */; };
+		519052C7172BBFE400DB24F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515C8145DEA4000CF6C45 /* UIKit.framework */; };
+		519052C8172BBFE400DB24F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515CA145DEA4000CF6C45 /* Foundation.framework */; };
+		519052C9172BBFE400DB24F0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515CC145DEA4000CF6C45 /* CoreGraphics.framework */; };
+		519052CB172BBFE400DB24F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 516515D1145DEA4000CF6C45 /* InfoPlist.strings */; };
+		519052CC172BBFE400DB24F0 /* SMCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516515DD145DEA4100CF6C45 /* SMCategoriesViewController.xib */; };
+		519052CD172BBFE400DB24F0 /* SMMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51A5CE0B1466768A00B274B3 /* SMMessageViewController.xib */; };
+		519052CE172BBFE400DB24F0 /* SMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B415FD26A200128453 /* SMAboutViewController.xib */; };
+		519052CF172BBFE400DB24F0 /* canvas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5109146214AE0B5200047A47 /* canvas.jpg */; };
+		519052D0172BBFE400DB24F0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146D14AE63FB00047A47 /* Default@2x.png */; };
+		519052D1172BBFE400DB24F0 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146F14AE640A00047A47 /* Default-Landscape~ipad.png */; };
+		519052D2172BBFE400DB24F0 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109147114AE641200047A47 /* Default-Portrait~ipad.png */; };
+		519052D3172BBFE400DB24F0 /* SMProposeNewMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133AF15FD257000128453 /* SMProposeNewMessageController.xib */; };
+		519052D4172BBFE400DB24F0 /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = 5129835014C163CA00252D33 /* new.png */; };
+		519052D5172BBFE400DB24F0 /* new_stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 51788A19150CE50700AEE736 /* new_stamp.png */; };
+		519052D6172BBFE400DB24F0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 513B9F4D15FA82F000199E82 /* Settings.bundle */; };
+		519052D7172BBFE400DB24F0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B615FD27B200128453 /* Localizable.strings */; };
+		519052D8172BBFE400DB24F0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B915FD27B200128453 /* Localizable.strings */; };
+		519052D9172BBFE400DB24F0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5171FA27160BADB600D19E01 /* Default-568h@2x.png */; };
+		519052DA172BBFE400DB24F0 /* sosm_background_640_1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63AA16D0E1B0002FCC38 /* sosm_background_640_1136.png */; };
+		519052DB172BBFE400DB24F0 /* sosm_next_message.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63AB16D0E1B0002FCC38 /* sosm_next_message.png */; };
+		519052DC172BBFE400DB24F0 /* sosm_previous_message.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63AC16D0E1B0002FCC38 /* sosm_previous_message.png */; };
+		519052DD172BBFE400DB24F0 /* sosm_message_container.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63B316D0E29C002FCC38 /* sosm_message_container.png */; };
+		519052DE172BBFE400DB24F0 /* sosm_button_send.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63B616D0E336002FCC38 /* sosm_button_send.png */; };
+		519052DF172BBFE400DB24F0 /* sosm_dislike.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63B916D10B6E002FCC38 /* sosm_dislike.png */; };
+		519052E0172BBFE400DB24F0 /* sosm_disliked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BA16D10B6E002FCC38 /* sosm_disliked.png */; };
+		519052E1172BBFE400DB24F0 /* sosm_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BB16D10B6E002FCC38 /* sosm_like.png */; };
+		519052E2172BBFE400DB24F0 /* sosm_liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BC16D10B6E002FCC38 /* sosm_liked.png */; };
+		519052E3172BBFE400DB24F0 /* sosm_bottom_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63C516D11217002FCC38 /* sosm_bottom_bar.png */; };
+		519052E4172BBFE400DB24F0 /* sosm_top_bar_with_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63C816D118C0002FCC38 /* sosm_top_bar_with_icon.png */; };
+		519052E5172BBFE400DB24F0 /* sosm_button_home_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CB16D13416002FCC38 /* sosm_button_home_empty.png */; };
+		519052E6172BBFE400DB24F0 /* sosm_button_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CC16D13416002FCC38 /* sosm_button_home.png */; };
+		519052E7172BBFE400DB24F0 /* 57px_full_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63D116D1673A002FCC38 /* 57px_full_app.png */; };
+		519052E8172BBFE400DB24F0 /* 114px_full_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63D316D16744002FCC38 /* 114px_full_app.png */; };
+		519052E9172BBFE400DB24F0 /* 72px_full_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63D516D16886002FCC38 /* 72px_full_app.png */; };
+		519052EA172BBFE400DB24F0 /* 144px_full_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63D716D1688E002FCC38 /* 144px_full_app.png */; };
+		519052EB172BBFE400DB24F0 /* sosm_top_bar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 516A30CF16FC3D1A00D20E82 /* sosm_top_bar_icon.png */; };
+		519052EC172BBFE400DB24F0 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 516A30D416FC418A00D20E82 /* Pacifico.ttf */; };
+		519052ED172BBFE400DB24F0 /* sosm_message_big_container.png in Resources */ = {isa = PBXBuildFile; fileRef = 510290D917195FA4004F602C /* sosm_message_big_container.png */; };
+		519052EE172BBFE400DB24F0 /* Handlee.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 510290DE171960AF004F602C /* Handlee.ttf */; };
+		519052EF172BBFE400DB24F0 /* sosm_button_refresh_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 510290E8171964E3004F602C /* sosm_button_refresh_small.png */; };
+		519052F0172BBFE400DB24F0 /* sosm_button_home_update_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 510291021719A196004F602C /* sosm_button_home_update_5.png */; };
+		519052F1172BBFE400DB24F0 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 517088C21719A9AA00DDA769 /* Default-Landscape@2x~ipad.png */; };
+		519052F2172BBFE400DB24F0 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 517088C01719A63500DDA769 /* Default-Portrait@2x~ipad.png */; };
+		519052F3172BBFE400DB24F0 /* sosm_message_propose.png in Resources */ = {isa = PBXBuildFile; fileRef = 517AFB691721B2C600F59C78 /* sosm_message_propose.png */; };
+		519052F4172BBFE400DB24F0 /* email-14-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 51A6C9C417259F0800358BB9 /* email-14-256.png */; };
+		519052F5172BBFE400DB24F0 /* twitter-4-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 51A6C9C917259F4400358BB9 /* twitter-4-256.png */; };
+		519052F6172BBFE400DB24F0 /* 57px.png in Resources */ = {isa = PBXBuildFile; fileRef = 51BA3F7A172AEB7B00A1FE65 /* 57px.png */; };
+		519052F7172BBFE400DB24F0 /* 114px.png in Resources */ = {isa = PBXBuildFile; fileRef = 51BA3F7C172AEB8500A1FE65 /* 114px.png */; };
+		519052F8172BBFE400DB24F0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 51BA3F7E172AEB8D00A1FE65 /* Default.png */; };
+		519052F9172BBFE400DB24F0 /* 72px.png in Resources */ = {isa = PBXBuildFile; fileRef = 51BA3F80172AEBA800A1FE65 /* 72px.png */; };
+		519052FA172BBFE400DB24F0 /* 144px.png in Resources */ = {isa = PBXBuildFile; fileRef = 51BA3F82172AEBAD00A1FE65 /* 144px.png */; };
+		519052FB172BBFE400DB24F0 /* sosm_button_home_top_category.png in Resources */ = {isa = PBXBuildFile; fileRef = 51BA3F84172AEED600A1FE65 /* sosm_button_home_top_category.png */; };
 		51973E3214B64B650062C26B /* SMProposeNewMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51973E3014B64B640062C26B /* SMProposeNewMessageController.m */; };
 		51A5CE061465221400B274B3 /* NSString+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE051465221400B274B3 /* NSString+SOSMessage.m */; };
 		51A5CE0C1466768A00B274B3 /* SMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE0A1466768A00B274B3 /* SMMessageViewController.m */; };
@@ -354,6 +424,8 @@
 		517ECA4214B9A8F600B3CA55 /* UIButton+SOSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SOSMessage.m"; sourceTree = "<group>"; };
 		517ECA4C14BCD39B00B3CA55 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		5187633816F4685E003D0B2B /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/SMProposeNewMessageController.xib; sourceTree = "<group>"; };
+		519052FF172BBFE400DB24F0 /* sosmessage-lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sosmessage-lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51905300172BBFE500DB24F0 /* sosmessage-lite.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "sosmessage-lite.plist"; path = "/Volumes/Perso/aketom/sosmessagedecarte-ios/sosmessage-lite.plist"; sourceTree = "<absolute>"; };
 		51973E2F14B64B640062C26B /* SMProposeNewMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMProposeNewMessageController.h; sourceTree = "<group>"; };
 		51973E3014B64B640062C26B /* SMProposeNewMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMProposeNewMessageController.m; sourceTree = "<group>"; };
 		51A5CE041465221400B274B3 /* NSString+SOSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SOSMessage.h"; sourceTree = "<group>"; };
@@ -426,6 +498,21 @@
 				516515C9145DEA4000CF6C45 /* UIKit.framework in Frameworks */,
 				516515CB145DEA4000CF6C45 /* Foundation.framework in Frameworks */,
 				516515CD145DEA4000CF6C45 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		519052C1172BBFE400DB24F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				519052C2172BBFE400DB24F0 /* StoreKit.framework in Frameworks */,
+				519052C3172BBFE400DB24F0 /* iAd.framework in Frameworks */,
+				519052C4172BBFE400DB24F0 /* Twitter.framework in Frameworks */,
+				519052C5172BBFE400DB24F0 /* MessageUI.framework in Frameworks */,
+				519052C6172BBFE400DB24F0 /* CoreText.framework in Frameworks */,
+				519052C7172BBFE400DB24F0 /* UIKit.framework in Frameworks */,
+				519052C8172BBFE400DB24F0 /* Foundation.framework in Frameworks */,
+				519052C9172BBFE400DB24F0 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +617,7 @@
 				515F722814BE2CF5004676E1 /* smbu.app */,
 				51B8CD1916FAECB3009B5DB4 /* smj.app */,
 				51B8CD6716FAED8A009B5DB4 /* smb.app */,
+				519052FF172BBFE400DB24F0 /* sosmessage-lite.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -590,6 +678,7 @@
 				516515D0145DEA4000CF6C45 /* sosmessage-Info.plist */,
 				51D85B6416F8D194002635CF /* sosmessage-bu.plist */,
 				51B8CD1A16FAECB3009B5DB4 /* sosmessage-jokes.plist */,
+				51905300172BBFE500DB24F0 /* sosmessage-lite.plist */,
 				516515D1145DEA4000CF6C45 /* InfoPlist.strings */,
 				516515D4145DEA4000CF6C45 /* main.m */,
 				516515D6145DEA4100CF6C45 /* sosmessage-Prefix.pch */,
@@ -707,6 +796,23 @@
 			productReference = 516515C4145DEA4000CF6C45 /* sosmessage.app */;
 			productType = "com.apple.product-type.application";
 		};
+		519052B2172BBFE400DB24F0 /* sosmessage-lite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 519052FC172BBFE400DB24F0 /* Build configuration list for PBXNativeTarget "sosmessage-lite" */;
+			buildPhases = (
+				519052B3172BBFE400DB24F0 /* Sources */,
+				519052C1172BBFE400DB24F0 /* Frameworks */,
+				519052CA172BBFE400DB24F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "sosmessage-lite";
+			productName = sosmessage;
+			productReference = 519052FF172BBFE400DB24F0 /* sosmessage-lite.app */;
+			productType = "com.apple.product-type.application";
+		};
 		51B8CCD916FAECB3009B5DB4 /* jokes */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51B8CD1616FAECB3009B5DB4 /* Build configuration list for PBXNativeTarget "jokes" */;
@@ -763,6 +869,7 @@
 			projectRoot = "";
 			targets = (
 				516515C3145DEA4000CF6C45 /* sosmessage */,
+				519052B2172BBFE400DB24F0 /* sosmessage-lite */,
 				515F720314BE2CF5004676E1 /* break up */,
 				51B8CCD916FAECB3009B5DB4 /* jokes */,
 				51B8CD2316FAED8A009B5DB4 /* birthday */,
@@ -875,6 +982,62 @@
 				51BA3F81172AEBA800A1FE65 /* 72px.png in Resources */,
 				51BA3F83172AEBAD00A1FE65 /* 144px.png in Resources */,
 				51BA3F85172AEED600A1FE65 /* sosm_button_home_top_category.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		519052CA172BBFE400DB24F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				519052CB172BBFE400DB24F0 /* InfoPlist.strings in Resources */,
+				519052CC172BBFE400DB24F0 /* SMCategoriesViewController.xib in Resources */,
+				519052CD172BBFE400DB24F0 /* SMMessageViewController.xib in Resources */,
+				519052CE172BBFE400DB24F0 /* SMAboutViewController.xib in Resources */,
+				519052CF172BBFE400DB24F0 /* canvas.jpg in Resources */,
+				519052D0172BBFE400DB24F0 /* Default@2x.png in Resources */,
+				519052D1172BBFE400DB24F0 /* Default-Landscape~ipad.png in Resources */,
+				519052D2172BBFE400DB24F0 /* Default-Portrait~ipad.png in Resources */,
+				519052D3172BBFE400DB24F0 /* SMProposeNewMessageController.xib in Resources */,
+				519052D4172BBFE400DB24F0 /* new.png in Resources */,
+				519052D5172BBFE400DB24F0 /* new_stamp.png in Resources */,
+				519052D6172BBFE400DB24F0 /* Settings.bundle in Resources */,
+				519052D7172BBFE400DB24F0 /* Localizable.strings in Resources */,
+				519052D8172BBFE400DB24F0 /* Localizable.strings in Resources */,
+				519052D9172BBFE400DB24F0 /* Default-568h@2x.png in Resources */,
+				519052DA172BBFE400DB24F0 /* sosm_background_640_1136.png in Resources */,
+				519052DB172BBFE400DB24F0 /* sosm_next_message.png in Resources */,
+				519052DC172BBFE400DB24F0 /* sosm_previous_message.png in Resources */,
+				519052DD172BBFE400DB24F0 /* sosm_message_container.png in Resources */,
+				519052DE172BBFE400DB24F0 /* sosm_button_send.png in Resources */,
+				519052DF172BBFE400DB24F0 /* sosm_dislike.png in Resources */,
+				519052E0172BBFE400DB24F0 /* sosm_disliked.png in Resources */,
+				519052E1172BBFE400DB24F0 /* sosm_like.png in Resources */,
+				519052E2172BBFE400DB24F0 /* sosm_liked.png in Resources */,
+				519052E3172BBFE400DB24F0 /* sosm_bottom_bar.png in Resources */,
+				519052E4172BBFE400DB24F0 /* sosm_top_bar_with_icon.png in Resources */,
+				519052E5172BBFE400DB24F0 /* sosm_button_home_empty.png in Resources */,
+				519052E6172BBFE400DB24F0 /* sosm_button_home.png in Resources */,
+				519052E7172BBFE400DB24F0 /* 57px_full_app.png in Resources */,
+				519052E8172BBFE400DB24F0 /* 114px_full_app.png in Resources */,
+				519052E9172BBFE400DB24F0 /* 72px_full_app.png in Resources */,
+				519052EA172BBFE400DB24F0 /* 144px_full_app.png in Resources */,
+				519052EB172BBFE400DB24F0 /* sosm_top_bar_icon.png in Resources */,
+				519052EC172BBFE400DB24F0 /* Pacifico.ttf in Resources */,
+				519052ED172BBFE400DB24F0 /* sosm_message_big_container.png in Resources */,
+				519052EE172BBFE400DB24F0 /* Handlee.ttf in Resources */,
+				519052EF172BBFE400DB24F0 /* sosm_button_refresh_small.png in Resources */,
+				519052F0172BBFE400DB24F0 /* sosm_button_home_update_5.png in Resources */,
+				519052F1172BBFE400DB24F0 /* Default-Landscape@2x~ipad.png in Resources */,
+				519052F2172BBFE400DB24F0 /* Default-Portrait@2x~ipad.png in Resources */,
+				519052F3172BBFE400DB24F0 /* sosm_message_propose.png in Resources */,
+				519052F4172BBFE400DB24F0 /* email-14-256.png in Resources */,
+				519052F5172BBFE400DB24F0 /* twitter-4-256.png in Resources */,
+				519052F6172BBFE400DB24F0 /* 57px.png in Resources */,
+				519052F7172BBFE400DB24F0 /* 114px.png in Resources */,
+				519052F8172BBFE400DB24F0 /* Default.png in Resources */,
+				519052F9172BBFE400DB24F0 /* 72px.png in Resources */,
+				519052FA172BBFE400DB24F0 /* 144px.png in Resources */,
+				519052FB172BBFE400DB24F0 /* sosm_button_home_top_category.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1034,6 +1197,26 @@
 				517ECA4314B9A8F600B3CA55 /* UIButton+SOSMessage.m in Sources */,
 				517E321B14F0DB1D003565F9 /* AdBannerNavigationController.m in Sources */,
 				510291091719A343004F602C /* iRate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		519052B3172BBFE400DB24F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				519052B4172BBFE400DB24F0 /* main.m in Sources */,
+				519052B5172BBFE400DB24F0 /* AppDelegate.m in Sources */,
+				519052B6172BBFE400DB24F0 /* SMCategoriesViewController.m in Sources */,
+				519052B7172BBFE400DB24F0 /* NSString+SOSMessage.m in Sources */,
+				519052B8172BBFE400DB24F0 /* SMMessageViewController.m in Sources */,
+				519052B9172BBFE400DB24F0 /* SMMessagesHandler.m in Sources */,
+				519052BA172BBFE400DB24F0 /* MBProgressHUD.m in Sources */,
+				519052BB172BBFE400DB24F0 /* SMAboutViewController.m in Sources */,
+				519052BC172BBFE400DB24F0 /* UIColor+SOSMessage.m in Sources */,
+				519052BD172BBFE400DB24F0 /* SMProposeNewMessageController.m in Sources */,
+				519052BE172BBFE400DB24F0 /* UIButton+SOSMessage.m in Sources */,
+				519052BF172BBFE400DB24F0 /* AdBannerNavigationController.m in Sources */,
+				519052C0172BBFE400DB24F0 /* iRate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1236,6 +1419,32 @@
 			};
 			name = Release;
 		};
+		519052FD172BBFE400DB24F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "sosmessage/sosmessage-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
+				INFOPLIST_FILE = "sosmessage-lite.plist";
+				PRODUCT_NAME = "sosmessage-lite";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		519052FE172BBFE400DB24F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "sosmessage/sosmessage-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
+				INFOPLIST_FILE = "sosmessage-lite.plist";
+				PRODUCT_NAME = "sosmessage-lite";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		51B8CD1716FAECB3009B5DB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1306,6 +1515,15 @@
 			buildConfigurations = (
 				516515E6145DEA4100CF6C45 /* Debug */,
 				516515E7145DEA4100CF6C45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		519052FC172BBFE400DB24F0 /* Build configuration list for PBXNativeTarget "sosmessage-lite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				519052FD172BBFE400DB24F0 /* Debug */,
+				519052FE172BBFE400DB24F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

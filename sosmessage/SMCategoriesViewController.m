@@ -181,7 +181,7 @@ static char sosPosY;
     uiLabel.backgroundColor = [UIColor clearColor];
     uiLabel.text = label;
     uiLabel.font = CATEGORY_FONT;
-    uiLabel.textColor = [UIColor colorWithWhite:1.0 alpha:1.0];;
+    uiLabel.textColor = [UIColor colorWithWhite:0.0 alpha:1.0];;
     uiLabel.textAlignment = UITextAlignmentCenter;
     uiLabel.userInteractionEnabled = YES;
     
@@ -233,16 +233,17 @@ static char sosPosY;
     if ([workingCategories count] == 0) {
         [workingCategories release];
         return;
-    } else if ([workingCategories count] == 1) {
-        [self addAdvertisingBlockinPosY:0];
-        [self addSOSCategory:[workingCategories objectAtIndex:0] inPosX:0 andPosY:1 forBlock:NB_BLOCKS];
-        y = 2;
-    } else {
-        for (NSDictionary* category in workingCategories) {
-            [self addSOSCategory:category inPosX:0 andPosY:[self.categories indexOfObject:category] forBlock:NB_BLOCKS];
-        }
-        y = [workingCategories count];
     }
+    if ([AppDelegate isIAdCompliant]) {
+        [self addAdvertisingBlockinPosY:0];
+        y = 1;
+    }
+    
+    for (NSDictionary* category in workingCategories) {
+        [self addSOSCategory:category inPosX:0 andPosY:y forBlock:NB_BLOCKS];
+        y += 1;
+    }
+    
     [workingCategories release];
     
     if ([MFMailComposeViewController canSendMail]) {
@@ -274,7 +275,8 @@ static char sosPosY;
             
             // Add env icon
             NSString *imageName = [((UILabel*)subView).text isEqualToString:kmessage_propose] ? @"sosm_message_propose.png" : @"sosm_top_bar_icon.png";
-            if (objc_getAssociatedObject(subView, &sosPosY) != nil && [objc_getAssociatedObject(subView, &sosPosY) intValue] == 0) {
+            
+            if ([self isHighlightedCategory:subView]) {
                 imageName = @"sosm_button_home_top_category.png";
             }
             
@@ -295,7 +297,7 @@ static char sosPosY;
                 if ([self.lastFetchingDate compare:categoryLastAdd] < 0) {
                     UIImage *img = [UIImage imageNamed:@"sosm_button_home_update_5.png"];
                     UIImageView* newImage = [[UIImageView alloc] initWithImage:img];
-                    newImage.frame = CGRectMake(subView.frame.origin.x + subView.frame.size.width - 35, viewY - 5, img.size.width, img.size.height);
+                    newImage.frame = CGRectMake(subView.frame.origin.x + subView.frame.size.width - 20, viewY - 5, img.size.width / 2, img.size.height / 2);
                     
                     [self.view addSubview:newImage];
                     [newImage release];
@@ -314,6 +316,11 @@ static char sosPosY;
             subView.frame = CGRectMake(subView.frame.origin.x, floorf(subView.frame.origin.y * fitHeight), subView.frame.size.width, imgRation * subView.frame.size.width);
         }
     }
+}
+
+-(BOOL)isHighlightedCategory:(UIView *)subView {
+    int highlightIndex = [AppDelegate isIAdCompliant] ? 1 : 0;
+    return objc_getAssociatedObject(subView, &sosPosY) != nil && [objc_getAssociatedObject(subView, &sosPosY) intValue] == highlightIndex;
 }
 
 -(BOOL)isEnabledCategory:(NSDictionary *)category {

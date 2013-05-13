@@ -138,10 +138,10 @@
 
 - (int)deviceSpecificCategoriesHeaderSize {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return 60;
+        return [AppDelegate isIAdCompliant] ? 90 : 60;
     }
     else {
-        return 140;
+        return [AppDelegate isIAdCompliant] ? 210 : 140;
     }
 }
 

@@ -178,10 +178,10 @@ static char sosPosY;
     NSString* label = kcategories_all;
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
     //uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:kAlpha];
-    uiLabel.backgroundColor = [UIColor clearColor];
+    uiLabel.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6];
     uiLabel.text = label;
     uiLabel.font = CATEGORY_FONT;
-    uiLabel.textColor = [UIColor colorWithWhite:0.0 alpha:1.0];;
+    uiLabel.textColor = [UIColor colorWithWhite:0.0 alpha:1.0];
     uiLabel.textAlignment = UITextAlignmentCenter;
     uiLabel.userInteractionEnabled = YES;
     
@@ -275,6 +275,7 @@ static char sosPosY;
             
             // Add env icon
             NSString *imageName = [((UILabel*)subView).text isEqualToString:kmessage_propose] ? @"sosm_message_propose.png" : @"sosm_top_bar_icon.png";
+            imageName = [((UILabel*)subView).text isEqualToString:kcategories_all] ? @"sosm_button_home_full_app.png" : imageName;
             
             if ([self isHighlightedCategory:subView]) {
                 imageName = @"sosm_button_home_top_category.png";

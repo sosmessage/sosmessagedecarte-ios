@@ -5,15 +5,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>sosm-lite</string>
+	<string>sosmessages</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>114px.png</string>
-		<string>57px.png</string>
-		<string>72px.png</string>
-		<string>144px.png</string>
+		<string>lite_114px.png</string>
+		<string>lite_57px.png</string>
+		<string>lite_72px.png</string>
+		<string>lite_144px.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -21,10 +21,10 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>114px.png</string>
-				<string>57px.png</string>
-				<string>72px.png</string>
-				<string>144px.png</string>
+				<string>lite_114px.png</string>
+				<string>lite_57px.png</string>
+				<string>lite_72px.png</string>
+				<string>lite_144px.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
@@ -44,11 +44,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>SMAppName</key>

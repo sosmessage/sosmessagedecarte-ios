@@ -37,11 +37,21 @@
 {
     [super viewDidLoad];
     self.ourMessage.font = MESSAGE_FONT;
+    self.btnBack.titleLabel.font = BARS_FONT;
+    self.btnOtherApp.titleLabel.font = BARS_FONT;
+    self.lblAbout.font = BARS_FONT;
 }
 
 - (void)viewDidUnload
 {
     [self setOurMessage:nil];
+    [self setLblAbout:nil];
+    [self setBtnBack:nil];
+    [self setBtnOtherApp:nil];
+    [self setLblAketomic:nil];
+    [self setBtnAketomic:nil];
+    [self setLblLkemen:nil];
+    [self setBtnLkemen:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -49,6 +59,20 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    // Resize lkemen / aketomic btns
+    [self moveButton:self.btnAketomic besideLabel:self.lblAketomic];
+    [self moveButton:self.btnLkemen besideLabel:self.lblLkemen];
+}
+
+-(void)moveButton:(UIButton *)btn besideLabel:(UILabel *)label {
+    CGSize strSize = [label.text sizeWithFont:label.font];
+    btn.center = CGPointMake(label.center.x + (strSize.width / 2) - (btn.frame.size.width / 2), label.center.y);
+    NSLog(@"lbl: %.2f:%.2f Btn: %.2f:%.2f", label.center.x, label.center.y, btn.center.x, btn.center.y);
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -63,6 +87,13 @@
 
 - (void)dealloc {
     [_ourMessage release];
+    [_lblAbout release];
+    [_btnBack release];
+    [_btnOtherApp release];
+    [_lblAketomic release];
+    [_btnAketomic release];
+    [_lblLkemen release];
+    [_btnLkemen release];
     [super dealloc];
 }
 

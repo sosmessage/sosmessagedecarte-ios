@@ -62,6 +62,7 @@ static char sosPosY;
     [self requestCategories];
     self.creditsLabel.font = BARS_FONT;
     self.applicationName.font = BARS_FONT;
+    self.btnLanguage.font = BARS_FONT;
 }
 
 - (void)viewDidUnload
@@ -379,6 +380,7 @@ static char sosPosY;
 
 - (IBAction)refreshPressed:(id)sender {
     [AppDelegate sharedDelegate].refreshCategories = YES;
+    self.announcements = nil;
     
     [self refreshCategories];
 }

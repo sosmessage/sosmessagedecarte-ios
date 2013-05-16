@@ -20,5 +20,13 @@
 - (IBAction)liseTwitterPressed:(id)sender;
 
 @property (retain, nonatomic) IBOutlet UITextView *ourMessage;
+@property (retain, nonatomic) IBOutlet UILabel *lblAbout;
+@property (retain, nonatomic) IBOutlet UIButton *btnBack;
+@property (retain, nonatomic) IBOutlet UIButton *btnOtherApp;
+
+@property (retain, nonatomic) IBOutlet UILabel *lblAketomic;
+@property (retain, nonatomic) IBOutlet UIButton *btnAketomic;
+@property (retain, nonatomic) IBOutlet UILabel *lblLkemen;
+@property (retain, nonatomic) IBOutlet UIButton *btnLkemen;
 
 @end

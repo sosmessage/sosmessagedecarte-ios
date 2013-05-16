@@ -11,9 +11,11 @@
 #define SM_URL @"http://www.dummyurl.fr"
 
 #define SM_ABOUT @"http://www.aketomic.com/redirect/apps"
-#define SM_TWITTER @"https://twitter.com/sosmessage"
 #define SM_EMAIL @"contact@aketomic.com"
-#define SM_APP_URL @"http://itunes.apple.com/fr/app/sos-message-de-carte/id492273436?mt=8&uo=4"
+#define SM_TWITTER @"https://www.twitter.com/sosmessage"
+#define AKETOMIC_TWITTER @"https://www.twitter.com/aketomic"
+#define LISE_TWITTER @"https://www.twitter.com/lkemen"
+#define SM_APP_URL @"https://itunes.apple.com/us/app/sosmessages/id635646488?ls=1&mt=8"
 
 @protocol SMUrlBase <NSObject>
 

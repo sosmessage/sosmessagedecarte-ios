@@ -115,7 +115,7 @@
 // Marging between two blocks
 - (int)deviceSpecificCategoriesMarginHeight {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return 7;
+        return 5;
     }
     else {
         return 12;
@@ -141,7 +141,7 @@
         return [AppDelegate isIAdCompliant] ? 90 : 60;
     }
     else {
-        return [AppDelegate isIAdCompliant] ? 210 : 140;
+        return [AppDelegate isIAdCompliant] ? 90 : 100;
     }
 }
 
@@ -189,7 +189,7 @@
 - (UIFont *)deviceSpecificCategoryFont {
     int fontSize = 30;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        fontSize = 22;
+        fontSize = 19;
     }
     return [UIFont fontWithName:@"Helvetica-Bold" size:fontSize];
 }

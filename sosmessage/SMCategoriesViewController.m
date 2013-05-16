@@ -243,7 +243,7 @@ static char sosPosY;
     
     if ([MFMailComposeViewController canSendMail]) {
         [self addMailPropositionBlockinPosY:y];
-        y++;
+
     }
     else {
         /* To be re-enabled by default when the propositions btn will be better handled */
@@ -253,8 +253,8 @@ static char sosPosY;
     }
     
     if ([AppDelegate isIAdCompliant]) {
+        y++;
         [self addAdvertisingBlockinPosY:y];
-    //    y++;
     }
     
     float fitHeight =  ceilf((self.view.bounds.size.height - CATEGORIES_HEADER_SIZE - CATEGORIES_FOOTER_SIZE) / (y + 1.0f)); //XXX May i need to set a max-height to handle background image size
@@ -324,7 +324,8 @@ static char sosPosY;
 }
 
 -(BOOL)isHighlightedCategory:(UIView *)subView {
-    int highlightIndex = [AppDelegate isIAdCompliant] ? 1 : 0;
+    //int highlightIndex = [AppDelegate isIAdCompliant] ? 1 : 0;
+    int highlightIndex = 0;
     return objc_getAssociatedObject(subView, &sosPosY) != nil && [objc_getAssociatedObject(subView, &sosPosY) intValue] == highlightIndex;
 }
 

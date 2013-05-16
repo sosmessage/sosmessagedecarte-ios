@@ -177,8 +177,7 @@ static char sosPosY;
 -(void)addAdvertisingBlockinPosY:(int)posY {
     NSString* label = kcategories_all;
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
-    //uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:kAlpha];
-    uiLabel.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1];//[UIColor colorWithRed:0 green:0.66 blue:0.61 alpha:0.4];
+    uiLabel.backgroundColor = [UIColor clearColor];
     uiLabel.text = label;
     uiLabel.font = CATEGORY_FONT;
     uiLabel.textColor = [UIColor colorWithWhite:0.0 alpha:1.0];
@@ -195,7 +194,7 @@ static char sosPosY;
 -(void)addMailPropositionBlockinPosY:(int)posY {
     NSString* label = kmessage_propose;
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
-    uiLabel.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.4];//[UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:kAlpha];
+    uiLabel.backgroundColor = [UIColor clearColor];
     uiLabel.text = label;
     uiLabel.font = CATEGORY_FONT;
     uiLabel.textColor = [UIColor colorWithWhite:0.0 alpha:1];
@@ -244,6 +243,7 @@ static char sosPosY;
     
     if ([MFMailComposeViewController canSendMail]) {
         [self addMailPropositionBlockinPosY:y];
+        y++;
     }
     else {
         /* To be re-enabled by default when the propositions btn will be better handled */
@@ -251,6 +251,12 @@ static char sosPosY;
             y -= 1;
         }
     }
+    
+    if ([AppDelegate isIAdCompliant]) {
+        [self addAdvertisingBlockinPosY:y];
+    //    y++;
+    }
+    
     float fitHeight =  ceilf((self.view.bounds.size.height - CATEGORIES_HEADER_SIZE - CATEGORIES_FOOTER_SIZE) / (y + 1.0f)); //XXX May i need to set a max-height to handle background image size
 
     for (UIView* subView in self.view.subviews) {
@@ -304,6 +310,8 @@ static char sosPosY;
             UIImageView *imageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sosm_button_home_empty.png"]] autorelease];
             imageView.frame = subView.frame;
             UIColor *iconBackColor = category ? [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR]] : [UIColor colorWithWhite:0.8 alpha:1];
+            iconBackColor = [((UILabel*)subView).text isEqualToString:kcategories_all] ? [UIColor whiteColor] : iconBackColor;
+            
             imageView.backgroundColor = iconBackColor;
             [self.view insertSubview:imageView belowSubview:subView];
             
@@ -311,10 +319,6 @@ static char sosPosY;
             UIImage* img = [(UIImageView*)subView image];
             float imgRation = img.size.height / img.size.width;
             subView.frame = CGRectMake(subView.frame.origin.x, floorf(subView.frame.origin.y * fitHeight), subView.frame.size.width, imgRation * subView.frame.size.width);
-        }
-        
-        if ([AppDelegate isIAdCompliant]) {
-            [self addAdvertisingBlockinPosY:y];
         }
     }
 }

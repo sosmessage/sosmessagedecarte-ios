@@ -464,10 +464,7 @@ static char sosPosY;
             }
         }
 
-        if (!announcements) {
-            [self handleAnnouncements];
-            return;
-        }
+        [self handleAnnouncements];
     }
     [self refreshCategories];
 }

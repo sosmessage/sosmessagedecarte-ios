@@ -17,6 +17,7 @@
 
 - (IBAction)mailPressed:(id)sender;
 - (IBAction)twitterPressed:(id)sender;
+- (IBAction)liseTwitterPressed:(id)sender;
 
 @property (retain, nonatomic) IBOutlet UITextView *ourMessage;
 

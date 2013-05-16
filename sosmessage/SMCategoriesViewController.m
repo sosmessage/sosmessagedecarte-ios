@@ -178,7 +178,7 @@ static char sosPosY;
     NSString* label = kcategories_all;
     UILabel* uiLabel = [self buildUILabelForBlock:NB_BLOCKS inPosX:0 andPosY:posY];
     //uiLabel.backgroundColor = [UIColor colorWithHue:label.calculateHue saturation:0.55 brightness:0.9 alpha:kAlpha];
-    uiLabel.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6];
+    uiLabel.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1];//[UIColor colorWithRed:0 green:0.66 blue:0.61 alpha:0.4];
     uiLabel.text = label;
     uiLabel.font = CATEGORY_FONT;
     uiLabel.textColor = [UIColor colorWithWhite:0.0 alpha:1.0];
@@ -233,10 +233,6 @@ static char sosPosY;
     if ([workingCategories count] == 0) {
         [workingCategories release];
         return;
-    }
-    if ([AppDelegate isIAdCompliant]) {
-        [self addAdvertisingBlockinPosY:0];
-        y = 1;
     }
     
     for (NSDictionary* category in workingCategories) {
@@ -315,6 +311,10 @@ static char sosPosY;
             UIImage* img = [(UIImageView*)subView image];
             float imgRation = img.size.height / img.size.width;
             subView.frame = CGRectMake(subView.frame.origin.x, floorf(subView.frame.origin.y * fitHeight), subView.frame.size.width, imgRation * subView.frame.size.width);
+        }
+        
+        if ([AppDelegate isIAdCompliant]) {
+            [self addAdvertisingBlockinPosY:y];
         }
     }
 }

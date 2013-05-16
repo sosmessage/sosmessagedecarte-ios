@@ -93,4 +93,13 @@
 - (IBAction)twitterPressed:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: SM_TWITTER]];
 }
+
+- (IBAction)aketomicTwitterPressed:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: AKETOMIC_TWITTER]];
+}
+
+- (IBAction)liseTwitterPressed:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: LISE_TWITTER]];
+}
+
 @end

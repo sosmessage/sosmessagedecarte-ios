@@ -23,6 +23,8 @@
 +(void)initialize {
     //[iRate sharedInstance].previewMode = YES;
     [iRate sharedInstance].applicationName = [AppDelegate applicationReadableName];
+    [iRate sharedInstance].daysUntilPrompt = 3;
+    [iRate sharedInstance].usesUntilPrompt = 5;
 }
 
 -(BOOL)getRefreshCategories {

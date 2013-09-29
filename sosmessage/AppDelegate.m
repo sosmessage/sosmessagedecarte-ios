@@ -53,6 +53,10 @@
     [appDefaults setValue:([langCode isEqualToString:@"fr"] ? @"fr" : @"en") forKey:@"language_selection"];
     [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
     
+    // set the status bar style
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    
     //Display categories controller
     SMCategoriesViewController *categories = [[[SMCategoriesViewController alloc] initWithNibName:@"SMCategoriesViewController" bundle:nil] autorelease];
     UINavigationController *nav;
@@ -69,6 +73,7 @@
     self.window.rootViewController = nav;
     self.refreshCategories = NO;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

@@ -60,10 +60,6 @@
 		515B63C216D10B6E002FCC38 /* sosm_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BB16D10B6E002FCC38 /* sosm_like.png */; };
 		515B63C316D10B6E002FCC38 /* sosm_liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BC16D10B6E002FCC38 /* sosm_liked.png */; };
 		515B63C416D10B6E002FCC38 /* sosm_liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BC16D10B6E002FCC38 /* sosm_liked.png */; };
-		515B63C616D11217002FCC38 /* sosm_bottom_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63C516D11217002FCC38 /* sosm_bottom_bar.png */; };
-		515B63C716D11217002FCC38 /* sosm_bottom_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63C516D11217002FCC38 /* sosm_bottom_bar.png */; };
-		515B63C916D118C0002FCC38 /* sosm_top_bar_with_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63C816D118C0002FCC38 /* sosm_top_bar_with_icon.png */; };
-		515B63CA16D118C0002FCC38 /* sosm_top_bar_with_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63C816D118C0002FCC38 /* sosm_top_bar_with_icon.png */; };
 		515B63CD16D13416002FCC38 /* sosm_button_home_empty2.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CB16D13416002FCC38 /* sosm_button_home_empty2.png */; };
 		515B63CE16D13416002FCC38 /* sosm_button_home_empty2.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CB16D13416002FCC38 /* sosm_button_home_empty2.png */; };
 		515B63CF16D13416002FCC38 /* sosm_button_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CC16D13416002FCC38 /* sosm_button_home.png */; };
@@ -104,10 +100,6 @@
 		516515D9145DEA4100CF6C45 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515D8145DEA4100CF6C45 /* AppDelegate.m */; };
 		516515DC145DEA4100CF6C45 /* SMCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515DB145DEA4100CF6C45 /* SMCategoriesViewController.m */; };
 		516515DF145DEA4100CF6C45 /* SMCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516515DD145DEA4100CF6C45 /* SMCategoriesViewController.xib */; };
-		516A30D016FC3D1A00D20E82 /* sosm_top_bar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 516A30CF16FC3D1A00D20E82 /* sosm_top_bar_icon.png */; };
-		516A30D116FC3D1A00D20E82 /* sosm_top_bar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 516A30CF16FC3D1A00D20E82 /* sosm_top_bar_icon.png */; };
-		516A30D216FC3D1A00D20E82 /* sosm_top_bar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 516A30CF16FC3D1A00D20E82 /* sosm_top_bar_icon.png */; };
-		516A30D316FC3D1A00D20E82 /* sosm_top_bar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 516A30CF16FC3D1A00D20E82 /* sosm_top_bar_icon.png */; };
 		516A30D516FC418A00D20E82 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 516A30D416FC418A00D20E82 /* Pacifico.ttf */; };
 		516A30D616FC418A00D20E82 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 516A30D416FC418A00D20E82 /* Pacifico.ttf */; };
 		516A30D716FC418A00D20E82 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 516A30D416FC418A00D20E82 /* Pacifico.ttf */; };
@@ -177,15 +169,12 @@
 		519052E0172BBFE400DB24F0 /* sosm_disliked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BA16D10B6E002FCC38 /* sosm_disliked.png */; };
 		519052E1172BBFE400DB24F0 /* sosm_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BB16D10B6E002FCC38 /* sosm_like.png */; };
 		519052E2172BBFE400DB24F0 /* sosm_liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BC16D10B6E002FCC38 /* sosm_liked.png */; };
-		519052E3172BBFE400DB24F0 /* sosm_bottom_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63C516D11217002FCC38 /* sosm_bottom_bar.png */; };
-		519052E4172BBFE400DB24F0 /* sosm_top_bar_with_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63C816D118C0002FCC38 /* sosm_top_bar_with_icon.png */; };
 		519052E5172BBFE400DB24F0 /* sosm_button_home_empty2.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CB16D13416002FCC38 /* sosm_button_home_empty2.png */; };
 		519052E6172BBFE400DB24F0 /* sosm_button_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CC16D13416002FCC38 /* sosm_button_home.png */; };
 		519052E7172BBFE400DB24F0 /* 57px_full_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63D116D1673A002FCC38 /* 57px_full_app.png */; };
 		519052E8172BBFE400DB24F0 /* 114px_full_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63D316D16744002FCC38 /* 114px_full_app.png */; };
 		519052E9172BBFE400DB24F0 /* 72px_full_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63D516D16886002FCC38 /* 72px_full_app.png */; };
 		519052EA172BBFE400DB24F0 /* 144px_full_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63D716D1688E002FCC38 /* 144px_full_app.png */; };
-		519052EB172BBFE400DB24F0 /* sosm_top_bar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 516A30CF16FC3D1A00D20E82 /* sosm_top_bar_icon.png */; };
 		519052EC172BBFE400DB24F0 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 516A30D416FC418A00D20E82 /* Pacifico.ttf */; };
 		519052ED172BBFE400DB24F0 /* sosm_message_big_container.png in Resources */ = {isa = PBXBuildFile; fileRef = 510290D917195FA4004F602C /* sosm_message_big_container.png */; };
 		519052EE172BBFE400DB24F0 /* Handlee.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 510290DE171960AF004F602C /* Handlee.ttf */; };
@@ -262,8 +251,6 @@
 		51B8CD0916FAECB3009B5DB4 /* sosm_disliked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BA16D10B6E002FCC38 /* sosm_disliked.png */; };
 		51B8CD0A16FAECB3009B5DB4 /* sosm_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BB16D10B6E002FCC38 /* sosm_like.png */; };
 		51B8CD0B16FAECB3009B5DB4 /* sosm_liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BC16D10B6E002FCC38 /* sosm_liked.png */; };
-		51B8CD0C16FAECB3009B5DB4 /* sosm_bottom_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63C516D11217002FCC38 /* sosm_bottom_bar.png */; };
-		51B8CD0D16FAECB3009B5DB4 /* sosm_top_bar_with_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63C816D118C0002FCC38 /* sosm_top_bar_with_icon.png */; };
 		51B8CD0E16FAECB3009B5DB4 /* sosm_button_home_empty2.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CB16D13416002FCC38 /* sosm_button_home_empty2.png */; };
 		51B8CD0F16FAECB3009B5DB4 /* sosm_button_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CC16D13416002FCC38 /* sosm_button_home.png */; };
 		51B8CD1016FAECB3009B5DB4 /* sosmessage-bu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51D85B6416F8D194002635CF /* sosmessage-bu.plist */; };
@@ -318,8 +305,6 @@
 		51B8CD5316FAED8A009B5DB4 /* sosm_disliked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BA16D10B6E002FCC38 /* sosm_disliked.png */; };
 		51B8CD5416FAED8A009B5DB4 /* sosm_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BB16D10B6E002FCC38 /* sosm_like.png */; };
 		51B8CD5516FAED8A009B5DB4 /* sosm_liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BC16D10B6E002FCC38 /* sosm_liked.png */; };
-		51B8CD5616FAED8A009B5DB4 /* sosm_bottom_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63C516D11217002FCC38 /* sosm_bottom_bar.png */; };
-		51B8CD5716FAED8A009B5DB4 /* sosm_top_bar_with_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63C816D118C0002FCC38 /* sosm_top_bar_with_icon.png */; };
 		51B8CD5816FAED8A009B5DB4 /* sosm_button_home_empty2.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CB16D13416002FCC38 /* sosm_button_home_empty2.png */; };
 		51B8CD5916FAED8A009B5DB4 /* sosm_button_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CC16D13416002FCC38 /* sosm_button_home.png */; };
 		51B8CD5A16FAED8A009B5DB4 /* sosmessage-bu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51D85B6416F8D194002635CF /* sosmessage-bu.plist */; };
@@ -363,6 +348,8 @@
 		E23BEB951741899300565C54 /* lite_144px.png in Resources */ = {isa = PBXBuildFile; fileRef = E23BEB941741899300565C54 /* lite_144px.png */; };
 		E271DE2E174537E5004D9A1E /* sosm_button_home_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = E271DE2D174537E5004D9A1E /* sosm_button_home_empty.png */; };
 		E271DE2F174537E5004D9A1E /* sosm_button_home_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = E271DE2D174537E5004D9A1E /* sosm_button_home_empty.png */; };
+		E2E1E21217F8472F009F8598 /* facebook-4-256.png in Resources */ = {isa = PBXBuildFile; fileRef = E2E1E21117F8472F009F8598 /* facebook-4-256.png */; };
+		E2E1E21317F8472F009F8598 /* facebook-4-256.png in Resources */ = {isa = PBXBuildFile; fileRef = E2E1E21117F8472F009F8598 /* facebook-4-256.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -395,8 +382,6 @@
 		515B63BA16D10B6E002FCC38 /* sosm_disliked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_disliked.png; sourceTree = "<group>"; };
 		515B63BB16D10B6E002FCC38 /* sosm_like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_like.png; sourceTree = "<group>"; };
 		515B63BC16D10B6E002FCC38 /* sosm_liked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_liked.png; sourceTree = "<group>"; };
-		515B63C516D11217002FCC38 /* sosm_bottom_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_bottom_bar.png; sourceTree = "<group>"; };
-		515B63C816D118C0002FCC38 /* sosm_top_bar_with_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_top_bar_with_icon.png; sourceTree = "<group>"; };
 		515B63CB16D13416002FCC38 /* sosm_button_home_empty2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_button_home_empty2.png; sourceTree = "<group>"; };
 		515B63CC16D13416002FCC38 /* sosm_button_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_button_home.png; sourceTree = "<group>"; };
 		515B63D116D1673A002FCC38 /* 57px_full_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 57px_full_app.png; sourceTree = "<group>"; };
@@ -417,7 +402,6 @@
 		516515DA145DEA4100CF6C45 /* SMCategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMCategoriesViewController.h; sourceTree = "<group>"; };
 		516515DB145DEA4100CF6C45 /* SMCategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMCategoriesViewController.m; sourceTree = "<group>"; };
 		516515DE145DEA4100CF6C45 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SMCategoriesViewController.xib; sourceTree = "<group>"; };
-		516A30CF16FC3D1A00D20E82 /* sosm_top_bar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_top_bar_icon.png; sourceTree = "<group>"; };
 		516A30D416FC418A00D20E82 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
 		517088C01719A63500DDA769 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		517088C21719A9AA00DDA769 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
@@ -481,6 +465,7 @@
 		E23BEB921741899100565C54 /* lite_72px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lite_72px.png; sourceTree = "<group>"; };
 		E23BEB941741899300565C54 /* lite_144px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lite_144px.png; sourceTree = "<group>"; };
 		E271DE2D174537E5004D9A1E /* sosm_button_home_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_button_home_empty.png; sourceTree = "<group>"; };
+		E2E1E21117F8472F009F8598 /* facebook-4-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-4-256.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -577,6 +562,7 @@
 				E23BEB8C1741547D00565C54 /* sosm_button_home_full_app.png */,
 				51BA3F84172AEED600A1FE65 /* sosm_button_home_top_category.png */,
 				51A6C9C917259F4400358BB9 /* twitter-4-256.png */,
+				E2E1E21117F8472F009F8598 /* facebook-4-256.png */,
 				51A6C9C417259F0800358BB9 /* email-14-256.png */,
 				510290DE171960AF004F602C /* Handlee.ttf */,
 				516A30D416FC418A00D20E82 /* Pacifico.ttf */,
@@ -584,10 +570,7 @@
 				E271DE2D174537E5004D9A1E /* sosm_button_home_empty.png */,
 				515B63CB16D13416002FCC38 /* sosm_button_home_empty2.png */,
 				515B63CC16D13416002FCC38 /* sosm_button_home.png */,
-				516A30CF16FC3D1A00D20E82 /* sosm_top_bar_icon.png */,
 				510290E8171964E3004F602C /* sosm_button_refresh_small.png */,
-				515B63C816D118C0002FCC38 /* sosm_top_bar_with_icon.png */,
-				515B63C516D11217002FCC38 /* sosm_bottom_bar.png */,
 				515B63B916D10B6E002FCC38 /* sosm_dislike.png */,
 				515B63BA16D10B6E002FCC38 /* sosm_disliked.png */,
 				515B63BB16D10B6E002FCC38 /* sosm_like.png */,
@@ -924,8 +907,6 @@
 				515B63C016D10B6E002FCC38 /* sosm_disliked.png in Resources */,
 				515B63C216D10B6E002FCC38 /* sosm_like.png in Resources */,
 				515B63C416D10B6E002FCC38 /* sosm_liked.png in Resources */,
-				515B63C716D11217002FCC38 /* sosm_bottom_bar.png in Resources */,
-				515B63CA16D118C0002FCC38 /* sosm_top_bar_with_icon.png in Resources */,
 				515B63CE16D13416002FCC38 /* sosm_button_home_empty2.png in Resources */,
 				515B63D016D13416002FCC38 /* sosm_button_home.png in Resources */,
 				51B8CCD116FAEBF6009B5DB4 /* 57px_breakup.png in Resources */,
@@ -933,7 +914,6 @@
 				51B8CCD416FAEC43009B5DB4 /* Default-568h@2x.png in Resources */,
 				51B8CCD616FAEC72009B5DB4 /* 72px_breakup.png in Resources */,
 				51B8CCD816FAEC78009B5DB4 /* 144px_breakup.png in Resources */,
-				516A30D116FC3D1A00D20E82 /* sosm_top_bar_icon.png in Resources */,
 				516A30D616FC418A00D20E82 /* Pacifico.ttf in Resources */,
 				510290DB17195FA4004F602C /* sosm_message_big_container.png in Resources */,
 				510290E0171963E5004F602C /* Handlee.ttf in Resources */,
@@ -976,15 +956,13 @@
 				515B63BF16D10B6E002FCC38 /* sosm_disliked.png in Resources */,
 				515B63C116D10B6E002FCC38 /* sosm_like.png in Resources */,
 				515B63C316D10B6E002FCC38 /* sosm_liked.png in Resources */,
-				515B63C616D11217002FCC38 /* sosm_bottom_bar.png in Resources */,
-				515B63C916D118C0002FCC38 /* sosm_top_bar_with_icon.png in Resources */,
+				E2E1E21217F8472F009F8598 /* facebook-4-256.png in Resources */,
 				515B63CD16D13416002FCC38 /* sosm_button_home_empty2.png in Resources */,
 				515B63CF16D13416002FCC38 /* sosm_button_home.png in Resources */,
 				515B63D216D1673A002FCC38 /* 57px_full_app.png in Resources */,
 				515B63D416D16744002FCC38 /* 114px_full_app.png in Resources */,
 				515B63D616D16886002FCC38 /* 72px_full_app.png in Resources */,
 				515B63D816D1688F002FCC38 /* 144px_full_app.png in Resources */,
-				516A30D016FC3D1A00D20E82 /* sosm_top_bar_icon.png in Resources */,
 				516A30D516FC418A00D20E82 /* Pacifico.ttf in Resources */,
 				510290DA17195FA4004F602C /* sosm_message_big_container.png in Resources */,
 				510290DF171963E4004F602C /* Handlee.ttf in Resources */,
@@ -1033,15 +1011,12 @@
 				519052E0172BBFE400DB24F0 /* sosm_disliked.png in Resources */,
 				519052E1172BBFE400DB24F0 /* sosm_like.png in Resources */,
 				519052E2172BBFE400DB24F0 /* sosm_liked.png in Resources */,
-				519052E3172BBFE400DB24F0 /* sosm_bottom_bar.png in Resources */,
-				519052E4172BBFE400DB24F0 /* sosm_top_bar_with_icon.png in Resources */,
 				519052E5172BBFE400DB24F0 /* sosm_button_home_empty2.png in Resources */,
 				519052E6172BBFE400DB24F0 /* sosm_button_home.png in Resources */,
 				519052E7172BBFE400DB24F0 /* 57px_full_app.png in Resources */,
 				519052E8172BBFE400DB24F0 /* 114px_full_app.png in Resources */,
 				519052E9172BBFE400DB24F0 /* 72px_full_app.png in Resources */,
 				519052EA172BBFE400DB24F0 /* 144px_full_app.png in Resources */,
-				519052EB172BBFE400DB24F0 /* sosm_top_bar_icon.png in Resources */,
 				519052EC172BBFE400DB24F0 /* Pacifico.ttf in Resources */,
 				519052ED172BBFE400DB24F0 /* sosm_message_big_container.png in Resources */,
 				519052EE172BBFE400DB24F0 /* Handlee.ttf in Resources */,
@@ -1058,6 +1033,7 @@
 				519052F9172BBFE400DB24F0 /* 72px.png in Resources */,
 				519052FA172BBFE400DB24F0 /* 144px.png in Resources */,
 				519052FB172BBFE400DB24F0 /* sosm_button_home_top_category.png in Resources */,
+				E2E1E21317F8472F009F8598 /* facebook-4-256.png in Resources */,
 				E23BEB8D1741547D00565C54 /* sosm_button_home_full_app.png in Resources */,
 				E23BEB8F1741898400565C54 /* lite_57px.png in Resources */,
 				E23BEB911741898800565C54 /* lite_114px.png in Resources */,
@@ -1094,8 +1070,6 @@
 				51B8CD0916FAECB3009B5DB4 /* sosm_disliked.png in Resources */,
 				51B8CD0A16FAECB3009B5DB4 /* sosm_like.png in Resources */,
 				51B8CD0B16FAECB3009B5DB4 /* sosm_liked.png in Resources */,
-				51B8CD0C16FAECB3009B5DB4 /* sosm_bottom_bar.png in Resources */,
-				51B8CD0D16FAECB3009B5DB4 /* sosm_top_bar_with_icon.png in Resources */,
 				51B8CD0E16FAECB3009B5DB4 /* sosm_button_home_empty2.png in Resources */,
 				51B8CD0F16FAECB3009B5DB4 /* sosm_button_home.png in Resources */,
 				51B8CD1016FAECB3009B5DB4 /* sosmessage-bu.plist in Resources */,
@@ -1108,7 +1082,6 @@
 				51B8CD1E16FAED34009B5DB4 /* 114px_jokes.png in Resources */,
 				51B8CD2016FAED3E009B5DB4 /* 72px_jokes.png in Resources */,
 				51B8CD2216FAED41009B5DB4 /* 144px_jokes.png in Resources */,
-				516A30D216FC3D1A00D20E82 /* sosm_top_bar_icon.png in Resources */,
 				516A30D716FC418A00D20E82 /* Pacifico.ttf in Resources */,
 				510290DC17195FA4004F602C /* sosm_message_big_container.png in Resources */,
 				510290E1171963E5004F602C /* Handlee.ttf in Resources */,
@@ -1150,8 +1123,6 @@
 				51B8CD5316FAED8A009B5DB4 /* sosm_disliked.png in Resources */,
 				51B8CD5416FAED8A009B5DB4 /* sosm_like.png in Resources */,
 				51B8CD5516FAED8A009B5DB4 /* sosm_liked.png in Resources */,
-				51B8CD5616FAED8A009B5DB4 /* sosm_bottom_bar.png in Resources */,
-				51B8CD5716FAED8A009B5DB4 /* sosm_top_bar_with_icon.png in Resources */,
 				51B8CD5816FAED8A009B5DB4 /* sosm_button_home_empty2.png in Resources */,
 				51B8CD5916FAED8A009B5DB4 /* sosm_button_home.png in Resources */,
 				51B8CD5A16FAED8A009B5DB4 /* sosmessage-bu.plist in Resources */,
@@ -1168,7 +1139,6 @@
 				51B8CD6C16FAEDF5009B5DB4 /* 114px_birthday.png in Resources */,
 				51B8CD6E16FAEDFA009B5DB4 /* 72px_birthday.png in Resources */,
 				51B8CD7016FAEDFE009B5DB4 /* 144px_birthday.png in Resources */,
-				516A30D316FC3D1A00D20E82 /* sosm_top_bar_icon.png in Resources */,
 				516A30D816FC418A00D20E82 /* Pacifico.ttf in Resources */,
 				510290DD17195FA4004F602C /* sosm_message_big_container.png in Resources */,
 				510290E2171963E6004F602C /* Handlee.ttf in Resources */,

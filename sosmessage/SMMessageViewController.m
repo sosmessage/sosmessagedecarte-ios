@@ -32,6 +32,7 @@
 
 @implementation SMMessageViewController
 @synthesize backgroundView;
+@synthesize topBarView;
 @synthesize messageText;
 @synthesize categoryName;
 @synthesize sendMessageButton;
@@ -58,6 +59,8 @@ float baseHue;
         
         self.view.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[self.category objectForKey:CATEGORY_COLOR]];
         self.sendMessageButton.backgroundColor = [AppDelegate buildUIColorFromARGBStringRepresentation:[self.category objectForKey:CATEGORY_COLOR]];
+        
+        [self.topBarView setBackgroundColor:[AppDelegate buildUIColorFromARGBStringRepresentation:[self.category objectForKey:CATEGORY_COLOR]]];
         
         [self.shareBtnLabel setText:klabel_btn_share];
 

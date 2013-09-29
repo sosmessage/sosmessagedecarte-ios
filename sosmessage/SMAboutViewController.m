@@ -125,6 +125,15 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: SM_TWITTER]];
 }
 
+- (IBAction)facebookPressed:(id)sender {
+    NSURL *facebookURL = [NSURL URLWithString: SM_FACEBOOK_ID];
+    if ([[UIApplication sharedApplication] canOpenURL:facebookURL]) {
+        [[UIApplication sharedApplication] openURL:facebookURL];
+    } else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:SM_FACEBOOK_URL]];
+    }
+}
+
 - (IBAction)aketomicTwitterPressed:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: AKETOMIC_TWITTER]];
 }

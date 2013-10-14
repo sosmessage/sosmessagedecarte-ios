@@ -308,7 +308,7 @@ static char sosPosY;
                 }
             }
             
-            UIImageView *imageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sosm_button_home_empty.png"]] autorelease];
+            UIView *imageView = [[[UILabel alloc] init] autorelease];
             imageView.frame = subView.frame;
             UIColor *iconBackColor = category ? [AppDelegate buildUIColorFromARGBStringRepresentation:[category objectForKey:CATEGORY_COLOR]] : [UIColor colorWithWhite:0.8 alpha:1];
             iconBackColor = [((UILabel*)subView).text isEqualToString:kcategories_all] ? [UIColor whiteColor] : iconBackColor;

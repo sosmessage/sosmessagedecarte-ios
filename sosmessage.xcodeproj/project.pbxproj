@@ -8,29 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		510290DA17195FA4004F602C /* sosm_message_big_container.png in Resources */ = {isa = PBXBuildFile; fileRef = 510290D917195FA4004F602C /* sosm_message_big_container.png */; };
-		510290DB17195FA4004F602C /* sosm_message_big_container.png in Resources */ = {isa = PBXBuildFile; fileRef = 510290D917195FA4004F602C /* sosm_message_big_container.png */; };
-		510290DC17195FA4004F602C /* sosm_message_big_container.png in Resources */ = {isa = PBXBuildFile; fileRef = 510290D917195FA4004F602C /* sosm_message_big_container.png */; };
-		510290DD17195FA4004F602C /* sosm_message_big_container.png in Resources */ = {isa = PBXBuildFile; fileRef = 510290D917195FA4004F602C /* sosm_message_big_container.png */; };
 		510290DF171963E4004F602C /* Handlee.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 510290DE171960AF004F602C /* Handlee.ttf */; };
-		510290E0171963E5004F602C /* Handlee.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 510290DE171960AF004F602C /* Handlee.ttf */; };
-		510290E1171963E5004F602C /* Handlee.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 510290DE171960AF004F602C /* Handlee.ttf */; };
-		510290E2171963E6004F602C /* Handlee.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 510290DE171960AF004F602C /* Handlee.ttf */; };
 		510290E9171964E3004F602C /* sosm_button_refresh_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 510290E8171964E3004F602C /* sosm_button_refresh_small.png */; };
-		510290EA171964E3004F602C /* sosm_button_refresh_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 510290E8171964E3004F602C /* sosm_button_refresh_small.png */; };
-		510290EB171964E3004F602C /* sosm_button_refresh_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 510290E8171964E3004F602C /* sosm_button_refresh_small.png */; };
-		510290EC171964E3004F602C /* sosm_button_refresh_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 510290E8171964E3004F602C /* sosm_button_refresh_small.png */; };
 		510291031719A196004F602C /* sosm_button_home_update_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 510291021719A196004F602C /* sosm_button_home_update_5.png */; };
-		510291041719A196004F602C /* sosm_button_home_update_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 510291021719A196004F602C /* sosm_button_home_update_5.png */; };
-		510291051719A196004F602C /* sosm_button_home_update_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 510291021719A196004F602C /* sosm_button_home_update_5.png */; };
-		510291061719A196004F602C /* sosm_button_home_update_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 510291021719A196004F602C /* sosm_button_home_update_5.png */; };
 		510291091719A343004F602C /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 510291081719A343004F602C /* iRate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		5102910A1719A343004F602C /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 510291081719A343004F602C /* iRate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		5102910B1719A343004F602C /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 510291081719A343004F602C /* iRate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		5102910C1719A343004F602C /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 510291081719A343004F602C /* iRate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		5102910F1719A411004F602C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5102910E1719A411004F602C /* StoreKit.framework */; };
-		510291101719A423004F602C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5102910E1719A411004F602C /* StoreKit.framework */; };
-		510291111719A42A004F602C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5102910E1719A411004F602C /* StoreKit.framework */; };
-		510291121719A431004F602C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5102910E1719A411004F602C /* StoreKit.framework */; };
 		5109146314AE0B5300047A47 /* canvas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5109146214AE0B5200047A47 /* canvas.jpg */; };
 		5109146614AE279800047A47 /* UIColor+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5109146514AE279800047A47 /* UIColor+SOSMessage.m */; };
 		5109146E14AE63FB00047A47 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146D14AE63FB00047A47 /* Default@2x.png */; };
@@ -38,60 +20,23 @@
 		5109147214AE641200047A47 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109147114AE641200047A47 /* Default-Portrait~ipad.png */; };
 		510CB9411471B4A80039C8A0 /* SMMessagesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 510CB9401471B4A80039C8A0 /* SMMessagesHandler.m */; };
 		5129835114C163CA00252D33 /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = 5129835014C163CA00252D33 /* new.png */; };
-		5129835214C163CA00252D33 /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = 5129835014C163CA00252D33 /* new.png */; };
 		513B9F4E15FA82F000199E82 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 513B9F4D15FA82F000199E82 /* Settings.bundle */; };
-		513B9F4F15FA82F000199E82 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 513B9F4D15FA82F000199E82 /* Settings.bundle */; };
 		513FBA3D1480F4ED00E69AC1 /* SMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513FBA3B1480F4ED00E69AC1 /* SMAboutViewController.m */; };
 		515B63AD16D0E1B0002FCC38 /* sosm_background_640_1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63AA16D0E1B0002FCC38 /* sosm_background_640_1136.png */; };
-		515B63AE16D0E1B0002FCC38 /* sosm_background_640_1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63AA16D0E1B0002FCC38 /* sosm_background_640_1136.png */; };
 		515B63AF16D0E1B0002FCC38 /* sosm_next_message.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63AB16D0E1B0002FCC38 /* sosm_next_message.png */; };
-		515B63B016D0E1B0002FCC38 /* sosm_next_message.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63AB16D0E1B0002FCC38 /* sosm_next_message.png */; };
 		515B63B116D0E1B0002FCC38 /* sosm_previous_message.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63AC16D0E1B0002FCC38 /* sosm_previous_message.png */; };
-		515B63B216D0E1B0002FCC38 /* sosm_previous_message.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63AC16D0E1B0002FCC38 /* sosm_previous_message.png */; };
 		515B63B416D0E29C002FCC38 /* sosm_message_container.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63B316D0E29C002FCC38 /* sosm_message_container.png */; };
-		515B63B516D0E29C002FCC38 /* sosm_message_container.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63B316D0E29C002FCC38 /* sosm_message_container.png */; };
 		515B63B716D0E336002FCC38 /* sosm_button_send.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63B616D0E336002FCC38 /* sosm_button_send.png */; };
-		515B63B816D0E336002FCC38 /* sosm_button_send.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63B616D0E336002FCC38 /* sosm_button_send.png */; };
 		515B63BD16D10B6E002FCC38 /* sosm_dislike.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63B916D10B6E002FCC38 /* sosm_dislike.png */; };
-		515B63BE16D10B6E002FCC38 /* sosm_dislike.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63B916D10B6E002FCC38 /* sosm_dislike.png */; };
 		515B63BF16D10B6E002FCC38 /* sosm_disliked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BA16D10B6E002FCC38 /* sosm_disliked.png */; };
-		515B63C016D10B6E002FCC38 /* sosm_disliked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BA16D10B6E002FCC38 /* sosm_disliked.png */; };
 		515B63C116D10B6E002FCC38 /* sosm_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BB16D10B6E002FCC38 /* sosm_like.png */; };
-		515B63C216D10B6E002FCC38 /* sosm_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BB16D10B6E002FCC38 /* sosm_like.png */; };
 		515B63C316D10B6E002FCC38 /* sosm_liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BC16D10B6E002FCC38 /* sosm_liked.png */; };
-		515B63C416D10B6E002FCC38 /* sosm_liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BC16D10B6E002FCC38 /* sosm_liked.png */; };
 		515B63CD16D13416002FCC38 /* sosm_button_home_empty2.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CB16D13416002FCC38 /* sosm_button_home_empty2.png */; };
-		515B63CE16D13416002FCC38 /* sosm_button_home_empty2.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CB16D13416002FCC38 /* sosm_button_home_empty2.png */; };
 		515B63CF16D13416002FCC38 /* sosm_button_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CC16D13416002FCC38 /* sosm_button_home.png */; };
-		515B63D016D13416002FCC38 /* sosm_button_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CC16D13416002FCC38 /* sosm_button_home.png */; };
 		515B63D216D1673A002FCC38 /* 57px_full_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63D116D1673A002FCC38 /* 57px_full_app.png */; };
 		515B63D416D16744002FCC38 /* 114px_full_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63D316D16744002FCC38 /* 114px_full_app.png */; };
 		515B63D616D16886002FCC38 /* 72px_full_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63D516D16886002FCC38 /* 72px_full_app.png */; };
 		515B63D816D1688F002FCC38 /* 144px_full_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63D716D1688E002FCC38 /* 144px_full_app.png */; };
-		515F720514BE2CF5004676E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515D4145DEA4000CF6C45 /* main.m */; };
-		515F720614BE2CF5004676E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515D8145DEA4100CF6C45 /* AppDelegate.m */; };
-		515F720714BE2CF5004676E1 /* SMCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515DB145DEA4100CF6C45 /* SMCategoriesViewController.m */; };
-		515F720814BE2CF5004676E1 /* NSString+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE051465221400B274B3 /* NSString+SOSMessage.m */; };
-		515F720914BE2CF5004676E1 /* SMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE0A1466768A00B274B3 /* SMMessageViewController.m */; };
-		515F720A14BE2CF5004676E1 /* SMMessagesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 510CB9401471B4A80039C8A0 /* SMMessagesHandler.m */; };
-		515F720B14BE2CF5004676E1 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F1A70714746B710092F9F8 /* MBProgressHUD.m */; };
-		515F720C14BE2CF5004676E1 /* SMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513FBA3B1480F4ED00E69AC1 /* SMAboutViewController.m */; };
-		515F720D14BE2CF5004676E1 /* UIColor+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5109146514AE279800047A47 /* UIColor+SOSMessage.m */; };
-		515F720E14BE2CF5004676E1 /* SMProposeNewMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51973E3014B64B640062C26B /* SMProposeNewMessageController.m */; };
-		515F720F14BE2CF5004676E1 /* UIButton+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 517ECA4214B9A8F600B3CA55 /* UIButton+SOSMessage.m */; };
-		515F721114BE2CF5004676E1 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517ECA4C14BCD39B00B3CA55 /* Twitter.framework */; };
-		515F721214BE2CF5004676E1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51712AE614A1BE7000E366AF /* MessageUI.framework */; };
-		515F721314BE2CF5004676E1 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A5CE131466E24200B274B3 /* CoreText.framework */; };
-		515F721414BE2CF5004676E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515C8145DEA4000CF6C45 /* UIKit.framework */; };
-		515F721514BE2CF5004676E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515CA145DEA4000CF6C45 /* Foundation.framework */; };
-		515F721614BE2CF5004676E1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515CC145DEA4000CF6C45 /* CoreGraphics.framework */; };
-		515F721814BE2CF5004676E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 516515D1145DEA4000CF6C45 /* InfoPlist.strings */; };
-		515F721914BE2CF5004676E1 /* SMCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516515DD145DEA4100CF6C45 /* SMCategoriesViewController.xib */; };
-		515F721A14BE2CF5004676E1 /* SMMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51A5CE0B1466768A00B274B3 /* SMMessageViewController.xib */; };
-		515F721D14BE2CF5004676E1 /* canvas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5109146214AE0B5200047A47 /* canvas.jpg */; };
-		515F722014BE2CF5004676E1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146D14AE63FB00047A47 /* Default@2x.png */; };
-		515F722114BE2CF5004676E1 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146F14AE640A00047A47 /* Default-Landscape~ipad.png */; };
-		515F722214BE2CF5004676E1 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109147114AE641200047A47 /* Default-Portrait~ipad.png */; };
 		516515C9145DEA4000CF6C45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515C8145DEA4000CF6C45 /* UIKit.framework */; };
 		516515CB145DEA4000CF6C45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515CA145DEA4000CF6C45 /* Foundation.framework */; };
 		516515CD145DEA4000CF6C45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515CC145DEA4000CF6C45 /* CoreGraphics.framework */; };
@@ -101,27 +46,13 @@
 		516515DC145DEA4100CF6C45 /* SMCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515DB145DEA4100CF6C45 /* SMCategoriesViewController.m */; };
 		516515DF145DEA4100CF6C45 /* SMCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516515DD145DEA4100CF6C45 /* SMCategoriesViewController.xib */; };
 		516A30D516FC418A00D20E82 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 516A30D416FC418A00D20E82 /* Pacifico.ttf */; };
-		516A30D616FC418A00D20E82 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 516A30D416FC418A00D20E82 /* Pacifico.ttf */; };
-		516A30D716FC418A00D20E82 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 516A30D416FC418A00D20E82 /* Pacifico.ttf */; };
-		516A30D816FC418A00D20E82 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 516A30D416FC418A00D20E82 /* Pacifico.ttf */; };
-		517088C11719A63500DDA769 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 517088C01719A63500DDA769 /* Default-Portrait@2x~ipad.png */; };
-		517088C31719A9AA00DDA769 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 517088C21719A9AA00DDA769 /* Default-Landscape@2x~ipad.png */; };
 		517088C41719ADAE00DDA769 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 517088C21719A9AA00DDA769 /* Default-Landscape@2x~ipad.png */; };
 		517088C51719ADB200DDA769 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 517088C01719A63500DDA769 /* Default-Portrait@2x~ipad.png */; };
-		517088C61719ADC100DDA769 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 517088C21719A9AA00DDA769 /* Default-Landscape@2x~ipad.png */; };
-		517088C71719ADC600DDA769 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 517088C01719A63500DDA769 /* Default-Portrait@2x~ipad.png */; };
-		517088C81719ADCD00DDA769 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 517088C21719A9AA00DDA769 /* Default-Landscape@2x~ipad.png */; };
-		517088C91719ADD100DDA769 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 517088C01719A63500DDA769 /* Default-Portrait@2x~ipad.png */; };
 		51712AE714A1BE7000E366AF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51712AE614A1BE7000E366AF /* MessageUI.framework */; };
 		5171FA28160BADB600D19E01 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5171FA27160BADB600D19E01 /* Default-568h@2x.png */; };
 		51788A1A150CE50700AEE736 /* new_stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 51788A19150CE50700AEE736 /* new_stamp.png */; };
-		51788A1B150CE50700AEE736 /* new_stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 51788A19150CE50700AEE736 /* new_stamp.png */; };
 		517AFB6A1721B2C600F59C78 /* sosm_message_propose.png in Resources */ = {isa = PBXBuildFile; fileRef = 517AFB691721B2C600F59C78 /* sosm_message_propose.png */; };
-		517AFB6B1721B2C600F59C78 /* sosm_message_propose.png in Resources */ = {isa = PBXBuildFile; fileRef = 517AFB691721B2C600F59C78 /* sosm_message_propose.png */; };
-		517AFB6C1721B2C600F59C78 /* sosm_message_propose.png in Resources */ = {isa = PBXBuildFile; fileRef = 517AFB691721B2C600F59C78 /* sosm_message_propose.png */; };
-		517AFB6D1721B2C600F59C78 /* sosm_message_propose.png in Resources */ = {isa = PBXBuildFile; fileRef = 517AFB691721B2C600F59C78 /* sosm_message_propose.png */; };
 		517E321B14F0DB1D003565F9 /* AdBannerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517E321A14F0DB1D003565F9 /* AdBannerNavigationController.m */; };
-		517E321C14F0DB1D003565F9 /* AdBannerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517E321A14F0DB1D003565F9 /* AdBannerNavigationController.m */; };
 		517ECA4314B9A8F600B3CA55 /* UIButton+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 517ECA4214B9A8F600B3CA55 /* UIButton+SOSMessage.m */; };
 		517ECA4D14BCD39B00B3CA55 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517ECA4C14BCD39B00B3CA55 /* Twitter.framework */; };
 		519052B4172BBFE400DB24F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515D4145DEA4000CF6C45 /* main.m */; };
@@ -197,149 +128,20 @@
 		51A5CE0D1466768A00B274B3 /* SMMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51A5CE0B1466768A00B274B3 /* SMMessageViewController.xib */; };
 		51A5CE141466E24200B274B3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A5CE131466E24200B274B3 /* CoreText.framework */; };
 		51A6C9C517259F0800358BB9 /* email-14-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 51A6C9C417259F0800358BB9 /* email-14-256.png */; };
-		51A6C9C617259F0800358BB9 /* email-14-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 51A6C9C417259F0800358BB9 /* email-14-256.png */; };
-		51A6C9C717259F0800358BB9 /* email-14-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 51A6C9C417259F0800358BB9 /* email-14-256.png */; };
-		51A6C9C817259F0800358BB9 /* email-14-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 51A6C9C417259F0800358BB9 /* email-14-256.png */; };
 		51A6C9CA17259F4400358BB9 /* twitter-4-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 51A6C9C917259F4400358BB9 /* twitter-4-256.png */; };
-		51A6C9CB17259F4400358BB9 /* twitter-4-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 51A6C9C917259F4400358BB9 /* twitter-4-256.png */; };
-		51A6C9CC17259F4400358BB9 /* twitter-4-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 51A6C9C917259F4400358BB9 /* twitter-4-256.png */; };
-		51A6C9CD17259F4400358BB9 /* twitter-4-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 51A6C9C917259F4400358BB9 /* twitter-4-256.png */; };
-		51B8CCD116FAEBF6009B5DB4 /* 57px_breakup.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CCD016FAEBF6009B5DB4 /* 57px_breakup.png */; };
-		51B8CCD316FAEC07009B5DB4 /* 114px_breakup.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CCD216FAEC07009B5DB4 /* 114px_breakup.png */; };
-		51B8CCD416FAEC43009B5DB4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5171FA27160BADB600D19E01 /* Default-568h@2x.png */; };
-		51B8CCD616FAEC72009B5DB4 /* 72px_breakup.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CCD516FAEC72009B5DB4 /* 72px_breakup.png */; };
-		51B8CCD816FAEC78009B5DB4 /* 144px_breakup.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CCD716FAEC78009B5DB4 /* 144px_breakup.png */; };
-		51B8CCDB16FAECB3009B5DB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515D4145DEA4000CF6C45 /* main.m */; };
-		51B8CCDC16FAECB3009B5DB4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515D8145DEA4100CF6C45 /* AppDelegate.m */; };
-		51B8CCDD16FAECB3009B5DB4 /* SMCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515DB145DEA4100CF6C45 /* SMCategoriesViewController.m */; };
-		51B8CCDE16FAECB3009B5DB4 /* NSString+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE051465221400B274B3 /* NSString+SOSMessage.m */; };
-		51B8CCDF16FAECB3009B5DB4 /* SMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE0A1466768A00B274B3 /* SMMessageViewController.m */; };
-		51B8CCE016FAECB3009B5DB4 /* SMMessagesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 510CB9401471B4A80039C8A0 /* SMMessagesHandler.m */; };
-		51B8CCE116FAECB3009B5DB4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F1A70714746B710092F9F8 /* MBProgressHUD.m */; };
-		51B8CCE216FAECB3009B5DB4 /* SMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513FBA3B1480F4ED00E69AC1 /* SMAboutViewController.m */; };
-		51B8CCE316FAECB3009B5DB4 /* UIColor+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5109146514AE279800047A47 /* UIColor+SOSMessage.m */; };
-		51B8CCE416FAECB3009B5DB4 /* SMProposeNewMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51973E3014B64B640062C26B /* SMProposeNewMessageController.m */; };
-		51B8CCE516FAECB3009B5DB4 /* UIButton+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 517ECA4214B9A8F600B3CA55 /* UIButton+SOSMessage.m */; };
-		51B8CCE616FAECB3009B5DB4 /* AdBannerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517E321A14F0DB1D003565F9 /* AdBannerNavigationController.m */; };
-		51B8CCE816FAECB3009B5DB4 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CBBC0614BE330D009148B2 /* iAd.framework */; };
-		51B8CCE916FAECB3009B5DB4 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517ECA4C14BCD39B00B3CA55 /* Twitter.framework */; };
-		51B8CCEA16FAECB3009B5DB4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51712AE614A1BE7000E366AF /* MessageUI.framework */; };
-		51B8CCEB16FAECB3009B5DB4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A5CE131466E24200B274B3 /* CoreText.framework */; };
-		51B8CCEC16FAECB3009B5DB4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515C8145DEA4000CF6C45 /* UIKit.framework */; };
-		51B8CCED16FAECB3009B5DB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515CA145DEA4000CF6C45 /* Foundation.framework */; };
-		51B8CCEE16FAECB3009B5DB4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515CC145DEA4000CF6C45 /* CoreGraphics.framework */; };
-		51B8CCF016FAECB3009B5DB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 516515D1145DEA4000CF6C45 /* InfoPlist.strings */; };
-		51B8CCF116FAECB3009B5DB4 /* SMCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516515DD145DEA4100CF6C45 /* SMCategoriesViewController.xib */; };
-		51B8CCF216FAECB3009B5DB4 /* SMMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51A5CE0B1466768A00B274B3 /* SMMessageViewController.xib */; };
-		51B8CCF316FAECB3009B5DB4 /* SMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B415FD26A200128453 /* SMAboutViewController.xib */; };
-		51B8CCF516FAECB3009B5DB4 /* canvas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5109146214AE0B5200047A47 /* canvas.jpg */; };
-		51B8CCF616FAECB3009B5DB4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146D14AE63FB00047A47 /* Default@2x.png */; };
-		51B8CCF716FAECB3009B5DB4 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146F14AE640A00047A47 /* Default-Landscape~ipad.png */; };
-		51B8CCF816FAECB3009B5DB4 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109147114AE641200047A47 /* Default-Portrait~ipad.png */; };
-		51B8CCF916FAECB3009B5DB4 /* SMProposeNewMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133AF15FD257000128453 /* SMProposeNewMessageController.xib */; };
-		51B8CCFA16FAECB3009B5DB4 /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = 5129835014C163CA00252D33 /* new.png */; };
-		51B8CCFF16FAECB3009B5DB4 /* new_stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 51788A19150CE50700AEE736 /* new_stamp.png */; };
-		51B8CD0016FAECB3009B5DB4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 513B9F4D15FA82F000199E82 /* Settings.bundle */; };
-		51B8CD0116FAECB3009B5DB4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B615FD27B200128453 /* Localizable.strings */; };
-		51B8CD0216FAECB3009B5DB4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B915FD27B200128453 /* Localizable.strings */; };
-		51B8CD0316FAECB3009B5DB4 /* sosm_background_640_1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63AA16D0E1B0002FCC38 /* sosm_background_640_1136.png */; };
-		51B8CD0416FAECB3009B5DB4 /* sosm_next_message.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63AB16D0E1B0002FCC38 /* sosm_next_message.png */; };
-		51B8CD0516FAECB3009B5DB4 /* sosm_previous_message.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63AC16D0E1B0002FCC38 /* sosm_previous_message.png */; };
-		51B8CD0616FAECB3009B5DB4 /* sosm_message_container.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63B316D0E29C002FCC38 /* sosm_message_container.png */; };
-		51B8CD0716FAECB3009B5DB4 /* sosm_button_send.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63B616D0E336002FCC38 /* sosm_button_send.png */; };
-		51B8CD0816FAECB3009B5DB4 /* sosm_dislike.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63B916D10B6E002FCC38 /* sosm_dislike.png */; };
-		51B8CD0916FAECB3009B5DB4 /* sosm_disliked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BA16D10B6E002FCC38 /* sosm_disliked.png */; };
-		51B8CD0A16FAECB3009B5DB4 /* sosm_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BB16D10B6E002FCC38 /* sosm_like.png */; };
-		51B8CD0B16FAECB3009B5DB4 /* sosm_liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BC16D10B6E002FCC38 /* sosm_liked.png */; };
-		51B8CD0E16FAECB3009B5DB4 /* sosm_button_home_empty2.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CB16D13416002FCC38 /* sosm_button_home_empty2.png */; };
-		51B8CD0F16FAECB3009B5DB4 /* sosm_button_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CC16D13416002FCC38 /* sosm_button_home.png */; };
-		51B8CD1016FAECB3009B5DB4 /* sosmessage-bu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51D85B6416F8D194002635CF /* sosmessage-bu.plist */; };
-		51B8CD1116FAECB3009B5DB4 /* 57px_breakup.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CCD016FAEBF6009B5DB4 /* 57px_breakup.png */; };
-		51B8CD1216FAECB3009B5DB4 /* 114px_breakup.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CCD216FAEC07009B5DB4 /* 114px_breakup.png */; };
-		51B8CD1316FAECB3009B5DB4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5171FA27160BADB600D19E01 /* Default-568h@2x.png */; };
-		51B8CD1416FAECB3009B5DB4 /* 72px_breakup.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CCD516FAEC72009B5DB4 /* 72px_breakup.png */; };
-		51B8CD1516FAECB3009B5DB4 /* 144px_breakup.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CCD716FAEC78009B5DB4 /* 144px_breakup.png */; };
-		51B8CD1C16FAED30009B5DB4 /* 57px_jokes.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CD1B16FAED30009B5DB4 /* 57px_jokes.png */; };
-		51B8CD1E16FAED34009B5DB4 /* 114px_jokes.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CD1D16FAED34009B5DB4 /* 114px_jokes.png */; };
-		51B8CD2016FAED3E009B5DB4 /* 72px_jokes.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CD1F16FAED3E009B5DB4 /* 72px_jokes.png */; };
-		51B8CD2216FAED41009B5DB4 /* 144px_jokes.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CD2116FAED41009B5DB4 /* 144px_jokes.png */; };
-		51B8CD2516FAED8A009B5DB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515D4145DEA4000CF6C45 /* main.m */; };
-		51B8CD2616FAED8A009B5DB4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515D8145DEA4100CF6C45 /* AppDelegate.m */; };
-		51B8CD2716FAED8A009B5DB4 /* SMCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 516515DB145DEA4100CF6C45 /* SMCategoriesViewController.m */; };
-		51B8CD2816FAED8A009B5DB4 /* NSString+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE051465221400B274B3 /* NSString+SOSMessage.m */; };
-		51B8CD2916FAED8A009B5DB4 /* SMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A5CE0A1466768A00B274B3 /* SMMessageViewController.m */; };
-		51B8CD2A16FAED8A009B5DB4 /* SMMessagesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 510CB9401471B4A80039C8A0 /* SMMessagesHandler.m */; };
-		51B8CD2B16FAED8A009B5DB4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F1A70714746B710092F9F8 /* MBProgressHUD.m */; };
-		51B8CD2C16FAED8A009B5DB4 /* SMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513FBA3B1480F4ED00E69AC1 /* SMAboutViewController.m */; };
-		51B8CD2D16FAED8A009B5DB4 /* UIColor+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5109146514AE279800047A47 /* UIColor+SOSMessage.m */; };
-		51B8CD2E16FAED8A009B5DB4 /* SMProposeNewMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51973E3014B64B640062C26B /* SMProposeNewMessageController.m */; };
-		51B8CD2F16FAED8A009B5DB4 /* UIButton+SOSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 517ECA4214B9A8F600B3CA55 /* UIButton+SOSMessage.m */; };
-		51B8CD3016FAED8A009B5DB4 /* AdBannerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517E321A14F0DB1D003565F9 /* AdBannerNavigationController.m */; };
-		51B8CD3216FAED8A009B5DB4 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CBBC0614BE330D009148B2 /* iAd.framework */; };
-		51B8CD3316FAED8A009B5DB4 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517ECA4C14BCD39B00B3CA55 /* Twitter.framework */; };
-		51B8CD3416FAED8A009B5DB4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51712AE614A1BE7000E366AF /* MessageUI.framework */; };
-		51B8CD3516FAED8A009B5DB4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A5CE131466E24200B274B3 /* CoreText.framework */; };
-		51B8CD3616FAED8A009B5DB4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515C8145DEA4000CF6C45 /* UIKit.framework */; };
-		51B8CD3716FAED8A009B5DB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515CA145DEA4000CF6C45 /* Foundation.framework */; };
-		51B8CD3816FAED8A009B5DB4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516515CC145DEA4000CF6C45 /* CoreGraphics.framework */; };
-		51B8CD3A16FAED8A009B5DB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 516515D1145DEA4000CF6C45 /* InfoPlist.strings */; };
-		51B8CD3B16FAED8A009B5DB4 /* SMCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516515DD145DEA4100CF6C45 /* SMCategoriesViewController.xib */; };
-		51B8CD3C16FAED8A009B5DB4 /* SMMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51A5CE0B1466768A00B274B3 /* SMMessageViewController.xib */; };
-		51B8CD3D16FAED8A009B5DB4 /* SMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B415FD26A200128453 /* SMAboutViewController.xib */; };
-		51B8CD3F16FAED8A009B5DB4 /* canvas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5109146214AE0B5200047A47 /* canvas.jpg */; };
-		51B8CD4016FAED8A009B5DB4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146D14AE63FB00047A47 /* Default@2x.png */; };
-		51B8CD4116FAED8A009B5DB4 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109146F14AE640A00047A47 /* Default-Landscape~ipad.png */; };
-		51B8CD4216FAED8A009B5DB4 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5109147114AE641200047A47 /* Default-Portrait~ipad.png */; };
-		51B8CD4316FAED8A009B5DB4 /* SMProposeNewMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133AF15FD257000128453 /* SMProposeNewMessageController.xib */; };
-		51B8CD4416FAED8A009B5DB4 /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = 5129835014C163CA00252D33 /* new.png */; };
-		51B8CD4916FAED8A009B5DB4 /* new_stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 51788A19150CE50700AEE736 /* new_stamp.png */; };
-		51B8CD4A16FAED8A009B5DB4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 513B9F4D15FA82F000199E82 /* Settings.bundle */; };
-		51B8CD4B16FAED8A009B5DB4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B615FD27B200128453 /* Localizable.strings */; };
-		51B8CD4C16FAED8A009B5DB4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B915FD27B200128453 /* Localizable.strings */; };
-		51B8CD4D16FAED8A009B5DB4 /* sosm_background_640_1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63AA16D0E1B0002FCC38 /* sosm_background_640_1136.png */; };
-		51B8CD4E16FAED8A009B5DB4 /* sosm_next_message.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63AB16D0E1B0002FCC38 /* sosm_next_message.png */; };
-		51B8CD4F16FAED8A009B5DB4 /* sosm_previous_message.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63AC16D0E1B0002FCC38 /* sosm_previous_message.png */; };
-		51B8CD5016FAED8A009B5DB4 /* sosm_message_container.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63B316D0E29C002FCC38 /* sosm_message_container.png */; };
-		51B8CD5116FAED8A009B5DB4 /* sosm_button_send.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63B616D0E336002FCC38 /* sosm_button_send.png */; };
-		51B8CD5216FAED8A009B5DB4 /* sosm_dislike.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63B916D10B6E002FCC38 /* sosm_dislike.png */; };
-		51B8CD5316FAED8A009B5DB4 /* sosm_disliked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BA16D10B6E002FCC38 /* sosm_disliked.png */; };
-		51B8CD5416FAED8A009B5DB4 /* sosm_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BB16D10B6E002FCC38 /* sosm_like.png */; };
-		51B8CD5516FAED8A009B5DB4 /* sosm_liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63BC16D10B6E002FCC38 /* sosm_liked.png */; };
-		51B8CD5816FAED8A009B5DB4 /* sosm_button_home_empty2.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CB16D13416002FCC38 /* sosm_button_home_empty2.png */; };
-		51B8CD5916FAED8A009B5DB4 /* sosm_button_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 515B63CC16D13416002FCC38 /* sosm_button_home.png */; };
-		51B8CD5A16FAED8A009B5DB4 /* sosmessage-bu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51D85B6416F8D194002635CF /* sosmessage-bu.plist */; };
-		51B8CD5B16FAED8A009B5DB4 /* 57px_breakup.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CCD016FAEBF6009B5DB4 /* 57px_breakup.png */; };
-		51B8CD5C16FAED8A009B5DB4 /* 114px_breakup.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CCD216FAEC07009B5DB4 /* 114px_breakup.png */; };
-		51B8CD5D16FAED8A009B5DB4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5171FA27160BADB600D19E01 /* Default-568h@2x.png */; };
-		51B8CD5E16FAED8A009B5DB4 /* 72px_breakup.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CCD516FAEC72009B5DB4 /* 72px_breakup.png */; };
-		51B8CD5F16FAED8A009B5DB4 /* 144px_breakup.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CCD716FAEC78009B5DB4 /* 144px_breakup.png */; };
-		51B8CD6016FAED8A009B5DB4 /* 57px_jokes.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CD1B16FAED30009B5DB4 /* 57px_jokes.png */; };
-		51B8CD6116FAED8A009B5DB4 /* 114px_jokes.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CD1D16FAED34009B5DB4 /* 114px_jokes.png */; };
-		51B8CD6216FAED8A009B5DB4 /* 72px_jokes.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CD1F16FAED3E009B5DB4 /* 72px_jokes.png */; };
-		51B8CD6316FAED8A009B5DB4 /* 144px_jokes.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CD2116FAED41009B5DB4 /* 144px_jokes.png */; };
-		51B8CD6A16FAEDED009B5DB4 /* 57px_birthday.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CD6916FAEDED009B5DB4 /* 57px_birthday.png */; };
-		51B8CD6C16FAEDF5009B5DB4 /* 114px_birthday.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CD6B16FAEDF5009B5DB4 /* 114px_birthday.png */; };
-		51B8CD6E16FAEDFA009B5DB4 /* 72px_birthday.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CD6D16FAEDFA009B5DB4 /* 72px_birthday.png */; };
-		51B8CD7016FAEDFE009B5DB4 /* 144px_birthday.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B8CD6F16FAEDFE009B5DB4 /* 144px_birthday.png */; };
 		51BA3F7B172AEB7B00A1FE65 /* 57px.png in Resources */ = {isa = PBXBuildFile; fileRef = 51BA3F7A172AEB7B00A1FE65 /* 57px.png */; };
 		51BA3F7D172AEB8500A1FE65 /* 114px.png in Resources */ = {isa = PBXBuildFile; fileRef = 51BA3F7C172AEB8500A1FE65 /* 114px.png */; };
 		51BA3F7F172AEB8D00A1FE65 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 51BA3F7E172AEB8D00A1FE65 /* Default.png */; };
 		51BA3F81172AEBA800A1FE65 /* 72px.png in Resources */ = {isa = PBXBuildFile; fileRef = 51BA3F80172AEBA800A1FE65 /* 72px.png */; };
 		51BA3F83172AEBAD00A1FE65 /* 144px.png in Resources */ = {isa = PBXBuildFile; fileRef = 51BA3F82172AEBAD00A1FE65 /* 144px.png */; };
 		51BA3F85172AEED600A1FE65 /* sosm_button_home_top_category.png in Resources */ = {isa = PBXBuildFile; fileRef = 51BA3F84172AEED600A1FE65 /* sosm_button_home_top_category.png */; };
-		51BA3F86172AEED600A1FE65 /* sosm_button_home_top_category.png in Resources */ = {isa = PBXBuildFile; fileRef = 51BA3F84172AEED600A1FE65 /* sosm_button_home_top_category.png */; };
-		51BA3F87172AEED600A1FE65 /* sosm_button_home_top_category.png in Resources */ = {isa = PBXBuildFile; fileRef = 51BA3F84172AEED600A1FE65 /* sosm_button_home_top_category.png */; };
-		51BA3F88172AEED600A1FE65 /* sosm_button_home_top_category.png in Resources */ = {isa = PBXBuildFile; fileRef = 51BA3F84172AEED600A1FE65 /* sosm_button_home_top_category.png */; };
 		51C133AC15FD257000128453 /* SMProposeNewMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133AF15FD257000128453 /* SMProposeNewMessageController.xib */; };
-		51C133AD15FD257000128453 /* SMProposeNewMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133AF15FD257000128453 /* SMProposeNewMessageController.xib */; };
 		51C133B115FD26A200128453 /* SMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B415FD26A200128453 /* SMAboutViewController.xib */; };
-		51C133B215FD26A200128453 /* SMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B415FD26A200128453 /* SMAboutViewController.xib */; };
 		51C133BB15FD27B200128453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B615FD27B200128453 /* Localizable.strings */; };
-		51C133BC15FD27B200128453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B615FD27B200128453 /* Localizable.strings */; };
 		51C133BD15FD27B200128453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B915FD27B200128453 /* Localizable.strings */; };
-		51C133BE15FD27B200128453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51C133B915FD27B200128453 /* Localizable.strings */; };
-		51CBBC0714BE330E009148B2 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CBBC0614BE330D009148B2 /* iAd.framework */; };
 		51CBBC0814BE3326009148B2 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CBBC0614BE330D009148B2 /* iAd.framework */; };
+		51D98AFE180DA1CF0044BAFD /* sosm_top_bar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D98AFD180DA1CF0044BAFD /* sosm_top_bar_icon.png */; };
+		51D98AFF180DA1CF0044BAFD /* sosm_top_bar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D98AFD180DA1CF0044BAFD /* sosm_top_bar_icon.png */; };
 		51F1A70814746B710092F9F8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F1A70714746B710092F9F8 /* MBProgressHUD.m */; };
 		E23BEB8D1741547D00565C54 /* sosm_button_home_full_app.png in Resources */ = {isa = PBXBuildFile; fileRef = E23BEB8C1741547D00565C54 /* sosm_button_home_full_app.png */; };
 		E23BEB8F1741898400565C54 /* lite_57px.png in Resources */ = {isa = PBXBuildFile; fileRef = E23BEB8E1741898300565C54 /* lite_57px.png */; };
@@ -388,7 +190,6 @@
 		515B63D316D16744002FCC38 /* 114px_full_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114px_full_app.png; sourceTree = "<group>"; };
 		515B63D516D16886002FCC38 /* 72px_full_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 72px_full_app.png; sourceTree = "<group>"; };
 		515B63D716D1688E002FCC38 /* 144px_full_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 144px_full_app.png; sourceTree = "<group>"; };
-		515F722814BE2CF5004676E1 /* smbu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smbu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		516515C4145DEA4000CF6C45 /* sosmessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sosmessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		516515C8145DEA4000CF6C45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		516515CA145DEA4000CF6C45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -432,13 +233,11 @@
 		51B8CCD216FAEC07009B5DB4 /* 114px_breakup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114px_breakup.png; sourceTree = "<group>"; };
 		51B8CCD516FAEC72009B5DB4 /* 72px_breakup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 72px_breakup.png; sourceTree = "<group>"; };
 		51B8CCD716FAEC78009B5DB4 /* 144px_breakup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 144px_breakup.png; sourceTree = "<group>"; };
-		51B8CD1916FAECB3009B5DB4 /* smj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51B8CD1A16FAECB3009B5DB4 /* sosmessage-jokes.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "sosmessage-jokes.plist"; path = "/Volumes/Perso/aketom/sosmessagedecarte-ios/sosmessage-jokes.plist"; sourceTree = "<absolute>"; };
 		51B8CD1B16FAED30009B5DB4 /* 57px_jokes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 57px_jokes.png; sourceTree = "<group>"; };
 		51B8CD1D16FAED34009B5DB4 /* 114px_jokes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114px_jokes.png; sourceTree = "<group>"; };
 		51B8CD1F16FAED3E009B5DB4 /* 72px_jokes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 72px_jokes.png; sourceTree = "<group>"; };
 		51B8CD2116FAED41009B5DB4 /* 144px_jokes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 144px_jokes.png; sourceTree = "<group>"; };
-		51B8CD6716FAED8A009B5DB4 /* smb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51B8CD6816FAED8A009B5DB4 /* sosmessage-birthday.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "sosmessage-birthday.plist"; path = "/Volumes/Perso/aketom/sosmessagedecarte-ios/sosmessage-birthday.plist"; sourceTree = "<absolute>"; };
 		51B8CD6916FAEDED009B5DB4 /* 57px_birthday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 57px_birthday.png; sourceTree = "<group>"; };
 		51B8CD6B16FAEDF5009B5DB4 /* 114px_birthday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114px_birthday.png; sourceTree = "<group>"; };
@@ -456,6 +255,7 @@
 		51C133BA15FD27B200128453 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
 		51CBBC0614BE330D009148B2 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		51D85B6416F8D194002635CF /* sosmessage-bu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sosmessage-bu.plist"; sourceTree = "<group>"; };
+		51D98AFD180DA1CF0044BAFD /* sosm_top_bar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosm_top_bar_icon.png; sourceTree = "<group>"; };
 		51DCAD9415FE8446008F07AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		51F1A70614746B710092F9F8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		51F1A70714746B710092F9F8 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
@@ -469,21 +269,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		515F721014BE2CF5004676E1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				510291101719A423004F602C /* StoreKit.framework in Frameworks */,
-				51CBBC0714BE330E009148B2 /* iAd.framework in Frameworks */,
-				515F721114BE2CF5004676E1 /* Twitter.framework in Frameworks */,
-				515F721214BE2CF5004676E1 /* MessageUI.framework in Frameworks */,
-				515F721314BE2CF5004676E1 /* CoreText.framework in Frameworks */,
-				515F721414BE2CF5004676E1 /* UIKit.framework in Frameworks */,
-				515F721514BE2CF5004676E1 /* Foundation.framework in Frameworks */,
-				515F721614BE2CF5004676E1 /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		516515C1145DEA4000CF6C45 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -514,36 +299,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		51B8CCE716FAECB3009B5DB4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				510291111719A42A004F602C /* StoreKit.framework in Frameworks */,
-				51B8CCE816FAECB3009B5DB4 /* iAd.framework in Frameworks */,
-				51B8CCE916FAECB3009B5DB4 /* Twitter.framework in Frameworks */,
-				51B8CCEA16FAECB3009B5DB4 /* MessageUI.framework in Frameworks */,
-				51B8CCEB16FAECB3009B5DB4 /* CoreText.framework in Frameworks */,
-				51B8CCEC16FAECB3009B5DB4 /* UIKit.framework in Frameworks */,
-				51B8CCED16FAECB3009B5DB4 /* Foundation.framework in Frameworks */,
-				51B8CCEE16FAECB3009B5DB4 /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		51B8CD3116FAED8A009B5DB4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				510291121719A431004F602C /* StoreKit.framework in Frameworks */,
-				51B8CD3216FAED8A009B5DB4 /* iAd.framework in Frameworks */,
-				51B8CD3316FAED8A009B5DB4 /* Twitter.framework in Frameworks */,
-				51B8CD3416FAED8A009B5DB4 /* MessageUI.framework in Frameworks */,
-				51B8CD3516FAED8A009B5DB4 /* CoreText.framework in Frameworks */,
-				51B8CD3616FAED8A009B5DB4 /* UIKit.framework in Frameworks */,
-				51B8CD3716FAED8A009B5DB4 /* Foundation.framework in Frameworks */,
-				51B8CD3816FAED8A009B5DB4 /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -559,6 +314,7 @@
 		515B63A916D0E195002FCC38 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				51D98AFD180DA1CF0044BAFD /* sosm_top_bar_icon.png */,
 				E23BEB8C1741547D00565C54 /* sosm_button_home_full_app.png */,
 				51BA3F84172AEED600A1FE65 /* sosm_button_home_top_category.png */,
 				51A6C9C917259F4400358BB9 /* twitter-4-256.png */,
@@ -616,9 +372,6 @@
 			isa = PBXGroup;
 			children = (
 				516515C4145DEA4000CF6C45 /* sosmessage.app */,
-				515F722814BE2CF5004676E1 /* smbu.app */,
-				51B8CD1916FAECB3009B5DB4 /* smj.app */,
-				51B8CD6716FAED8A009B5DB4 /* smb.app */,
 				519052FF172BBFE400DB24F0 /* sosmessage-lite.app */,
 			);
 			name = Products;
@@ -764,23 +517,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		515F720314BE2CF5004676E1 /* break up */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 515F722514BE2CF5004676E1 /* Build configuration list for PBXNativeTarget "break up" */;
-			buildPhases = (
-				515F720414BE2CF5004676E1 /* Sources */,
-				515F721014BE2CF5004676E1 /* Frameworks */,
-				515F721714BE2CF5004676E1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "break up";
-			productName = sosmessage;
-			productReference = 515F722814BE2CF5004676E1 /* smbu.app */;
-			productType = "com.apple.product-type.application";
-		};
 		516515C3145DEA4000CF6C45 /* sosmessage */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 516515E5145DEA4100CF6C45 /* Build configuration list for PBXNativeTarget "sosmessage" */;
@@ -815,40 +551,6 @@
 			productReference = 519052FF172BBFE400DB24F0 /* sosmessage-lite.app */;
 			productType = "com.apple.product-type.application";
 		};
-		51B8CCD916FAECB3009B5DB4 /* jokes */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 51B8CD1616FAECB3009B5DB4 /* Build configuration list for PBXNativeTarget "jokes" */;
-			buildPhases = (
-				51B8CCDA16FAECB3009B5DB4 /* Sources */,
-				51B8CCE716FAECB3009B5DB4 /* Frameworks */,
-				51B8CCEF16FAECB3009B5DB4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = jokes;
-			productName = sosmessage;
-			productReference = 51B8CD1916FAECB3009B5DB4 /* smj.app */;
-			productType = "com.apple.product-type.application";
-		};
-		51B8CD2316FAED8A009B5DB4 /* birthday */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 51B8CD6416FAED8A009B5DB4 /* Build configuration list for PBXNativeTarget "birthday" */;
-			buildPhases = (
-				51B8CD2416FAED8A009B5DB4 /* Sources */,
-				51B8CD3116FAED8A009B5DB4 /* Frameworks */,
-				51B8CD3916FAED8A009B5DB4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = birthday;
-			productName = sosmessage;
-			productReference = 51B8CD6716FAED8A009B5DB4 /* smb.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -872,62 +574,11 @@
 			targets = (
 				516515C3145DEA4000CF6C45 /* sosmessage */,
 				519052B2172BBFE400DB24F0 /* sosmessage-lite */,
-				515F720314BE2CF5004676E1 /* break up */,
-				51B8CCD916FAECB3009B5DB4 /* jokes */,
-				51B8CD2316FAED8A009B5DB4 /* birthday */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		515F721714BE2CF5004676E1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				515F721814BE2CF5004676E1 /* InfoPlist.strings in Resources */,
-				515F721914BE2CF5004676E1 /* SMCategoriesViewController.xib in Resources */,
-				515F721A14BE2CF5004676E1 /* SMMessageViewController.xib in Resources */,
-				51C133B215FD26A200128453 /* SMAboutViewController.xib in Resources */,
-				515F721D14BE2CF5004676E1 /* canvas.jpg in Resources */,
-				515F722014BE2CF5004676E1 /* Default@2x.png in Resources */,
-				515F722114BE2CF5004676E1 /* Default-Landscape~ipad.png in Resources */,
-				515F722214BE2CF5004676E1 /* Default-Portrait~ipad.png in Resources */,
-				51C133AD15FD257000128453 /* SMProposeNewMessageController.xib in Resources */,
-				5129835214C163CA00252D33 /* new.png in Resources */,
-				51788A1B150CE50700AEE736 /* new_stamp.png in Resources */,
-				513B9F4F15FA82F000199E82 /* Settings.bundle in Resources */,
-				51C133BC15FD27B200128453 /* Localizable.strings in Resources */,
-				51C133BE15FD27B200128453 /* Localizable.strings in Resources */,
-				515B63AE16D0E1B0002FCC38 /* sosm_background_640_1136.png in Resources */,
-				515B63B016D0E1B0002FCC38 /* sosm_next_message.png in Resources */,
-				515B63B216D0E1B0002FCC38 /* sosm_previous_message.png in Resources */,
-				515B63B516D0E29C002FCC38 /* sosm_message_container.png in Resources */,
-				515B63B816D0E336002FCC38 /* sosm_button_send.png in Resources */,
-				515B63BE16D10B6E002FCC38 /* sosm_dislike.png in Resources */,
-				515B63C016D10B6E002FCC38 /* sosm_disliked.png in Resources */,
-				515B63C216D10B6E002FCC38 /* sosm_like.png in Resources */,
-				515B63C416D10B6E002FCC38 /* sosm_liked.png in Resources */,
-				515B63CE16D13416002FCC38 /* sosm_button_home_empty2.png in Resources */,
-				515B63D016D13416002FCC38 /* sosm_button_home.png in Resources */,
-				51B8CCD116FAEBF6009B5DB4 /* 57px_breakup.png in Resources */,
-				51B8CCD316FAEC07009B5DB4 /* 114px_breakup.png in Resources */,
-				51B8CCD416FAEC43009B5DB4 /* Default-568h@2x.png in Resources */,
-				51B8CCD616FAEC72009B5DB4 /* 72px_breakup.png in Resources */,
-				51B8CCD816FAEC78009B5DB4 /* 144px_breakup.png in Resources */,
-				516A30D616FC418A00D20E82 /* Pacifico.ttf in Resources */,
-				510290DB17195FA4004F602C /* sosm_message_big_container.png in Resources */,
-				510290E0171963E5004F602C /* Handlee.ttf in Resources */,
-				510290EA171964E3004F602C /* sosm_button_refresh_small.png in Resources */,
-				510291041719A196004F602C /* sosm_button_home_update_5.png in Resources */,
-				517088C11719A63500DDA769 /* Default-Portrait@2x~ipad.png in Resources */,
-				517088C31719A9AA00DDA769 /* Default-Landscape@2x~ipad.png in Resources */,
-				517AFB6B1721B2C600F59C78 /* sosm_message_propose.png in Resources */,
-				51A6C9C617259F0800358BB9 /* email-14-256.png in Resources */,
-				51A6C9CB17259F4400358BB9 /* twitter-4-256.png in Resources */,
-				51BA3F86172AEED600A1FE65 /* sosm_button_home_top_category.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		516515C2145DEA4000CF6C45 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -975,6 +626,7 @@
 				51A6C9CA17259F4400358BB9 /* twitter-4-256.png in Resources */,
 				51BA3F7B172AEB7B00A1FE65 /* 57px.png in Resources */,
 				51BA3F7D172AEB8500A1FE65 /* 114px.png in Resources */,
+				51D98AFE180DA1CF0044BAFD /* sosm_top_bar_icon.png in Resources */,
 				51BA3F7F172AEB8D00A1FE65 /* Default.png in Resources */,
 				51BA3F81172AEBA800A1FE65 /* 72px.png in Resources */,
 				51BA3F83172AEBAD00A1FE65 /* 144px.png in Resources */,
@@ -1027,6 +679,7 @@
 				519052F3172BBFE400DB24F0 /* sosm_message_propose.png in Resources */,
 				519052F4172BBFE400DB24F0 /* email-14-256.png in Resources */,
 				519052F5172BBFE400DB24F0 /* twitter-4-256.png in Resources */,
+				51D98AFF180DA1CF0044BAFD /* sosm_top_bar_icon.png in Resources */,
 				519052F6172BBFE400DB24F0 /* 57px.png in Resources */,
 				519052F7172BBFE400DB24F0 /* 114px.png in Resources */,
 				519052F8172BBFE400DB24F0 /* Default.png in Resources */,
@@ -1043,139 +696,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		51B8CCEF16FAECB3009B5DB4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				51B8CCF016FAECB3009B5DB4 /* InfoPlist.strings in Resources */,
-				51B8CCF116FAECB3009B5DB4 /* SMCategoriesViewController.xib in Resources */,
-				51B8CCF216FAECB3009B5DB4 /* SMMessageViewController.xib in Resources */,
-				51B8CCF316FAECB3009B5DB4 /* SMAboutViewController.xib in Resources */,
-				51B8CCF516FAECB3009B5DB4 /* canvas.jpg in Resources */,
-				51B8CCF616FAECB3009B5DB4 /* Default@2x.png in Resources */,
-				51B8CCF716FAECB3009B5DB4 /* Default-Landscape~ipad.png in Resources */,
-				51B8CCF816FAECB3009B5DB4 /* Default-Portrait~ipad.png in Resources */,
-				51B8CCF916FAECB3009B5DB4 /* SMProposeNewMessageController.xib in Resources */,
-				51B8CCFA16FAECB3009B5DB4 /* new.png in Resources */,
-				51B8CCFF16FAECB3009B5DB4 /* new_stamp.png in Resources */,
-				51B8CD0016FAECB3009B5DB4 /* Settings.bundle in Resources */,
-				51B8CD0116FAECB3009B5DB4 /* Localizable.strings in Resources */,
-				51B8CD0216FAECB3009B5DB4 /* Localizable.strings in Resources */,
-				51B8CD0316FAECB3009B5DB4 /* sosm_background_640_1136.png in Resources */,
-				51B8CD0416FAECB3009B5DB4 /* sosm_next_message.png in Resources */,
-				51B8CD0516FAECB3009B5DB4 /* sosm_previous_message.png in Resources */,
-				51B8CD0616FAECB3009B5DB4 /* sosm_message_container.png in Resources */,
-				51B8CD0716FAECB3009B5DB4 /* sosm_button_send.png in Resources */,
-				51B8CD0816FAECB3009B5DB4 /* sosm_dislike.png in Resources */,
-				51B8CD0916FAECB3009B5DB4 /* sosm_disliked.png in Resources */,
-				51B8CD0A16FAECB3009B5DB4 /* sosm_like.png in Resources */,
-				51B8CD0B16FAECB3009B5DB4 /* sosm_liked.png in Resources */,
-				51B8CD0E16FAECB3009B5DB4 /* sosm_button_home_empty2.png in Resources */,
-				51B8CD0F16FAECB3009B5DB4 /* sosm_button_home.png in Resources */,
-				51B8CD1016FAECB3009B5DB4 /* sosmessage-bu.plist in Resources */,
-				51B8CD1116FAECB3009B5DB4 /* 57px_breakup.png in Resources */,
-				51B8CD1216FAECB3009B5DB4 /* 114px_breakup.png in Resources */,
-				51B8CD1316FAECB3009B5DB4 /* Default-568h@2x.png in Resources */,
-				51B8CD1416FAECB3009B5DB4 /* 72px_breakup.png in Resources */,
-				51B8CD1516FAECB3009B5DB4 /* 144px_breakup.png in Resources */,
-				51B8CD1C16FAED30009B5DB4 /* 57px_jokes.png in Resources */,
-				51B8CD1E16FAED34009B5DB4 /* 114px_jokes.png in Resources */,
-				51B8CD2016FAED3E009B5DB4 /* 72px_jokes.png in Resources */,
-				51B8CD2216FAED41009B5DB4 /* 144px_jokes.png in Resources */,
-				516A30D716FC418A00D20E82 /* Pacifico.ttf in Resources */,
-				510290DC17195FA4004F602C /* sosm_message_big_container.png in Resources */,
-				510290E1171963E5004F602C /* Handlee.ttf in Resources */,
-				510290EB171964E3004F602C /* sosm_button_refresh_small.png in Resources */,
-				510291051719A196004F602C /* sosm_button_home_update_5.png in Resources */,
-				517088C61719ADC100DDA769 /* Default-Landscape@2x~ipad.png in Resources */,
-				517088C71719ADC600DDA769 /* Default-Portrait@2x~ipad.png in Resources */,
-				517AFB6C1721B2C600F59C78 /* sosm_message_propose.png in Resources */,
-				51A6C9C717259F0800358BB9 /* email-14-256.png in Resources */,
-				51A6C9CC17259F4400358BB9 /* twitter-4-256.png in Resources */,
-				51BA3F87172AEED600A1FE65 /* sosm_button_home_top_category.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		51B8CD3916FAED8A009B5DB4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				51B8CD3A16FAED8A009B5DB4 /* InfoPlist.strings in Resources */,
-				51B8CD3B16FAED8A009B5DB4 /* SMCategoriesViewController.xib in Resources */,
-				51B8CD3C16FAED8A009B5DB4 /* SMMessageViewController.xib in Resources */,
-				51B8CD3D16FAED8A009B5DB4 /* SMAboutViewController.xib in Resources */,
-				51B8CD3F16FAED8A009B5DB4 /* canvas.jpg in Resources */,
-				51B8CD4016FAED8A009B5DB4 /* Default@2x.png in Resources */,
-				51B8CD4116FAED8A009B5DB4 /* Default-Landscape~ipad.png in Resources */,
-				51B8CD4216FAED8A009B5DB4 /* Default-Portrait~ipad.png in Resources */,
-				51B8CD4316FAED8A009B5DB4 /* SMProposeNewMessageController.xib in Resources */,
-				51B8CD4416FAED8A009B5DB4 /* new.png in Resources */,
-				51B8CD4916FAED8A009B5DB4 /* new_stamp.png in Resources */,
-				51B8CD4A16FAED8A009B5DB4 /* Settings.bundle in Resources */,
-				51B8CD4B16FAED8A009B5DB4 /* Localizable.strings in Resources */,
-				51B8CD4C16FAED8A009B5DB4 /* Localizable.strings in Resources */,
-				51B8CD4D16FAED8A009B5DB4 /* sosm_background_640_1136.png in Resources */,
-				51B8CD4E16FAED8A009B5DB4 /* sosm_next_message.png in Resources */,
-				51B8CD4F16FAED8A009B5DB4 /* sosm_previous_message.png in Resources */,
-				51B8CD5016FAED8A009B5DB4 /* sosm_message_container.png in Resources */,
-				51B8CD5116FAED8A009B5DB4 /* sosm_button_send.png in Resources */,
-				51B8CD5216FAED8A009B5DB4 /* sosm_dislike.png in Resources */,
-				51B8CD5316FAED8A009B5DB4 /* sosm_disliked.png in Resources */,
-				51B8CD5416FAED8A009B5DB4 /* sosm_like.png in Resources */,
-				51B8CD5516FAED8A009B5DB4 /* sosm_liked.png in Resources */,
-				51B8CD5816FAED8A009B5DB4 /* sosm_button_home_empty2.png in Resources */,
-				51B8CD5916FAED8A009B5DB4 /* sosm_button_home.png in Resources */,
-				51B8CD5A16FAED8A009B5DB4 /* sosmessage-bu.plist in Resources */,
-				51B8CD5B16FAED8A009B5DB4 /* 57px_breakup.png in Resources */,
-				51B8CD5C16FAED8A009B5DB4 /* 114px_breakup.png in Resources */,
-				51B8CD5D16FAED8A009B5DB4 /* Default-568h@2x.png in Resources */,
-				51B8CD5E16FAED8A009B5DB4 /* 72px_breakup.png in Resources */,
-				51B8CD5F16FAED8A009B5DB4 /* 144px_breakup.png in Resources */,
-				51B8CD6016FAED8A009B5DB4 /* 57px_jokes.png in Resources */,
-				51B8CD6116FAED8A009B5DB4 /* 114px_jokes.png in Resources */,
-				51B8CD6216FAED8A009B5DB4 /* 72px_jokes.png in Resources */,
-				51B8CD6316FAED8A009B5DB4 /* 144px_jokes.png in Resources */,
-				51B8CD6A16FAEDED009B5DB4 /* 57px_birthday.png in Resources */,
-				51B8CD6C16FAEDF5009B5DB4 /* 114px_birthday.png in Resources */,
-				51B8CD6E16FAEDFA009B5DB4 /* 72px_birthday.png in Resources */,
-				51B8CD7016FAEDFE009B5DB4 /* 144px_birthday.png in Resources */,
-				516A30D816FC418A00D20E82 /* Pacifico.ttf in Resources */,
-				510290DD17195FA4004F602C /* sosm_message_big_container.png in Resources */,
-				510290E2171963E6004F602C /* Handlee.ttf in Resources */,
-				510290EC171964E3004F602C /* sosm_button_refresh_small.png in Resources */,
-				510291061719A196004F602C /* sosm_button_home_update_5.png in Resources */,
-				517088C81719ADCD00DDA769 /* Default-Landscape@2x~ipad.png in Resources */,
-				517088C91719ADD100DDA769 /* Default-Portrait@2x~ipad.png in Resources */,
-				517AFB6D1721B2C600F59C78 /* sosm_message_propose.png in Resources */,
-				51A6C9C817259F0800358BB9 /* email-14-256.png in Resources */,
-				51A6C9CD17259F4400358BB9 /* twitter-4-256.png in Resources */,
-				51BA3F88172AEED600A1FE65 /* sosm_button_home_top_category.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		515F720414BE2CF5004676E1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				515F720514BE2CF5004676E1 /* main.m in Sources */,
-				515F720614BE2CF5004676E1 /* AppDelegate.m in Sources */,
-				515F720714BE2CF5004676E1 /* SMCategoriesViewController.m in Sources */,
-				515F720814BE2CF5004676E1 /* NSString+SOSMessage.m in Sources */,
-				515F720914BE2CF5004676E1 /* SMMessageViewController.m in Sources */,
-				515F720A14BE2CF5004676E1 /* SMMessagesHandler.m in Sources */,
-				515F720B14BE2CF5004676E1 /* MBProgressHUD.m in Sources */,
-				515F720C14BE2CF5004676E1 /* SMAboutViewController.m in Sources */,
-				515F720D14BE2CF5004676E1 /* UIColor+SOSMessage.m in Sources */,
-				515F720E14BE2CF5004676E1 /* SMProposeNewMessageController.m in Sources */,
-				515F720F14BE2CF5004676E1 /* UIButton+SOSMessage.m in Sources */,
-				517E321C14F0DB1D003565F9 /* AdBannerNavigationController.m in Sources */,
-				5102910A1719A343004F602C /* iRate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		516515C0145DEA4000CF6C45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1213,46 +736,6 @@
 				519052BE172BBFE400DB24F0 /* UIButton+SOSMessage.m in Sources */,
 				519052BF172BBFE400DB24F0 /* AdBannerNavigationController.m in Sources */,
 				519052C0172BBFE400DB24F0 /* iRate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		51B8CCDA16FAECB3009B5DB4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				51B8CCDB16FAECB3009B5DB4 /* main.m in Sources */,
-				51B8CCDC16FAECB3009B5DB4 /* AppDelegate.m in Sources */,
-				51B8CCDD16FAECB3009B5DB4 /* SMCategoriesViewController.m in Sources */,
-				51B8CCDE16FAECB3009B5DB4 /* NSString+SOSMessage.m in Sources */,
-				51B8CCDF16FAECB3009B5DB4 /* SMMessageViewController.m in Sources */,
-				51B8CCE016FAECB3009B5DB4 /* SMMessagesHandler.m in Sources */,
-				51B8CCE116FAECB3009B5DB4 /* MBProgressHUD.m in Sources */,
-				51B8CCE216FAECB3009B5DB4 /* SMAboutViewController.m in Sources */,
-				51B8CCE316FAECB3009B5DB4 /* UIColor+SOSMessage.m in Sources */,
-				51B8CCE416FAECB3009B5DB4 /* SMProposeNewMessageController.m in Sources */,
-				51B8CCE516FAECB3009B5DB4 /* UIButton+SOSMessage.m in Sources */,
-				51B8CCE616FAECB3009B5DB4 /* AdBannerNavigationController.m in Sources */,
-				5102910B1719A343004F602C /* iRate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		51B8CD2416FAED8A009B5DB4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				51B8CD2516FAED8A009B5DB4 /* main.m in Sources */,
-				51B8CD2616FAED8A009B5DB4 /* AppDelegate.m in Sources */,
-				51B8CD2716FAED8A009B5DB4 /* SMCategoriesViewController.m in Sources */,
-				51B8CD2816FAED8A009B5DB4 /* NSString+SOSMessage.m in Sources */,
-				51B8CD2916FAED8A009B5DB4 /* SMMessageViewController.m in Sources */,
-				51B8CD2A16FAED8A009B5DB4 /* SMMessagesHandler.m in Sources */,
-				51B8CD2B16FAED8A009B5DB4 /* MBProgressHUD.m in Sources */,
-				51B8CD2C16FAED8A009B5DB4 /* SMAboutViewController.m in Sources */,
-				51B8CD2D16FAED8A009B5DB4 /* UIColor+SOSMessage.m in Sources */,
-				51B8CD2E16FAED8A009B5DB4 /* SMProposeNewMessageController.m in Sources */,
-				51B8CD2F16FAED8A009B5DB4 /* UIButton+SOSMessage.m in Sources */,
-				51B8CD3016FAED8A009B5DB4 /* AdBannerNavigationController.m in Sources */,
-				5102910C1719A343004F602C /* iRate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1312,28 +795,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		515F722614BE2CF5004676E1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "sosmessage/sosmessage-Prefix.pch";
-				INFOPLIST_FILE = "sosmessage/sosmessage-bu.plist";
-				PRODUCT_NAME = smbu;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		515F722714BE2CF5004676E1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "sosmessage/sosmessage-Prefix.pch";
-				INFOPLIST_FILE = "sosmessage/sosmessage-bu.plist";
-				PRODUCT_NAME = smbu;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
 		516515E3145DEA4100CF6C45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1450,62 +911,9 @@
 			};
 			name = Release;
 		};
-		51B8CD1716FAECB3009B5DB4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "sosmessage/sosmessage-Prefix.pch";
-				INFOPLIST_FILE = "sosmessage-jokes.plist";
-				PRODUCT_NAME = smj;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		51B8CD1816FAECB3009B5DB4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "sosmessage/sosmessage-Prefix.pch";
-				INFOPLIST_FILE = "sosmessage-jokes.plist";
-				PRODUCT_NAME = smj;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		51B8CD6516FAED8A009B5DB4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "sosmessage/sosmessage-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/sosmessage-birthday.plist";
-				PRODUCT_NAME = smb;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		51B8CD6616FAED8A009B5DB4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "sosmessage/sosmessage-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/sosmessage-birthday.plist";
-				PRODUCT_NAME = smb;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		515F722514BE2CF5004676E1 /* Build configuration list for PBXNativeTarget "break up" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				515F722614BE2CF5004676E1 /* Debug */,
-				515F722714BE2CF5004676E1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		516515BE145DEA4000CF6C45 /* Build configuration list for PBXProject "sosmessage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1529,24 +937,6 @@
 			buildConfigurations = (
 				519052FD172BBFE400DB24F0 /* Debug */,
 				519052FE172BBFE400DB24F0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		51B8CD1616FAECB3009B5DB4 /* Build configuration list for PBXNativeTarget "jokes" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				51B8CD1716FAECB3009B5DB4 /* Debug */,
-				51B8CD1816FAECB3009B5DB4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		51B8CD6416FAED8A009B5DB4 /* Build configuration list for PBXNativeTarget "birthday" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				51B8CD6516FAED8A009B5DB4 /* Debug */,
-				51B8CD6616FAED8A009B5DB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

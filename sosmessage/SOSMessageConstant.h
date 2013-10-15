@@ -79,6 +79,8 @@
 
 #define kmessage_propose             NSLocalizedString(@"message.propose", nil)
 #define kmessage_propose_sending     NSLocalizedString(@"message.propose.sending", nil)
+#define kmessage_propose_thanks      NSLocalizedString(@"message.propose.thanks", nil)
+#define kmessage_propose_thanks_title NSLocalizedString(@"message.propose.thanks.title", nil)
 #define kmessage_share               NSLocalizedString(@"message.share", nil)
 #define kmessage_share_unable_title  NSLocalizedString(@"message.share.unable.title", nil)
 #define kmessage_share_unable        NSLocalizedString(@"message.share.unable", nil)

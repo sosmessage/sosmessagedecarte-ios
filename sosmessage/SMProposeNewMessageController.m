@@ -9,7 +9,7 @@
 #import "SMProposeNewMessageController.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface SMProposeNewMessageController ()<SMMessageDelegate>
+@interface SMProposeNewMessageController ()<SMMessageDelegate, UIAlertViewDelegate>
 
 @property (assign) NSInteger selectedCategory;
 @property (nonatomic, retain) SMMessagesHandler* handler;
@@ -192,7 +192,7 @@ bool keyboardVisible = false;
 - (void)messageHandler:(SMMessagesHandler *)messageHandler didFinish:(id)data {
     NSLog(@"Status code: %d", messageHandler.lastStatusCode);
     if (messageHandler.lastStatusCode == 200) {
-        [self dismissModalViewControllerAnimated:true];
+        [[[UIAlertView new] initWithTitle:kmessage_propose_thanks_title message:kmessage_propose_thanks delegate:self cancelButtonTitle:nil otherButtonTitles:klabel_btn_ok, nil] show];
     }
 }
 
@@ -214,6 +214,11 @@ bool keyboardVisible = false;
     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
     scrollView.contentInset = contentInsets;
     scrollView.scrollIndicatorInsets = contentInsets;
+}
+
+#pragma mark alertView delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [self dismissModalViewControllerAnimated:true];
 }
 
 @end

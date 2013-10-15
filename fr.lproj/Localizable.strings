@@ -1,5 +1,7 @@
 "message.propose" = "Ton message";
 "message.propose.sending" = "Envoi de votre message ...";
+"message.propose.thanks.title" = "Contribution envoyée!";
+"message.propose.thanks" = "Merci pour votre contribution, elle sera disponible très vite.";
 "message.share"   = "Partage";
 "message.share.unable.title" = "Impossibilité";
 "message.share.unable" = "Vous ne disposez d'aucun moyen pour envoyer le message a vos comparses.";

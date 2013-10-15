@@ -1,5 +1,7 @@
 "message.propose" = "Submit yours";
 "message.propose.sending" = "Sending your message...";
+"message.propose.thanks.title" = "Contribution sent!";
+"message.propose.thanks" = "Thanks for your time, your message will be available soon.";
 "message.share"   = "Share message";
 "message.share.unable.title" = "Can't share";
 "message.share.unable" = "Sorry, but we can't share this wonderful message as you do not have suffisant device capabilites.";

@@ -190,7 +190,7 @@ bool keyboardVisible = false;
 }
 
 - (void)messageHandler:(SMMessagesHandler *)messageHandler didFinish:(id)data {
-    NSLog(@"Status code: %d", messageHandler.lastStatusCode);
+    NSLog(@"Status code: %ld", (long)messageHandler.lastStatusCode);
     if (messageHandler.lastStatusCode == 200) {
         [[[UIAlertView new] initWithTitle:kmessage_propose_thanks_title message:kmessage_propose_thanks delegate:self cancelButtonTitle:nil otherButtonTitles:klabel_btn_ok, nil] show];
     }

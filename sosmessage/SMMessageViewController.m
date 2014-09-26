@@ -268,7 +268,7 @@ float baseHue;
         if ([TWTweetComposeViewController canSendTweet]) {
             [sheet addButtonWithTitle:LBL_TWITTER];
         }
-        NSLog(@"Number of buttons in action sheet: %d", sheet.numberOfButtons);
+        NSLog(@"Number of buttons in action sheet: %ld", (long)sheet.numberOfButtons);
         if (sheet.numberOfButtons > 0) {
             sheet.cancelButtonIndex = [sheet addButtonWithTitle:klabel_btn_cancel];
             [sheet showInView:self.view];
@@ -327,21 +327,6 @@ float baseHue;
     [self fillMessageWithDirection:-1];
 }
 
--(void)fetchAMessage {
-    NSLog(@"XXX fetchAMessage called ...");
-    return;
-    
-    if (interstitial.loaded && fetchCount > 5) {
-        [interstitial presentFromViewController:self];
-        fetchCount = 0;
-        return;
-    }
-    
-    if ([AppDelegate isInsterstitialAdCompliant]) {
-        fetchCount += 1;
-    }
-}
-
 #pragma mark NSMessageHandlerDelegate
 
 - (void)startActivityFromMessageHandler:(SMMessagesHandler *)messageHandler
@@ -382,7 +367,7 @@ float baseHue;
         
         NSInteger nbVote = [[[result objectForKey:MESSAGE_VOTE] objectForKey:VOTE_PLUS] integerValue];
 
-        self.votePlusScoring.text = [NSString stringWithFormat:@"%d like%@", nbVote, nbVote > 1 ? @"s" : @""];
+        self.votePlusScoring.text = [NSString stringWithFormat:@"%ld like%@", (long)nbVote, nbVote > 1 ? @"s" : @""];
         
         self.messageText.textColor = [UIColor colorWithHue:baseHue saturation:1.0 brightness:0.3 alpha:1.0];
     }
@@ -400,7 +385,7 @@ float baseHue;
 #pragma mark UIActionSheetDelegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSLog(@"Button pressed: %d", buttonIndex);
+    NSLog(@"Button pressed: %ld", (long)buttonIndex);
     if (actionSheet.cancelButtonIndex != buttonIndex) {
         NSString* btnText = [actionSheet buttonTitleAtIndex:buttonIndex];
         if ([btnText isEqual: LBL_SMS]) {

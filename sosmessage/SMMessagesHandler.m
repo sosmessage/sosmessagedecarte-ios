@@ -327,7 +327,7 @@
     if (lastCategory) {
         return true;
     }
-    NSLog(@"hasNext: %d (%d, %d)", index < messages.count, index, messages.count);
+    NSLog(@"hasNext: %d (%d, %lu)", index < messages.count, index, (unsigned long)messages.count);
     return index < messages.count - 1;
 }
 
